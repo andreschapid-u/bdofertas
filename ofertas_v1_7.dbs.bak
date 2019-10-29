@@ -341,6 +341,9 @@ Privado=1]]></comment>
 			<fk name="fk_ofertas_contratos" to_schema="ofertas" to_table="contratos" >
 				<fk_column name="id_contrato" pk="id_aut_contrato" />
 			</fk>
+			<fk name="fk_ofertas_sectores" to_schema="ofertas" to_table="sectores" >
+				<fk_column name="id_sector" pk="id_aut_sector" />
+			</fk>
 		</table>
 		<table name="ofertas_areascon" >
 			<column name="id_aut_oferta" type="integer" jt="4" mandatory="y" />
@@ -629,7 +632,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1264" y="912" />
 		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1152" y="1280" />
 		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1632" y="1360" />
-		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1328" y="1184" />
 		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="1888" y="784" />
 		<entity schema="ofertas" name="categorias_cargos" color="C1D8EE" x="1360" y="144" />
 		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="1936" y="528" />
@@ -637,6 +639,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1536" y="48" />
 		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1568" y="368" />
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1536" y="736" />
+		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1328" y="1184" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
