@@ -510,21 +510,6 @@ Privado=1]]></comment>
 				<fk_column name="id_sectores" pk="id_aut_sector" />
 			</fk>
 		</table>
-		<table name="table" >
-			<column name="id" type="integer" jt="4" mandatory="y" />
-			<column name="nombre" type="varchar" length="30" jt="12" />
-			<index name="pk_table_id" unique="PRIMARY_KEY" >
-				<column name="id" />
-			</index>
-		</table>
-		<table name="table_0" />
-		<table name="table_1" >
-			<column name="id_evento" type="integer" jt="4" mandatory="y" />
-			<column name="id_invitado" type="integer" jt="4" />
-			<index name="pk_table_1_id_evento" unique="PRIMARY_KEY" >
-				<column name="id_evento" />
-			</index>
-		</table>
 		<table name="tipo_de_observacion" >
 			<column name="id_aut_comentario" type="serial" jt="4" mandatory="y" sequence="sec_comentario" />
 			<column name="sugerencia_programa" type="text" jt="12" mandatory="y" />
@@ -616,7 +601,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="users" color="C1D8EE" x="896" y="48" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1264" y="912" />
 		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1152" y="1280" />
-		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1632" y="1360" />
 		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="1888" y="784" />
 		<entity schema="ofertas" name="categorias_cargos" color="C1D8EE" x="1360" y="144" />
 		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="1936" y="528" />
@@ -626,6 +610,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1536" y="736" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1328" y="1184" />
 		<entity schema="ofertas" name="egresados" color="008080" x="736" y="656" />
+		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1632" y="1360" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
