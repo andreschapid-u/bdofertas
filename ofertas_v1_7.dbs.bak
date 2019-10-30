@@ -384,6 +384,38 @@ Privado=1]]></comment>
 				<fk_column name="id_areaconocimiento" pk="id_aut_areaconocimiento" />
 			</fk>
 		</table>
+		<table name="ofertas_idiomas" >
+			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
+			<column name="id_idioma" type="integer" jt="4" mandatory="y" />
+			<column name="nivel_escritura" type="varchar" length="20" jt="12" mandatory="y" />
+			<column name="nivel_lectura" type="varchar" length="20" jt="12" mandatory="y" />
+			<column name="nivel_conversacion" type="varchar" length="20" jt="12" mandatory="y" />
+			<index name="idx_ofertas_idiomas" unique="PRIMARY_KEY" >
+				<column name="id_oferta" />
+				<column name="id_idioma" />
+			</index>
+			<fk name="fk_ofertas_idiomas_ofertas" to_schema="ofertas" to_table="ofertas" >
+				<fk_column name="id_oferta" pk="id_aut_oferta" />
+			</fk>
+			<fk name="fk_ofertas_idiomas_idiomas" to_schema="ofertas" to_table="idiomas" >
+				<fk_column name="id_idioma" pk="id_aut_idioma" />
+			</fk>
+		</table>
+		<table name="ofertas_software" >
+			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
+			<column name="id_software" type="integer" jt="4" mandatory="y" />
+			<column name="nivel" type="varchar" length="20" jt="12" mandatory="y" />
+			<index name="idx_ofertas_software" unique="PRIMARY_KEY" >
+				<column name="id_oferta" />
+				<column name="id_software" />
+			</index>
+			<fk name="fk_ofertas_software_software" to_schema="ofertas" to_table="software" >
+				<fk_column name="id_software" pk="id_aut_software" />
+			</fk>
+			<fk name="fk_ofertas_software_ofertas" to_schema="ofertas" to_table="ofertas" >
+				<fk_column name="id_oferta" pk="id_aut_oferta" />
+			</fk>
+		</table>
 		<table name="padres" >
 			<column name="id_aut_padre" type="serial" jt="4" mandatory="y" />
 			<column name="nombres" type="varchar" length="40" jt="12" mandatory="y" />
@@ -547,6 +579,16 @@ Privado=1]]></comment>
 				<column name="id_aut_sede" />
 			</index>
 		</table>
+		<table name="software" >
+			<column name="id_aut_software" type="serial" jt="4" mandatory="y" />
+			<column name="nombre" type="varchar" length="60" jt="12" mandatory="y" />
+			<index name="pk_software_id_aut_software" unique="PRIMARY_KEY" >
+				<column name="id_aut_software" />
+			</index>
+			<index name="idx_software" unique="UNIQUE" >
+				<column name="nombre" />
+			</index>
+		</table>
 		<table name="solicita" >
 			<column name="id_carnetizacion" type="integer" jt="4" mandatory="y" />
 			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
@@ -677,7 +719,10 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="784" y="1488" />
 		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1536" y="48" />
 		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1568" y="368" />
-		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="1600" y="1536" />
+		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1168" y="1568" />
+		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="960" y="1600" />
+		<entity schema="ofertas" name="software" color="C1D8EE" x="1648" y="1584" />
+		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1440" y="1552" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
