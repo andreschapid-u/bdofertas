@@ -128,7 +128,7 @@
 			<column name="id_lugar_expedicion" type="integer" jt="4" mandatory="y" />
 			<column name="id_lugar_residencia" type="integer" jt="4" mandatory="y" />
 			<column name="id_nivel_educativo" type="integer" jt="4" mandatory="y" />
-			<column name="num_hijos" type="smallint" jt="5" >
+			<column name="num_hijos" type="smallint" jt="5" mandatory="y" >
 				<defo>0</defo>
 			</column>
 			<column name="id_lugar_nacimiento" type="integer" jt="4" mandatory="y" />
@@ -137,12 +137,11 @@
 			<column name="correo" type="varchar" length="100" jt="12" mandatory="y" />
 			<column name="correo_alternativo" type="varchar" length="100" jt="12" mandatory="y" />
 			<column name="estado_civil" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="ha_trabajado" type="bool" jt="-7" />
-			<column name="trabaja_actualmente" type="bool" jt="-7" />
+			<column name="ha_trabajado" type="bool" jt="-7" mandatory="y" />
+			<column name="trabaja_actualmente" type="bool" jt="-7" mandatory="y" />
 			<column name="id_aut_user" type="integer" jt="4" />
 			<column name="grupo_etnico" type="varchar" length="40" jt="12" />
-			<column name="celular" type="varchar" length="16" jt="12" mandatory="y" />
-			<column name="telefono_fijo" type="varchar" length="16" jt="12" />
+			<column name="telefono" type="integer" jt="4" />
 			<index name="pk_egresados_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_egresado" />
 			</index>
@@ -292,7 +291,6 @@ Privado=1]]></comment>
 			<column name="mension_honor" type="bool" jt="-7" />
 			<column name="titulo_especial" type="varchar" length="100" jt="12" />
 			<column name="id_tipo_de_comentarios" type="integer" jt="4" />
-			<column name="anio_graduacion" type="varchar" length="50" jt="12" mandatory="y" />
 			<column name="fecha_graduacion" type="date" jt="91" />
 			<column name="id_programa" type="integer" jt="4" mandatory="y" />
 			<column name="id_estudiante" type="integer" jt="4" mandatory="y" />
@@ -692,9 +690,6 @@ Privado=1]]></comment>
 			<column name="password" type="varchar" length="128" jt="12" />
 			<column name="id_rol" type="integer" jt="4" mandatory="y" />
 			<column name="codigo_verificacion" type="integer" jt="4" />
-			<column name="activo" type="bool" jt="-7" mandatory="y" >
-				<defo>false</defo>
-			</column>
 			<index name="pk_users_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_user" />
 			</index>
@@ -703,6 +698,7 @@ Privado=1]]></comment>
 			</fk>
 		</table>
 	</schema>
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.2.7.jar" driver_desc="Standard" host="localhost" port="5432" instance="test" user="test" passwd="dGVzdA==" />
 	<layout name="Default Layout" id="Layout_2b6d324" show_relation="columns" >
 		<entity schema="ofertas" name="facultades" color="C1D8EE" x="832" y="1088" />
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="144" y="848" />
@@ -714,6 +710,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="48" y="304" />
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="368" y="560" />
 		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1280" y="768" />
+		<entity schema="ofertas" name="grados" color="C1D8EE" x="1008" y="912" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1264" y="912" />
 		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1152" y="1280" />
 		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="1888" y="784" />
@@ -721,6 +718,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1632" y="1360" />
 		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1056" y="1392" />
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="384" y="1392" />
+		<entity schema="ofertas" name="egresados" color="008080" x="736" y="656" />
 		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="704" y="1248" />
 		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="1856" y="1440" />
 		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="1840" y="1168" />
@@ -731,7 +729,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="544" y="1536" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="176" y="1488" />
 		<entity schema="ofertas" name="categorias_cargos" color="C1D8EE" x="1360" y="144" />
-		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1104" y="144" />
+		<entity schema="ofertas" name="users" color="C1D8EE" x="896" y="48" />
 		<entity schema="ofertas" name="roles" color="3986C1" x="688" y="48" />
 		<entity schema="ofertas" name="sectores" color="3986C1" x="1824" y="288" />
 		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1568" y="368" />
@@ -742,11 +740,9 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1536" y="736" />
 		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1440" y="1568" />
 		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="576" y="1392" />
-		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1328" y="1184" />
 		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="432" y="992" />
-		<entity schema="ofertas" name="users" color="C1D8EE" x="896" y="48" />
-		<entity schema="ofertas" name="grados" color="C1D8EE" x="1008" y="928" />
-		<entity schema="ofertas" name="egresados" color="008080" x="736" y="656" />
+		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1328" y="1184" />
+		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1104" y="144" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
