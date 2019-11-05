@@ -170,7 +170,7 @@
 			<column name="nombre" type="varchar" length="100" jt="12" />
 			<column name="razon_social" type="varchar" length="200" jt="12" mandatory="y" />
 			<column name="anio_creacion" type="smallint" jt="5" mandatory="y" />
-			<column name="numero_empleados" type="integer" jt="4" mandatory="y" />
+			<column name="numero_empleados" type="varchar" length="30" jt="12" mandatory="y" />
 			<column name="ingresos" type="varchar" length="30" jt="12" />
 			<column name="sitio_web" type="varchar" length="200" jt="12" />
 			<column name="id_direccion" type="integer" jt="4" mandatory="y" />
@@ -662,6 +662,20 @@ Privado=1]]></comment>
 				<fk_column name="id_grado" pk="id_tipo_de_comentarios" />
 			</fk>
 		</table>
+		<table name="titulo" >
+			<column name="id_aut_titulo" type="integer" jt="4" mandatory="y" />
+			<column name="nombre" type="varchar" length="50" jt="12" mandatory="y" />
+			<column name="id_programa" type="integer" jt="4" mandatory="y" />
+			<index name="pk_titulo_id_aut_titulo" unique="PRIMARY_KEY" >
+				<column name="id_aut_titulo" />
+			</index>
+			<index name="idx_titulo_id_programa" unique="UNIQUE" >
+				<column name="id_programa" />
+			</index>
+			<fk name="fk_titulo_programas" to_schema="ofertas" to_table="programas" >
+				<fk_column name="id_programa" pk="id_aut_programa" />
+			</fk>
+		</table>
 		<table name="ubicacion_oferta" >
 			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
 			<column name="id_ciudad" type="integer" jt="4" mandatory="y" />
@@ -681,7 +695,7 @@ Privado=1]]></comment>
 			<column name="email" type="varchar" length="60" jt="12" mandatory="y" />
 			<column name="password" type="varchar" length="128" jt="12" />
 			<column name="id_rol" type="integer" jt="4" mandatory="y" />
-			<column name="codigo_verificacion" type="integer" jt="4" />
+			<column name="codigo_verificacion" type="varchar" length="40" jt="12" />
 			<column name="activo" type="bool" jt="-7" mandatory="y" >
 				<defo>false</defo>
 			</column>
@@ -721,6 +735,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="960" y="1600" />
 		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="544" y="1536" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="176" y="1488" />
+		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1104" y="144" />
 		<entity schema="ofertas" name="roles" color="3986C1" x="688" y="48" />
 		<entity schema="ofertas" name="sectores" color="3986C1" x="1824" y="288" />
 		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1568" y="368" />
@@ -728,15 +743,15 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1200" y="368" />
 		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="960" y="384" />
 		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1104" y="608" />
+		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1536" y="736" />
 		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1440" y="1568" />
 		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="576" y="1392" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1328" y="1184" />
 		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="432" y="992" />
+		<entity schema="ofertas" name="egresados" color="008080" x="736" y="656" />
+		<entity schema="ofertas" name="titulo" color="C1D8EE" x="96" y="1232" />
 		<entity schema="ofertas" name="users" color="C1D8EE" x="896" y="48" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1008" y="928" />
-		<entity schema="ofertas" name="egresados" color="008080" x="736" y="656" />
-		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1536" y="736" />
-		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1104" y="144" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

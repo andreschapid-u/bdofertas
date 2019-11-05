@@ -10,6 +10,9 @@ CREATE TYPE ofertas.dominio_nivel_software_oferta AS ENUM ('Ninguno', 'Nivel baj
 CREATE TYPE ofertas.dominio_tipo_licencia_oferta AS ENUM ('A1', 'A2', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3');
 CREATE TYPE ofertas.dominio_estado_postulacion_oferta AS ENUM ('Contratado', 'Muy bueno', 'Bueno', 'Descartado', 'Desistió', 'Sin clasificación');
 
+CREATE TYPE ofertas.dominio_numero_empleados AS ENUM ('1 -10', '11 - 50', '51 -150', '151 - 300', '301 - 500', '501 -1000', '1001 - 5000', 'más de 5000');
+CREATE TYPE ofertas.dominio_ingresos_empresa AS ENUM ('0 - 3.000.000', '3.000.001 - 10.000.000', '10.000.001 - 25.000.000', '25.000.001 - 50.000.000', '50.000.001 - 100.000.000', 'más de 100.000.000');
+
 
 --Egresados Dominios
 CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('Pendiente', 'Realizado');
@@ -46,6 +49,10 @@ ALTER TABLE ofertas.postulaciones ALTER COLUMN estado TYPE ofertas.dominio_estad
 
 alter table ofertas.contratos alter column jornada_laboral type ofertas.dominio_jornada_laboral using jornada_laboral::ofertas.dominio_jornada_laboral;
 
+--alter table ofertas.empresas alter column numero_empleados type varchar(20);
+alter table ofertas.empresas alter column numero_empleados type ofertas.dominio_numero_empleados using numero_empleados::ofertas.dominio_numero_empleados;
+alter table ofertas.empresas alter column ingresos type ofertas.dominio_ingresos_empresa using ingresos::ofertas.dominio_ingresos_empresa;
+
 
 --Egresados ALTER TABLE
 ALTER TABLE ofertas.carnetizacion ALTER COLUMN estado_solicitud TYPE ofertas.dominio_estado_solicitud_carnetizacion USING estado_solicitud::ofertas.dominio_estado_solicitud_carnetizacion;
@@ -53,7 +60,7 @@ ALTER TABLE ofertas.egresados ALTER COLUMN genero TYPE ofertas.dominio_genero_eg
 ALTER TABLE ofertas.egresados ALTER COLUMN estado TYPE ofertas.dominio_estado_egresado USING estado::ofertas.dominio_estado_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN estado_civil TYPE ofertas.dominio_estado_civil_egresado USING estado_civil::ofertas.dominio_estado_civil_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN grupo_etnico TYPE ofertas.dominio_grupo_etnico_egresado USING grupo_etnico::ofertas.dominio_grupo_etnico_egresado;
-
+commit;
 
 INSERT INTO ofertas.discapacidades( id_aut_discapacidades, nombre ) VALUES ( 1, 'Problemas neurologicos' ); 
 
@@ -67,3 +74,4 @@ INSERT INTO ofertas.programas( id_aut_programa, nombre, id_facultad, id_sede ) V
 insert into ofertas.roles (nombre) values ('Administrador');
 insert into ofertas.roles (nombre) values ('Empresa');
 insert into ofertas.roles (nombre) values ('Egresado');
+commit;
