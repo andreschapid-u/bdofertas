@@ -6,17 +6,17 @@ CREATE  TABLE ofertas.areas_conocimiento (
 	CONSTRAINT pk_areas_conocimiento_id PRIMARY KEY ( id_aut_areaconocimiento )
  );
 
+CREATE  TABLE ofertas.cargos ( 
+	id_aut_cargos        serial  NOT NULL ,
+	nombre               varchar(40)  NOT NULL ,
+	estado               bool DEFAULT false  ,
+	CONSTRAINT pk_cargos_id_0 PRIMARY KEY ( id_aut_cargos )
+ );
+
 CREATE  TABLE ofertas.carnetizacion ( 
 	id_aut_carnetizacion integer  NOT NULL ,
 	estado_solicitud     varchar(50)  NOT NULL ,
 	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
- );
-
-CREATE  TABLE ofertas.categorias_cargos ( 
-	id_aut_cate_cargo    serial  NOT NULL ,
-	nombre               varchar(40)  NOT NULL ,
-	CONSTRAINT pk_categoria_id PRIMARY KEY ( id_aut_cate_cargo ),
-	CONSTRAINT idx_categorias_cargos UNIQUE ( nombre ) 
  );
 
 CREATE  TABLE ofertas.contratos ( 
@@ -66,7 +66,7 @@ CREATE  TABLE ofertas.padres (
 	nombres              varchar(40)  NOT NULL ,
 	apellidos            varchar(40)  NOT NULL ,
 	correo               varchar(60)   ,
-	telefono             integer  NOT NULL ,
+	telefono             varchar(16)  NOT NULL ,
 	id_nivel_estudio     integer  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
 	id_programa          integer  NOT NULL ,
@@ -103,7 +103,7 @@ CREATE  TABLE ofertas.sectores (
 
 CREATE  TABLE ofertas.sede ( 
 	id_aut_sede          serial  NOT NULL ,
-	nombre               integer  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
 	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede )
  );
 
@@ -119,16 +119,9 @@ CREATE  TABLE ofertas.users (
 	email                varchar(60)  NOT NULL ,
 	"password"           varchar(128)   ,
 	id_rol               integer  NOT NULL ,
-	codigo_verificacion  integer   ,
+	codigo_verificacion  varchar(60)   ,
+	activo               bool DEFAULT false NOT NULL ,
 	CONSTRAINT pk_users_id PRIMARY KEY ( id_aut_user )
- );
-
-CREATE  TABLE ofertas.cargos ( 
-	id_aut_cargos        serial  NOT NULL ,
-	nombre               varchar(40)  NOT NULL ,
-	id_categoria         integer  NOT NULL ,
-	estado               bool  NOT NULL ,
-	CONSTRAINT pk_cargos_id_0 PRIMARY KEY ( id_aut_cargos )
  );
 
 CREATE  TABLE ofertas.departamentos ( 
@@ -151,7 +144,7 @@ CREATE  TABLE ofertas.localizacion (
 	id_aut_localizacion  serial  NOT NULL ,
 	codigo_postal        integer   ,
 	direccion            varchar(100)  NOT NULL ,
-	barrio               varchar(40)  NOT NULL ,
+	barrio               varchar(40)   ,
 	id_ciudad            integer  NOT NULL ,
 	CONSTRAINT pk_localizacion_id PRIMARY KEY ( id_aut_localizacion )
  );
@@ -165,18 +158,19 @@ CREATE  TABLE ofertas.egresados (
 	id_lugar_expedicion  integer  NOT NULL ,
 	id_lugar_residencia  integer  NOT NULL ,
 	id_nivel_educativo   integer  NOT NULL ,
-	num_hijos            smallint DEFAULT 0 NOT NULL ,
+	num_hijos            smallint DEFAULT 0  ,
 	id_lugar_nacimiento  integer  NOT NULL ,
 	fecha_nacimiento     date  NOT NULL ,
 	estado               varchar(40)  NOT NULL ,
 	correo               varchar(100)  NOT NULL ,
 	correo_alternativo   varchar(100)  NOT NULL ,
 	estado_civil         varchar(40)  NOT NULL ,
-	ha_trabajado         bool  NOT NULL ,
-	trabaja_actualmente  bool  NOT NULL ,
+	ha_trabajado         bool   ,
+	trabaja_actualmente  bool   ,
 	id_aut_user          integer   ,
 	grupo_etnico         varchar(40)   ,
-	telefono             integer   ,
+	celular              varchar(16)  NOT NULL ,
+	telefono_fijo        varchar(16)   ,
 	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )
  );
 
@@ -192,13 +186,14 @@ CREATE  TABLE ofertas.empresas (
 	nombre               varchar(100)   ,
 	razon_social         varchar(200)  NOT NULL ,
 	anio_creacion        smallint  NOT NULL ,
-	numero_empleados     integer  NOT NULL ,
+	numero_empleados     varchar(30)  NOT NULL ,
 	ingresos             varchar(30)   ,
 	sitio_web            varchar(200)   ,
 	id_direccion         integer  NOT NULL ,
 	estado               varchar(20)   ,
 	fecha_registro       date DEFAULT current_date NOT NULL ,
 	fecha_activacion     date   ,
+	fecha_vencimineto    date   ,
 	total_publicaciones  integer   ,
 	limite_publicaciones integer   ,
 	num_publicaciones_actuales integer   ,
@@ -206,6 +201,7 @@ CREATE  TABLE ofertas.empresas (
 	telefono             varchar(16)   ,
 	url_logo             varchar(255)   ,
 	url_doc_camaracomercio varchar(255)  NOT NULL ,
+	descripcion          text   ,
 	CONSTRAINT pk_empresas_id PRIMARY KEY ( id_aut_empresa ),
 	CONSTRAINT idx_empresas_unique_nombre UNIQUE ( nombre ) ,
 	CONSTRAINT idx_empresas_unique_nit UNIQUE ( nit ) 
@@ -222,7 +218,7 @@ CREATE  TABLE ofertas.experiencia (
 	id_egresado          integer   ,
 	id_cargo             integer  NOT NULL ,
 	nombre_jefe          varchar(60)  NOT NULL ,
-	telefono_jefe        integer   ,
+	telefono_jefe        varchar(16)   ,
 	correo_jefe          varchar(60)  NOT NULL ,
 	nombre_empresa       varchar(50) DEFAULT 100 NOT NULL ,
 	dir_empresa          varchar(50) DEFAULT 100  ,
@@ -231,6 +227,7 @@ CREATE  TABLE ofertas.experiencia (
 	tipo_contrato        varchar(50) DEFAULT 50  ,
 	trabajo_en_su_area   bool   ,
 	sector               varchar(40)   ,
+	id_ciudad            integer  NOT NULL ,
 	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp )
  );
 
@@ -331,9 +328,8 @@ CREATE  TABLE ofertas.referidos (
 	id_aut_referido      serial  NOT NULL ,
 	id_egresado          integer   ,
 	nombres              varchar(100)  NOT NULL ,
-	apellidos            varchar(60)   ,
-	id_nivel_educativo   integer  NOT NULL ,
-	telefono_movil       integer   ,
+	id_nivel_educativo   integer   ,
+	telefono_movil       varchar(16)  NOT NULL ,
 	correo               varchar(60)   ,
 	parentesco           varchar(40)   ,
 	id_aut_programa      integer   ,
@@ -352,8 +348,8 @@ CREATE  TABLE ofertas.representante_empresa (
 	nombre               varchar(60)  NOT NULL ,
 	apellidos            varchar(60)  NOT NULL ,
 	id_empresa           integer  NOT NULL ,
-	telefono             integer   ,
-	telefono_movil       integer  NOT NULL ,
+	telefono             varchar(16)   ,
+	telefono_movil       varchar(16)  NOT NULL ,
 	CONSTRAINT pk_table_0_id_aut_administrador_empresa PRIMARY KEY ( id_aut_representante_empresa ),
 	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) 
  );
@@ -362,6 +358,14 @@ CREATE  TABLE ofertas.solicita (
 	id_carnetizacion     integer  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
 	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado )
+ );
+
+CREATE  TABLE ofertas.titulo ( 
+	id_aut_titulo        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	id_programa          integer  NOT NULL ,
+	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo ),
+	CONSTRAINT idx_titulo_id_programa UNIQUE ( id_programa ) 
  );
 
 CREATE  TABLE ofertas.ubicacion_oferta ( 
@@ -390,9 +394,10 @@ CREATE  TABLE ofertas.administrador_empresa (
 CREATE  TABLE ofertas.grados ( 
 	id_num_acta          integer DEFAULT 50 NOT NULL ,
 	tipo_grado           varchar(60)   ,
-	mension_honor        bool   ,
+	mencion_honor        bool   ,
 	titulo_especial      varchar(100)   ,
 	id_tipo_de_comentarios integer   ,
+	anio_graduacion      varchar(50)  NOT NULL ,
 	fecha_graduacion     date   ,
 	id_programa          integer  NOT NULL ,
 	id_estudiante        integer  NOT NULL ,
@@ -424,8 +429,6 @@ ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_empres
 
 ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user );
 
-ALTER TABLE ofertas.cargos ADD CONSTRAINT fk_cargos_cargos FOREIGN KEY ( id_categoria ) REFERENCES ofertas.categorias_cargos( id_aut_cate_cargo );
-
 ALTER TABLE ofertas.ciudades ADD CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep );
 
 ALTER TABLE ofertas.departamentos ADD CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais );
@@ -453,6 +456,8 @@ ALTER TABLE ofertas.empresas_sectores ADD CONSTRAINT fk_empresas_sectores_sector
 ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_cargos_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
 
 ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos );
+
+ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.facultades ADD CONSTRAINT fk_facultades_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
 
@@ -523,6 +528,8 @@ ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_egresados FOREIGN KEY ( 
 ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector );
 
 ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios );
+
+ALTER TABLE ofertas.titulo ADD CONSTRAINT fk_titulo_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
 
