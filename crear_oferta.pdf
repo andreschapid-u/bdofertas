@@ -1,495 +1,0 @@
-%PDF-1.5
-%âãÏÓ
-11 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(https://dbschema.com)>>/Subtype/Link/H/N/Rect[551.78 726.4 716.8 720.8]>>
-endobj
-12 0 obj
-<</Name/#23Comment/Contents(Table ofertas.ofertas)/Subtype/Stamp/Rect[356.8 480 391.2 471.2]/AP<</N 10 0 R>>>>
-endobj
-13 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.ofertas)>>/Subtype/Link/H/N/Rect[356.8 480 391.2 471.2]>>
-endobj
-14 0 obj
-<</Name/#23Comment/Contents(id_aut_oferta \nserial not null \n)/Subtype/Stamp/Rect[309.76 461.6 365.8 452.8]/AP<</N 10 0 R>>>>
-endobj
-15 0 obj
-<</Name/#23Comment/Contents(id_empresa \ninteger not null \n)/Subtype/Stamp/Rect[309.76 448.8 359.91 440]/AP<</N 10 0 R>>>>
-endobj
-16 0 obj
-<</Name/#23Comment/Contents(nombre_oferta \nvarchar\(100\) not null \n)/Subtype/Stamp/Rect[309.76 436 372.19 427.2]/AP<</N 10 0 R>>>>
-endobj
-17 0 obj
-<</Name/#23Comment/Contents(descripcion \ntext not null \n)/Subtype/Stamp/Rect[309.76 423.2 358.31 414.4]/AP<</N 10 0 R>>>>
-endobj
-18 0 obj
-<</Name/#23Comment/Contents(id_cargo \ninteger not null \n)/Subtype/Stamp/Rect[309.76 410.4 346.58 401.6]/AP<</N 10 0 R>>>>
-endobj
-19 0 obj
-<</Name/#23Comment/Contents(id_contrato \ninteger not null \n)/Subtype/Stamp/Rect[309.76 397.6 357.25 388.8]/AP<</N 10 0 R>>>>
-endobj
-20 0 obj
-<</Name/#23Comment/Contents(numero_vacantes \ninteger not null default 1 \n)/Subtype/Stamp/Rect[309.76 384.8 386.06 376]/AP<</N 10 0 R>>>>
-endobj
-21 0 obj
-<</Name/#23Comment/Contents(id_forma_pago \ninteger not null \n)/Subtype/Stamp/Rect[309.76 372 373.79 363.2]/AP<</N 10 0 R>>>>
-endobj
-22 0 obj
-<</Name/#23Comment/Contents(experiencia \nvarchar\(30\) not null \n)/Subtype/Stamp/Rect[309.76 359.2 358.84 350.4]/AP<</N 10 0 R>>>>
-endobj
-23 0 obj
-<</Name/#23Comment/Contents(anios_experiencia \nsmallint not null default 0 \n)/Subtype/Stamp/Rect[309.76 346.4 387.13 337.6]/AP<</N 10 0 R>>>>
-endobj
-24 0 obj
-<</Name/#23Comment/Contents(fecha_publicacion \ndate \n)/Subtype/Stamp/Rect[309.76 333.6 386.6 324.8]/AP<</N 10 0 R>>>>
-endobj
-25 0 obj
-<</Name/#23Comment/Contents(fecha_cierre \ndate \n)/Subtype/Stamp/Rect[309.76 320.8 362.58 312]/AP<</N 10 0 R>>>>
-endobj
-26 0 obj
-<</Name/#23Comment/Contents(estado \nvarchar\(20\) not null \n)/Subtype/Stamp/Rect[309.76 308 338.58 299.2]/AP<</N 10 0 R>>>>
-endobj
-27 0 obj
-<</Name/#23Comment/Contents(estado_proceso \nvarchar \n)/Subtype/Stamp/Rect[309.76 295.2 378.06 286.4]/AP<</N 10 0 R>>>>
-endobj
-28 0 obj
-<</Name/#23Comment/Contents(id_sector \ninteger not null \n)/Subtype/Stamp/Rect[309.76 282.4 348.71 273.6]/AP<</N 10 0 R>>>>
-endobj
-29 0 obj
-<</Name/#23Comment/Contents(nombre_temporal_empresa \nvarchar\(30\) \n)/Subtype/Stamp/Rect[309.76 269.6 427.67 260.8]/AP<</N 10 0 R>>>>
-endobj
-30 0 obj
-<</Name/#23Comment/Contents(licencia_conduccion \nvarchar\(20\) \n)/Subtype/Stamp/Rect[309.76 256.8 395.66 248]/AP<</N 10 0 R>>>>
-endobj
-31 0 obj
-<</Name/#23Comment/Contents(requisitos_minimos \ntext not null \n)/Subtype/Stamp/Rect[309.76 244 391.91 235.2]/AP<</N 10 0 R>>>>
-endobj
-32 0 obj
-<</Name/#23Comment/Contents(id_discapacidad \ninteger \n)/Subtype/Stamp/Rect[309.76 231.2 378.59 222.4]/AP<</N 10 0 R>>>>
-endobj
-33 0 obj
-<</Name/#23Comment/Contents(Table ofertas.contratos)/Subtype/Stamp/Rect[612.8 672 660 663.2]/AP<</N 10 0 R>>>>
-endobj
-34 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.contratos)>>/Subtype/Link/H/N/Rect[612.8 672 660 663.2]>>
-endobj
-35 0 obj
-<</Name/#23Comment/Contents(id_aut_contrato \nserial not null \n)/Subtype/Stamp/Rect[591.36 653.6 657.53 644.8]/AP<</N 10 0 R>>>>
-endobj
-36 0 obj
-<</Name/#23Comment/Contents(duracion \nvarchar\(20\) \n)/Subtype/Stamp/Rect[591.36 640.8 628.18 632]/AP<</N 10 0 R>>>>
-endobj
-37 0 obj
-<</Name/#23Comment/Contents(tipo_contrato \nvarchar\(50\) not null \n)/Subtype/Stamp/Rect[591.36 628 646.86 619.2]/AP<</N 10 0 R>>>>
-endobj
-38 0 obj
-<</Name/#23Comment/Contents(jornada_laboral \nvarchar\(30\) not null \n)/Subtype/Stamp/Rect[591.36 615.2 657.52 606.4]/AP<</N 10 0 R>>>>
-endobj
-39 0 obj
-<</Name/#23Comment/Contents(horario \nvarchar\(40\) \n)/Subtype/Stamp/Rect[591.36 602.4 621.24 593.6]/AP<</N 10 0 R>>>>
-endobj
-40 0 obj
-<</Name/#23Comment/Contents(comentarios_salario \ntext \n)/Subtype/Stamp/Rect[591.36 589.6 677.25 580.8]/AP<</N 10 0 R>>>>
-endobj
-41 0 obj
-<</Name/#23Comment/Contents(Table ofertas.ubicacion_oferta)/Subtype/Stamp/Rect[339.2 697.6 421.6 688.8]/AP<</N 10 0 R>>>>
-endobj
-42 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.ubicacion_oferta)>>/Subtype/Link/H/N/Rect[339.2 697.6 421.6 688.8]>>
-endobj
-43 0 obj
-<</Name/#23Comment/Contents(id_oferta \ninteger not null \n)/Subtype/Stamp/Rect[348.16 679.2 385.51 670.4]/AP<</N 10 0 R>>>>
-endobj
-44 0 obj
-<</Name/#23Comment/Contents(id_ciudad \ninteger not null \n)/Subtype/Stamp/Rect[348.16 666.4 389.25 657.6]/AP<</N 10 0 R>>>>
-endobj
-45 0 obj
-<</Name/#23Comment/Contents(Table ofertas.sectores)/Subtype/Stamp/Rect[168 672 209.6 663.2]/AP<</N 10 0 R>>>>
-endobj
-46 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.sectores)>>/Subtype/Link/H/N/Rect[168 672 209.6 663.2]>>
-endobj
-47 0 obj
-<</Name/#23Comment/Contents(id_aut_sector \nserial not null \n)/Subtype/Stamp/Rect[156.16 653.6 213.79 644.8]/AP<</N 10 0 R>>>>
-endobj
-48 0 obj
-<</Name/#23Comment/Contents(nombre \nvarchar\(50\) not null \n)/Subtype/Stamp/Rect[156.16 640.8 188.7 632]/AP<</N 10 0 R>>>>
-endobj
-49 0 obj
-<</Name/#23Comment/Contents(Table ofertas.programas_ofertas)/Subtype/Stamp/Rect[71.2 582.4 165.6 573.6]/AP<</N 10 0 R>>>>
-endobj
-50 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.programas_ofertas)>>/Subtype/Link/H/N/Rect[71.2 582.4 165.6 573.6]>>
-endobj
-51 0 obj
-<</Name/#23Comment/Contents(id_oferta \ninteger not null \n)/Subtype/Stamp/Rect[79.36 564 116.71 555.2]/AP<</N 10 0 R>>>>
-endobj
-52 0 obj
-<</Name/#23Comment/Contents(id_programa \ninteger not null \n)/Subtype/Stamp/Rect[79.36 551.2 133.24 542.4]/AP<</N 10 0 R>>>>
-endobj
-53 0 obj
-<</Name/#23Comment/Contents(Table ofertas.ofertas_idiomas)/Subtype/Stamp/Rect[72 352 151.2 343.2]/AP<</N 10 0 R>>>>
-endobj
-54 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.ofertas_idiomas)>>/Subtype/Link/H/N/Rect[72 352 151.2 343.2]>>
-endobj
-55 0 obj
-<</Name/#23Comment/Contents(id_oferta \ninteger not null \n)/Subtype/Stamp/Rect[66.56 333.6 103.91 324.8]/AP<</N 10 0 R>>>>
-endobj
-56 0 obj
-<</Name/#23Comment/Contents(id_idioma \ninteger not null \n)/Subtype/Stamp/Rect[66.56 320.8 107.64 312]/AP<</N 10 0 R>>>>
-endobj
-57 0 obj
-<</Name/#23Comment/Contents(nivel_escritura \nvarchar\(20\) not null \n)/Subtype/Stamp/Rect[66.56 308 128.44 299.2]/AP<</N 10 0 R>>>>
-endobj
-58 0 obj
-<</Name/#23Comment/Contents(nivel_lectura \nvarchar\(20\) not null \n)/Subtype/Stamp/Rect[66.56 295.2 120.44 286.4]/AP<</N 10 0 R>>>>
-endobj
-59 0 obj
-<</Name/#23Comment/Contents(nivel_conversacion \nvarchar\(20\) not null \n)/Subtype/Stamp/Rect[66.56 282.4 148.19 273.6]/AP<</N 10 0 R>>>>
-endobj
-60 0 obj
-<</Name/#23Comment/Contents(Table ofertas.ofertas_areascon)/Subtype/Stamp/Rect[62.4 224 148 215.2]/AP<</N 10 0 R>>>>
-endobj
-61 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.ofertas_areascon)>>/Subtype/Link/H/N/Rect[62.4 224 148 215.2]>>
-endobj
-62 0 obj
-<</Name/#23Comment/Contents(id_aut_oferta \ninteger not null \n)/Subtype/Stamp/Rect[53.76 205.6 109.8 196.8]/AP<</N 10 0 R>>>>
-endobj
-63 0 obj
-<</Name/#23Comment/Contents(id_areaconocimiento \ninteger not null \n)/Subtype/Stamp/Rect[53.76 192.8 142.33 184]/AP<</N 10 0 R>>>>
-endobj
-64 0 obj
-<</Name/#23Comment/Contents(Table ofertas.preguntas_oferta)/Subtype/Stamp/Rect[75.2 441.6 160.8 432.8]/AP<</N 10 0 R>>>>
-endobj
-65 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.preguntas_oferta)>>/Subtype/Link/H/N/Rect[75.2 441.6 160.8 432.8]>>
-endobj
-66 0 obj
-<</Name/#23Comment/Contents(id_aut_pregunta \nserial not null \n)/Subtype/Stamp/Rect[79.36 423.2 148.74 414.4]/AP<</N 10 0 R>>>>
-endobj
-67 0 obj
-<</Name/#23Comment/Contents(pregunta \ntext not null \n)/Subtype/Stamp/Rect[79.36 410.4 117.25 401.6]/AP<</N 10 0 R>>>>
-endobj
-68 0 obj
-<</Name/#23Comment/Contents(id_oferta \ninteger not null \n)/Subtype/Stamp/Rect[79.36 397.6 116.71 388.8]/AP<</N 10 0 R>>>>
-endobj
-69 0 obj
-<</Name/#23Comment/Contents(Table ofertas.cargos)/Subtype/Stamp/Rect[261.6 134.4 294.4 125.6]/AP<</N 10 0 R>>>>
-endobj
-70 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.cargos)>>/Subtype/Link/H/N/Rect[261.6 134.4 294.4 125.6]>>
-endobj
-71 0 obj
-<</Name/#23Comment/Contents(id_aut_cargos \nserial not null \n)/Subtype/Stamp/Rect[245.76 116 306.06 107.2]/AP<</N 10 0 R>>>>
-endobj
-72 0 obj
-<</Name/#23Comment/Contents(nombre \nvarchar\(40\) not null \n)/Subtype/Stamp/Rect[245.76 103.2 278.3 94.4]/AP<</N 10 0 R>>>>
-endobj
-73 0 obj
-<</Name/#23Comment/Contents(id_categoria \ninteger \n)/Subtype/Stamp/Rect[245.76 90.4 298.05 81.6]/AP<</N 10 0 R>>>>
-endobj
-74 0 obj
-<</Name/#23Comment/Contents(estado \nbool not null \n)/Subtype/Stamp/Rect[245.76 77.6 274.58 68.8]/AP<</N 10 0 R>>>>
-endobj
-75 0 obj
-<</Name/#23Comment/Contents(Table ofertas.ofertas_software)/Subtype/Stamp/Rect[364.8 121.6 448 112.8]/AP<</N 10 0 R>>>>
-endobj
-76 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.ofertas_software)>>/Subtype/Link/H/N/Rect[364.8 121.6 448 112.8]>>
-endobj
-77 0 obj
-<</Name/#23Comment/Contents(id_software \nserial not null \n)/Subtype/Stamp/Rect[373.76 103.2 422.84 94.4]/AP<</N 10 0 R>>>>
-endobj
-78 0 obj
-<</Name/#23Comment/Contents(id_oferta \ninteger not null \n)/Subtype/Stamp/Rect[373.76 90.4 411.11 81.6]/AP<</N 10 0 R>>>>
-endobj
-79 0 obj
-<</Name/#23Comment/Contents(nombre \nvarchar\(60\) not null \n)/Subtype/Stamp/Rect[373.76 77.6 406.3 68.8]/AP<</N 10 0 R>>>>
-endobj
-80 0 obj
-<</Name/#23Comment/Contents(nivel \nvarchar\(20\) not null \n)/Subtype/Stamp/Rect[373.76 64.8 393.5 56]/AP<</N 10 0 R>>>>
-endobj
-81 0 obj
-<</Name/#23Comment/Contents(Table ofertas.empresas)/Subtype/Stamp/Rect[612 531.2 660.8 522.4]/AP<</N 10 0 R>>>>
-endobj
-82 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.empresas)>>/Subtype/Link/H/N/Rect[612 531.2 660.8 522.4]>>
-endobj
-83 0 obj
-<</Name/#23Comment/Contents(id_aut_empresa \nserial not null \n)/Subtype/Stamp/Rect[565.76 512.8 634.59 504]/AP<</N 10 0 R>>>>
-endobj
-84 0 obj
-<</Name/#23Comment/Contents(nit \nvarchar\(15\) not null \n)/Subtype/Stamp/Rect[565.76 500 575.9 491.2]/AP<</N 10 0 R>>>>
-endobj
-85 0 obj
-<</Name/#23Comment/Contents(nombre \nvarchar\(100\) \n)/Subtype/Stamp/Rect[565.76 487.2 598.3 478.4]/AP<</N 10 0 R>>>>
-endobj
-86 0 obj
-<</Name/#23Comment/Contents(razon_social \nvarchar\(200\) not null \n)/Subtype/Stamp/Rect[565.76 474.4 619.64 465.6]/AP<</N 10 0 R>>>>
-endobj
-87 0 obj
-<</Name/#23Comment/Contents(anio_creacion \nsmallint not null \n)/Subtype/Stamp/Rect[565.76 461.6 625.52 452.8]/AP<</N 10 0 R>>>>
-endobj
-88 0 obj
-<</Name/#23Comment/Contents(numero_empleados \ninteger not null \n)/Subtype/Stamp/Rect[565.76 448.8 650.6 440]/AP<</N 10 0 R>>>>
-endobj
-89 0 obj
-<</Name/#23Comment/Contents(ingresos \nvarchar\(30\) \n)/Subtype/Stamp/Rect[565.76 436 602.04 427.2]/AP<</N 10 0 R>>>>
-endobj
-90 0 obj
-<</Name/#23Comment/Contents(sitio_web \nvarchar\(200\) \n)/Subtype/Stamp/Rect[565.76 423.2 605.77 414.4]/AP<</N 10 0 R>>>>
-endobj
-91 0 obj
-<</Name/#23Comment/Contents(id_direccion \ninteger not null \n)/Subtype/Stamp/Rect[565.76 410.4 616.98 401.6]/AP<</N 10 0 R>>>>
-endobj
-92 0 obj
-<</Name/#23Comment/Contents(estado \nvarchar\(20\) \n)/Subtype/Stamp/Rect[565.76 397.6 594.58 388.8]/AP<</N 10 0 R>>>>
-endobj
-93 0 obj
-<</Name/#23Comment/Contents(fecha_registro \ndate not null default current_date \n)/Subtype/Stamp/Rect[565.76 384.8 626.59 376]/AP<</N 10 0 R>>>>
-endobj
-94 0 obj
-<</Name/#23Comment/Contents(fecha_activacion \ndate \n)/Subtype/Stamp/Rect[565.76 372 637.26 363.2]/AP<</N 10 0 R>>>>
-endobj
-95 0 obj
-<</Name/#23Comment/Contents(total_publicaciones \ninteger \n)/Subtype/Stamp/Rect[565.76 359.2 647.4 350.4]/AP<</N 10 0 R>>>>
-endobj
-96 0 obj
-<</Name/#23Comment/Contents(limite_publicaciones \ninteger \n)/Subtype/Stamp/Rect[565.76 346.4 651.65 337.6]/AP<</N 10 0 R>>>>
-endobj
-97 0 obj
-<</Name/#23Comment/Contents(num_publicaciones_actuales \ninteger \n)/Subtype/Stamp/Rect[565.76 333.6 689.01 324.8]/AP<</N 10 0 R>>>>
-endobj
-98 0 obj
-<</Name/#23Comment/Contents(correo \nvarchar\(60\) \n)/Subtype/Stamp/Rect[565.76 320.8 592.97 312]/AP<</N 10 0 R>>>>
-endobj
-99 0 obj
-<</Name/#23Comment/Contents(telefono \nvarchar\(16\) \n)/Subtype/Stamp/Rect[565.76 308 599.92 299.2]/AP<</N 10 0 R>>>>
-endobj
-100 0 obj
-<</Name/#23Comment/Contents(url_logo \nvarchar\(255\) \n)/Subtype/Stamp/Rect[565.76 295.2 599.91 286.4]/AP<</N 10 0 R>>>>
-endobj
-101 0 obj
-<</Name/#23Comment/Contents(url_doc_camaracomercio \nvarchar\(255\) not null \n)/Subtype/Stamp/Rect[565.76 282.4 673.52 273.6]/AP<</N 10 0 R>>>>
-endobj
-102 0 obj
-<</Name/#23Comment/Contents(Table ofertas.salarios)/Subtype/Stamp/Rect[566.4 211.2 604.8 202.4]/AP<</N 10 0 R>>>>
-endobj
-103 0 obj
-<</BS<</S/U/W 0>>/A<</S/URI/URI(#ofertas.salarios)>>/Subtype/Link/H/N/Rect[566.4 211.2 604.8 202.4]>>
-endobj
-104 0 obj
-<</Name/#23Comment/Contents(id_aut_salario \nserial not null \n)/Subtype/Stamp/Rect[552.96 192.8 612.72 184]/AP<</N 10 0 R>>>>
-endobj
-105 0 obj
-<</Name/#23Comment/Contents(minimo \ninteger not null \n)/Subtype/Stamp/Rect[552.96 180 583.89 171.2]/AP<</N 10 0 R>>>>
-endobj
-106 0 obj
-<</Name/#23Comment/Contents(maximo \ninteger not null \n)/Subtype/Stamp/Rect[552.96 167.2 586.56 158.4]/AP<</N 10 0 R>>>>
-endobj
-107 0 obj
-<</Name/#23Comment/Contents(forma_pago \nvarchar\(20\) not null \n)/Subtype/Stamp/Rect[552.96 154.4 604.19 145.6]/AP<</N 10 0 R>>>>
-endobj
-108 0 obj
-<</Filter/FlateDecode/Length 3501>>stream
-xœİ\Koä¸¾÷¯Kr°W|JºÁ&A€\6;‡ÜY-{´ènyÕíÙM~}X’j»[İ¤gŒŒ1À¸h“U_IÅbU‘Ô¯«¿|Z)[Ô¥->­Wı´úiUŞÖE	ÿğ§Ğõ­®‹n»úáo¢²øôàzh!*[¼ü9=;£E¡dQ	÷§âÓvõÇ¶ÿŸúôÈøyŞÍÖÍm¥f]Õ7²Mñİ¡ŸÚî0|é‹õĞ>Ní¶øsñãıÏİç~Ûfçàüëï+ÀPVñvÕÈšé1R˜
-úZY÷SÙ²ªaÌ¹?9íL­ÕÔÈÏÖ%ÓÀï×â†ºêB—Öı¥Û?üûA?ÅOG]L#ºHê2{, ŠzÀ3Öwıöiê÷Qk]Ö…•Èqk	GQZØâ¦q¿ã¨ƒÑ'PÄ¥#í­ª=Œ®G áÂÿîoˆÉX§¹*ĞFi|>Hk k*ËÔ—Uå¬‰è—O°’eaLùú	â_¡›±›ªOB÷]œ(Æeöqw˜ÚÃYø
-Ş
-ÃÚÔé~¯Ü[!êËJ	ÿ[‚ì¾Ô<òxàr<<w]5·exğû¾;ŒÓÙ'ïXVl˜–ÉWvYÉ¢¾h–õ%«¬gFù0NÛöî©%“àÙ˜3³òFi]'Éizy/gs_Z|³¦9ı>|çIŒqÆ$¼êãC?Úsïã=Ÿ‚t³X³+@Z’Ù"-`J©™rf3Gèö¡ì¥…|–†t«…ùÆJº×!Ù;(Dô)…¤^´xé¬fŞåµÉ£(=³ù¨ÏĞd¸èlp4H¢Çá÷åH+gf=s"Õ	y¬ÛÉ—5W;°fíóáëi§L^Ñ§^2õ%æ]Në@=¾æëÉtGÎÁŞˆÊ-¸[¤O½6mO¿¶£³EûÔÚà"é–†æÿÏ@„r«nŠŞ¿©Ü‘Ô‚å¹R·MM¾ã®Ùìœˆ®okg¤4œ“‰n
-Åxw§*qküŸĞ—Ñ`"5õ,ä*Dù<QÜİ
-â\)•Q(ltã~VN8–ß¿~?ŸÕßŸtt)5QƒRx9 }%IÖ†i1S“ Eüø"qB§'ZÛY€MShİ†1‹ë¤vOç¦¦¹yŠ»ª+ì¬.xW¥*	3H»	¤ÃŒ:æ…Ï?púÃkŒ lu>ƒHØ¤I7‚‡íÆíıÔ¿AıÀé@¶î÷İ4<uÃ¸Ëø¤‰M|ú!qJ•˜¤=ûrfzóÄ'U|™ex²ö³{ŞöÓx÷¥íZ—Îï3 D^i*q»œ¨\ pJ`¼Õô¿?õÓĞïº!Çø#Ÿ$ë“ÊN»ÆıİA¨,3t{è»Ïî<ßo†®Íœ‡‘Û:	DYè†~šúùQ’|Ñxûé÷‡vc‚‘E’ˆÊI¾{šÆ®ßg!¨²¬P˜™Œ5ŒTá&Ëú„VÇĞÁ­ãÔnŞ°FiÏAzÓqö“¼òú¹Ëœ
-‘_áíhê}öÃÁy†í°¶ckì’P4&ÚÄzØwí“óëv °Š†’JºÀTP[»|Œè£-D¢Ô¬]6åòˆ ‰¤ hk(ˆ%ãPj1µDu(ËrÂW97e|j™<˜HÍı½¬Ó‡´ˆÿB6ò‘]LKP¸ŠŠZu¤(5Qµúıµ:*ÊüPå%ê\ZRYË\À¨}à¶˜˜€(6\•˜Tn‡Î/“ÌŸ—LŒB\KŸ§œ€ e—‰^d›¸šOã[”7©ë2‹é/ã´k×íİ¦½‡…)BêÂÌÂ’úÙ	†,í4Ña	íÆm¿;€ôıİ¾İäÂ8±$‡E@K]X¬lWFY¦7+£Kœ÷Ø4:UXÉ ’+H×–û;º)±’ÁC
-<r(«!şÚåm0ï±	m<IÚdY!Í•¤	‚ŠĞ"ş‹ÀGRtqÀ¾ø |õÑRù´àú’õû)Ê8¢Õ\Q„ñŸ­MIŒúù3¦Wõ“×krzyÍZ •ÁÎ³h,¯BÌ¼ÄÎãS6ŸšWQ†çŒ8ğÈ_ƒµß²İ®dcãÆo‰fAMÚ×5Xj,ı6p·Ú‡DSÁ’†RÄ <}X²|X!ª&†pdI´ßfFš ğP‚ñ_ğIÑEÂ9PDP(z´ØD-(J#Ò¾›¢>P$ZÌ%hÿ9!E9)³îãDpuœ(s*NÌÊàña-E‰¯0–:`´1†’üp'ÂÈàà4¯6¸£Î«”hÔÄqrõDÒ›ÚŸp!Ú‚1ğP:á<ù¬ˆ2¼UZSz„-ÈÖh$RduuÉb6D¢pE˜î>áè·è
-@¨´A?Ÿ‹zØDğ²ñúÑ¹¥o®Ÿ?…Ùxõ#L÷9P7Ì÷iá|\»¿»b+«†„Ñ”õ5 Áˆ]ÌjéY1>&±PGN7W…0ˆNÏëIşAdàÓËÅ¤B(ÌHğ»c[ &ØˆP•7#Á¯hit0#Ik•´ 82T˜Ü¬lA-FZÏ¯[Y/fƒ$	§Q„)à¾XCúîõ»P:
-'†$6<­ÆDÚ÷ĞOr,`ƒpÅ%#&Î¹¦œOâÉ7¬‡q»ì,íÏ\à””ó` Û	ÈëB7‹.¢+g[İ¤~º2q¯eÇİ™İğ¥ßÜáfóáyÊA¼ÓCBˆl\œ–)?µœDòC%ˆäwãîK?ísêzâDa)xbF'²<šÇÒOcãg±*Ã$nânæSX”~
-Õ"7+ƒÇJ¨¥kWê‚Oêš¥Ò>çRÈ+ò²ïS¥Ek¬? ª#o[yg[_[Ûo­W}€Q%„bÂ­3Eù:zö¶úvßÍ­ûµ3ó“k|ú;û5Á²WùX„§¯r±OÏ<,¨ï´»a;ô»äÚ9eç£­N]ÌVëcû‘Á€d´ 93!em°!U•3#R•f#"
-ƒv"}ĞN-¸ŞA#²Öí’íIƒvÂp_Nº¾wı.%]ş 0b1GI%5¼	I%ŸóıÖú‘˜‘³¤’0Üg£-=;nü4õÏ»CHº.f5J]ŸÕÄCgì¼´Œ©y]Ö‚pôì-¢Eâ‰.¿F¬yêğZp1Pø¹RĞqm¼B%é•xR•Ûx‹Jˆú¶”Vp<{EŠ‡ ­nÔúi4œáF¶x˜›Ä5ØY6¸ô`KÖµHdE½‘FAß@~,a›épÁá|8mİöT**«Ô‘®ØD-\ ã5u‘Î»(ŠrXOïG"¬ˆıœR²b.¸‡
-K3=`ï»å¾¾âär	Kı®oíÜù¼”rÕÄç8]{t‹ XÍÃ²ªº(9°¸öpI®Ë¨z×úÇqJ>2‰ò£4ÍËÃ²N’mz÷'6ÄÚ4]S#TÜ‡û¹G÷o ´RJ¦%™<6xB!í~/j¾Ÿùú	el0zMQ75áŞF’i¶á¡ğƒ	ßLK;ãQãå-rè©›¨°nôÅ&j¢mĞV‹÷SV‹¨+AğCZÄv‹ÜxÄó¤l?>~kçŞâµ7Ô˜öÜ¸Œæ
-o¨í±3‚C¬¯d\}X1ò¹Ò#°ø¹GÊ¾C‘ìXxğ%Y%W:b–,Ü’kcQ)Grdq¢djŞM©CÍ»)ëXón„ôeg$¹æ´ßŸBº–kğPIğÔœµ,Í©•¥åšøµ Œ$gW@‡Â7Ğ\ù¦¡-â¿à ?’¢‹~…óUhÅex›¨…5^Q¿‰øŠúÍU¤	‚J[ÿùó¡†¹`„@ÇØ—ëü•y®ªóT‚è£J‹şòËãÓ:Qå9RÆ-É…}©bÑıƒL-Ú_!2™Åø—‰àDê¡N”¬ŸlOíÇ[«º!ùP)ÈŒÒä‡kŠpçè®ƒ"aú H½ğÈ ì‹{gÎr7½‹¢SSÄzí‘1„ËŠÃîÑM›<Ù©7Yv(ôì‡ƒ{¿õ÷9ÂSï;²ğù}Çõ0õ9—[P~êG–Ê=Y™J.o÷äxE‘n˜Mıã°?L9"«+ï˜1‚pG‘àg“r'_d–†!^Tíf~Ù/ùâ'ÂX:Sº #õÜÛáĞ¿GêİGÆvº/:¯ç¹İä¡I¾oQ_‚ìÆiê³L3ù¶Ey|ıñĞoú‡q—#;y[œe‡İìçis·“ïÿ¢ìäåñÕG½»»®İ¶S—¦.ù¦"YÚ‡/’Qæ½]UIyÕØ˜¹×%t’q#É…I Ãi»² è•bP[…OC¡÷º'cxs?/EQo%ı~ªŸDÙM¢yAŠ¸/¥1@Áåô®¥QöRÅÏş0Jº VÂ…3Üµ…øØá7ÔÍ',pÙŠòEéŠÇ{6[)ù»#‘ĞŸ‡’Ìõ{Ò™¿HUò®ÁZÊTÎËYİ¢Í«¿.@rC‚°mÏ“+WW’{ãì¶iú.]ögpúÎ9Eö?µ'á
-endstream
-endobj
-110 0 obj
-<</Contents 108 0 R/Type/Page/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]/Font<</F1 9 0 R>>/XObject<</Xf4 4 0 R/Xf1 1 0 R/Xf2 2 0 R/Xf6 6 0 R>>>>/Annots[11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R 20 0 R 21 0 R 22 0 R 23 0 R 24 0 R 25 0 R 26 0 R 27 0 R 28 0 R 29 0 R 30 0 R 31 0 R 32 0 R 33 0 R 34 0 R 35 0 R 36 0 R 37 0 R 38 0 R 39 0 R 40 0 R 41 0 R 42 0 R 43 0 R 44 0 R 45 0 R 46 0 R 47 0 R 48 0 R 49 0 R 50 0 R 51 0 R 52 0 R 53 0 R 54 0 R 55 0 R 56 0 R 57 0 R 58 0 R 59 0 R 60 0 R 61 0 R 62 0 R 63 0 R 64 0 R 65 0 R 66 0 R 67 0 R 68 0 R 69 0 R 70 0 R 71 0 R 72 0 R 73 0 R 74 0 R 75 0 R 76 0 R 77 0 R 78 0 R 79 0 R 80 0 R 81 0 R 82 0 R 83 0 R 84 0 R 85 0 R 86 0 R 87 0 R 88 0 R 89 0 R 90 0 R 91 0 R 92 0 R 93 0 R 94 0 R 95 0 R 96 0 R 97 0 R 98 0 R 99 0 R 100 0 R 101 0 R 102 0 R 103 0 R 104 0 R 105 0 R 106 0 R 107 0 R]/Parent 109 0 R/MediaBox[0 0 768 742.4]>>
-endobj
-9 0 obj
-<</Subtype/Type1/Type/Font/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>
-endobj
-1 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 36>>stream
-xœ3P°PÈå24R9\Á\`®…‚	g¡`h¤œ¸ }[°
-endstream
-endobj
-2 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 33>>stream
-xœ3P°PÈå24R9\Á †	oæ9†F`a Œ'
-endstream
-endobj
-3 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 62>>stream
-xœ34S°PÈå24S04Ò31‚‘ Q ‘Ìe¬g
-f@e€É\
-`q01 ŠÁäŠaš@Jƒ¹ „Wæ
-endstream
-endobj
-4 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 154>>stream
-xœE1!E{NÁ	Qõ™I™Á™¤Ù4)rş n6ï©PÆ+ÒÊjX¨iâd¶®x» ûÆ6iN|?™642|-4úZÎ›”	J"Ë‘HLË@.¿óà„3šÅÿ6«òw·Nâo(XIqwß'Ó
-~|Fsî9Ë?vg^h¸E…RÅèÖ0Rı`¼Çœ1ñ¢ò6ò
-endstream
-endobj
-5 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 99>>stream
-xœEŒ»À0Dû›‚	‘íØ RÊx·Éşmr8Ÿ‚ã	˜lÄd_´ëDÒ,¬ÆYMñî”Ì´JqË±i[f|‡¬)Mú($<Ş9ûÀ§úñÿf^v\ãø!
-endstream
-endobj
-6 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 134>>stream
-xœE±Ã0E{¦`NX`¤	r—2A]ÎŞ¿5 ØiàİçŒo`üB!İXUİºxg¶]ñó#C¥†gR'Å›'¸g$)²BqÈ<·%7†¿ñ¬Iõg™İ¶´;õ}•g’0AIdq¥ŸÆ„ ²Üyô	šËÿ3ksÀ°/q
-endstream
-endobj
-7 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 25>>stream
-xœ³P0PÈå24S ¢.•Æ 4a
-endstream
-endobj
-8 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 16 16]/Length 25>>stream
-xœ³P04SÈå
-9\`2 /â*
-endstream
-endobj
-10 0 obj
-<</Subtype/Form/Filter/FlateDecode/Type/XObject/Matrix [1 0 0 1 0 0]/FormType 1/Resources<</ProcSet [/PDF /Text /ImageB /ImageC /ImageI]>>/BBox[0 0 10 10]/Length 8>>stream
-xœ    
-endstream
-endobj
-109 0 obj
-<</Kids[110 0 R]/Type/Pages/Count 1/ITXT(1.3.5)>>
-endobj
-111 0 obj
-<</Type/Catalog/Pages 109 0 R>>
-endobj
-112 0 obj
-<<>>
-endobj
-xref
-0 113
-0000000000 65535 f 
-0000017993 00000 n 
-0000018228 00000 n 
-0000018460 00000 n 
-0000018721 00000 n 
-0000019075 00000 n 
-0000019373 00000 n 
-0000019707 00000 n 
-0000019931 00000 n 
-0000017905 00000 n 
-0000020155 00000 n 
-0000000015 00000 n 
-0000000137 00000 n 
-0000000264 00000 n 
-0000000379 00000 n 
-0000000522 00000 n 
-0000000662 00000 n 
-0000000812 00000 n 
-0000000952 00000 n 
-0000001092 00000 n 
-0000001235 00000 n 
-0000001390 00000 n 
-0000001533 00000 n 
-0000001682 00000 n 
-0000001842 00000 n 
-0000001978 00000 n 
-0000002108 00000 n 
-0000002250 00000 n 
-0000002387 00000 n 
-0000002528 00000 n 
-0000002680 00000 n 
-0000002826 00000 n 
-0000002971 00000 n 
-0000003109 00000 n 
-0000003236 00000 n 
-0000003351 00000 n 
-0000003497 00000 n 
-0000003632 00000 n 
-0000003781 00000 n 
-0000003934 00000 n 
-0000004070 00000 n 
-0000004209 00000 n 
-0000004347 00000 n 
-0000004473 00000 n 
-0000004614 00000 n 
-0000004755 00000 n 
-0000004881 00000 n 
-0000004995 00000 n 
-0000005139 00000 n 
-0000005280 00000 n 
-0000005418 00000 n 
-0000005544 00000 n 
-0000005682 00000 n 
-0000005824 00000 n 
-0000005956 00000 n 
-0000006076 00000 n 
-0000006216 00000 n 
-0000006354 00000 n 
-0000006504 00000 n 
-0000006654 00000 n 
-0000006809 00000 n 
-0000006942 00000 n 
-0000007063 00000 n 
-0000007206 00000 n 
-0000007354 00000 n 
-0000007491 00000 n 
-0000007616 00000 n 
-0000007761 00000 n 
-0000007897 00000 n 
-0000008037 00000 n 
-0000008165 00000 n 
-0000008281 00000 n 
-0000008423 00000 n 
-0000008565 00000 n 
-0000008698 00000 n 
-0000008831 00000 n 
-0000008967 00000 n 
-0000009091 00000 n 
-0000009232 00000 n 
-0000009371 00000 n 
-0000009512 00000 n 
-0000009650 00000 n 
-0000009778 00000 n 
-0000009894 00000 n 
-0000010037 00000 n 
-0000010175 00000 n 
-0000010310 00000 n 
-0000010461 00000 n 
-0000010607 00000 n 
-0000010752 00000 n 
-0000010887 00000 n 
-0000011026 00000 n 
-0000011170 00000 n 
-0000011305 00000 n 
-0000011467 00000 n 
-0000011601 00000 n 
-0000011742 00000 n 
-0000011885 00000 n 
-0000012034 00000 n 
-0000012167 00000 n 
-0000012302 00000 n 
-0000012441 00000 n 
-0000012603 00000 n 
-0000012734 00000 n 
-0000012853 00000 n 
-0000012997 00000 n 
-0000013134 00000 n 
-0000013273 00000 n 
-0000013422 00000 n 
-0000020362 00000 n 
-0000016993 00000 n 
-0000020429 00000 n 
-0000020478 00000 n 
-trailer
-<</Info 112 0 R/ID [<e4046f29bc032b089443375d56a23e90><2d956d0c5bc95d536681c144345cef81>]/Root 111 0 R/Size 113>>
-startxref
-20500
-%%EOF
