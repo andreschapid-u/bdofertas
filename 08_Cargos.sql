@@ -33,7 +33,7 @@ INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(32,'Capellán',
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(33,'Capitán',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(34,'Cartógrafo',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(35,'Chef',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(36,'Cientifico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(36,'Científico(a)',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(37,'Citotecnólogo(a)',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(38,'Cobrador(a)',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(39,'Comandante',true);

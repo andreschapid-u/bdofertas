@@ -201,7 +201,7 @@ CREATE  TABLE ofertas.empresas (
 	estado               varchar(20)   ,
 	fecha_registro       date DEFAULT current_date NOT NULL ,
 	fecha_activacion     date   ,
-	fecha_vencimineto    date   ,
+	fecha_vencimiento    date   ,
 	total_publicaciones  integer   ,
 	limite_publicaciones integer   ,
 	num_publicaciones_actuales integer   ,

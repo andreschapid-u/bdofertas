@@ -179,7 +179,7 @@
 				<defo>current_date</defo>
 			</column>
 			<column name="fecha_activacion" type="date" jt="91" />
-			<column name="fecha_vencimineto" type="date" jt="91" />
+			<column name="fecha_vencimiento" type="date" jt="91" />
 			<column name="total_publicaciones" type="integer" jt="4" />
 			<column name="limite_publicaciones" type="integer" jt="4" />
 			<column name="num_publicaciones_actuales" type="integer" jt="4" />

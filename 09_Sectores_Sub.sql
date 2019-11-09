@@ -33,7 +33,7 @@ INSERT INTO ofertas.sectores(id_aut_sector, nombre) values(32,'Tecnología');
 INSERT INTO ofertas.sectores(id_aut_sector, nombre) values(33,'Telecomunicaciones');
 INSERT INTO ofertas.sectores(id_aut_sector, nombre) values(34,'Textiles, Prendas de Vestir y Calzado');
 INSERT INTO ofertas.sectores(id_aut_sector, nombre) values(35,'Transporte');
-INSERT INTO ofertas.sectores(id_aut_sector, nombre) values(36,'Vehiculos y Partes');
+INSERT INTO ofertas.sectores(id_aut_sector, nombre) values(36,'Vehículos y Partes');
 
 
 COMMIT;
@@ -47,7 +47,7 @@ INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(6
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(7,'Pesca',1);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(8,'Aceites y Grasas Comestibles',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(9,'Alimentos Para Animales',2);
-INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(10,'Azucar',2);
+INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(10,'Azúcar',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(11,'Batidos',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(12,'Café Exportadores',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(13,'Chocolate y Confitería',2);
@@ -56,7 +56,7 @@ INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(1
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(16,'Molinera de Arroz',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(17,'Molinería de Productos de Trigo',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(18,'Pastas, Panadería y Galletas',2);
-INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(19,'Productos Carnicos',2);
+INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(19,'Productos Cárnicos',2);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(20,'Ajustadores de Seguros',3);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(21,'Compañías de Seguros',3);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(22,'Corredores de Seguros',3);
@@ -209,7 +209,7 @@ INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(1
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(169,'Restaurantes',31);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(170,'Servicios de Aseo',31);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(171,'Servicios Públicos',31);
-INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(172,'Turimo',31);
+INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(172,'Turismo',31);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(173,'Vigilancia y Seguridad',31);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(174,'Comercio de Computadores',32);
 INSERT INTO ofertas.sub_sectores(id_aut_sub_sector, nombre,id_sectores) values(175,'Desarrollo y Diseño de Páginas Web',32);

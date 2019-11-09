@@ -21,7 +21,7 @@ CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('Pendiente',
 CREATE TYPE ofertas.dominio_genero_egresado AS ENUM ('Masculino', 'Femenino');
 CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('En espera', 'Activo', 'Inactivo');
 CREATE TYPE ofertas.dominio_estado_civil_egresado AS ENUM ('Soltero', 'Casado', 'Union Libre');
-CREATE TYPE ofertas.dominio_grupo_etnico_egresado AS ENUM ('Mestizo', 'Caucasico', 'Afrocolombiano', 'Indigena', 'Otro grupo');
+CREATE TYPE ofertas.dominio_grupo_etnico_egresado AS ENUM ('Mestizo', 'Caucásico', 'Afrocolombiano', 'Indígena', 'Otro grupo');
 
 
 commit;
