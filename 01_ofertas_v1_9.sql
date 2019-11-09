@@ -268,7 +268,7 @@ CREATE  TABLE ofertas.ofertas (
 	licencia_conduccion  varchar(20)   ,
 	requisitos_minimos   text  NOT NULL ,
 	id_discapacidad      integer   ,
-	num_dias_oferta      inet  NOT NULL ,
+	num_dias_oferta      int  NOT NULL ,
 	id_aut_nivprog       integer  NOT NULL ,
 	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta )
  );

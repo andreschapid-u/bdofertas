@@ -373,7 +373,7 @@ Privado=1]]></comment>
 			<column name="licencia_conduccion" type="varchar" length="20" jt="12" />
 			<column name="requisitos_minimos" type="text" jt="12" mandatory="y" />
 			<column name="id_discapacidad" type="integer" jt="4" />
-			<column name="num_dias_oferta" type="inet" jt="1111" mandatory="y" />
+			<column name="num_dias_oferta" type="integer" jt="4" mandatory="y" />
 			<column name="id_aut_nivprog" type="integer" jt="4" mandatory="y" />
 			<index name="pk_ofertas_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_oferta" />
@@ -771,11 +771,10 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1136" y="608" />
 		<entity schema="ofertas" name="users" color="C1D8EE" x="928" y="48" />
 		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1520" y="1584" />
-		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1360" y="1184" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1040" y="928" />
 		<entity schema="ofertas" name="nivel_programa" color="C1D8EE" x="48" y="1392" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1232" />
-		<script name="01_ofertas_v1_9.sql" id="Editor_25b97af" language="SQL" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v1_9.sql" />
+		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1360" y="1184" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

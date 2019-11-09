@@ -179,7 +179,7 @@
 				<defo>current_date</defo>
 			</column>
 			<column name="fecha_activacion" type="date" jt="91" />
-			<column name="fecha_vencimineto" type="date" jt="91" />
+			<column name="fecha_vencimiento" type="date" jt="91" />
 			<column name="total_publicaciones" type="integer" jt="4" />
 			<column name="limite_publicaciones" type="integer" jt="4" />
 			<column name="num_publicaciones_actuales" type="integer" jt="4" />
@@ -775,6 +775,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1040" y="928" />
 		<entity schema="ofertas" name="nivel_programa" color="C1D8EE" x="48" y="1392" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1232" />
+		<script name="01_ofertas_v1_9.sql" id="Editor_25b97af" language="SQL" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v1_9.sql" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
