@@ -4,7 +4,7 @@ CREATE TYPE ofertas.dominio_tipo_contrato AS ENUM ('Término indefinido', 'Contr
 CREATE TYPE ofertas.dominio_estado_empresa AS ENUM ('En espera', 'Activo', 'Inactivo');
 CREATE TYPE ofertas.dominio_experiencia_oferta AS ENUM ('Sin experiencia', 'Igual a', 'Mayor o igual que', 'Menor o igual que');
 CREATE TYPE ofertas.dominio_estado_oferta AS ENUM ('Aceptada', 'Rechazada', 'Pendiente');  --Administrador
-CREATE TYPE ofertas.dominio_estado_oferta_emp AS ENUM ('Activa', 'En selección', 'Finalizada con contratación','Finalizada sin contratación', 'Expirada');  --Empresa
+CREATE TYPE ofertas.dominio_estado_oferta_emp AS ENUM ('En espera', 'Activa', 'En selección', 'Finalizada con contratación','Finalizada sin contratación', 'Expirada');  --Empresa
 CREATE TYPE ofertas.dominio_jornada_laboral AS ENUM ('Medio tiempo', 'Tiempo completo', 'Tiempo parcial');
 CREATE TYPE ofertas.dominio_contrato_forma_pago AS ENUM ('Moneda local', 'US Dolar');
 CREATE TYPE ofertas.dominio_nivel_idioma_oferta AS ENUM ('Nativo', 'Avanzado', 'Medio', 'Bajo');
