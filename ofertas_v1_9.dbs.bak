@@ -562,6 +562,20 @@ Privado=1]]></comment>
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 		</table>
+		<table name="recepcion_hv" >
+			<column name="id_aut_recepcionhv" type="serial" jt="4" mandatory="y" />
+			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
+			<column name="correo" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="nombres" type="varchar" length="30" jt="12" mandatory="y" />
+			<column name="apellidos" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="telefono_movil" type="varchar" length="16" jt="12" mandatory="y" />
+			<index name="pk_recepcion_hv_id_aut_recepcionhv" unique="PRIMARY_KEY" >
+				<column name="id_aut_recepcionhv" />
+			</index>
+			<fk name="fk_recepcion_hv_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
+				<fk_column name="id_oferta" pk="id_aut_oferta" />
+			</fk>
+		</table>
 		<table name="referidos" >
 			<column name="id_aut_referido" type="serial" jt="4" mandatory="y" />
 			<column name="id_egresado" type="integer" jt="4" />
@@ -770,11 +784,12 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="416" y="1392" />
 		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1136" y="608" />
 		<entity schema="ofertas" name="users" color="C1D8EE" x="928" y="48" />
-		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1520" y="1584" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1040" y="928" />
 		<entity schema="ofertas" name="nivel_programa" color="C1D8EE" x="48" y="1392" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1232" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1360" y="1184" />
+		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1488" y="1632" />
+		<entity schema="ofertas" name="recepcion_hv" color="C1D8EE" x="1792" y="1568" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

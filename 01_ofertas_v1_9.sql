@@ -268,7 +268,7 @@ CREATE  TABLE ofertas.ofertas (
 	licencia_conduccion  varchar(20)   ,
 	requisitos_minimos   text  NOT NULL ,
 	id_discapacidad      integer   ,
-	num_dias_oferta      int  NOT NULL ,
+	num_dias_oferta      integer  NOT NULL ,
 	id_aut_nivprog       integer  NOT NULL ,
 	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta )
  );
@@ -333,6 +333,16 @@ CREATE  TABLE ofertas.programas_ofertas (
 	id_oferta            integer  NOT NULL ,
 	id_programa          integer  NOT NULL ,
 	CONSTRAINT idx_programas_ofertas PRIMARY KEY ( id_oferta, id_programa )
+ );
+
+CREATE  TABLE ofertas.recepcion_hv ( 
+	id_aut_recepcionhv   serial  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	correo               varchar(60)  NOT NULL ,
+	nombres              varchar(30)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	CONSTRAINT pk_recepcion_hv_id_aut_recepcionhv PRIMARY KEY ( id_aut_recepcionhv )
  );
 
 CREATE  TABLE ofertas.referidos ( 
@@ -525,6 +535,8 @@ ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_nivel_programa FOREIGN
 ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
 ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+
+ALTER TABLE ofertas.recepcion_hv ADD CONSTRAINT fk_recepcion_hv_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.referidos ADD CONSTRAINT fk_referidos_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
 
