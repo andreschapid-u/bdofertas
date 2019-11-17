@@ -20,16 +20,6 @@ CREATE  TABLE ofertas.carnetizacion (
 	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
  );
 
-CREATE  TABLE ofertas.contratos ( 
-	id_aut_contrato      serial  NOT NULL ,
-	duracion             varchar(20)   ,
-	tipo_contrato        varchar(50)  NOT NULL ,
-	jornada_laboral      varchar(30)  NOT NULL ,
-	horario              varchar(40)   ,
-	comentarios_salario  text   ,
-	CONSTRAINT pk_contratos_id_aut_contrato PRIMARY KEY ( id_aut_contrato )
- );
-
 CREATE  TABLE ofertas.discapacidades ( 
 	id_aut_discapacidades serial  NOT NULL ,
 	nombre               varchar(30)  NOT NULL ,
@@ -254,7 +244,6 @@ CREATE  TABLE ofertas.ofertas (
 	nombre_oferta        varchar(100)  NOT NULL ,
 	descripcion          text  NOT NULL ,
 	id_cargo             integer  NOT NULL ,
-	id_contrato          integer  NOT NULL ,
 	numero_vacantes      integer DEFAULT 1 NOT NULL ,
 	id_forma_pago        integer  NOT NULL ,
 	experiencia          varchar(30)  NOT NULL ,
@@ -412,6 +401,18 @@ CREATE  TABLE ofertas.administrador_empresa (
 	CONSTRAINT idx_administrador_empresa_1 UNIQUE ( correo_corporativo ) 
  );
 
+CREATE  TABLE ofertas.contratos ( 
+	id_aut_contrato      serial  NOT NULL ,
+	duracion             varchar(20)   ,
+	tipo_contrato        varchar(50)  NOT NULL ,
+	jornada_laboral      varchar(30)  NOT NULL ,
+	horario              varchar(40)   ,
+	comentarios_salario  text   ,
+	id_oferta            integer  NOT NULL ,
+	CONSTRAINT pk_contratos_id_aut_contrato PRIMARY KEY ( id_aut_contrato ),
+	CONSTRAINT idx_contratos_oferta UNIQUE ( id_oferta ) 
+ );
+
 CREATE  TABLE ofertas.grados ( 
 	id_num_acta          integer DEFAULT 50 NOT NULL ,
 	tipo_grado           varchar(60)   ,
@@ -451,6 +452,8 @@ ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_empres
 ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user );
 
 ALTER TABLE ofertas.ciudades ADD CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep );
+
+ALTER TABLE ofertas.contratos ADD CONSTRAINT fk_contratos_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.departamentos ADD CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais );
 
@@ -492,8 +495,6 @@ ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_empresas FOREIGN KEY ( id_
 
 ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos );
 
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_contratos FOREIGN KEY ( id_contrato ) REFERENCES ofertas.contratos( id_aut_contrato );
-
 ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_sectores FOREIGN KEY ( id_sector ) REFERENCES ofertas.sectores( id_aut_sector );
 
 ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_salarios FOREIGN KEY ( id_forma_pago ) REFERENCES ofertas.salarios( id_aut_salario );
@@ -502,21 +503,21 @@ ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_discapacidades FOREIGN KEY
 
 ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_areas_conocimiento FOREIGN KEY ( id_aut_nivprog ) REFERENCES ofertas.nivel_programa( id_aut_nivprogra );
 
-ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon FOREIGN KEY ( id_areaconocimiento ) REFERENCES ofertas.areas_conocimiento( id_aut_areaconocimiento );
+ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon FOREIGN KEY ( id_areaconocimiento ) REFERENCES ofertas.areas_conocimiento( id_aut_areaconocimiento ) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE ofertas.ofertas_idiomas ADD CONSTRAINT fk_ofertas_idiomas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+ALTER TABLE ofertas.ofertas_idiomas ADD CONSTRAINT fk_ofertas_idiomas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.ofertas_idiomas ADD CONSTRAINT fk_ofertas_idiomas_idiomas FOREIGN KEY ( id_idioma ) REFERENCES ofertas.idiomas( id_aut_idioma );
 
-ALTER TABLE ofertas.ofertas_software ADD CONSTRAINT fk_ofertas_software_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+ALTER TABLE ofertas.ofertas_software ADD CONSTRAINT fk_ofertas_software_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.participa ADD CONSTRAINT fk_participa_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
 
 ALTER TABLE ofertas.participa ADD CONSTRAINT fk_participa_evento FOREIGN KEY ( id_evento ) REFERENCES ofertas.evento( id_aut_evento );
 
-ALTER TABLE ofertas.postulaciones ADD CONSTRAINT fk_postulaciones_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+ALTER TABLE ofertas.postulaciones ADD CONSTRAINT fk_postulaciones_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.postulaciones ADD CONSTRAINT fk_postulaciones_egresados FOREIGN KEY ( id_aut_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
 
@@ -524,7 +525,7 @@ ALTER TABLE ofertas.postulaciones_respuestas ADD CONSTRAINT fk_postulaciones_res
 
 ALTER TABLE ofertas.postulaciones_respuestas ADD CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta );
 
-ALTER TABLE ofertas.preguntas_oferta ADD CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+ALTER TABLE ofertas.preguntas_oferta ADD CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
 
@@ -558,7 +559,7 @@ ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion_gr
 
 ALTER TABLE ofertas.titulo ADD CONSTRAINT fk_titulo_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
-ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
+ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 

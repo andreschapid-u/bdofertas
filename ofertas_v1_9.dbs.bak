@@ -81,9 +81,16 @@
 			<column name="jornada_laboral" type="varchar" length="30" jt="12" mandatory="y" />
 			<column name="horario" type="varchar" length="40" jt="12" />
 			<column name="comentarios_salario" type="text" jt="12" />
+			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
 			<index name="pk_contratos_id_aut_contrato" unique="PRIMARY_KEY" >
 				<column name="id_aut_contrato" />
 			</index>
+			<index name="idx_contratos_oferta" unique="UNIQUE" >
+				<column name="id_oferta" />
+			</index>
+			<fk name="fk_contratos_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
+				<fk_column name="id_oferta" pk="id_aut_oferta" />
+			</fk>
 		</table>
 		<table name="departamentos" >
 			<column name="id_aut_dep" type="serial" jt="4" mandatory="y" />
@@ -355,7 +362,6 @@ Privado=1]]></comment>
 			<column name="nombre_oferta" type="varchar" length="100" jt="12" mandatory="y" />
 			<column name="descripcion" type="text" jt="12" mandatory="y" />
 			<column name="id_cargo" type="integer" jt="4" mandatory="y" />
-			<column name="id_contrato" type="integer" length="30" jt="4" mandatory="y" />
 			<column name="numero_vacantes" type="integer" jt="4" mandatory="y" >
 				<defo>1</defo>
 			</column>
@@ -384,9 +390,6 @@ Privado=1]]></comment>
 			<fk name="fk_ofertas_cargos" to_schema="ofertas" to_table="cargos" >
 				<fk_column name="id_cargo" pk="id_aut_cargos" />
 			</fk>
-			<fk name="fk_ofertas_contratos" to_schema="ofertas" to_table="contratos" >
-				<fk_column name="id_contrato" pk="id_aut_contrato" />
-			</fk>
 			<fk name="fk_ofertas_sectores" to_schema="ofertas" to_table="sectores" >
 				<fk_column name="id_sector" pk="id_aut_sector" />
 			</fk>
@@ -407,10 +410,10 @@ Privado=1]]></comment>
 				<column name="id_aut_oferta" />
 				<column name="id_areaconocimiento" />
 			</index>
-			<fk name="fk_ofertas_areascon_ofertas" to_schema="ofertas" to_table="ofertas" >
+			<fk name="fk_ofertas_areascon_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_aut_oferta" pk="id_aut_oferta" />
 			</fk>
-			<fk name="fk_ofertas_areascon" to_schema="ofertas" to_table="areas_conocimiento" >
+			<fk name="fk_ofertas_areascon" to_schema="ofertas" to_table="areas_conocimiento" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_areaconocimiento" pk="id_aut_areaconocimiento" />
 			</fk>
 		</table>
@@ -424,7 +427,7 @@ Privado=1]]></comment>
 				<column name="id_oferta" />
 				<column name="id_idioma" />
 			</index>
-			<fk name="fk_ofertas_idiomas_ofertas" to_schema="ofertas" to_table="ofertas" >
+			<fk name="fk_ofertas_idiomas_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 			<fk name="fk_ofertas_idiomas_idiomas" to_schema="ofertas" to_table="idiomas" >
@@ -439,7 +442,7 @@ Privado=1]]></comment>
 			<index name="idx_ofertas_software" unique="PRIMARY_KEY" >
 				<column name="id_software" />
 			</index>
-			<fk name="fk_ofertas_software_ofertas" to_schema="ofertas" to_table="ofertas" >
+			<fk name="fk_ofertas_software_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 		</table>
@@ -496,7 +499,7 @@ Privado=1]]></comment>
 			<index name="unq_postulaciones_id_aut_egresado" unique="UNIQUE" >
 				<column name="id_aut_egresado" />
 			</index>
-			<fk name="fk_postulaciones_ofertas" to_schema="ofertas" to_table="ofertas" >
+			<fk name="fk_postulaciones_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_aut_oferta" pk="id_aut_oferta" />
 			</fk>
 			<fk name="fk_postulaciones_egresados" to_schema="ofertas" to_table="egresados" >
@@ -525,7 +528,7 @@ Privado=1]]></comment>
 			<index name="pk_preguntas_oferta_id_aut_pregunta" unique="PRIMARY_KEY" >
 				<column name="id_aut_pregunta" />
 			</index>
-			<fk name="fk_preguntas_oferta_ofertas" to_schema="ofertas" to_table="ofertas" >
+			<fk name="fk_preguntas_oferta_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 		</table>
@@ -719,7 +722,7 @@ Privado=1]]></comment>
 				<column name="id_oferta" />
 				<column name="id_ciudad" />
 			</index>
-			<fk name="fk_ubicacion_oferta_ofertas" to_schema="ofertas" to_table="ofertas" >
+			<fk name="fk_ubicacion_oferta_ofertas" to_schema="ofertas" to_table="ofertas" delete_action="cascade" update_action="cascade" >
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 			<fk name="fk_ubicacion_oferta_ciudades" to_schema="ofertas" to_table="ciudades" >
@@ -753,19 +756,13 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="400" y="560" />
 		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1312" y="768" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1296" y="912" />
-		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1184" y="1280" />
 		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="1920" y="784" />
 		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="1968" y="528" />
-		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1664" y="1360" />
 		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1088" y="1392" />
 		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="736" y="1248" />
-		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="1888" y="1440" />
-		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="1872" y="1168" />
 		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="816" y="1488" />
 		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1568" y="48" />
-		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1200" y="1568" />
 		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="992" y="1600" />
-		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="576" y="1536" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="208" y="1488" />
 		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1136" y="144" />
 		<entity schema="ofertas" name="sectores" color="3986C1" x="1856" y="288" />
@@ -775,7 +772,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="992" y="384" />
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1568" y="736" />
 		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="608" y="1392" />
-		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="464" y="992" />
 		<entity schema="ofertas" name="egresados" color="008080" x="768" y="656" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="480" y="288" />
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="128" y="1232" />
@@ -787,9 +783,16 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1040" y="928" />
 		<entity schema="ofertas" name="nivel_programa" color="C1D8EE" x="48" y="1392" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1232" />
-		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1360" y="1184" />
-		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1488" y="1632" />
 		<entity schema="ofertas" name="recepcion_hv" color="C1D8EE" x="1792" y="1568" />
+		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="1888" y="1440" />
+		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1360" y="1184" />
+		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1664" y="1360" />
+		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="1872" y="1168" />
+		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1200" y="1568" />
+		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1488" y="1632" />
+		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1184" y="1280" />
+		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="576" y="1536" />
+		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="464" y="992" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

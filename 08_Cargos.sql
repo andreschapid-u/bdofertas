@@ -76,203 +76,102 @@ INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(75,'Enfermero(a
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(76,'Entrenador(a)',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(77,'Estilista',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(78,'Estilista',true);
-
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(79,'Estudiante
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(80,'Estudiante de Posgrado
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(81,'Estudiante para Tesis
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(82,'Facilitador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(83,'Farmacéutico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(84,'Fisioterapeuta
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(85,'Fonoaudiólogo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(86,'Fotógrafo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(87,'Fotolitógrafo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(88,'Geofísico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(89,'Geólogo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(90,'Gerente
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(91,'Gerente General
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(92,'Guía
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(93,'Guionista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(94,'Hostess
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(95,'Ilustrador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(96,'Impulsador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(97,'Ingeniero(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(98,'Inspector(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(99,'Instalador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(100,'Instructor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(101,'Instrumentador(a) Quirúrgico
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(102,'Interventor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(103,'Investigador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(104,'Jefe
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(105,'Kinesiólogo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(106,'Libretista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(107,'Líder de Proyecto
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(108,'Locutor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(109,'Luminotecnico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(110,'Maitress
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(111,'Manicurista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(112,'Maquetista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(113,'Mecánico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(114,'Mecánico Dental
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(115,'Medico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(116,'Medico(a) Especialista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(117,'Mensajero(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(118,'Mercaderista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(119,'Mesero(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(120,'Miembro de Junta Directiva
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(121,'Modista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(122,'Niñero(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(123,'Notario(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(124,'Odontólogo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(125,'Oficinista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(126,'Operador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(127,'Operario(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(128,'Orientador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(129,'Otro Profesional
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(130,'Periodista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(131,'Planeador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(132,'Planificador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(133,'Practicante
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(134,'Preparador de alimentos
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(135,'Presidente(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(136,'Productor
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(137,'Profesional
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(138,'Programador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(139,'Promotor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(140,'Propietario(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(141,'Psicólogo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(142,'Psicopedagogo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(143,'Publicista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(144,'Químico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(145,'Realizador
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(146,'Recepcionista
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(147,'Rector(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(148,'Redactor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(149,'Reportero(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(150,'Representante
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(151,'Representante de ventas
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(152,'Residente
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(153,'Revisor(a) Fiscal
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(154,'Secretario(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(155,'Secretario(a) Berlingue
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(156,'Secretario(a) General
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(157,'Socio(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(158,'Subdirector(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(159,'Subdirector(a) General
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(160,'Subgerente
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(161,'Supernumerario(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(162,'Supervisor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(163,'Técnico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(164,'Técnico(a) Superior
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(165,'Teleoperador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(166,'Tesorero(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(167,'Topógrafo(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(168,'Trabajador(a) Social
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(169,'Trader
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(170,'Traductor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(171,'Vendedor(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(172,'Vicepresidente(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(173,'Vicerector(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(174,'Vigilante
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(175,'Visitador(a) Medico(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(176,'Webmaster/Desarrollador(a)
-',true);
-INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(177,'Zootecnista
-',true);
-
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(79,'Estudiante',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(80,'Estudiante de Posgrado',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(81,'Estudiante para Tesis',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(82,'Facilitador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(83,'Farmacéutico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(84,'Fisioterapeuta',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(85,'Fonoaudiólogo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(86,'Fotógrafo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(87,'Fotolitógrafo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(88,'Geofísico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(89,'Geólogo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(90,'Gerente',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(91,'Gerente General',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(92,'Guía',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(93,'Guionista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(94,'Hostess',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(95,'Ilustrador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(96,'Impulsador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(97,'Ingeniero(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(98,'Inspector(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(99,'Instalador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(100,'Instructor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(101,'Instrumentador(a) Quirúrgico',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(102,'Interventor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(103,'Investigador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(104,'Jefe',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(105,'Kinesiólogo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(106,'Libretista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(107,'Líder de Proyecto',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(108,'Locutor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(109,'Luminotecnico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(110,'Maitress',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(111,'Manicurista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(112,'Maquetista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(113,'Mecánico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(114,'Mecánico Dental',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(115,'Medico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(116,'Medico(a) Especialista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(117,'Mensajero(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(118,'Mercaderista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(119,'Mesero(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(120,'Miembro de Junta Directiva',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(121,'Modista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(122,'Niñero(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(123,'Notario(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(124,'Odontólogo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(125,'Oficinista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(126,'Operador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(127,'Operario(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(128,'Orientador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(129,'Otro Profesional',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(130,'Periodista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(131,'Planeador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(132,'Planificador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(133,'Practicante',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(134,'Preparador de alimentos',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(135,'Presidente(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(136,'Productor',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(137,'Profesional',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(138,'Programador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(139,'Promotor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(140,'Propietario(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(141,'Psicólogo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(142,'Psicopedagogo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(143,'Publicista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(144,'Químico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(145,'Realizador',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(146,'Recepcionista',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(147,'Rector(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(148,'Redactor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(149,'Reportero(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(150,'Representante',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(151,'Representante de ventas',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(152,'Residente',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(153,'Revisor(a) Fiscal',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(154,'Secretario(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(155,'Secretario(a) Berlingue',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(156,'Secretario(a) General',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(157,'Socio(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(158,'Subdirector(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(159,'Subdirector(a) General',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(160,'Subgerente',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(161,'Supernumerario(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(162,'Supervisor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(163,'Técnico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(164,'Técnico(a) Superior',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(165,'Teleoperador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(166,'Tesorero(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(167,'Topógrafo(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(168,'Trabajador(a) Social',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(169,'Trader',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(170,'Traductor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(171,'Vendedor(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(172,'Vicepresidente(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(173,'Vicerector(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(174,'Vigilante',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(175,'Visitador(a) Medico(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(176,'Webmaster/Desarrollador(a)',true);
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(177,'Zootecnista',true);
