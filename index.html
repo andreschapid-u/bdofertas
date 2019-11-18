@@ -243,9 +243,9 @@ th {
 
 <!-- == Legend == -->
 <g transform='translate(10,10)'>
-  <rect x='10' y='10' width='270' height='56' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
+  <rect x='10' y='10' width='230' height='56' rx='6' ry='6' style='fill:url(#legendGradient);filter:url(#shadow);'/> 
   <text x='20' y='25' class='legendTitle' >ofertas</text> 
-  <text x='20' y='39' class='legendSubTitle'><tspan>Table &amp; column comments as mouse-over tooltips.</tspan></text> 
+  <text x='20' y='39' class='legendSubTitle'><tspan>Table comments as mouse-over tooltips.</tspan></text> 
   <a xlink:href='https://dbschema.com'><text x='20' y='53' class='legendSubTitle'><tspan>Generated using DbSchema</tspan></text></a> 
 </g>
 
@@ -706,14 +706,22 @@ participa ref evento ( id_evento -&gt; id_aut_evento )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 464,480L 344,480Q 336,480 336,488L 336,496' ><title>Fk fk_participa_evento
 participa ref evento ( id_evento -&gt; id_aut_evento )</title></path>
 <text x='413' y='475' transform='rotate(0 413,475)' class='relName'>id_evento</text>
+<!-- == Fk 'empresas_fk_empresas_localizacion' == -->
+<path id='empresas_fk_empresas_localizacion'  onmouseover="hghl(['empresas_fk_empresas_localizacion','ofertas.empresas.id_direccion','ofertas.localizacion.id_aut_localizacion'])" onmouseout="uhghl(['empresas_fk_empresas_localizacion','ofertas.empresas.id_direccion','ofertas.localizacion.id_aut_localizacion'])" transform='translate(8,0)' class='scene' d='M 1536,704L 1296,704' >
+	<title>Fk fk_empresas_localizacion
+empresas ref localizacion ( id_direccion -&gt; id_aut_localizacion )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1536,704L 1296,704' ><title>Fk fk_empresas_localizacion
+empresas ref localizacion ( id_direccion -&gt; id_aut_localizacion )</title></path>
+<text x='1471' y='699' transform='rotate(0 1471,699)' class='relName'>id_direccion</text>
 <!-- == Fk 'experiencia_fk_cargos_egresados' == -->
-<path id='experiencia_fk_cargos_egresados'  onmouseover="hghl(['experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 784,480L 784,640' >
+<path id='experiencia_fk_cargos_egresados'  onmouseover="hghl(['experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 784,512L 784,640' >
 	<title>Fk fk_cargos_egresados
 experiencia ref egresados ( id_egresado -&gt; id_aut_egresado )</title>
 </path>
-<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 784,480L 784,640' ><title>Fk fk_cargos_egresados
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 784,512L 784,640' ><title>Fk fk_cargos_egresados
 experiencia ref egresados ( id_egresado -&gt; id_aut_egresado )</title></path>
-<text x='799' y='481' transform='rotate(90 799,481)' class='relName'>id_egresado</text>
+<text x='799' y='513' transform='rotate(90 799,513)' class='relName'>id_egresado</text>
 <!-- == Fk 'experiencia_fk_experiencia_cargos' == -->
 <path id='experiencia_fk_experiencia_cargos'  onmouseover="hghl(['experiencia_fk_experiencia_cargos','ofertas.experiencia.id_cargo','ofertas.cargos.id_aut_cargos'])" onmouseout="uhghl(['experiencia_fk_experiencia_cargos','ofertas.experiencia.id_cargo','ofertas.cargos.id_aut_cargos'])" transform='translate(8,0)' class='scene' d='M 816,256L 1144,256Q 1152,256 1152,248L 1152,240' >
 	<title>Fk fk_experiencia_cargos
@@ -730,14 +738,6 @@ experiencia ref ciudades ( id_ciudad -&gt; id_aut_ciudad )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 816,384L 976,384' ><title>Fk fk_experiencia_ciudades
 experiencia ref ciudades ( id_ciudad -&gt; id_aut_ciudad )</title></path>
 <text x='825' y='379' transform='rotate(0 825,379)' class='relName'>id_ciudad</text>
-<!-- == Fk 'empresas_fk_empresas_localizacion' == -->
-<path id='empresas_fk_empresas_localizacion'  onmouseover="hghl(['empresas_fk_empresas_localizacion','ofertas.empresas.id_direccion','ofertas.localizacion.id_aut_localizacion'])" onmouseout="uhghl(['empresas_fk_empresas_localizacion','ofertas.empresas.id_direccion','ofertas.localizacion.id_aut_localizacion'])" transform='translate(8,0)' class='scene' d='M 1536,704L 1296,704' >
-	<title>Fk fk_empresas_localizacion
-empresas ref localizacion ( id_direccion -&gt; id_aut_localizacion )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1536,704L 1296,704' ><title>Fk fk_empresas_localizacion
-empresas ref localizacion ( id_direccion -&gt; id_aut_localizacion )</title></path>
-<text x='1471' y='699' transform='rotate(0 1471,699)' class='relName'>id_direccion</text>
 <!-- == Table 'facultades' == -->
 <rect class='entity' style='stroke:#1E578F' x='864' y='1080' width='144' height='96' rx='8' ry='8' />
 <path d='M 864 1108 L 864 1088 Q 864 1080 872 1080 L 1000 1080 Q 1008 1080 1008 1088 L 1008 1108 L864 1108 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1504,45 +1504,6 @@ varchar(50)</title></a>
   <use id='nn' x='482' y='493' xlink:href='#nn'/><a xlink:href='#ofertas.participa_como_se_entero'><text id='ofertas.participa.como_se_entero' x='499' y='503'>como_se_entero</text><title>como_se_entero
 * varchar(50)</title></a>
 <text x='621' y='500' text-anchor='end' class='colType'>t</text>
-<!-- == Table 'experiencia' == -->
-<rect class='entity' style='stroke:#1E578F' x='656' y='200' width='160' height='272' rx='8' ry='8' />
-<path d='M 656 228 L 656 208 Q 656 200 664 200 L 808 200 Q 816 200 816 208 L 816 228 L656 228 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='656' y='200' width='160' height='272' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.experiencia'><text x='696' y='219' >experiencia</text><title>Table ofertas.experiencia</title></a>
-  <use id='nn' x='658' y='237' xlink:href='#nn'/><use id='pk' x='658' y='236' xlink:href='#pk'><title>Pk pk_cargos_id ( id_aut_exp ) </title></use><a xlink:href='#ofertas.experiencia_id_aut_exp'><text id='ofertas.experiencia.id_aut_exp' x='675' y='247'>id_aut_exp</text><title>id_aut_exp
-* serial</title></a>
-<text x='813' y='244' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.experiencia_id_egresado'><text id='ofertas.experiencia.id_egresado' x='675' y='263' onmouseover="hghl(['experiencia_fk_cargos_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['experiencia_fk_cargos_egresados','ofertas.egresados.id_aut_egresado'])">id_egresado</text><title>id_egresado
-integer</title></a>
-<a xlink:href='#ofertas.experiencia.id_egresado'><use id='fk' x='804' y='252' xlink:href='#fk'/><title>References egresados ( id_egresado -&gt; id_aut_egresado ) </title></a>
-  <use id='nn' x='658' y='269' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_id_cargo'><text id='ofertas.experiencia.id_cargo' x='675' y='279' onmouseover="hghl(['experiencia_fk_experiencia_cargos','ofertas.cargos.id_aut_cargos'])" onmouseout="uhghl(['experiencia_fk_experiencia_cargos','ofertas.cargos.id_aut_cargos'])">id_cargo</text><title>id_cargo
-* integer</title></a>
-<a xlink:href='#ofertas.experiencia.id_cargo'><use id='fk' x='804' y='268' xlink:href='#fk'/><title>References cargos ( id_cargo -&gt; id_aut_cargos ) </title></a>
-  <use id='nn' x='658' y='285' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_nombre_jefe'><text id='ofertas.experiencia.nombre_jefe' x='675' y='295'>nombre_jefe</text><title>nombre_jefe
-* varchar(60)</title></a>
-<text x='813' y='292' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_telefono_jefe'><text id='ofertas.experiencia.telefono_jefe' x='675' y='311'>telefono_jefe</text><title>telefono_jefe
-varchar(16)</title></a>
-<text x='813' y='308' text-anchor='end' class='colType'>t</text>  <use id='nn' x='658' y='317' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_correo_jefe'><text id='ofertas.experiencia.correo_jefe' x='675' y='327'>correo_jefe</text><title>correo_jefe
-* varchar(60)</title></a>
-<text x='813' y='324' text-anchor='end' class='colType'>t</text>  <use id='nn' x='658' y='333' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_nombre_empresa'><text id='ofertas.experiencia.nombre_empresa' x='675' y='343'>nombre_empresa</text><title>nombre_empresa
-* varchar(50) default 100</title></a>
-<text x='813' y='340' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_dir_empresa'><text id='ofertas.experiencia.dir_empresa' x='675' y='359'>dir_empresa</text><title>dir_empresa
-varchar(50) default 100</title></a>
-<text x='813' y='356' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_tel_trabajo'><text id='ofertas.experiencia.tel_trabajo' x='675' y='375'>tel_trabajo</text><title>tel_trabajo
-integer</title></a>
-<text x='813' y='372' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.experiencia_rango_salario'><text id='ofertas.experiencia.rango_salario' x='675' y='391'>rango_salario</text><title>rango_salario
-varchar(50) default 100</title></a>
-<text x='813' y='388' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_tipo_contrato'><text id='ofertas.experiencia.tipo_contrato' x='675' y='407'>tipo_contrato</text><title>tipo_contrato
-varchar(50) default 50</title></a>
-<text x='813' y='404' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_trabajo_en_su_area'><text id='ofertas.experiencia.trabajo_en_su_area' x='675' y='423'>trabajo_en_su_area</text><title>trabajo_en_su_area
-bool</title></a>
-<text x='813' y='420' text-anchor='end' class='colType'>b</text>  <a xlink:href='#ofertas.experiencia_sector'><text id='ofertas.experiencia.sector' x='675' y='439'>sector</text><title>sector
-varchar(40)
-Publico=0
-Privado=1</title></a>
-<text x='813' y='436' text-anchor='end' class='colType'>t</text>  <use id='nn' x='658' y='445' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_id_ciudad'><text id='ofertas.experiencia.id_ciudad' x='675' y='455' onmouseover="hghl(['experiencia_fk_experiencia_ciudades','ofertas.ciudades.id_aut_ciudad'])" onmouseout="uhghl(['experiencia_fk_experiencia_ciudades','ofertas.ciudades.id_aut_ciudad'])">id_ciudad</text><title>id_ciudad
-* integer</title></a>
-<a xlink:href='#ofertas.experiencia.id_ciudad'><use id='fk' x='804' y='444' xlink:href='#fk'/><title>References ciudades ( id_ciudad -&gt; id_aut_ciudad ) </title></a>
-
 <!-- == Table 'empresas' == -->
 <rect class='entity' style='stroke:#1E578F' x='1552' y='696' width='224' height='384' rx='8' ry='8' />
 <path d='M 1552 724 L 1552 704 Q 1552 696 1560 696 L 1768 696 Q 1776 696 1776 704 L 1776 724 L1552 724 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1596,6 +1557,49 @@ varchar(255)</title></a>
 <text x='1773' y='1044' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.empresas_descripcion'><text id='ofertas.empresas.descripcion' x='1571' y='1063'>descripcion</text><title>descripcion
 text</title></a>
 <text x='1773' y='1060' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'experiencia' == -->
+<rect class='entity' style='stroke:#1E578F' x='656' y='200' width='160' height='304' rx='8' ry='8' />
+<path d='M 656 228 L 656 208 Q 656 200 664 200 L 808 200 Q 816 200 816 208 L 816 228 L656 228 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='656' y='200' width='160' height='304' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.experiencia'><text x='696' y='219' >experiencia</text><title>Table ofertas.experiencia</title></a>
+  <use id='nn' x='658' y='237' xlink:href='#nn'/><use id='pk' x='658' y='236' xlink:href='#pk'><title>Pk pk_cargos_id ( id_aut_exp ) </title></use><a xlink:href='#ofertas.experiencia_id_aut_exp'><text id='ofertas.experiencia.id_aut_exp' x='675' y='247'>id_aut_exp</text><title>id_aut_exp
+* serial</title></a>
+<text x='813' y='244' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.experiencia_id_egresado'><text id='ofertas.experiencia.id_egresado' x='675' y='263' onmouseover="hghl(['experiencia_fk_cargos_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['experiencia_fk_cargos_egresados','ofertas.egresados.id_aut_egresado'])">id_egresado</text><title>id_egresado
+integer</title></a>
+<a xlink:href='#ofertas.experiencia.id_egresado'><use id='fk' x='804' y='252' xlink:href='#fk'/><title>References egresados ( id_egresado -&gt; id_aut_egresado ) </title></a>
+  <use id='nn' x='658' y='269' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_id_cargo'><text id='ofertas.experiencia.id_cargo' x='675' y='279' onmouseover="hghl(['experiencia_fk_experiencia_cargos','ofertas.cargos.id_aut_cargos'])" onmouseout="uhghl(['experiencia_fk_experiencia_cargos','ofertas.cargos.id_aut_cargos'])">id_cargo</text><title>id_cargo
+* integer</title></a>
+<a xlink:href='#ofertas.experiencia.id_cargo'><use id='fk' x='804' y='268' xlink:href='#fk'/><title>References cargos ( id_cargo -&gt; id_aut_cargos ) </title></a>
+  <use id='nn' x='658' y='285' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_nombre_jefe'><text id='ofertas.experiencia.nombre_jefe' x='675' y='295'>nombre_jefe</text><title>nombre_jefe
+* varchar(60)</title></a>
+<text x='813' y='292' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_telefono_jefe'><text id='ofertas.experiencia.telefono_jefe' x='675' y='311'>telefono_jefe</text><title>telefono_jefe
+varchar(16)</title></a>
+<text x='813' y='308' text-anchor='end' class='colType'>t</text>  <use id='nn' x='658' y='317' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_correo_jefe'><text id='ofertas.experiencia.correo_jefe' x='675' y='327'>correo_jefe</text><title>correo_jefe
+* varchar(60)</title></a>
+<text x='813' y='324' text-anchor='end' class='colType'>t</text>  <use id='nn' x='658' y='333' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_nombre_empresa'><text id='ofertas.experiencia.nombre_empresa' x='675' y='343'>nombre_empresa</text><title>nombre_empresa
+* varchar(50) default 100</title></a>
+<text x='813' y='340' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_dir_empresa'><text id='ofertas.experiencia.dir_empresa' x='675' y='359'>dir_empresa</text><title>dir_empresa
+varchar(50) default 100</title></a>
+<text x='813' y='356' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_tel_trabajo'><text id='ofertas.experiencia.tel_trabajo' x='675' y='375'>tel_trabajo</text><title>tel_trabajo
+integer</title></a>
+<text x='813' y='372' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.experiencia_rango_salario'><text id='ofertas.experiencia.rango_salario' x='675' y='391'>rango_salario</text><title>rango_salario
+varchar(50) default 100</title></a>
+<text x='813' y='388' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_tipo_contrato'><text id='ofertas.experiencia.tipo_contrato' x='675' y='407'>tipo_contrato</text><title>tipo_contrato
+varchar(50) default 50</title></a>
+<text x='813' y='404' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.experiencia_trabajo_en_su_area'><text id='ofertas.experiencia.trabajo_en_su_area' x='675' y='423'>trabajo_en_su_area</text><title>trabajo_en_su_area
+bool</title></a>
+<text x='813' y='420' text-anchor='end' class='colType'>b</text>  <a xlink:href='#ofertas.experiencia_sector'><text id='ofertas.experiencia.sector' x='675' y='439'>sector</text><title>sector
+varchar(40)
+Publico=0
+Privado=1</title></a>
+<text x='813' y='436' text-anchor='end' class='colType'>t</text>  <use id='nn' x='658' y='445' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_id_ciudad'><text id='ofertas.experiencia.id_ciudad' x='675' y='455' onmouseover="hghl(['experiencia_fk_experiencia_ciudades','ofertas.ciudades.id_aut_ciudad'])" onmouseout="uhghl(['experiencia_fk_experiencia_ciudades','ofertas.ciudades.id_aut_ciudad'])">id_ciudad</text><title>id_ciudad
+* integer</title></a>
+<a xlink:href='#ofertas.experiencia.id_ciudad'><use id='fk' x='804' y='444' xlink:href='#fk'/><title>References ciudades ( id_ciudad -&gt; id_aut_ciudad ) </title></a>
+  <use id='nn' x='658' y='461' xlink:href='#nn'/><a xlink:href='#ofertas.experiencia_fecha_inicio'><text id='ofertas.experiencia.fecha_inicio' x='675' y='471'>fecha_inicio</text><title>fecha_inicio
+* date</title></a>
+<text x='813' y='468' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.experiencia_fecha_fin'><text id='ofertas.experiencia.fecha_fin' x='675' y='487'>fecha_fin</text><title>fecha_fin
+date</title></a>
+<text x='813' y='484' text-anchor='end' class='colType'>d</text>
 </g></svg></div>
 <div class='container'>
 
@@ -2527,6 +2531,18 @@ Privado&#61;1 </td>
 		<td>*<svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
 		<td><a name='ofertas.experiencia_id_ciudad'>id&#95;ciudad</a></td>
 		<td> integer   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>*</td>
+		<td><a name='ofertas.experiencia_fecha_inicio'>fecha&#95;inicio</a></td>
+		<td> date   </td>
+		<td>  </td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td><a name='ofertas.experiencia_fecha_fin'>fecha&#95;fin</a></td>
+		<td> date   </td>
 		<td>  </td>
 	</tr>
 <tr><th colspan='4'>Indexes</th></tr>
