@@ -261,6 +261,8 @@
 Privado=1]]></comment>
 			</column>
 			<column name="id_ciudad" type="integer" jt="4" mandatory="y" />
+			<column name="fecha_inicio" type="date" jt="91" mandatory="y" />
+			<column name="fecha_fin" type="date" jt="91" />
 			<index name="pk_cargos_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_exp" />
 			</index>
@@ -792,8 +794,8 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1504" y="64" />
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="192" y="512" />
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="480" y="432" />
-		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="656" y="208" />
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1552" y="704" />
+		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="656" y="208" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
