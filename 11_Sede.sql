@@ -1,0 +1,11 @@
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (1,'Sede Popayán');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (2,'Sede Santander de Quilichao');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (3,'Sede Piendamó');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (4,'Sede Guapi');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (5,'Sede Miranda');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (6,'Sede Bolívar');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (7,'Sede Pasto - Universidad de Nariño');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (8,'Sede Cali - Universidad de San Buenaventura');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (9,'Sede Cartagena - Escuela Naval Almirante Padilla');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (10,'Sede Bogotá - Universidad EAN');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (11,'Sede Bogotá - Universidad El Bosque');
