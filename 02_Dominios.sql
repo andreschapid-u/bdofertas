@@ -23,8 +23,6 @@ CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('En espera', 'Activo', 'Ina
 CREATE TYPE ofertas.dominio_estado_civil_egresado AS ENUM ('Soltero(a)', 'Casado(a)','Viudo(a)','Union Libre','Separado(a)','Comprometido(a)','Divorciado(a)');
 CREATE TYPE ofertas.dominio_grupo_etnico_egresado AS ENUM ('Afrodescendiente', 'Indígena', 'Mestizo', 'Blanco', 'Otro');
 CREATE TYPE ofertas.dominio_discapacidad AS ENUM ('No','Visual','Cognitiva','Auditiva','Otra(s)');
-CREATE TYPE ofertas.dominio_nivel_estudio AS ENUM ('Tecnología','Pregrado','Posgrado');
-
 
 
 commit;
@@ -66,5 +64,4 @@ ALTER TABLE ofertas.egresados ALTER COLUMN estado TYPE ofertas.dominio_estado_eg
 ALTER TABLE ofertas.egresados ALTER COLUMN estado_civil TYPE ofertas.dominio_estado_civil_egresado USING estado_civil::ofertas.dominio_estado_civil_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN grupo_etnico TYPE ofertas.dominio_grupo_etnico_egresado USING grupo_etnico::ofertas.dominio_grupo_etnico_egresado;
 ALTER TABLE ofertas.discapacidades ALTER COLUMN nombre TYPE ofertas.dominio_discapacidad USING nombre::ofertas.dominio_discapacidad;
-ALTER TABLE ofertas.niveles_estudio ALTER COLUMN nombre TYPE ofertas.dominio_nivel_estudio USING nombre::ofertas.dominio_nivel_estudio;
 commit;
