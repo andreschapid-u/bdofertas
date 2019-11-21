@@ -37,6 +37,12 @@ CREATE  TABLE ofertas.evento (
 	CONSTRAINT pk_evento_id_evento PRIMARY KEY ( id_aut_evento )
  );
 
+CREATE  TABLE ofertas.facultades ( 
+	id_aut_facultad      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
+ );
+
 CREATE  TABLE ofertas.idiomas ( 
 	id_aut_idioma        serial  NOT NULL ,
 	nombre               varchar(20)  NOT NULL ,
@@ -112,6 +118,12 @@ CREATE  TABLE ofertas.sub_sectores (
 	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector )
  );
 
+CREATE  TABLE ofertas.titulo ( 
+	id_aut_titulo        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
+ );
+
 CREATE  TABLE ofertas.users ( 
 	id_aut_user          serial  NOT NULL ,
 	email                varchar(60)  NOT NULL ,
@@ -155,24 +167,12 @@ CREATE  TABLE ofertas.referidos (
 	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido )
  );
 
-CREATE  TABLE ofertas.titulo ( 
-	id_aut_titulo        serial  NOT NULL ,
-	nombre               varchar(50)  NOT NULL ,
-	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
- );
-
 CREATE  TABLE ofertas.ciudades ( 
 	id_aut_ciudad        serial  NOT NULL ,
 	nombre               varchar(50)   ,
 	id_departamento      integer  NOT NULL ,
 	CONSTRAINT pk_ciudades_id PRIMARY KEY ( id_aut_ciudad ),
 	CONSTRAINT idx_ciudades UNIQUE ( nombre, id_departamento ) 
- );
-
-CREATE  TABLE ofertas.facultades ( 
-	id_aut_facultad      serial  NOT NULL ,
-	nombre               varchar(60)  NOT NULL ,
-	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
  );
 
 CREATE  TABLE ofertas.localizacion ( 
@@ -485,8 +485,6 @@ ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_cargos FOREIGN KEY
 
 ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
-ALTER TABLE ofertas.facultades ADD CONSTRAINT fk_facultades_programas FOREIGN KEY ( id_aut_facultad ) REFERENCES ofertas.programas( id_facultad );
-
 ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
 ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_estudiante ) REFERENCES ofertas.egresados( id_aut_egresado );
@@ -533,6 +531,10 @@ ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_programas FOREIGN KEY 
 
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
 
+ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo );
+
+ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
+
 ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
 ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
@@ -556,8 +558,6 @@ ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_egresados FOREIGN KEY ( 
 ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector );
 
 ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios );
-
-ALTER TABLE ofertas.titulo ADD CONSTRAINT fk_titulo_programas FOREIGN KEY ( id_aut_titulo ) REFERENCES ofertas.programas( id_titulo );
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 

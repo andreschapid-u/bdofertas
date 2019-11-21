@@ -282,9 +282,6 @@ Privado=1]]></comment>
 			<index name="pk_facultades_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_facultad" />
 			</index>
-			<fk name="fk_facultades_programas" to_schema="ofertas" to_table="programas" >
-				<fk_column name="id_aut_facultad" pk="id_facultad" />
-			</fk>
 		</table>
 		<table name="grados" >
 			<column name="id_num_acta" type="integer" jt="4" mandatory="y" >
@@ -558,6 +555,12 @@ Privado=1]]></comment>
 			<fk name="fk_programas_niveles_estudio" to_schema="ofertas" to_table="niveles_estudio" >
 				<fk_column name="id_nivelestudio" pk="id_aut_estudio" />
 			</fk>
+			<fk name="fk_programas_titulo" to_schema="ofertas" to_table="titulo" >
+				<fk_column name="id_titulo" pk="id_aut_titulo" />
+			</fk>
+			<fk name="fk_programas_facultades" to_schema="ofertas" to_table="facultades" >
+				<fk_column name="id_facultad" pk="id_aut_facultad" />
+			</fk>
 		</table>
 		<table name="programas_ofertas" >
 			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
@@ -715,9 +718,6 @@ Privado=1]]></comment>
 			<index name="pk_titulo_id_aut_titulo" unique="PRIMARY_KEY" >
 				<column name="id_aut_titulo" />
 			</index>
-			<fk name="fk_titulo_programas" to_schema="ofertas" to_table="programas" >
-				<fk_column name="id_aut_titulo" pk="id_titulo" />
-			</fk>
 		</table>
 		<table name="ubicacion_oferta" >
 			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
@@ -793,12 +793,13 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="544" y="208" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1264" y="1184" />
 		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="336" y="848" />
-		<entity schema="ofertas" name="programas" color="C1D8EE" x="304" y="1232" />
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="48" y="1248" />
 		<entity schema="ofertas" name="egresados" color="008080" x="656" y="656" />
 		<entity schema="ofertas" name="facultades" color="C1D8EE" x="688" y="1056" />
+		<entity schema="ofertas" name="programas" color="C1D8EE" x="304" y="1232" />
 		<script name="01_ofertas_v1_9.sql" id="Editor_26e7f45" language="SQL" confirmed="y" file="file:/C:/Users/carl9/Documents/GitHub/bdofertas/01_ofertas_v1_9.sql" />
 		<script name="01_ofertas_v2_0.sql" id="Editor_43f2b34" language="SQL" file="file:/C:/Users/carl9/Documents/GitHub/bdofertas/01_ofertas_v2_0.sql" />
+		<script name="01_ofertas_v2_0.sql" id="Editor_2784a62" language="SQL" file="file:/C:/Users/carl9/Documents/GitHub/bdofertas/01_ofertas_v2_0.sql" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
