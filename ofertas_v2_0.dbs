@@ -798,6 +798,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="egresados" color="008080" x="656" y="656" />
 		<entity schema="ofertas" name="facultades" color="C1D8EE" x="688" y="1056" />
 		<script name="01_ofertas_v1_9.sql" id="Editor_26e7f45" language="SQL" confirmed="y" file="file:/C:/Users/carl9/Documents/GitHub/bdofertas/01_ofertas_v1_9.sql" />
+		<script name="01_ofertas_v2_0.sql" id="Editor_43f2b34" language="SQL" file="file:/C:/Users/carl9/Documents/GitHub/bdofertas/01_ofertas_v2_0.sql" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
