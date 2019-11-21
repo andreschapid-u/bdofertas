@@ -1,5 +1,5 @@
 INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (1,'Sede Popayán');
-INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (2,'Sede Santander de Quilichao');
+INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (2,'Sede Norte');
 INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (3,'Sede Piendamó');
 INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (4,'Sede Guapi');
 INSERT INTO  ofertas.sede(id_aut_sede,nombre) VALUES (5,'Sede Miranda');
