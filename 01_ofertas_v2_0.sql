@@ -55,6 +55,7 @@ CREATE  TABLE ofertas.nivel_programa (
 CREATE  TABLE ofertas.niveles_estudio ( 
 	id_aut_estudio       serial  NOT NULL ,
 	nombre               varchar(50) DEFAULT 100 NOT NULL ,
+	pertenece_u          bool DEFAULT false NOT NULL ,
 	CONSTRAINT pk_niveles_estudio_id PRIMARY KEY ( id_aut_estudio ),
 	CONSTRAINT idx_niveles_estudio_nombre UNIQUE ( nombre ) 
  );
@@ -130,12 +131,49 @@ CREATE  TABLE ofertas.departamentos (
 	CONSTRAINT idx_departamentos UNIQUE ( nombre, id_pais_fk ) 
  );
 
+CREATE  TABLE ofertas.programas ( 
+	id_aut_programa      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	id_facultad          integer   ,
+	id_sede              integer   ,
+	id_nivelestudio      integer   ,
+	id_titulo            integer   ,
+	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa ),
+	CONSTRAINT unq_programas_id_titulo UNIQUE ( id_titulo ) ,
+	CONSTRAINT unq_programas_id_facultad UNIQUE ( id_facultad ) 
+ );
+
+CREATE  TABLE ofertas.referidos ( 
+	id_aut_referido      serial  NOT NULL ,
+	id_egresado          integer   ,
+	nombres              varchar(100)  NOT NULL ,
+	id_nivel_educativo   integer   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	correo               varchar(60)   ,
+	parentesco           varchar(40)   ,
+	id_aut_programa      integer   ,
+	es_egresado          bool   ,
+	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido )
+ );
+
+CREATE  TABLE ofertas.titulo ( 
+	id_aut_titulo        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
+ );
+
 CREATE  TABLE ofertas.ciudades ( 
 	id_aut_ciudad        serial  NOT NULL ,
 	nombre               varchar(50)   ,
 	id_departamento      integer  NOT NULL ,
 	CONSTRAINT pk_ciudades_id PRIMARY KEY ( id_aut_ciudad ),
 	CONSTRAINT idx_ciudades UNIQUE ( nombre, id_departamento ) 
+ );
+
+CREATE  TABLE ofertas.facultades ( 
+	id_aut_facultad      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
  );
 
 CREATE  TABLE ofertas.localizacion ( 
@@ -153,21 +191,21 @@ CREATE  TABLE ofertas.egresados (
 	nombres              varchar(40)  NOT NULL ,
 	apellidos            varchar(40)  NOT NULL ,
 	genero               varchar(20)  NOT NULL ,
-	id_lugar_expedicion  integer  NOT NULL ,
-	id_lugar_residencia  integer  NOT NULL ,
-	id_nivel_educativo   integer  NOT NULL ,
+	id_lugar_expedicion  integer   ,
+	id_lugar_residencia  integer   ,
+	id_nivel_educativo   integer   ,
 	num_hijos            smallint DEFAULT 0  ,
-	id_lugar_nacimiento  integer  NOT NULL ,
-	fecha_nacimiento     date  NOT NULL ,
+	id_lugar_nacimiento  integer   ,
+	fecha_nacimiento     date   ,
 	estado               varchar(40)  NOT NULL ,
-	correo               varchar(100)  NOT NULL ,
-	correo_alternativo   varchar(100)  NOT NULL ,
-	estado_civil         varchar(40)  NOT NULL ,
+	correo               varchar(100)   ,
+	correo_alternativo   varchar(100)   ,
+	estado_civil         varchar(40)   ,
 	ha_trabajado         bool   ,
 	trabaja_actualmente  bool   ,
 	id_aut_user          integer   ,
 	grupo_etnico         varchar(40)   ,
-	celular              varchar(16)  NOT NULL ,
+	celular              varchar(16)   ,
 	telefono_fijo        varchar(16)   ,
 	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )
  );
@@ -226,16 +264,25 @@ CREATE  TABLE ofertas.experiencia (
 	trabajo_en_su_area   bool   ,
 	sector               varchar(40)   ,
 	id_ciudad            integer  NOT NULL ,
+	fecha_inicio         date  NOT NULL ,
+	fecha_fin            date   ,
 	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp )
  );
 
 COMMENT ON COLUMN ofertas.experiencia.sector IS 'Publico=0\nPrivado=1';
 
-CREATE  TABLE ofertas.facultades ( 
-	id_aut_facultad      serial  NOT NULL ,
-	nombre               varchar(60)  NOT NULL ,
-	id_direccion         integer   ,
-	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
+CREATE  TABLE ofertas.grados ( 
+	id_num_acta          integer DEFAULT 50 NOT NULL ,
+	tipo_grado           varchar(60)   ,
+	mencion_honor        varchar(50)   ,
+	titulo_especial      varchar(100)   ,
+	id_tipo_de_comentarios integer   ,
+	anio_graduacion      varchar(50)  NOT NULL ,
+	fecha_graduacion     date   ,
+	id_programa          integer  NOT NULL ,
+	id_estudiante        integer  NOT NULL ,
+	CONSTRAINT idx_grados PRIMARY KEY ( id_programa, id_estudiante ),
+	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) 
  );
 
 CREATE  TABLE ofertas.ofertas ( 
@@ -258,7 +305,7 @@ CREATE  TABLE ofertas.ofertas (
 	requisitos_minimos   text  NOT NULL ,
 	id_discapacidad      integer   ,
 	num_dias_oferta      integer  NOT NULL ,
-	id_aut_nivprog       integer  NOT NULL ,
+	id_aut_nivestud      integer  NOT NULL ,
 	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta )
  );
 
@@ -309,15 +356,6 @@ CREATE  TABLE ofertas.preguntas_oferta (
 	CONSTRAINT pk_preguntas_oferta_id_aut_pregunta PRIMARY KEY ( id_aut_pregunta )
  );
 
-CREATE  TABLE ofertas.programas ( 
-	id_aut_programa      serial  NOT NULL ,
-	nombre               varchar(60)  NOT NULL ,
-	id_facultad          integer   ,
-	id_sede              integer   ,
-	id_nivelprogra       integer   ,
-	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa )
- );
-
 CREATE  TABLE ofertas.programas_ofertas ( 
 	id_oferta            integer  NOT NULL ,
 	id_programa          integer  NOT NULL ,
@@ -332,19 +370,6 @@ CREATE  TABLE ofertas.recepcion_hv (
 	apellidos            varchar(60)  NOT NULL ,
 	telefono_movil       varchar(16)  NOT NULL ,
 	CONSTRAINT pk_recepcion_hv_id_aut_recepcionhv PRIMARY KEY ( id_aut_recepcionhv )
- );
-
-CREATE  TABLE ofertas.referidos ( 
-	id_aut_referido      serial  NOT NULL ,
-	id_egresado          integer   ,
-	nombres              varchar(100)  NOT NULL ,
-	id_nivel_educativo   integer   ,
-	telefono_movil       varchar(16)  NOT NULL ,
-	correo               varchar(60)   ,
-	parentesco           varchar(40)   ,
-	id_aut_programa      integer   ,
-	es_egresado          bool   ,
-	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido )
  );
 
 CREATE  TABLE ofertas.referidos_egresados ( 
@@ -370,12 +395,13 @@ CREATE  TABLE ofertas.solicita (
 	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado )
  );
 
-CREATE  TABLE ofertas.titulo ( 
-	id_aut_titulo        serial  NOT NULL ,
-	nombre               varchar(50)  NOT NULL ,
-	id_programa          integer  NOT NULL ,
-	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo ),
-	CONSTRAINT idx_titulo_id_programa UNIQUE ( id_programa ) 
+CREATE  TABLE ofertas.tipo_de_observacion ( 
+	id_aut_comentario    serial  NOT NULL ,
+	sugerencia_programa  text  NOT NULL ,
+	opinio_universidad_futuro text  NOT NULL ,
+	nombre_docente_influyo varchar(60)  NOT NULL ,
+	id_grado             integer  NOT NULL ,
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
  );
 
 CREATE  TABLE ofertas.ubicacion_oferta ( 
@@ -413,34 +439,11 @@ CREATE  TABLE ofertas.contratos (
 	CONSTRAINT idx_contratos_oferta UNIQUE ( id_oferta ) 
  );
 
-CREATE  TABLE ofertas.grados ( 
-	id_num_acta          integer DEFAULT 50 NOT NULL ,
-	tipo_grado           varchar(60)   ,
-	mencion_honor        varchar(50)   ,
-	titulo_especial      varchar(100)   ,
-	id_tipo_de_comentarios integer   ,
-	anio_graduacion      varchar(50)  NOT NULL ,
-	fecha_graduacion     date   ,
-	id_programa          integer  NOT NULL ,
-	id_estudiante        integer  NOT NULL ,
-	CONSTRAINT idx_grados PRIMARY KEY ( id_programa, id_estudiante ),
-	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) 
- );
-
 CREATE  TABLE ofertas.postulaciones_respuestas ( 
 	id_egresado          integer  NOT NULL ,
 	id_pregunta          integer  NOT NULL ,
 	respuesta            text  NOT NULL ,
 	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta )
- );
-
-CREATE  TABLE ofertas.tipo_de_observacion ( 
-	id_aut_comentario    serial  NOT NULL ,
-	sugerencia_programa  text  NOT NULL ,
-	opinio_universidad_futuro text  NOT NULL ,
-	nombre_docente_influyo varchar(60)  NOT NULL ,
-	id_grado             integer  NOT NULL ,
-	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
  );
 
 ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_legal_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
@@ -483,7 +486,7 @@ ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_cargos FOREIGN KEY
 
 ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
-ALTER TABLE ofertas.facultades ADD CONSTRAINT fk_facultades_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
+ALTER TABLE ofertas.facultades ADD CONSTRAINT fk_facultades_programas FOREIGN KEY ( id_aut_facultad ) REFERENCES ofertas.programas( id_facultad );
 
 ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
@@ -501,7 +504,7 @@ ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_salarios FOREIGN KEY ( id_
 
 ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_discapacidades FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades );
 
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_areas_conocimiento FOREIGN KEY ( id_aut_nivprog ) REFERENCES ofertas.nivel_programa( id_aut_nivprogra );
+ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_niveles_estudio FOREIGN KEY ( id_aut_nivestud ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
 
 ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
@@ -527,11 +530,9 @@ ALTER TABLE ofertas.postulaciones_respuestas ADD CONSTRAINT fk_postulaciones_res
 
 ALTER TABLE ofertas.preguntas_oferta ADD CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
-
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede );
 
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_nivel_programa FOREIGN KEY ( id_nivelprogra ) REFERENCES ofertas.nivel_programa( id_aut_nivprogra );
+ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
 
 ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
@@ -557,7 +558,7 @@ ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIG
 
 ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios );
 
-ALTER TABLE ofertas.titulo ADD CONSTRAINT fk_titulo_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
+ALTER TABLE ofertas.titulo ADD CONSTRAINT fk_titulo_programas FOREIGN KEY ( id_aut_titulo ) REFERENCES ofertas.programas( id_titulo );
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
