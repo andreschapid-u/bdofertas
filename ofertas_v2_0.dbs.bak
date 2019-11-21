@@ -282,7 +282,9 @@ Privado=1]]></comment>
 			<index name="pk_facultades_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_facultad" />
 			</index>
-			<fk name="fk_facultades_localizacion" to_schema="ofertas" to_table="localizacion" />
+			<fk name="fk_facultades_programas" to_schema="ofertas" to_table="programas" >
+				<fk_column name="id_aut_facultad" pk="id_facultad" />
+			</fk>
 		</table>
 		<table name="grados" >
 			<column name="id_num_acta" type="integer" jt="4" mandatory="y" >
@@ -547,9 +549,9 @@ Privado=1]]></comment>
 			<index name="unq_programas_id_titulo" unique="UNIQUE" >
 				<column name="id_titulo" />
 			</index>
-			<fk name="fk_programas_facultades" to_schema="ofertas" to_table="facultades" >
-				<fk_column name="id_facultad" pk="id_aut_facultad" />
-			</fk>
+			<index name="unq_programas_id_facultad" unique="UNIQUE" >
+				<column name="id_facultad" />
+			</index>
 			<fk name="fk_programas_programas" to_schema="ofertas" to_table="sede" >
 				<fk_column name="id_sede" pk="id_aut_sede" />
 			</fk>
@@ -789,12 +791,12 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="368" y="432" />
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1440" y="704" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="544" y="208" />
-		<entity schema="ofertas" name="facultades" color="C1D8EE" x="752" y="1088" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1264" y="1184" />
 		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="336" y="848" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="304" y="1232" />
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="48" y="1248" />
 		<entity schema="ofertas" name="egresados" color="008080" x="656" y="656" />
+		<entity schema="ofertas" name="facultades" color="C1D8EE" x="688" y="1056" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
