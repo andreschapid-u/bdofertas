@@ -1,5 +1,4 @@
 drop schema if exist ofertas cascade;
-
 CREATE SCHEMA ofertas;
 
 CREATE  TABLE ofertas.areas_conocimiento ( 
@@ -155,12 +154,10 @@ CREATE  TABLE ofertas.programas (
 	id_nivelestudio      integer   ,
 	id_titulo            integer   ,
 	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa ),
-	CONSTRAINT unq_programas_id_titulo UNIQUE ( id_titulo ) ,
-	CONSTRAINT unq_programas_id_facultad UNIQUE ( id_facultad ) ,
 	CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede )  ,
 	CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
-	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  ,
-	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  
+	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  ,
+	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  
  );
 
 CREATE  TABLE ofertas.referidos ( 
