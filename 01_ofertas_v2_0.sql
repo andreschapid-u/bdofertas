@@ -115,7 +115,8 @@ CREATE  TABLE ofertas.sub_sectores (
 	id_aut_sub_sector    serial  NOT NULL ,
 	nombre               varchar(100)  NOT NULL ,
 	id_sectores          integer  NOT NULL ,
-	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector )
+	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector ),
+	CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector )  
  );
 
 CREATE  TABLE ofertas.titulo ( 
@@ -131,7 +132,8 @@ CREATE  TABLE ofertas.users (
 	id_rol               integer  NOT NULL ,
 	codigo_verificacion  varchar(60)   ,
 	activo               bool DEFAULT false NOT NULL ,
-	CONSTRAINT pk_users_id PRIMARY KEY ( id_aut_user )
+	CONSTRAINT pk_users_id PRIMARY KEY ( id_aut_user ),
+	CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.roles( id_aut_rol )  
  );
 
 CREATE  TABLE ofertas.departamentos ( 
@@ -139,7 +141,8 @@ CREATE  TABLE ofertas.departamentos (
 	nombre               varchar(50)  NOT NULL ,
 	id_pais_fk           integer  NOT NULL ,
 	CONSTRAINT pk_departamento_id PRIMARY KEY ( id_aut_dep ),
-	CONSTRAINT idx_departamentos UNIQUE ( nombre, id_pais_fk ) 
+	CONSTRAINT idx_departamentos UNIQUE ( nombre, id_pais_fk ) ,
+	CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais )  
  );
 
 CREATE  TABLE ofertas.programas ( 
@@ -151,7 +154,11 @@ CREATE  TABLE ofertas.programas (
 	id_titulo            integer   ,
 	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa ),
 	CONSTRAINT unq_programas_id_titulo UNIQUE ( id_titulo ) ,
-	CONSTRAINT unq_programas_id_facultad UNIQUE ( id_facultad ) 
+	CONSTRAINT unq_programas_id_facultad UNIQUE ( id_facultad ) ,
+	CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede )  ,
+	CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  ,
+	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  
  );
 
 CREATE  TABLE ofertas.referidos ( 
@@ -164,7 +171,9 @@ CREATE  TABLE ofertas.referidos (
 	parentesco           varchar(40)   ,
 	id_aut_programa      integer   ,
 	es_egresado          bool   ,
-	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido )
+	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido ),
+	CONSTRAINT fk_referidos_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_referidos_programas FOREIGN KEY ( id_aut_programa ) REFERENCES ofertas.programas( id_aut_programa )  
  );
 
 CREATE  TABLE ofertas.ciudades ( 
@@ -172,7 +181,8 @@ CREATE  TABLE ofertas.ciudades (
 	nombre               varchar(50)   ,
 	id_departamento      integer  NOT NULL ,
 	CONSTRAINT pk_ciudades_id PRIMARY KEY ( id_aut_ciudad ),
-	CONSTRAINT idx_ciudades UNIQUE ( nombre, id_departamento ) 
+	CONSTRAINT idx_ciudades UNIQUE ( nombre, id_departamento ) ,
+	CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep )  
  );
 
 CREATE  TABLE ofertas.localizacion ( 
@@ -181,7 +191,8 @@ CREATE  TABLE ofertas.localizacion (
 	direccion            varchar(100)  NOT NULL ,
 	barrio               varchar(40)   ,
 	id_ciudad            integer  NOT NULL ,
-	CONSTRAINT pk_localizacion_id PRIMARY KEY ( id_aut_localizacion )
+	CONSTRAINT pk_localizacion_id PRIMARY KEY ( id_aut_localizacion ),
+	CONSTRAINT fk_localizacion_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
  );
 
 CREATE  TABLE ofertas.egresados ( 
@@ -206,13 +217,21 @@ CREATE  TABLE ofertas.egresados (
 	grupo_etnico         varchar(40)   ,
 	celular              varchar(16)   ,
 	telefono_fijo        varchar(16)   ,
-	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )
+	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado ),
+	CONSTRAINT fk_egresados_ciudades FOREIGN KEY ( id_lugar_expedicion ) REFERENCES ofertas.ciudades( id_aut_ciudad )  ,
+	CONSTRAINT fk_egresados_localizacion FOREIGN KEY ( id_lugar_residencia ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
+	CONSTRAINT fk_egresados_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_egresados_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  ,
+	CONSTRAINT fk_egresados_nacimiento_ciudades FOREIGN KEY ( id_lugar_nacimiento ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
  );
 
 CREATE  TABLE ofertas.egresados_discapacidades ( 
 	id_egresado          integer  NOT NULL ,
 	id_discapacidad      integer  NOT NULL ,
-	CONSTRAINT idx_egresados_discapacidades PRIMARY KEY ( id_egresado, id_discapacidad )
+	descripcion          varchar(80)   ,
+	CONSTRAINT idx_egresados_discapacidades PRIMARY KEY ( id_egresado, id_discapacidad ),
+	CONSTRAINT fk_egresados_discapacidades_egresado FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_egresados_discapacidades_discap FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades )  
  );
 
 CREATE  TABLE ofertas.empresas ( 
@@ -239,13 +258,16 @@ CREATE  TABLE ofertas.empresas (
 	descripcion          text   ,
 	CONSTRAINT pk_empresas_id PRIMARY KEY ( id_aut_empresa ),
 	CONSTRAINT idx_empresas_unique_nombre UNIQUE ( nombre ) ,
-	CONSTRAINT idx_empresas_unique_nit UNIQUE ( nit ) 
+	CONSTRAINT idx_empresas_unique_nit UNIQUE ( nit ) ,
+	CONSTRAINT fk_empresas_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  
  );
 
 CREATE  TABLE ofertas.empresas_sectores ( 
 	id_empresa           integer  NOT NULL ,
 	id_sub_sector        integer  NOT NULL ,
-	CONSTRAINT idx_empresas_sectores PRIMARY KEY ( id_empresa, id_sub_sector )
+	CONSTRAINT idx_empresas_sectores PRIMARY KEY ( id_empresa, id_sub_sector ),
+	CONSTRAINT fk_empresas_sectores_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_empresas_sectores_sector FOREIGN KEY ( id_sub_sector ) REFERENCES ofertas.sub_sectores( id_aut_sub_sector )  
  );
 
 CREATE  TABLE ofertas.experiencia ( 
@@ -265,7 +287,10 @@ CREATE  TABLE ofertas.experiencia (
 	id_ciudad            integer  NOT NULL ,
 	fecha_inicio         date  NOT NULL ,
 	fecha_fin            date   ,
-	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp )
+	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp ),
+	CONSTRAINT fk_cargos_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_experiencia_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
  );
 
 COMMENT ON COLUMN ofertas.experiencia.sector IS 'Publico=0\nPrivado=1';
@@ -281,7 +306,9 @@ CREATE  TABLE ofertas.grados (
 	id_programa          integer  NOT NULL ,
 	id_estudiante        integer  NOT NULL ,
 	CONSTRAINT idx_grados PRIMARY KEY ( id_programa, id_estudiante ),
-	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) 
+	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) ,
+	CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
+	CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_estudiante ) REFERENCES ofertas.egresados( id_aut_egresado )  
  );
 
 CREATE  TABLE ofertas.ofertas ( 
@@ -305,13 +332,21 @@ CREATE  TABLE ofertas.ofertas (
 	id_discapacidad      integer   ,
 	num_dias_oferta      integer  NOT NULL ,
 	id_aut_nivestud      integer  NOT NULL ,
-	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta )
+	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta ),
+	CONSTRAINT fk_ofertas_empresas FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_ofertas_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_ofertas_sectores FOREIGN KEY ( id_sector ) REFERENCES ofertas.sectores( id_aut_sector )  ,
+	CONSTRAINT fk_ofertas_salarios FOREIGN KEY ( id_forma_pago ) REFERENCES ofertas.salarios( id_aut_salario )  ,
+	CONSTRAINT fk_ofertas_discapacidades FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades )  ,
+	CONSTRAINT fk_ofertas_niveles_estudio FOREIGN KEY ( id_aut_nivestud ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  
  );
 
 CREATE  TABLE ofertas.ofertas_areascon ( 
 	id_aut_oferta        integer  NOT NULL ,
 	id_areaconocimiento  integer  NOT NULL ,
-	CONSTRAINT idx_ofertas_areascon PRIMARY KEY ( id_aut_oferta, id_areaconocimiento )
+	CONSTRAINT idx_ofertas_areascon PRIMARY KEY ( id_aut_oferta, id_areaconocimiento ),
+	CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ofertas_areascon FOREIGN KEY ( id_areaconocimiento ) REFERENCES ofertas.areas_conocimiento( id_aut_areaconocimiento ) ON DELETE CASCADE ON UPDATE CASCADE
  );
 
 CREATE  TABLE ofertas.ofertas_idiomas ( 
@@ -320,7 +355,9 @@ CREATE  TABLE ofertas.ofertas_idiomas (
 	nivel_escritura      varchar(20)  NOT NULL ,
 	nivel_lectura        varchar(20)  NOT NULL ,
 	nivel_conversacion   varchar(20)  NOT NULL ,
-	CONSTRAINT idx_ofertas_idiomas PRIMARY KEY ( id_oferta, id_idioma )
+	CONSTRAINT idx_ofertas_idiomas PRIMARY KEY ( id_oferta, id_idioma ),
+	CONSTRAINT fk_ofertas_idiomas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ofertas_idiomas_idiomas FOREIGN KEY ( id_idioma ) REFERENCES ofertas.idiomas( id_aut_idioma )  
  );
 
 CREATE  TABLE ofertas.ofertas_software ( 
@@ -328,14 +365,17 @@ CREATE  TABLE ofertas.ofertas_software (
 	id_oferta            integer  NOT NULL ,
 	nombre               varchar(60)  NOT NULL ,
 	nivel                varchar(20)  NOT NULL ,
-	CONSTRAINT idx_ofertas_software PRIMARY KEY ( id_software )
+	CONSTRAINT idx_ofertas_software PRIMARY KEY ( id_software ),
+	CONSTRAINT fk_ofertas_software_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
  );
 
 CREATE  TABLE ofertas.participa ( 
 	id_egresado          integer  NOT NULL ,
 	id_evento            integer  NOT NULL ,
 	como_se_entero       varchar(50)  NOT NULL ,
-	CONSTRAINT idx_participa PRIMARY KEY ( id_egresado, id_evento )
+	CONSTRAINT idx_participa PRIMARY KEY ( id_egresado, id_evento ),
+	CONSTRAINT fk_participa_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_participa_evento FOREIGN KEY ( id_evento ) REFERENCES ofertas.evento( id_aut_evento )  
  );
 
 CREATE  TABLE ofertas.postulaciones ( 
@@ -345,20 +385,25 @@ CREATE  TABLE ofertas.postulaciones (
 	fecha_revision_empresa date   ,
 	estado               varchar(30)   ,
 	CONSTRAINT idx_postulaciones PRIMARY KEY ( id_aut_egresado, id_aut_oferta ),
-	CONSTRAINT unq_postulaciones_id_aut_egresado UNIQUE ( id_aut_egresado ) 
+	CONSTRAINT unq_postulaciones_id_aut_egresado UNIQUE ( id_aut_egresado ) ,
+	CONSTRAINT fk_postulaciones_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_postulaciones_egresados FOREIGN KEY ( id_aut_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
  );
 
 CREATE  TABLE ofertas.preguntas_oferta ( 
 	id_aut_pregunta      serial  NOT NULL ,
 	pregunta             text  NOT NULL ,
 	id_oferta            integer  NOT NULL ,
-	CONSTRAINT pk_preguntas_oferta_id_aut_pregunta PRIMARY KEY ( id_aut_pregunta )
+	CONSTRAINT pk_preguntas_oferta_id_aut_pregunta PRIMARY KEY ( id_aut_pregunta ),
+	CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
  );
 
 CREATE  TABLE ofertas.programas_ofertas ( 
 	id_oferta            integer  NOT NULL ,
 	id_programa          integer  NOT NULL ,
-	CONSTRAINT idx_programas_ofertas PRIMARY KEY ( id_oferta, id_programa )
+	CONSTRAINT idx_programas_ofertas PRIMARY KEY ( id_oferta, id_programa ),
+	CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
+	CONSTRAINT fk_programas_ofertas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta )  
  );
 
 CREATE  TABLE ofertas.recepcion_hv ( 
@@ -368,13 +413,16 @@ CREATE  TABLE ofertas.recepcion_hv (
 	nombres              varchar(30)  NOT NULL ,
 	apellidos            varchar(60)  NOT NULL ,
 	telefono_movil       varchar(16)  NOT NULL ,
-	CONSTRAINT pk_recepcion_hv_id_aut_recepcionhv PRIMARY KEY ( id_aut_recepcionhv )
+	CONSTRAINT pk_recepcion_hv_id_aut_recepcionhv PRIMARY KEY ( id_aut_recepcionhv ),
+	CONSTRAINT fk_recepcion_hv_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
  );
 
 CREATE  TABLE ofertas.referidos_egresados ( 
 	id_egresados         integer  NOT NULL ,
 	id_referidos         integer  NOT NULL ,
-	CONSTRAINT idx_referidos_egresados PRIMARY KEY ( id_egresados, id_referidos )
+	CONSTRAINT idx_referidos_egresados PRIMARY KEY ( id_egresados, id_referidos ),
+	CONSTRAINT fk_referidos_egresados_egresados FOREIGN KEY ( id_egresados ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_referidos_egresados_referidos FOREIGN KEY ( id_referidos ) REFERENCES ofertas.referidos( id_aut_referido )  
  );
 
 CREATE  TABLE ofertas.representante_empresa ( 
@@ -385,13 +433,16 @@ CREATE  TABLE ofertas.representante_empresa (
 	telefono             varchar(16)   ,
 	telefono_movil       varchar(16)  NOT NULL ,
 	CONSTRAINT pk_table_0_id_aut_administrador_empresa PRIMARY KEY ( id_aut_representante_empresa ),
-	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) 
+	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) ,
+	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  
  );
 
 CREATE  TABLE ofertas.solicita ( 
 	id_carnetizacion     integer  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
-	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado )
+	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado ),
+	CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion )  ,
+	CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
  );
 
 CREATE  TABLE ofertas.tipo_de_observacion ( 
@@ -400,13 +451,16 @@ CREATE  TABLE ofertas.tipo_de_observacion (
 	opinio_universidad_futuro text  NOT NULL ,
 	nombre_docente_influyo varchar(60)  NOT NULL ,
 	id_grado             integer  NOT NULL ,
-	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario ),
+	CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios )  
  );
 
 CREATE  TABLE ofertas.ubicacion_oferta ( 
 	id_oferta            integer  NOT NULL ,
 	id_ciudad            integer  NOT NULL ,
-	CONSTRAINT idx_ubicacion_oferta PRIMARY KEY ( id_oferta, id_ciudad )
+	CONSTRAINT idx_ubicacion_oferta PRIMARY KEY ( id_oferta, id_ciudad ),
+	CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
  );
 
 CREATE  TABLE ofertas.administrador_empresa ( 
@@ -423,7 +477,11 @@ CREATE  TABLE ofertas.administrador_empresa (
 	id_aut_user          integer  NOT NULL ,
 	CONSTRAINT pk_representante_legal_id PRIMARY KEY ( id_aut_administrador_empresa ),
 	CONSTRAINT idx_administrador_empresa_0 UNIQUE ( id_empresa ) ,
-	CONSTRAINT idx_administrador_empresa_1 UNIQUE ( correo_corporativo ) 
+	CONSTRAINT idx_administrador_empresa_1 UNIQUE ( correo_corporativo ) ,
+	CONSTRAINT fk_representante_legal_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
+	CONSTRAINT fk_representante_legal_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  
  );
 
 CREATE  TABLE ofertas.contratos ( 
@@ -435,132 +493,15 @@ CREATE  TABLE ofertas.contratos (
 	comentarios_salario  text   ,
 	id_oferta            integer  NOT NULL ,
 	CONSTRAINT pk_contratos_id_aut_contrato PRIMARY KEY ( id_aut_contrato ),
-	CONSTRAINT idx_contratos_oferta UNIQUE ( id_oferta ) 
+	CONSTRAINT idx_contratos_oferta UNIQUE ( id_oferta ) ,
+	CONSTRAINT fk_contratos_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
  );
 
 CREATE  TABLE ofertas.postulaciones_respuestas ( 
 	id_egresado          integer  NOT NULL ,
 	id_pregunta          integer  NOT NULL ,
 	respuesta            text  NOT NULL ,
-	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta )
+	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta ),
+	CONSTRAINT fk_postulaciones_respuestas_postulaciones FOREIGN KEY ( id_egresado ) REFERENCES ofertas.postulaciones( id_aut_egresado )  ,
+	CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta )  
  );
-
-ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_legal_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
-
-ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_legal_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa );
-
-ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos );
-
-ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user );
-
-ALTER TABLE ofertas.ciudades ADD CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep );
-
-ALTER TABLE ofertas.contratos ADD CONSTRAINT fk_contratos_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.departamentos ADD CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais );
-
-ALTER TABLE ofertas.egresados ADD CONSTRAINT fk_egresados_ciudades FOREIGN KEY ( id_lugar_expedicion ) REFERENCES ofertas.ciudades( id_aut_ciudad );
-
-ALTER TABLE ofertas.egresados ADD CONSTRAINT fk_egresados_localizacion FOREIGN KEY ( id_lugar_residencia ) REFERENCES ofertas.localizacion( id_aut_localizacion );
-
-ALTER TABLE ofertas.egresados ADD CONSTRAINT fk_egresados_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
-
-ALTER TABLE ofertas.egresados ADD CONSTRAINT fk_egresados_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user );
-
-ALTER TABLE ofertas.egresados ADD CONSTRAINT fk_egresados_nacimiento_ciudades FOREIGN KEY ( id_lugar_nacimiento ) REFERENCES ofertas.ciudades( id_aut_ciudad );
-
-ALTER TABLE ofertas.egresados_discapacidades ADD CONSTRAINT fk_egresados_discapacidades_egresado FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.egresados_discapacidades ADD CONSTRAINT fk_egresados_discapacidades_discap FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades );
-
-ALTER TABLE ofertas.empresas ADD CONSTRAINT fk_empresas_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
-
-ALTER TABLE ofertas.empresas_sectores ADD CONSTRAINT fk_empresas_sectores_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa );
-
-ALTER TABLE ofertas.empresas_sectores ADD CONSTRAINT fk_empresas_sectores_sector FOREIGN KEY ( id_sub_sector ) REFERENCES ofertas.sub_sectores( id_aut_sub_sector );
-
-ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_cargos_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos );
-
-ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
-
-ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
-
-ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_estudiante ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.localizacion ADD CONSTRAINT fk_localizacion_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
-
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_empresas FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa );
-
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos );
-
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_sectores FOREIGN KEY ( id_sector ) REFERENCES ofertas.sectores( id_aut_sector );
-
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_salarios FOREIGN KEY ( id_forma_pago ) REFERENCES ofertas.salarios( id_aut_salario );
-
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_discapacidades FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades );
-
-ALTER TABLE ofertas.ofertas ADD CONSTRAINT fk_ofertas_niveles_estudio FOREIGN KEY ( id_aut_nivestud ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
-
-ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.ofertas_areascon ADD CONSTRAINT fk_ofertas_areascon FOREIGN KEY ( id_areaconocimiento ) REFERENCES ofertas.areas_conocimiento( id_aut_areaconocimiento ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.ofertas_idiomas ADD CONSTRAINT fk_ofertas_idiomas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.ofertas_idiomas ADD CONSTRAINT fk_ofertas_idiomas_idiomas FOREIGN KEY ( id_idioma ) REFERENCES ofertas.idiomas( id_aut_idioma );
-
-ALTER TABLE ofertas.ofertas_software ADD CONSTRAINT fk_ofertas_software_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.participa ADD CONSTRAINT fk_participa_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.participa ADD CONSTRAINT fk_participa_evento FOREIGN KEY ( id_evento ) REFERENCES ofertas.evento( id_aut_evento );
-
-ALTER TABLE ofertas.postulaciones ADD CONSTRAINT fk_postulaciones_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.postulaciones ADD CONSTRAINT fk_postulaciones_egresados FOREIGN KEY ( id_aut_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.postulaciones_respuestas ADD CONSTRAINT fk_postulaciones_respuestas_postulaciones FOREIGN KEY ( id_egresado ) REFERENCES ofertas.postulaciones( id_aut_egresado );
-
-ALTER TABLE ofertas.postulaciones_respuestas ADD CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta );
-
-ALTER TABLE ofertas.preguntas_oferta ADD CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede );
-
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
-
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo );
-
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
-
-ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
-
-ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta );
-
-ALTER TABLE ofertas.recepcion_hv ADD CONSTRAINT fk_recepcion_hv_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.referidos ADD CONSTRAINT fk_referidos_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
-
-ALTER TABLE ofertas.referidos ADD CONSTRAINT fk_referidos_programas FOREIGN KEY ( id_aut_programa ) REFERENCES ofertas.programas( id_aut_programa );
-
-ALTER TABLE ofertas.referidos_egresados ADD CONSTRAINT fk_referidos_egresados_egresados FOREIGN KEY ( id_egresados ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.referidos_egresados ADD CONSTRAINT fk_referidos_egresados_referidos FOREIGN KEY ( id_referidos ) REFERENCES ofertas.referidos( id_aut_referido );
-
-ALTER TABLE ofertas.representante_empresa ADD CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa );
-
-ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion );
-
-ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
-
-ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector );
-
-ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios );
-
-ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
-
-ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
-
-ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.roles( id_aut_rol );
