@@ -536,7 +536,7 @@ Privado=1]]></comment>
 		</table>
 		<table name="programas" >
 			<column name="id_aut_programa" type="serial" jt="4" mandatory="y" />
-			<column name="nombre" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="nombre" type="varchar" length="150" jt="12" mandatory="y" />
 			<column name="id_facultad" type="integer" jt="4" />
 			<column name="id_sede" type="integer" jt="4" />
 			<column name="id_nivelestudio" type="integer" jt="4" />
