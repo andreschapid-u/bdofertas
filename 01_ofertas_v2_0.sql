@@ -1,3 +1,5 @@
+drop schema if exist ofertas cascade;
+
 CREATE SCHEMA ofertas;
 
 CREATE  TABLE ofertas.areas_conocimiento ( 
