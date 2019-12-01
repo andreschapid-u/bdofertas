@@ -1,248 +1,247 @@
 --Paises
-INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES 
-(1,'Afghanistan'),
-(2,'Albania'),
-(3,'Algeria'),
-(4,'American Samoa'),
-(5,'Andorra'),
-(6,'Angola'),
-(7,'Anguilla'),
-(8,'Antarctica'),
-(9,'Antigua And Barbuda'),
-(10,'Argentina'),
-(11,'Armenia'),
-(12,'Aruba'),
-(13,'Australia'),
-(14,'Austria'),
-(15,'Azerbaijan'),
-(16,'Bahamas The'),
-(17,'Bahrain'),
-(18,'Bangladesh'),
-(19,'Barbados'),
-(20,'Belarus'),
-(21,'Belgium'),
-(22,'Belize'),
-(23,'Benin'),
-(24,'Bermuda'),
-(25,'Bhutan'),
-(26,'Bolivia'),
-(27,'Bosnia and Herzegovina'),
-(28,'Botswana'),
-(29,'Bouvet Island'),
-(30,'Brazil'),
-(31,'British Indian Ocean Territory'),
-(32,'Brunei'),
-(33,'Bulgaria'),
-(34,'Burkina Faso'),
-(35,'Burundi'),
-(36,'Cambodia'),
-(37,'Cameroon'),
-(38,'Canada'),
-(39,'Cape Verde'),
-(40,'Cayman Islands'),
-(41,'Central African Republic'),
-(42,'Chad'),
-(43,'Chile'),
-(44,'China'),
-(45,'Christmas Island'),
-(46,'Cocos (Keeling) Islands'),
-(47,'Colombia'),
-(48,'Comoros'),
-(49,'Republic Of The Congo'),
-(50,'Democratic Republic Of The Congo'),
-(51,'Cook Islands'),
-(52,'Costa Rica'),
-(53,'Cote D''Ivoire (Ivory Coast)'),
-(54,'Croatia'),
-(55,'Cuba'),
-(56,'Cyprus'),
-(57,'Czech Republic'),
-(58,'Denmark'),
-(59,'Djibouti'),
-(60,'Dominica'),
-(61,'Dominican Republic'),
-(62,'East Timor'),
-(63,'Ecuador'),
-(64,'Egypt'),
-(65,'El Salvador'),
-(66,'Equatorial Guinea'),
-(67,'Eritrea'),
-(68,'Estonia'),
-(69,'Ethiopia'),
-(70,'External Territories of Australia'),
-(71,'Falkland Islands'),
-(72,'Faroe Islands'),
-(73,'Fiji Islands'),
-(74,'Finland'),
-(75,'France'),
-(76,'French Guiana'),
-(77,'French Polynesia'),
-(78,'French Southern Territories'),
-(79,'Gabon'),
-(80,'Gambia The'),
-(81,'Georgia'),
-(82,'Germany'),
-(83,'Ghana'),
-(84,'Gibraltar'),
-(85,'Greece'),
-(86,'Greenland'),
-(87,'Grenada'),
-(88,'Guadeloupe'),
-(89,'Guam'),
-(90,'Guatemala'),
-(91,'Guernsey and Alderney'),
-(92,'Guinea'),
-(93,'Guinea-Bissau'),
-(94,'Guyana'),
-(95,'Haiti'),
-(96,'Heard and McDonald Islands'),
-(97,'Honduras'),
-(98,'Hong Kong S.A.R.'),
-(99,'Hungary'),
-(100,'Iceland'),
-(101,'India'),
-(102,'Indonesia'),
-(103,'Iran'),
-(104,'Iraq'),
-(105,'Ireland'),
-(106,'Israel'),
-(107,'Italy'),
-(108,'Jamaica'),
-(109,'Japan'),
-(110,'Jersey'),
-(111,'Jordan'),
-(112,'Kazakhstan'),
-(113,'Kenya'),
-(114,'Kiribati'),
-(115,'Korea North'),
-(116,'Korea South'),
-(117,'Kuwait'),
-(118,'Kyrgyzstan'),
-(119,'Laos'),
-(120,'Latvia'),
-(121,'Lebanon'),
-(122,'Lesotho'),
-(123,'Liberia'),
-(124,'Libya'),
-(125,'Liechtenstein'),
-(126,'Lithuania'),
-(127,'Luxembourg'),
-(128,'Macau S.A.R.'),
-(129,'Macedonia'),
-(130,'Madagascar'),
-(131,'Malawi'),
-(132,'Malaysia'),
-(133,'Maldives'),
-(134,'Mali'),
-(135,'Malta'),
-(136,'Man (Isle of)'),
-(137,'Marshall Islands'),
-(138,'Martinique'),
-(139,'Mauritania'),
-(140,'Mauritius'),
-(141,'Mayotte'),
-(142,'Mexico'),
-(143,'Micronesia'),
-(144,'Moldova'),
-(145,'Monaco'),
-(146,'Mongolia'),
-(147,'Montserrat'),
-(148,'Morocco'),
-(149,'Mozambique'),
-(150,'Myanmar'),
-(151,'Namibia'),
-(152,'Nauru'),
-(153,'Nepal'),
-(154,'Netherlands Antilles'),
-(155,'Netherlands The'),
-(156,'New Caledonia'),
-(157,'New Zealand'),
-(158,'Nicaragua'),
-(159,'Niger'),
-(160,'Nigeria'),
-(161,'Niue'),
-(162,'Norfolk Island'),
-(163,'Northern Mariana Islands'),
-(164,'Norway'),
-(165,'Oman'),
-(166,'Pakistan'),
-(167,'Palau'),
-(168,'Palestinian Territory Occupied'),
-(169,'Panama'),
-(170,'Papua new Guinea'),
-(171,'Paraguay'),
-(172,'Peru'),
-(173,'Philippines'),
-(174,'Pitcairn Island'),
-(175,'Poland'),
-(176,'Portugal'),
-(177,'Puerto Rico'),
-(178,'Qatar'),
-(179,'Reunion'),
-(180,'Romania'),
-(181,'Russia'),
-(182,'Rwanda'),
-(183,'Saint Helena'),
-(184,'Saint Kitts And Nevis'),
-(185,'Saint Lucia'),
-(186,'Saint Pierre and Miquelon'),
-(187,'Saint Vincent And The Grenadines'),
-(188,'Samoa'),
-(189,'San Marino'),
-(190,'Sao Tome and Principe'),
-(191,'Saudi Arabia'),
-(192,'Senegal'),
-(193,'Serbia'),
-(194,'Seychelles'),
-(195,'Sierra Leone'),
-(196,'Singapore'),
-(197,'Slovakia'),
-(198,'Slovenia'),
-(199,'Smaller Territories of the UK'),
-(200,'Solomon Islands'),
-(201,'Somalia'),
-(202,'South Africa'),
-(203,'South Georgia'),
-(204,'South Sudan'),
-(205,'Spain'),
-(206,'Sri Lanka'),
-(207,'Sudan'),
-(208,'Suriname'),
-(209,'Svalbard And Jan Mayen Islands'),
-(210,'Swaziland'),
-(211,'Sweden'),
-(212,'Switzerland'),
-(213,'Syria'),
-(214,'Taiwan'),
-(215,'Tajikistan'),
-(216,'Tanzania'),
-(217,'Thailand'),
-(218,'Togo'),
-(219,'Tokelau'),
-(220,'Tonga'),
-(221,'Trinidad And Tobago'),
-(222,'Tunisia'),
-(223,'Turkey'),
-(224,'Turkmenistan'),
-(225,'Turks And Caicos Islands'),
-(226,'Tuvalu'),
-(227,'Uganda'),
-(228,'Ukraine'),
-(229,'United Arab Emirates'),
-(230,'United Kingdom'),
-(231,'United States'),
-(232,'United States Minor Outlying Islands'),
-(233,'Uruguay'),
-(234,'Uzbekistan'),
-(235,'Vanuatu'),
-(236,'Vatican City State (Holy See)'),
-(237,'Venezuela'),
-(238,'Vietnam'),
-(239,'Virgin Islands (British)'),
-(240,'Virgin Islands (US)'),
-(241,'Wallis And Futuna Islands'),
-(242,'Western Sahara'),
-(243,'Yemen'),
-(244,'Yugoslavia'),
-(245,'Zambia'),
-(246,'Zimbabwe');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (1,'Afghanistan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (2,'Albania');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (3,'Algeria');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (4,'American Samoa');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (5,'Andorra');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (6,'Angola');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (7,'Anguilla');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (8,'Antarctica');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (9,'Antigua And Barbuda');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (10,'Argentina');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (11,'Armenia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (12,'Aruba');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (13,'Australia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (14,'Austria');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (15,'Azerbaijan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (16,'Bahamas The');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (17,'Bahrain');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (18,'Bangladesh');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (19,'Barbados');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (20,'Belarus');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (21,'Belgium');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (22,'Belize');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (23,'Benin');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (24,'Bermuda');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (25,'Bhutan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (26,'Bolivia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (27,'Bosnia and Herzegovina');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (28,'Botswana');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (29,'Bouvet Island');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (30,'Brazil');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (31,'British Indian Ocean Territory');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (32,'Brunei');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (33,'Bulgaria');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (34,'Burkina Faso');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (35,'Burundi');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (36,'Cambodia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (37,'Cameroon');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (38,'Canada');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (39,'Cape Verde');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (40,'Cayman Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (41,'Central African Republic');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (42,'Chad');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (43,'Chile');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (44,'China');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (45,'Christmas Island');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (46,'Cocos(Keeling) Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (47,'Colombia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (48,'Comoros');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (49,'Republic Of The Congo');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (50,'Democratic Republic Of The Congo');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (51,'Cook Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (52,'Costa Rica');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (53,'Cote Ivoire(Ivory Coast)');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (54,'Croatia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (55,'Cuba');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (56,'Cyprus');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (57,'Czech Republic');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (58,'Denmark');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (59,'Djibouti');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (60,'Dominica');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (61,'Dominican Republic');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (62,'East Timor');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (63,'Ecuador');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (64,'Egypt');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (65,'El Salvador');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (66,'Equatorial Guinea');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (67,'Eritrea');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (68,'Estonia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (69,'Ethiopia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (70,'External Territories of Australia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (71,'Falkland Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (72,'Faroe Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (73,'Fiji Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (74,'Finland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (75,'France');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (76,'French Guiana');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (77,'French Polynesia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (78,'French Southern Territories');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (79,'Gabon');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (80,'Gambia The');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (81,'Georgia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (82,'Germany');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (83,'Ghana');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (84,'Gibraltar');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (85,'Greece');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (86,'Greenland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (87,'Grenada');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (88,'Guadeloupe');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (89,'Guam');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (90,'Guatemala');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (91,'Guernsey and Alderney');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (92,'Guinea');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (93,'Guinea-Bissau');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (94,'Guyana');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (95,'Haiti');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (96,'Heard and McDonald Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (97,'Honduras');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (98,'Hong Kong S.A.R.');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (99,'Hungary');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (100,'Iceland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (101,'India');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (102,'Indonesia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (103,'Iran');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (104,'Iraq');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (105,'Ireland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (106,'Israel');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (107,'Italy');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (108,'Jamaica');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (109,'Japan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (110,'Jersey');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (111,'Jordan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (112,'Kazakhstan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (113,'Kenya');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (114,'Kiribati');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (115,'Korea North');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (116,'Korea South');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (117,'Kuwait');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (118,'Kyrgyzstan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (119,'Laos');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (120,'Latvia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (121,'Lebanon');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (122,'Lesotho');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (123,'Liberia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (124,'Libya');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (125,'Liechtenstein');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (126,'Lithuania');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (127,'Luxembourg');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (128,'Macau S.A.R.');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (129,'Macedonia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (130,'Madagascar');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (131,'Malawi');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (132,'Malaysia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (133,'Maldives');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (134,'Mali');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (135,'Malta');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (136,'Man (Isle of)');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (137,'Marshall Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (138,'Martinique');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (139,'Mauritania');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (140,'Mauritius');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (141,'Mayotte');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (142,'Mexico');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (143,'Micronesia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (144,'Moldova');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (145,'Monaco');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (146,'Mongolia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (147,'Montserrat');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (148,'Morocco');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (149,'Mozambique');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (150,'Myanmar');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (151,'Namibia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (152,'Nauru');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (153,'Nepal');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (154,'Netherlands Antilles');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (155,'Netherlands The');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (156,'New Caledonia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (157,'New Zealand');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (158,'Nicaragua');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (159,'Niger');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (160,'Nigeria');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (161,'Niue');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (162,'Norfolk Island');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (163,'Northern Mariana Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (164,'Norway');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (165,'Oman');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (166,'Pakistan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (167,'Palau');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (168,'Palestinian Territory Occupied');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (169,'Panama');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (170,'Papua new Guinea');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (171,'Paraguay');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (172,'Peru');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (173,'Philippines');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (174,'Pitcairn Island');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (175,'Poland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (176,'Portugal');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (177,'Puerto Rico');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (178,'Qatar');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (179,'Reunion');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (180,'Romania');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (181,'Russia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (182,'Rwanda');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (183,'Saint Helena');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (184,'Saint Kitts And Nevis');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (185,'Saint Lucia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (186,'Saint Pierre and Miquelon');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (187,'Saint Vincent And The Grenadines');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (188,'Samoa');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (189,'San Marino');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (190,'Sao Tome and Principe');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (191,'Saudi Arabia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (192,'Senegal');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (193,'Serbia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (194,'Seychelles');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (195,'Sierra Leone');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (196,'Singapore');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (197,'Slovakia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (198,'Slovenia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (199,'Smaller Territories of the UK');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (200,'Solomon Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (201,'Somalia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (202,'South Africa');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (203,'South Georgia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (204,'South Sudan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (205,'Spain');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (206,'Sri Lanka');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (207,'Sudan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (208,'Suriname');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (209,'Svalbard And Jan Mayen Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (210,'Swaziland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (211,'Sweden');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (212,'Switzerland');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (213,'Syria');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (214,'Taiwan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (215,'Tajikistan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (216,'Tanzania');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (217,'Thailand');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (218,'Togo');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (219,'Tokelau');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (220,'Tonga');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (221,'Trinidad And Tobago');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (222,'Tunisia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (223,'Turkey');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (224,'Turkmenistan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (225,'Turks And Caicos Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (226,'Tuvalu');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (227,'Uganda');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (228,'Ukraine');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (229,'United Arab Emirates');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (230,'United Kingdom');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (231,'United States');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (232,'United States Minor Outlying Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (233,'Uruguay');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (234,'Uzbekistan');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (235,'Vanuatu');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (236,'Vatican City State(Holy See)');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (237,'Venezuela');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (238,'Vietnam');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (239,'Virgin Islands (British)');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (240,'Virgin Islands(US)');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (241,'Wallis And Futuna Islands');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (242,'Western Sahara');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (243,'Yemen');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (244,'Yugoslavia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (245,'Zambia');
+INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (246,'Zimbabwe');
