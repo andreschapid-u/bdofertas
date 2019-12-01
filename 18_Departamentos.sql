@@ -2179,7 +2179,7 @@ INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2177,'
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2178,'Nimba',123);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2179,'Rivercess',123);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2180,'Sinoe',123);
-INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2181,'Ajdabiya',124););
+INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2181,'Ajdabiya',124);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2182,'Fezzan',124);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2183,'Banghazi',124);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2184,'Darnah',124);
