@@ -123,7 +123,7 @@ CREATE  TABLE ofertas.sub_sectores (
 
 CREATE  TABLE ofertas.titulo ( 
 	id_aut_titulo        serial  NOT NULL ,
-	nombre               varchar(50)  NOT NULL ,
+	nombre               varchar(150)  NOT NULL ,
 	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
  );
 
@@ -163,7 +163,6 @@ CREATE  TABLE ofertas.programas (
 
 CREATE  TABLE ofertas.referidos ( 
 	id_aut_referido      serial  NOT NULL ,
-	id_egresado          integer   ,
 	nombres              varchar(100)  NOT NULL ,
 	id_nivel_educativo   integer   ,
 	telefono_movil       varchar(16)  NOT NULL ,
@@ -217,6 +216,7 @@ CREATE  TABLE ofertas.egresados (
 	grupo_etnico         varchar(40)   ,
 	celular              varchar(16)   ,
 	telefono_fijo        varchar(16)   ,
+	estado_completar     bool  NOT NULL ,
 	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado ),
 	CONSTRAINT fk_egresados_ciudades FOREIGN KEY ( id_lugar_expedicion ) REFERENCES ofertas.ciudades( id_aut_ciudad )  ,
 	CONSTRAINT fk_egresados_localizacion FOREIGN KEY ( id_lugar_residencia ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
@@ -272,7 +272,7 @@ CREATE  TABLE ofertas.empresas_sectores (
 
 CREATE  TABLE ofertas.experiencia ( 
 	id_aut_exp           serial  NOT NULL ,
-	id_egresado          integer   ,
+	id_egresado          integer  NOT NULL ,
 	id_cargo             integer  NOT NULL ,
 	nombre_jefe          varchar(60)  NOT NULL ,
 	telefono_jefe        varchar(16)   ,
