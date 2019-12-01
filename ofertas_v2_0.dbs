@@ -670,7 +670,8 @@ Privado=1]]></comment>
 		<table name="solicita" >
 			<column name="id_carnetizacion" type="integer" jt="4" mandatory="y" />
 			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
-			<column name="fecha" type="date" jt="91" mandatory="y" />
+			<column name="fecha_solicitud" type="date" jt="91" mandatory="y" />
+			<column name="fecha_respuesta" type="date" jt="91" mandatory="y" />
 			<index name="idx_solicita" unique="PRIMARY_KEY" >
 				<column name="id_carnetizacion" />
 				<column name="id_egresado" />

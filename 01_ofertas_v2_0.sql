@@ -274,9 +274,6 @@ CREATE  TABLE ofertas.experiencia (
 	id_aut_exp           serial  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
 	id_cargo             integer  NOT NULL ,
-	nombre_jefe          varchar(60)  NOT NULL ,
-	telefono_jefe        varchar(16)   ,
-	correo_jefe          varchar(60)  NOT NULL ,
 	nombre_empresa       varchar(50) DEFAULT 100 NOT NULL ,
 	dir_empresa          varchar(50) DEFAULT 100  ,
 	tel_trabajo          integer   ,
@@ -305,6 +302,7 @@ CREATE  TABLE ofertas.grados (
 	fecha_graduacion     date   ,
 	id_programa          integer  NOT NULL ,
 	id_estudiante        integer  NOT NULL ,
+	estado               varchar(60)   ,
 	CONSTRAINT idx_grados PRIMARY KEY ( id_programa, id_estudiante ),
 	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) ,
 	CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
@@ -440,6 +438,8 @@ CREATE  TABLE ofertas.representante_empresa (
 CREATE  TABLE ofertas.solicita ( 
 	id_carnetizacion     integer  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
+	fecha_solicitud      date  NOT NULL ,
+	fecha_respuesta      date  NOT NULL ,
 	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado ),
 	CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion )  ,
 	CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  

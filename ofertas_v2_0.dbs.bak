@@ -670,6 +670,7 @@ Privado=1]]></comment>
 		<table name="solicita" >
 			<column name="id_carnetizacion" type="integer" jt="4" mandatory="y" />
 			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
+			<column name="fecha" type="date" jt="91" mandatory="y" />
 			<index name="idx_solicita" unique="PRIMARY_KEY" >
 				<column name="id_carnetizacion" />
 				<column name="id_egresado" />
@@ -746,7 +747,6 @@ Privado=1]]></comment>
 	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.2.7.jar" driver_desc="Standard" host="localhost" port="5432" instance="test" user="test" passwd="dGVzdA==" />
 	<layout name="BDOFertas" id="Layout_2b6d324" show_relation="columns" >
 		<comment><![CDATA[ofertas_bd_Egresados]]></comment>
-		<entity schema="ofertas" name="solicita" color="C1D8EE" x="960" y="768" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1184" y="912" />
 		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="1808" y="784" />
 		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="1856" y="528" />
@@ -790,6 +790,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="48" y="1248" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="544" y="208" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="928" y="928" />
+		<entity schema="ofertas" name="solicita" color="C1D8EE" x="960" y="768" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

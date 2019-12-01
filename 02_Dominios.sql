@@ -20,6 +20,7 @@ CREATE TYPE ofertas.dominio_ingresos_empresa AS ENUM ('0 - 3.000.000', '3.000.00
 CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('Pendiente', 'Realizado');
 CREATE TYPE ofertas.dominio_genero_egresado AS ENUM ('Masculino', 'Femenino');
 CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('En espera', 'Activo', 'Inactivo');
+CREATE TYPE ofertas.dominio_estado_carnetizacion AS ENUM ('Respondido', 'Solicitado', 'Recibido','Cancelado');
 CREATE TYPE ofertas.dominio_estado_civil_egresado AS ENUM ('Soltero(a)', 'Casado(a)','Viudo(a)','Union Libre','Separado(a)','Comprometido(a)','Divorciado(a)');
 CREATE TYPE ofertas.dominio_grupo_etnico_egresado AS ENUM ('Afrodescendiente', 'Indígena', 'Mestizo', 'Blanco', 'Otro');
 
@@ -60,6 +61,7 @@ alter table ofertas.empresas alter column ingresos type ofertas.dominio_ingresos
 ALTER TABLE ofertas.carnetizacion ALTER COLUMN estado_solicitud TYPE ofertas.dominio_estado_solicitud_carnetizacion USING estado_solicitud::ofertas.dominio_estado_solicitud_carnetizacion;
 ALTER TABLE ofertas.egresados ALTER COLUMN genero TYPE ofertas.dominio_genero_egresado USING genero::ofertas.dominio_genero_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN estado TYPE ofertas.dominio_estado_egresado USING estado::ofertas.dominio_estado_egresado;
+ALTER TABLE ofertas.egresados ALTER COLUMN estado_solicitud TYPE ofertas.dominio_estado_carnetizacion USING estado_solicitud::ofertas.dominio_estado_carnetizacion;
 ALTER TABLE ofertas.egresados ALTER COLUMN estado_civil TYPE ofertas.dominio_estado_civil_egresado USING estado_civil::ofertas.dominio_estado_civil_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN grupo_etnico TYPE ofertas.dominio_grupo_etnico_egresado USING grupo_etnico::ofertas.dominio_grupo_etnico_egresado;
 commit;
