@@ -201,7 +201,7 @@ CREATE  TABLE ofertas.referidos (
 CREATE  TABLE ofertas.acceso ( 
 	id_apoyo             integer  NOT NULL ,
 	id_servicio          integer  NOT NULL ,
-	CONSTRAINT pk_acceso_id_apoyo PRIMARY KEY ( id_apoyo ),
+	CONSTRAINT idx_acceso PRIMARY KEY ( id_apoyo, id_servicio ),
 	CONSTRAINT fk_acceso_apoyos FOREIGN KEY ( id_apoyo ) REFERENCES ofertas.apoyos( id_aut_apoyo )  ,
 	CONSTRAINT fk_acceso_servicios FOREIGN KEY ( id_servicio ) REFERENCES ofertas.servicios( id_aut_servicio )  
  );
@@ -507,7 +507,7 @@ CREATE  TABLE ofertas.comenta (
 	id_grado             integer  NOT NULL ,
 	id_comentario        integer  NOT NULL ,
 	respuesta            varchar(3000)  NOT NULL ,
-	CONSTRAINT pk_comenta_id_grado PRIMARY KEY ( id_grado ),
+	CONSTRAINT idx_comenta PRIMARY KEY ( id_grado, id_comentario ),
 	CONSTRAINT fk_comenta_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_aut_grado )  ,
 	CONSTRAINT fk_comenta_tipo_de_observacion FOREIGN KEY ( id_comentario ) REFERENCES ofertas.tipo_de_observacion( id_aut_comentario )  
  );
