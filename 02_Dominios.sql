@@ -20,7 +20,7 @@ CREATE TYPE ofertas.dominio_ingresos_empresa AS ENUM ('0 - 3.000.000', '3.000.00
 CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('Pendiente', 'Realizado');
 CREATE TYPE ofertas.dominio_genero_egresado AS ENUM ('Masculino', 'Femenino');
 CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('En espera', 'Activo', 'Inactivo');
-CREATE TYPE ofertas.dominio_estado_carnetizacion AS ENUM ('Respondido', 'Solicitado', 'Recibido','Cancelado');
+CREATE TYPE ofertas.dominio_estado_carnetizacion AS ENUM ('Aceptado', 'Pendiente','Cancelado');
 CREATE TYPE ofertas.dominio_estado_civil_egresado AS ENUM ('Soltero(a)', 'Casado(a)','Viudo(a)','Union Libre','Separado(a)','Comprometido(a)','Divorciado(a)');
 CREATE TYPE ofertas.dominio_grupo_etnico_egresado AS ENUM ('Afrodescendiente', 'Indígena', 'Mestizo', 'Blanco', 'Otro');
 
