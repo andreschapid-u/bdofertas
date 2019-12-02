@@ -16,7 +16,7 @@ CREATE  TABLE ofertas.cargos (
  );
 
 CREATE  TABLE ofertas.carnetizacion ( 
-	id_aut_carnetizacion integer  NOT NULL ,
+	id_aut_carnetizacion serial  NOT NULL ,
 	estado_solicitud     varchar(50)  NOT NULL ,
 	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
  );
@@ -114,7 +114,7 @@ CREATE  TABLE ofertas.sede (
  );
 
 CREATE  TABLE ofertas.servicios ( 
-	id_aut_servicio      integer  NOT NULL ,
+	id_aut_servicio      serial  NOT NULL ,
 	nombre               varchar(60)  NOT NULL ,
 	CONSTRAINT pk_servicios_id_aut_servicio PRIMARY KEY ( id_aut_servicio )
  );
@@ -151,7 +151,8 @@ CREATE  TABLE ofertas.users (
  );
 
 CREATE  TABLE ofertas.apoyos ( 
-	id_aut_apoyo         integer  NOT NULL ,
+	id_aut_apoyo         serial  NOT NULL ,
+	nombre_rol           varchar(60)  NOT NULL ,
 	id_user              integer  NOT NULL ,
 	nombres              varchar(60)  NOT NULL ,
 	apellidos            varchar(60)  NOT NULL ,
@@ -324,7 +325,7 @@ CREATE  TABLE ofertas.experiencia (
 COMMENT ON COLUMN ofertas.experiencia.sector IS 'Publico=0\nPrivado=1';
 
 CREATE  TABLE ofertas.grados ( 
-	id_aut_grado         integer  NOT NULL ,
+	id_aut_grado         serial  NOT NULL ,
 	tipo_grado           varchar(60)   ,
 	mencion_honor        varchar(50)   ,
 	titulo_especial      varchar(100)   ,
@@ -465,10 +466,10 @@ CREATE  TABLE ofertas.representante_empresa (
  );
 
 CREATE  TABLE ofertas.solicita ( 
-	id_carnetizacion     integer  NOT NULL ,
+	id_carnetizacion     serial  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
 	fecha_solicitud      date  NOT NULL ,
-	fecha_respuesta      date  NOT NULL ,
+	fecha_respuesta      date   ,
 	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado ),
 	CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion )  ,
 	CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
