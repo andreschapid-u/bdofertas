@@ -1,3 +1,3 @@
 --Egresados
 INSERT INTO  ofertas.egresados(id_aut_egresado,identificacion, nombres, apellidos, genero, id_lugar_expedicion, id_lugar_residencia, id_nivel_educativo, num_hijos, id_lugar_nacimiento, fecha_nacimiento, estado, correo, correo_alternativo, estado_civil, ha_trabajado, trabaja_actualmente, id_aut_user, grupo_etnico, celular, telefono_fijo, estado_completar)
-VALUES (1,'Pepe','Mujica', 'Masculino',12928,12944,5,0,12928,'12/11/1995','ACTIVO',horas@gmail.com, alfin@hotmail.com,'Soltero(a)',false,false,1,'Mestizo',3128337895,8239578,true);
+VALUES (1,1064789554,'Pepe','Mujica', 'Masculino',1,1,1,0,1,'12/11/1995','ACTIVO','horas@gmail.com', 'alfin@hotmail.com','Soltero(a)',false,false,1,'Mestizo',3128337895,8239578,true);
