@@ -308,7 +308,7 @@ CREATE  TABLE ofertas.experiencia (
 	id_cargo             integer  NOT NULL ,
 	nombre_empresa       varchar(50) DEFAULT 100 NOT NULL ,
 	dir_empresa          varchar(50) DEFAULT 100  ,
-	tel_trabajo          integer   ,
+	tel_trabajo          varchar(60)   ,
 	rango_salario        varchar(50) DEFAULT 100  ,
 	tipo_contrato        varchar(50) DEFAULT 50  ,
 	trabajo_en_su_area   bool   ,
