@@ -408,7 +408,10 @@ Privado=1]]></comment>
 			<column name="requisitos_minimos" type="text" jt="12" mandatory="y" />
 			<column name="num_dias_oferta" type="integer" jt="4" mandatory="y" />
 			<column name="id_aut_nivestud" type="integer" jt="4" mandatory="y" />
-			<column name="perfil" type="varchar" length="30" jt="12" />
+			<column name="perfil" type="varchar" length="30" jt="12" mandatory="y" />
+			<column name="disp_movilidad_propia" type="bool" jt="-7" mandatory="y" >
+				<defo>false</defo>
+			</column>
 			<index name="pk_ofertas_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_oferta" />
 			</index>
@@ -789,7 +792,6 @@ Privado=1]]></comment>
 		<comment><![CDATA[ofertas]]></comment>
 		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="2016" y="896" />
 		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="2064" y="640" />
-		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1184" y="1504" />
 		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="912" y="1600" />
 		<entity schema="ofertas" name="sectores" color="3986C1" x="1952" y="400" />
 		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1696" y="480" />
@@ -835,6 +837,9 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="272" y="960" />
 		<entity schema="ofertas" name="egresados" color="008080" x="832" y="736" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1472" y="1296" />
-		<entity schema="ofertas" name="ofertas_discapacidades" color="C1D8EE" x="1200" y="1568" />
+		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1152" y="1568" />
+		<entity schema="ofertas" name="ofertas_discapacidades" color="C1D8EE" x="1088" y="1456" />
+		<script name="01_ofertas_v2_0.sql" id="Editor_57a9f59" language="SQL" confirmed="y" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v2_0.sql" />
+		<script name="01_ofertas_v2_0.sql" id="Editor_2c1982e" language="SQL" confirmed="y" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v2_0.sql" />
 	</layout>
 </project>

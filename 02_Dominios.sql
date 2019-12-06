@@ -1,10 +1,10 @@
 -- APARTADO DE DOMINIOS
 -- DOMINIOS OFERTAS
 CREATE TYPE ofertas.dominio_tipo_contrato AS ENUM ('Término indefinido', 'Contrato de aprendizaje', 'Prestación de servicios', 'Obra a labor determinada', 'Término fijo');
-CREATE TYPE ofertas.dominio_estado_empresa AS ENUM ('En espera', 'Activo', 'Inactivo');
+CREATE TYPE ofertas.dominio_estado_empresa AS ENUM ('Pendiente', 'Activo', 'Inactivo');
 CREATE TYPE ofertas.dominio_experiencia_oferta AS ENUM ('Sin experiencia', 'Igual a', 'Mayor o igual que', 'Menor o igual que');
 CREATE TYPE ofertas.dominio_estado_oferta AS ENUM ('Aceptada', 'Rechazada', 'Pendiente');  --Administrador
-CREATE TYPE ofertas.dominio_estado_oferta_emp AS ENUM ('En espera', 'Activa', 'En selección', 'Finalizada con contratación','Finalizada sin contratación', 'Expirada');  --Empresa
+CREATE TYPE ofertas.dominio_estado_oferta_emp AS ENUM ('Pendiente', 'Activa', 'En selección', 'Finalizada con contratación','Finalizada sin contratación', 'Expirada');  --Empresa
 CREATE TYPE ofertas.dominio_jornada_laboral AS ENUM ('Medio tiempo', 'Tiempo completo', 'Tiempo parcial');
 CREATE TYPE ofertas.dominio_contrato_forma_pago AS ENUM ('Moneda local', 'US Dolar');
 CREATE TYPE ofertas.dominio_nivel_idioma_oferta AS ENUM ('Nativo', 'Avanzado', 'Medio', 'Bajo');
@@ -14,6 +14,8 @@ CREATE TYPE ofertas.dominio_estado_postulacion_oferta AS ENUM ('Contratado', 'Mu
 
 CREATE TYPE ofertas.dominio_numero_empleados AS ENUM ('1 - 10', '11 - 50', '51 - 150', '151 - 300', '301 - 500', '501 - 1000', '1001 - 5000', 'más de 5000');
 CREATE TYPE ofertas.dominio_ingresos_empresa AS ENUM ('0 - 3.000.000', '3.000.001 - 10.000.000', '10.000.001 - 25.000.000', '25.000.001 - 50.000.000', '50.000.001 - 100.000.000', 'más de 100.000.000');
+
+CREATE TYPE ofertas.dominio_perfil_oferta AS ENUM ('Profesional', 'Estudiante pregrado', 'Doctor', 'Especialista', 'Magister');
 
 
 --Egresados Dominios
@@ -34,6 +36,8 @@ ALTER TABLE ofertas.empresas ALTER COLUMN estado TYPE ofertas.dominio_estado_emp
 ALTER TABLE ofertas.ofertas ALTER COLUMN experiencia TYPE ofertas.dominio_experiencia_oferta USING experiencia::ofertas.dominio_experiencia_oferta;
 
 ALTER TABLE ofertas.salarios ALTER COLUMN forma_pago TYPE ofertas.dominio_contrato_forma_pago USING forma_pago::ofertas.dominio_contrato_forma_pago;
+
+ALTER TABLE ofertas.ofertas ALTER COLUMN perfil TYPE ofertas.dominio_perfil_oferta USING perfil::ofertas.dominio_perfil_oferta;
 
 
 ALTER TABLE ofertas.ofertas ALTER COLUMN estado TYPE ofertas.dominio_estado_oferta USING estado::ofertas.dominio_estado_oferta;
@@ -61,7 +65,7 @@ alter table ofertas.empresas alter column ingresos type ofertas.dominio_ingresos
 ALTER TABLE ofertas.carnetizacion ALTER COLUMN estado_solicitud TYPE ofertas.dominio_estado_solicitud_carnetizacion USING estado_solicitud::ofertas.dominio_estado_solicitud_carnetizacion;
 ALTER TABLE ofertas.egresados ALTER COLUMN genero TYPE ofertas.dominio_genero_egresado USING genero::ofertas.dominio_genero_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN estado TYPE ofertas.dominio_estado_egresado USING estado::ofertas.dominio_estado_egresado;
-ALTER TABLE ofertas.egresados ALTER COLUMN estado_solicitud TYPE ofertas.dominio_estado_carnetizacion USING estado_solicitud::ofertas.dominio_estado_carnetizacion;
+-- ALTER TABLE ofertas.egresados ALTER COLUMN estado_solicitud TYPE ofertas.dominio_estado_carnetizacion USING estado_solicitud::ofertas.dominio_estado_carnetizacion;
 ALTER TABLE ofertas.egresados ALTER COLUMN estado_civil TYPE ofertas.dominio_estado_civil_egresado USING estado_civil::ofertas.dominio_estado_civil_egresado;
 ALTER TABLE ofertas.egresados ALTER COLUMN grupo_etnico TYPE ofertas.dominio_grupo_etnico_egresado USING grupo_etnico::ofertas.dominio_grupo_etnico_egresado;
 commit;

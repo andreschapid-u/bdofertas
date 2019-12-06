@@ -1,6 +1,7 @@
 --
 -- LOCALIZACIONES
 --
+truncate table ofertas.empresas_sectores cascade;
 truncate table ofertas.empresas cascade;
 truncate table ofertas.ofertas cascade;
 truncate table ofertas.localizacion cascade;
@@ -10,46 +11,46 @@ commit;
 --Localizaciones Mamian 101 -110, Vanessa 111-120, Santiago 121-130
 INSERT INTO ofertas.localizacion(id_aut_localizacion, codigo_postal, direccion, barrio, id_ciudad)
 VALUES
-(101, 99001, 'Calle 11N No 23-55', 'La Paz', 165),
-(102, 99001, 'Calle 12N No 23-55', 'El Cadillal', 165),
-(103, 99001, 'Calle 13N No 23-55', 'Remo', 165),
-(104, 99001, 'Calle 14N No 23-55', 'Esmeralda', 165),
-(105, 99001, 'Calle 15N No 23-55', 'Boulevard del Rio', 165),
-(106, 99001, 'Calle 16N No 23-55', 'Santa Clara', 165),
-(107, 99001, 'Calle 17N No 23-55', 'La Pamba', 165),
-(108, 99001, 'Calle 18N No 23-55', 'Chama', 165),
-(109, 99001, 'Calle 19N No 23-55', 'Lomas de Granada', 165),
-(110, 99001, 'Calle 20N No 23-55', 'Los Naranjos', 165),
-(111, 99001, 'Calle 1N No 23-55', 'La Paz', 165),
-(112, 99001, 'Calle 2N No 23-55', 'La Esmeralda', 165),
-(113, 99001, 'Calle 3N No 23-55', 'El Empedrado', 165),
-(114, 99001, 'Calle 4N No 23-55', 'El Centro', 165),
-(115, 99001, 'Calle 5N No 23-55', 'Santa Ines', 165),
-(116, 99001, 'Calle 6N No 23-55', 'La Paz', 165),
-(117, 99001, 'Calle 7N No 23-55', 'El Obando', 165),
-(118, 99001, 'Calle 8N No 23-55', 'El Ortigal', 165),
-(119, 99001, 'Calle 9N No 23-55', 'El Recuerdo', 165),
-(120, 99001, 'Calle 10N No 23-55', 'San Camilo', 165),
-(121, 99001, 'Calle falsa 123 No 1', 'Pomona', 165),
-(122, 99001, 'Carrera 3 #2a-05', 'Quintas de josemiguel', 165),
-(123, 99001, 'Calle 2N No 21-43', 'Aldea', 165),
-(124, 99001, 'Calle 2', 'El Centro', 165),
-(125, 99001, 'Carrera 10 No 10-20', 'Santa Ines', 165),
-(126, 99001, 'Calle 6N No 10-49', 'La Paz', 165),
-(127, 99001, 'Calle 7N No 23-55', 'Maria Occidente', 165),
-(128, 99001, 'Calle 8N', 'Colegio Comfacauca', 165),
-(129, 99001, 'Calle 9N No 23-55', 'El Recuerdo', 165),
-(130, 99001, 'Carrera 1a No 23-55', 'Bello Horizonte', 165),
-(201, 99001, 'Calle 8A No 52-63', 'La Paz', 165),
-(202, 99001, 'Calle 8A No 52-68', 'El Cadillal', 165),
-(203, 99001, 'Calle 8A No 52-15', 'Remo', 165),
-(204, 99001, 'Calle 8A No 52-16', 'Lomas de granada', 165),
-(205, 99001, 'Calle 8A No 52-69', 'La Sombrilla', 165),
-(206, 99001, 'Calle 8A No 52-67', 'Santa Clara', 165),
-(207, 99001, 'Calle 8A No 52-60', 'Brisas de Pubenza', 165),
-(208, 99001, 'Calle 8A No 52-65', 'MAria Occidente', 165),
-(209, 99001, 'Calle 8A No 52-66', 'Lomas de Granada', 165),
-(210, 99001, 'Calle 8A No 52-62', 'Camilo Torres', 165);
+(101, 99001, 'Calle 11N No 23-55', 'La Paz', 785),
+(102, 99001, 'Calle 12N No 23-55', 'El Cadillal', 785),
+(103, 99001, 'Calle 13N No 23-55', 'Remo', 785),
+(104, 99001, 'Calle 14N No 23-55', 'Esmeralda', 785),
+(105, 99001, 'Calle 15N No 23-55', 'Boulevard del Rio', 785),
+(106, 99001, 'Calle 16N No 23-55', 'Santa Clara', 785),
+(107, 99001, 'Calle 17N No 23-55', 'La Pamba', 785),
+(108, 99001, 'Calle 18N No 23-55', 'Chama', 785),
+(109, 99001, 'Calle 19N No 23-55', 'Lomas de Granada', 785),
+(110, 99001, 'Calle 20N No 23-55', 'Los Naranjos', 785),
+(111, 99001, 'Calle 1N No 23-55', 'La Paz', 785),
+(112, 99001, 'Calle 2N No 23-55', 'La Esmeralda', 785),
+(113, 99001, 'Calle 3N No 23-55', 'El Empedrado', 785),
+(114, 99001, 'Calle 4N No 23-55', 'El Centro', 785),
+(115, 99001, 'Calle 5N No 23-55', 'Santa Ines', 785),
+(116, 99001, 'Calle 6N No 23-55', 'La Paz', 785),
+(117, 99001, 'Calle 7N No 23-55', 'El Obando', 785),
+(118, 99001, 'Calle 8N No 23-55', 'El Ortigal', 785),
+(119, 99001, 'Calle 9N No 23-55', 'El Recuerdo', 785),
+(120, 99001, 'Calle 10N No 23-55', 'San Camilo', 785),
+(121, 99001, 'Calle falsa 123 No 1', 'Pomona', 785),
+(122, 99001, 'Carrera 3 #2a-05', 'Quintas de josemiguel', 785),
+(123, 99001, 'Calle 2N No 21-43', 'Aldea', 785),
+(124, 99001, 'Calle 2', 'El Centro', 785),
+(125, 99001, 'Carrera 10 No 10-20', 'Santa Ines', 785),
+(126, 99001, 'Calle 6N No 10-49', 'La Paz', 785),
+(127, 99001, 'Calle 7N No 23-55', 'Maria Occidente', 785),
+(128, 99001, 'Calle 8N', 'Colegio Comfacauca', 785),
+(129, 99001, 'Calle 9N No 23-55', 'El Recuerdo', 785),
+(130, 99001, 'Carrera 1a No 23-55', 'Bello Horizonte', 785),
+(201, 99001, 'Calle 8A No 52-63', 'La Paz', 785),
+(202, 99001, 'Calle 8A No 52-68', 'El Cadillal', 785),
+(203, 99001, 'Calle 8A No 52-15', 'Remo', 785),
+(204, 99001, 'Calle 8A No 52-16', 'Lomas de granada', 785),
+(205, 99001, 'Calle 8A No 52-69', 'La Sombrilla', 785),
+(206, 99001, 'Calle 8A No 52-67', 'Santa Clara', 785),
+(207, 99001, 'Calle 8A No 52-60', 'Brisas de Pubenza', 785),
+(208, 99001, 'Calle 8A No 52-65', 'MAria Occidente', 785),
+(209, 99001, 'Calle 8A No 52-66', 'Lomas de Granada', 785),
+(210, 99001, 'Calle 8A No 52-62', 'Camilo Torres', 785);
 
 -- 
 -- EMPRESAS
@@ -141,20 +142,20 @@ VALUES
 --
 
 --ofertas 100 - 104 Mamian, 111-115 Vanessa, 120-125 Santiago
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (100, 2, 'Desarrollador de software', 'Se busca desarrollador de software para trabajar en PHP', 176, 2, 3, 'Sin experiencia', 0, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Habilidades en Framework de desarrollo symfony 3.4 o 4.2 (demostrable)', 25, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values  (101, 2, 'Administrador base de datos', 'Se busca DBA para bases de datos oracle y postgress', 278, 1, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Manejo de procedimientos almacenados y PL SQL', 19, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (102, 8, 'Administrador', 'Se busca administrador para sucursal de de Royal Films en Popayán Campanario', 4, 1, 3, 'Mayor o igual que', 2, '2019-08-22', '2019-11-22', 'Aceptada', 'Activa', 32, 'Titulacion, especializacion o seminario en administracion publica', 25, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (103, 8, 'Contador publico', 'Se busca contador para sucursal de Royal Films en Popayán Campanario', 45, 1, 4, 'Mayor o igual que', 2, '2019-08-22', '2019-10-22', 'Aceptada', 'En selección', 32, 'Manejo de ley 3900', 35, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (104, 9, 'Analista de mercado', 'Se busca analista de mercado para sede de Bancolombia Popayán Centro', 118, 3, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-09-11', 'Aceptada', 'Expirada', 32, 'Ninguna', 17, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (111, 12, 'Desarrollador de software', 'Se busca desarrollador de software para trabajar en PHP', 176, 2, 3, 'Sin experiencia', 0, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Habilidades en Framework de desarrollo symfony 3.4 o 4.2 (demostrable)', 25, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (112, 12, 'Administrador base de datos', 'Se busca DBA para bases de datos oracle y postgress', 278, 1, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Manejo de procedimientos almacenados y PL SQL', 19, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (113, 18, 'Economista', 'Se busca economista para la sucursal principal de la ciudad de Popayan ', 4, 1, 3, 'Mayor o igual que', 2, '2019-08-22', '2019-11-22', 'Aceptada', 'Activa', 32, 'Titulacion, especializacion o seminario en administracion publica', 25, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (114, 18, 'Contador publico', 'Se busca contador para sucursal de Royal Films en Popayán Campanario', 45, 1, 4, 'Mayor o igual que', 2, '2019-08-22', '2019-10-22', 'Aceptada', 'En selección', 32, 'Manejo de ley 3900', 35, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (115, 19, 'Diseñador Grafico', 'Se busca diseñador para promover eventos de la empresa One Life a nivel mundial', 118, 3, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-09-11', 'Aceptada', 'Expirada', 32, 'Ninguna', 17, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (122, 23, 'Economista', 'Se busca economista para consultoria en la  sucursal principal de la ciudad de Popayan ', 4, 1, 3, 'Mayor o igual que', 2, '2019-08-22', '2019-11-22', 'Aceptada', 'Activa', 32, 'Titulacion, especializacion o seminario en administracion publica', 25, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (123, 24, 'Contador publico', 'Se busca contador para llevar nuestras acciones', 45, 1, 4, 'Mayor o igual que', 2, '2019-08-22', '2019-10-22', 'Aceptada', 'En selección', 32, 'Manejo de ley 3900', 35, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values (124, 25, 'Diseñador Grafico', 'Se busca diseñador para crear un logan en nuestro nuevo proyecto', 118, 3, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-09-11', 'Aceptada', 'Expirada', 32, 'Ninguna', 17, 2);
-INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud) values  (120, 21, 'Desarrollador de software', 'Se busca Desarrollador de software que tenga conocimientos en frameworks como laravel ', 176, 2, 3, 'Sin experiencia', 0, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Habilidades en Framework de desarrollo symfony 3.4 o 4.2 (demostrable)', 25, 2);
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (100, 2, 'Desarrollador de software', 'Se busca desarrollador de software para trabajar en PHP', 176, 2, 3, 'Sin experiencia', 0, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Habilidades en Framework de desarrollo symfony 3.4 o 4.2 (demostrable)', 25, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values  (101, 2, 'Administrador base de datos', 'Se busca DBA para bases de datos oracle y postgress', 278, 1, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Manejo de procedimientos almacenados y PL SQL', 19, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (102, 8, 'Administrador', 'Se busca administrador para sucursal de de Royal Films en Popayán Campanario', 4, 1, 3, 'Mayor o igual que', 2, '2019-08-22', '2019-11-22', 'Aceptada', 'Activa', 32, 'Titulacion, especializacion o seminario en administracion publica', 25, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (103, 8, 'Contador publico', 'Se busca contador para sucursal de Royal Films en Popayán Campanario', 45, 1, 4, 'Mayor o igual que', 2, '2019-08-22', '2019-10-22', 'Aceptada', 'En selección', 32, 'Manejo de ley 3900', 35, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (104, 9, 'Analista de mercado', 'Se busca analista de mercado para sede de Bancolombia Popayán Centro', 118, 3, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-09-11', 'Aceptada', 'Expirada', 32, 'Ninguna', 17, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (111, 12, 'Desarrollador de software', 'Se busca desarrollador de software para trabajar en PHP', 176, 2, 3, 'Sin experiencia', 0, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Habilidades en Framework de desarrollo symfony 3.4 o 4.2 (demostrable)', 25, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (112, 12, 'Administrador base de datos', 'Se busca DBA para bases de datos oracle y postgress', 278, 1, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Manejo de procedimientos almacenados y PL SQL', 19, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (113, 18, 'Economista', 'Se busca economista para la sucursal principal de la ciudad de Popayan ', 4, 1, 3, 'Mayor o igual que', 2, '2019-08-22', '2019-11-22', 'Aceptada', 'Activa', 32, 'Titulacion, especializacion o seminario en administracion publica', 25, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (114, 18, 'Contador publico', 'Se busca contador para sucursal de Royal Films en Popayán Campanario', 45, 1, 4, 'Mayor o igual que', 2, '2019-08-22', '2019-10-22', 'Aceptada', 'En selección', 32, 'Manejo de ley 3900', 35, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (115, 19, 'Diseñador Grafico', 'Se busca diseñador para promover eventos de la empresa One Life a nivel mundial', 118, 3, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-09-11', 'Aceptada', 'Expirada', 32, 'Ninguna', 17, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (122, 23, 'Economista', 'Se busca economista para consultoria en la  sucursal principal de la ciudad de Popayan ', 4, 1, 3, 'Mayor o igual que', 2, '2019-08-22', '2019-11-22', 'Aceptada', 'Activa', 32, 'Titulacion, especializacion o seminario en administracion publica', 25, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (123, 24, 'Contador publico', 'Se busca contador para llevar nuestras acciones', 45, 1, 4, 'Mayor o igual que', 2, '2019-08-22', '2019-10-22', 'Aceptada', 'En selección', 32, 'Manejo de ley 3900', 35, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values (124, 25, 'Diseñador Grafico', 'Se busca diseñador para crear un logan en nuestro nuevo proyecto', 118, 3, 3, 'Mayor o igual que', 1, '2019-08-22', '2019-09-11', 'Aceptada', 'Expirada', 32, 'Ninguna', 17, 2, 'Profesional');
+INSERT INTO ofertas.ofertas(id_aut_oferta, id_empresa, nombre_oferta, descripcion, id_cargo, numero_vacantes, id_forma_pago, experiencia, anios_experiencia, fecha_publicacion, fecha_cierre, estado, estado_proceso, id_sector, requisitos_minimos, num_dias_oferta, id_aut_nivestud,perfil) values  (120, 21, 'Desarrollador de software', 'Se busca Desarrollador de software que tenga conocimientos en frameworks como laravel ', 176, 2, 3, 'Sin experiencia', 0, '2019-08-22', '2019-12-22', 'Aceptada', 'Finalizada sin contratación', 32, 'Habilidades en Framework de desarrollo symfony 3.4 o 4.2 (demostrable)', 25, 2, 'Profesional');
 -- 
 -- AREAS DE OFERTAS LABORALES
 --
