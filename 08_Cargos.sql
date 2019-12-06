@@ -175,3 +175,9 @@ INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(174,'Vigilante'
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(175,'Visitador(a) Medico(a)',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(176,'Webmaster/Desarrollador(a)',true);
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(177,'Zootecnista',true);
+
+
+--
+-- CARGOS PARA OFERTAS LABORALES
+--
+INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(278,'Administrador Base de Datos',true);
