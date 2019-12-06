@@ -26,7 +26,7 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_niv
 -- Pregrado
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_nivelestudio) VALUES (17,'Ingeniería Electrónica y Telecomunicaciones',2,1,5);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_nivelestudio) VALUES (18,'Ingeniería en Automática Industrial',2,1,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_nivelestudio) VALUES (19,'Ingeniería de Sistemas.',2,1,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_nivelestudio) VALUES (19,'Ingeniería de Sistemas',2,1,5);
 -- Especialización
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_nivelestudio) VALUES (20,'Especialización en Desarrollo de Soluciones Informáticas',2,1,6);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_sede,id_nivelestudio) VALUES (21,'Especialización en Redes y Servicios Telemáticos',2,1,6);

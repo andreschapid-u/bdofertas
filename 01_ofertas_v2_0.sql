@@ -16,7 +16,7 @@ CREATE  TABLE ofertas.cargos (
  );
 
 CREATE  TABLE ofertas.carnetizacion ( 
-	id_aut_carnetizacion integer  NOT NULL ,
+	id_aut_carnetizacion serial  NOT NULL ,
 	estado_solicitud     varchar(50)  NOT NULL ,
 	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
  );
@@ -86,7 +86,7 @@ CREATE  TABLE ofertas.pais (
 	CONSTRAINT idx_pais UNIQUE ( nombre ) 
  );
 
-CREATE  TABLE ofertas.roles ( 
+CREATE  TABLE ofertas.rol ( 
 	id_aut_rol           serial  NOT NULL ,
 	nombre               varchar(30)  NOT NULL ,
 	CONSTRAINT pk_roles_id PRIMARY KEY ( id_aut_rol )
@@ -113,12 +113,24 @@ CREATE  TABLE ofertas.sede (
 	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede )
  );
 
+CREATE  TABLE ofertas.servicios ( 
+	id_aut_servicio      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	CONSTRAINT pk_servicios_id_aut_servicio PRIMARY KEY ( id_aut_servicio )
+ );
+
 CREATE  TABLE ofertas.sub_sectores ( 
 	id_aut_sub_sector    serial  NOT NULL ,
 	nombre               varchar(100)  NOT NULL ,
 	id_sectores          integer  NOT NULL ,
 	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector ),
 	CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector )  
+ );
+
+CREATE  TABLE ofertas.tipo_de_observacion ( 
+	id_aut_comentario    serial  NOT NULL ,
+	pregunta             varchar(600)  NOT NULL ,
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
  );
 
 CREATE  TABLE ofertas.titulo ( 
@@ -135,7 +147,19 @@ CREATE  TABLE ofertas.users (
 	codigo_verificacion  varchar(60)   ,
 	activo               bool DEFAULT false NOT NULL ,
 	CONSTRAINT pk_users_id PRIMARY KEY ( id_aut_user ),
-	CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.roles( id_aut_rol )  
+	CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol )  
+ );
+
+CREATE  TABLE ofertas.apoyos ( 
+	id_aut_apoyo         serial  NOT NULL ,
+	nombre_rol           varchar(60)  NOT NULL ,
+	id_user              integer  NOT NULL ,
+	nombres              varchar(60)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	correo               varchar(60)  NOT NULL ,
+	correo_secundario    varchar(60)  NOT NULL ,
+	CONSTRAINT pk_apoyos_id_aut_apoyo PRIMARY KEY ( id_aut_apoyo ),
+	CONSTRAINT fk_apoyos_users FOREIGN KEY ( id_user ) REFERENCES ofertas.users( id_aut_user )  
  );
 
 CREATE  TABLE ofertas.departamentos ( 
@@ -173,6 +197,14 @@ CREATE  TABLE ofertas.referidos (
 	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido ),
 	CONSTRAINT fk_referidos_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
 	CONSTRAINT fk_referidos_programas FOREIGN KEY ( id_aut_programa ) REFERENCES ofertas.programas( id_aut_programa )  
+ );
+
+CREATE  TABLE ofertas.acceso ( 
+	id_apoyo             integer  NOT NULL ,
+	id_servicio          integer  NOT NULL ,
+	CONSTRAINT idx_acceso PRIMARY KEY ( id_apoyo, id_servicio ),
+	CONSTRAINT fk_acceso_apoyos FOREIGN KEY ( id_apoyo ) REFERENCES ofertas.apoyos( id_aut_apoyo )  ,
+	CONSTRAINT fk_acceso_servicios FOREIGN KEY ( id_servicio ) REFERENCES ofertas.servicios( id_aut_servicio )  
  );
 
 CREATE  TABLE ofertas.ciudades ( 
@@ -276,7 +308,7 @@ CREATE  TABLE ofertas.experiencia (
 	id_cargo             integer  NOT NULL ,
 	nombre_empresa       varchar(50) DEFAULT 100 NOT NULL ,
 	dir_empresa          varchar(50) DEFAULT 100  ,
-	tel_trabajo          integer   ,
+	tel_trabajo          varchar(60)   ,
 	rango_salario        varchar(50) DEFAULT 100  ,
 	tipo_contrato        varchar(50) DEFAULT 50  ,
 	trabajo_en_su_area   bool   ,
@@ -293,20 +325,18 @@ CREATE  TABLE ofertas.experiencia (
 COMMENT ON COLUMN ofertas.experiencia.sector IS 'Publico=0\nPrivado=1';
 
 CREATE  TABLE ofertas.grados ( 
-	id_num_acta          integer DEFAULT 50 NOT NULL ,
+	id_aut_grado         serial  NOT NULL ,
 	tipo_grado           varchar(60)   ,
 	mencion_honor        varchar(50)   ,
 	titulo_especial      varchar(100)   ,
-	id_tipo_de_comentarios integer   ,
 	anio_graduacion      varchar(50)  NOT NULL ,
 	fecha_graduacion     date   ,
 	id_programa          integer  NOT NULL ,
-	id_estudiante        integer  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
 	estado               varchar(60)   ,
-	CONSTRAINT idx_grados PRIMARY KEY ( id_programa, id_estudiante ),
-	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) ,
+	CONSTRAINT pk_grados_id_aut_grado PRIMARY KEY ( id_aut_grado ),
 	CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
-	CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_estudiante ) REFERENCES ofertas.egresados( id_aut_egresado )  
+	CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
  );
 
 CREATE  TABLE ofertas.ofertas ( 
@@ -436,23 +466,13 @@ CREATE  TABLE ofertas.representante_empresa (
  );
 
 CREATE  TABLE ofertas.solicita ( 
-	id_carnetizacion     integer  NOT NULL ,
+	id_carnetizacion     serial  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
 	fecha_solicitud      date  NOT NULL ,
-	fecha_respuesta      date  NOT NULL ,
+	fecha_respuesta      date   ,
 	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado ),
 	CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion )  ,
 	CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
- );
-
-CREATE  TABLE ofertas.tipo_de_observacion ( 
-	id_aut_comentario    serial  NOT NULL ,
-	sugerencia_programa  text  NOT NULL ,
-	opinio_universidad_futuro text  NOT NULL ,
-	nombre_docente_influyo varchar(60)  NOT NULL ,
-	id_grado             integer  NOT NULL ,
-	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario ),
-	CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios )  
  );
 
 CREATE  TABLE ofertas.ubicacion_oferta ( 
@@ -482,6 +502,15 @@ CREATE  TABLE ofertas.administrador_empresa (
 	CONSTRAINT fk_representante_legal_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
 	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
 	CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  
+ );
+
+CREATE  TABLE ofertas.comenta ( 
+	id_grado             integer  NOT NULL ,
+	id_comentario        integer  NOT NULL ,
+	respuesta            varchar(3000)  NOT NULL ,
+	CONSTRAINT idx_comenta PRIMARY KEY ( id_grado, id_comentario ),
+	CONSTRAINT fk_comenta_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_aut_grado )  ,
+	CONSTRAINT fk_comenta_tipo_de_observacion FOREIGN KEY ( id_comentario ) REFERENCES ofertas.tipo_de_observacion( id_aut_comentario )  
  );
 
 CREATE  TABLE ofertas.contratos ( 

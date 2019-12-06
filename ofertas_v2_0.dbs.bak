@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <project name="ofertas" id="Project_5e56948" template="Default" database="PostgreSQL" >
 	<schema name="ofertas" >
+		<table name="acceso" >
+			<column name="id_apoyo" type="integer" jt="4" mandatory="y" />
+			<column name="id_servicio" type="integer" jt="4" mandatory="y" />
+			<index name="idx_acceso" unique="PRIMARY_KEY" >
+				<column name="id_apoyo" />
+				<column name="id_servicio" />
+			</index>
+			<fk name="fk_acceso_apoyos" to_schema="ofertas" to_table="apoyos" >
+				<fk_column name="id_apoyo" pk="id_aut_apoyo" />
+			</fk>
+			<fk name="fk_acceso_servicios" to_schema="ofertas" to_table="servicios" >
+				<fk_column name="id_servicio" pk="id_aut_servicio" />
+			</fk>
+		</table>
 		<table name="administrador_empresa" >
 			<column name="id_aut_administrador_empresa" type="serial" jt="4" mandatory="y" />
 			<column name="nombres" type="varchar" length="40" jt="12" mandatory="y" />
@@ -35,6 +49,21 @@
 				<fk_column name="id_aut_user" pk="id_aut_user" />
 			</fk>
 		</table>
+		<table name="apoyos" >
+			<column name="id_aut_apoyo" type="serial" jt="4" mandatory="y" />
+			<column name="nombre_rol" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="id_user" type="integer" jt="4" mandatory="y" />
+			<column name="nombres" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="apellidos" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="correo" type="varchar" length="60" jt="12" mandatory="y" />
+			<column name="correo_secundario" type="varchar" length="60" jt="12" mandatory="y" />
+			<index name="pk_apoyos_id_aut_apoyo" unique="PRIMARY_KEY" >
+				<column name="id_aut_apoyo" />
+			</index>
+			<fk name="fk_apoyos_users" to_schema="ofertas" to_table="users" >
+				<fk_column name="id_user" pk="id_aut_user" />
+			</fk>
+		</table>
 		<table name="areas_conocimiento" >
 			<column name="id_aut_areaconocimiento" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="100" jt="12" mandatory="y" />
@@ -53,7 +82,7 @@
 			</index>
 		</table>
 		<table name="carnetizacion" >
-			<column name="id_aut_carnetizacion" type="integer" jt="4" mandatory="y" />
+			<column name="id_aut_carnetizacion" type="serial" jt="4" mandatory="y" />
 			<column name="estado_solicitud" type="varchar" length="50" jt="12" mandatory="y" />
 			<index name="pk_carnetizacion_id_aut_carnetizacion" unique="PRIMARY_KEY" >
 				<column name="id_aut_carnetizacion" />
@@ -72,6 +101,21 @@
 			</index>
 			<fk name="fk_ciudades_departamentos" to_schema="ofertas" to_table="departamentos" >
 				<fk_column name="id_departamento" pk="id_aut_dep" />
+			</fk>
+		</table>
+		<table name="comenta" >
+			<column name="id_grado" type="integer" jt="4" mandatory="y" />
+			<column name="id_comentario" type="integer" jt="4" mandatory="y" />
+			<column name="respuesta" type="varchar" length="3000" jt="12" mandatory="y" />
+			<index name="idx_comenta" unique="PRIMARY_KEY" >
+				<column name="id_grado" />
+				<column name="id_comentario" />
+			</index>
+			<fk name="fk_comenta_grados" to_schema="ofertas" to_table="grados" >
+				<fk_column name="id_grado" pk="id_aut_grado" />
+			</fk>
+			<fk name="fk_comenta_tipo_de_observacion" to_schema="ofertas" to_table="tipo_de_observacion" >
+				<fk_column name="id_comentario" pk="id_aut_comentario" />
 			</fk>
 		</table>
 		<table name="contratos" >
@@ -247,7 +291,7 @@
 			<column name="dir_empresa" type="varchar" length="50" jt="12" >
 				<defo>100</defo>
 			</column>
-			<column name="tel_trabajo" type="integer" jt="4" />
+			<column name="tel_trabajo" type="varchar" length="60" jt="12" />
 			<column name="rango_salario" type="varchar" length="50" jt="12" >
 				<defo>100</defo>
 			</column>
@@ -283,30 +327,23 @@ Privado=1]]></comment>
 			</index>
 		</table>
 		<table name="grados" >
-			<column name="id_num_acta" type="integer" jt="4" mandatory="y" >
-				<defo>50</defo>
-			</column>
+			<column name="id_aut_grado" type="serial" jt="4" mandatory="y" />
 			<column name="tipo_grado" type="varchar" length="60" jt="12" />
 			<column name="mencion_honor" type="varchar" length="50" jt="12" />
 			<column name="titulo_especial" type="varchar" length="100" jt="12" />
-			<column name="id_tipo_de_comentarios" type="integer" jt="4" />
 			<column name="anio_graduacion" type="varchar" length="50" jt="12" mandatory="y" />
 			<column name="fecha_graduacion" type="date" jt="91" />
 			<column name="id_programa" type="integer" jt="4" mandatory="y" />
-			<column name="id_estudiante" type="integer" jt="4" mandatory="y" />
+			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
 			<column name="estado" type="varchar" length="60" jt="12" />
-			<index name="idx_grados" unique="PRIMARY_KEY" >
-				<column name="id_programa" />
-				<column name="id_estudiante" />
-			</index>
-			<index name="unq_grados_id_tipo_de_comentarios" unique="UNIQUE" >
-				<column name="id_tipo_de_comentarios" />
+			<index name="pk_grados_id_aut_grado" unique="PRIMARY_KEY" >
+				<column name="id_aut_grado" />
 			</index>
 			<fk name="fk_grados_programas" to_schema="ofertas" to_table="programas" >
 				<fk_column name="id_programa" pk="id_aut_programa" />
 			</fk>
 			<fk name="fk_grados_egresados" to_schema="ofertas" to_table="egresados" >
-				<fk_column name="id_estudiante" pk="id_aut_egresado" />
+				<fk_column name="id_egresado" pk="id_aut_egresado" />
 			</fk>
 		</table>
 		<table name="idiomas" >
@@ -634,7 +671,7 @@ Privado=1]]></comment>
 				<fk_column name="id_empresa" pk="id_aut_empresa" />
 			</fk>
 		</table>
-		<table name="roles" >
+		<table name="rol" >
 			<column name="id_aut_rol" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="30" jt="12" mandatory="y" />
 			<index name="pk_roles_id" unique="PRIMARY_KEY" >
@@ -667,11 +704,18 @@ Privado=1]]></comment>
 				<column name="id_aut_sede" />
 			</index>
 		</table>
+		<table name="servicios" >
+			<column name="id_aut_servicio" type="serial" jt="4" mandatory="y" />
+			<column name="nombre" type="varchar" length="60" jt="12" mandatory="y" />
+			<index name="pk_servicios_id_aut_servicio" unique="PRIMARY_KEY" >
+				<column name="id_aut_servicio" />
+			</index>
+		</table>
 		<table name="solicita" >
-			<column name="id_carnetizacion" type="integer" jt="4" mandatory="y" />
+			<column name="id_carnetizacion" type="serial" jt="4" mandatory="y" />
 			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
 			<column name="fecha_solicitud" type="date" jt="91" mandatory="y" />
-			<column name="fecha_respuesta" type="date" jt="91" mandatory="y" />
+			<column name="fecha_respuesta" type="date" jt="91" />
 			<index name="idx_solicita" unique="PRIMARY_KEY" >
 				<column name="id_carnetizacion" />
 				<column name="id_egresado" />
@@ -696,16 +740,10 @@ Privado=1]]></comment>
 		</table>
 		<table name="tipo_de_observacion" >
 			<column name="id_aut_comentario" type="serial" jt="4" mandatory="y" />
-			<column name="sugerencia_programa" type="text" jt="12" mandatory="y" />
-			<column name="opinio_universidad_futuro" type="text" jt="12" mandatory="y" />
-			<column name="nombre_docente_influyo" type="varchar" length="60" jt="12" mandatory="y" />
-			<column name="id_grado" type="integer" jt="4" mandatory="y" />
+			<column name="pregunta" type="varchar" length="600" jt="12" mandatory="y" />
 			<index name="pk_comentarios_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_comentario" />
 			</index>
-			<fk name="fk_tipo_de_observacion_grados" to_schema="ofertas" to_table="grados" >
-				<fk_column name="id_grado" pk="id_tipo_de_comentarios" />
-			</fk>
 		</table>
 		<table name="titulo" >
 			<column name="id_aut_titulo" type="serial" jt="4" mandatory="y" />
@@ -740,58 +778,62 @@ Privado=1]]></comment>
 			<index name="pk_users_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_user" />
 			</index>
-			<fk name="fk_users_roles" to_schema="ofertas" to_table="roles" >
+			<fk name="fk_users_roles" to_schema="ofertas" to_table="rol" >
 				<fk_column name="id_rol" pk="id_aut_rol" />
 			</fk>
 		</table>
 	</schema>
 	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.2.7.jar" driver_desc="Standard" host="localhost" port="5432" instance="test" user="test" passwd="dGVzdA==" />
 	<layout name="BDOFertas" id="Layout_2b6d324" show_relation="columns" >
-		<comment><![CDATA[ofertas_bd_Egresados]]></comment>
-		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1184" y="912" />
-		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="1808" y="784" />
-		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="1856" y="528" />
-		<entity schema="ofertas" name="salarios" color="C1D8EE" x="976" y="1392" />
-		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="704" y="1488" />
-		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="96" y="1488" />
-		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1024" y="144" />
-		<entity schema="ofertas" name="sectores" color="3986C1" x="1744" y="288" />
-		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1488" y="368" />
-		<entity schema="ofertas" name="pais" color="C1D8EE" x="1312" y="416" />
-		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1120" y="368" />
-		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="880" y="384" />
-		<entity schema="ofertas" name="roles" color="3986C1" x="608" y="64" />
-		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1024" y="608" />
-		<entity schema="ofertas" name="users" color="C1D8EE" x="816" y="48" />
-		<entity schema="ofertas" name="recepcion_hv" color="C1D8EE" x="1680" y="1568" />
-		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="1776" y="1440" />
-		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1552" y="1360" />
-		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="1760" y="1168" />
-		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1088" y="1568" />
-		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1376" y="1632" />
-		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="464" y="1536" />
-		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="352" y="992" />
-		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1056" y="1280" />
-		<entity schema="ofertas" name="sede" color="C1D8EE" x="304" y="1424" />
-		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="848" y="1600" />
-		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1392" y="64" />
-		<entity schema="ofertas" name="evento" color="C1D8EE" x="80" y="512" />
-		<entity schema="ofertas" name="participa" color="C1D8EE" x="368" y="432" />
-		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1440" y="704" />
-		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1264" y="1184" />
-		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1200" y="768" />
-		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="624" y="1376" />
-		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="592" y="1216" />
-		<entity schema="ofertas" name="facultades" color="C1D8EE" x="688" y="1056" />
-		<entity schema="ofertas" name="programas" color="C1D8EE" x="304" y="1232" />
-		<entity schema="ofertas" name="referidos" color="C1D8EE" x="64" y="848" />
-		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="272" y="656" />
-		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="320" y="800" />
-		<entity schema="ofertas" name="egresados" color="008080" x="624" y="624" />
-		<entity schema="ofertas" name="titulo" color="C1D8EE" x="48" y="1248" />
-		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="544" y="208" />
-		<entity schema="ofertas" name="grados" color="C1D8EE" x="928" y="928" />
-		<entity schema="ofertas" name="solicita" color="C1D8EE" x="960" y="768" />
+		<comment><![CDATA[ofertas]]></comment>
+		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="2016" y="896" />
+		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="2064" y="640" />
+		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1184" y="1504" />
+		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="912" y="1600" />
+		<entity schema="ofertas" name="sectores" color="3986C1" x="1952" y="400" />
+		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1696" y="480" />
+		<entity schema="ofertas" name="recepcion_hv" color="C1D8EE" x="1888" y="1680" />
+		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="1984" y="1552" />
+		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1760" y="1472" />
+		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="1968" y="1280" />
+		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1296" y="1680" />
+		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1584" y="1744" />
+		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1264" y="1392" />
+		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="1056" y="1712" />
+		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1600" y="176" />
+		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1648" y="816" />
+		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1472" y="1296" />
+		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="800" y="1328" />
+		<entity schema="ofertas" name="facultades" color="C1D8EE" x="896" y="1168" />
+		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1328" y="1120" />
+		<entity schema="ofertas" name="sede" color="C1D8EE" x="48" y="1376" />
+		<entity schema="ofertas" name="titulo" color="C1D8EE" x="48" y="1184" />
+		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="576" y="1616" />
+		<entity schema="ofertas" name="grados" color="C1D8EE" x="1088" y="1008" />
+		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1456" y="992" />
+		<entity schema="ofertas" name="solicita" color="C1D8EE" x="1232" y="880" />
+		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1456" y="880" />
+		<entity schema="ofertas" name="users" color="C1D8EE" x="992" y="48" />
+		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="496" y="48" />
+		<entity schema="ofertas" name="acceso" color="C1D8EE" x="496" y="272" />
+		<entity schema="ofertas" name="servicios" color="C1D8EE" x="480" y="416" />
+		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1232" y="256" />
+		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="1088" y="496" />
+		<entity schema="ofertas" name="participa" color="C1D8EE" x="560" y="576" />
+		<entity schema="ofertas" name="evento" color="C1D8EE" x="288" y="624" />
+		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="480" y="768" />
+		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="528" y="944" />
+		<entity schema="ofertas" name="programas" color="C1D8EE" x="256" y="1360" />
+		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="528" y="1312" />
+		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="560" y="1104" />
+		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="832" y="1488" />
+		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1232" y="720" />
+		<entity schema="ofertas" name="pais" color="C1D8EE" x="1520" y="528" />
+		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1328" y="480" />
+		<entity schema="ofertas" name="rol" color="3986C1" x="688" y="112" />
+		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="784" y="256" />
+		<entity schema="ofertas" name="referidos" color="C1D8EE" x="272" y="960" />
+		<entity schema="ofertas" name="egresados" color="008080" x="832" y="736" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
@@ -6412,6 +6454,1050 @@ CREATE  TABLE ofertas.administrador_empresa (
 	CONSTRAINT fk_representante_legal_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
 	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
 	CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  
+ );
+
+CREATE  TABLE ofertas.contratos ( 
+	id_aut_contrato      serial  NOT NULL ,
+	duracion             varchar(20)   ,
+	tipo_contrato        varchar(50)  NOT NULL ,
+	jornada_laboral      varchar(30)  NOT NULL ,
+	horario              varchar(40)   ,
+	comentarios_salario  text   ,
+	id_oferta            integer  NOT NULL ,
+	CONSTRAINT pk_contratos_id_aut_contrato PRIMARY KEY ( id_aut_contrato ),
+	CONSTRAINT idx_contratos_oferta UNIQUE ( id_oferta ) ,
+	CONSTRAINT fk_contratos_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.postulaciones_respuestas ( 
+	id_egresado          integer  NOT NULL ,
+	id_pregunta          integer  NOT NULL ,
+	respuesta            text  NOT NULL ,
+	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta ),
+	CONSTRAINT fk_postulaciones_respuestas_postulaciones FOREIGN KEY ( id_egresado ) REFERENCES ofertas.postulaciones( id_aut_egresado )  ,
+	CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta )  
+ );
+]]></string>
+		</script>
+		<script name="SQL_Editor_012" id="Editor_3732173" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA ofertas;
+
+CREATE  TABLE ofertas.areas_conocimiento ( 
+	id_aut_areaconocimiento serial  NOT NULL ,
+	nombre               varchar(100)  NOT NULL ,
+	CONSTRAINT pk_areas_conocimiento_id PRIMARY KEY ( id_aut_areaconocimiento )
+ );
+
+CREATE  TABLE ofertas.cargos ( 
+	id_aut_cargos        serial  NOT NULL ,
+	nombre               varchar(40)  NOT NULL ,
+	estado               bool DEFAULT false  ,
+	CONSTRAINT pk_cargos_id_0 PRIMARY KEY ( id_aut_cargos )
+ );
+
+CREATE  TABLE ofertas.carnetizacion ( 
+	id_aut_carnetizacion integer  NOT NULL ,
+	estado_solicitud     varchar(50)  NOT NULL ,
+	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
+ );
+
+CREATE  TABLE ofertas.discapacidades ( 
+	id_aut_discapacidades serial  NOT NULL ,
+	nombre               varchar(30)  NOT NULL ,
+	CONSTRAINT pk_discapacidades_id_aut_discapacidades PRIMARY KEY ( id_aut_discapacidades )
+ );
+
+CREATE  TABLE ofertas.evento ( 
+	id_aut_evento        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	fecha_inicio         date   ,
+	fecha_fin            date   ,
+	lugar                text   ,
+	descripcion          varchar(50)   ,
+	cupos                numeric   ,
+	a_quien_va_dirigida  varchar(50)   ,
+	CONSTRAINT pk_evento_id_evento PRIMARY KEY ( id_aut_evento )
+ );
+
+CREATE  TABLE ofertas.facultades ( 
+	id_aut_facultad      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
+ );
+
+CREATE  TABLE ofertas.idiomas ( 
+	id_aut_idioma        serial  NOT NULL ,
+	nombre               varchar(20)  NOT NULL ,
+	CONSTRAINT pk_idiomas_id_aut_idioma PRIMARY KEY ( id_aut_idioma ),
+	CONSTRAINT idx_idiomas UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.nivel_programa ( 
+	id_aut_nivprogra     serial  NOT NULL ,
+	nombre               varchar(40)  NOT NULL ,
+	CONSTRAINT pk_nivel_programa_id_aut_nivprogra PRIMARY KEY ( id_aut_nivprogra ),
+	CONSTRAINT idx_nivel_programa UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.niveles_estudio ( 
+	id_aut_estudio       serial  NOT NULL ,
+	nombre               varchar(50) DEFAULT 100 NOT NULL ,
+	pertenece_u          bool DEFAULT false NOT NULL ,
+	CONSTRAINT pk_niveles_estudio_id PRIMARY KEY ( id_aut_estudio ),
+	CONSTRAINT idx_niveles_estudio_nombre UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.padres ( 
+	id_aut_padre         serial  NOT NULL ,
+	nombres              varchar(40)  NOT NULL ,
+	apellidos            varchar(40)  NOT NULL ,
+	correo               varchar(60)   ,
+	telefono             varchar(16)  NOT NULL ,
+	id_nivel_estudio     integer  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	id_programa          integer  NOT NULL ,
+	CONSTRAINT pk_contactos_id PRIMARY KEY ( id_aut_padre )
+ );
+
+CREATE  TABLE ofertas.pais ( 
+	id_aut_pais          serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_pais_id_pais PRIMARY KEY ( id_aut_pais ),
+	CONSTRAINT idx_pais UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.roles ( 
+	id_aut_rol           serial  NOT NULL ,
+	nombre               varchar(30)  NOT NULL ,
+	CONSTRAINT pk_roles_id PRIMARY KEY ( id_aut_rol )
+ );
+
+CREATE  TABLE ofertas.salarios ( 
+	id_aut_salario       serial  NOT NULL ,
+	minimo               integer  NOT NULL ,
+	maximo               integer  NOT NULL ,
+	forma_pago           varchar(20)  NOT NULL ,
+	CONSTRAINT pk_salarios_id_aut_salario PRIMARY KEY ( id_aut_salario )
+ );
+
+CREATE  TABLE ofertas.sectores ( 
+	id_aut_sector        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_table_0_id_aut_cate_sectores PRIMARY KEY ( id_aut_sector ),
+	CONSTRAINT idx_sectores UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.sede ( 
+	id_aut_sede          serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede )
+ );
+
+CREATE  TABLE ofertas.sub_sectores ( 
+	id_aut_sub_sector    serial  NOT NULL ,
+	nombre               varchar(100)  NOT NULL ,
+	id_sectores          integer  NOT NULL ,
+	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector ),
+	CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector )  
+ );
+
+CREATE  TABLE ofertas.titulo ( 
+	id_aut_titulo        serial  NOT NULL ,
+	nombre               varchar(150)  NOT NULL ,
+	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
+ );
+
+CREATE  TABLE ofertas.users ( 
+	id_aut_user          serial  NOT NULL ,
+	email                varchar(60)  NOT NULL ,
+	"password"           varchar(128)   ,
+	id_rol               integer  NOT NULL ,
+	codigo_verificacion  varchar(60)   ,
+	activo               bool DEFAULT false NOT NULL ,
+	CONSTRAINT pk_users_id PRIMARY KEY ( id_aut_user ),
+	CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.roles( id_aut_rol )  
+ );
+
+CREATE  TABLE ofertas.departamentos ( 
+	id_aut_dep           serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	id_pais_fk           integer  NOT NULL ,
+	CONSTRAINT pk_departamento_id PRIMARY KEY ( id_aut_dep ),
+	CONSTRAINT idx_departamentos UNIQUE ( nombre, id_pais_fk ) ,
+	CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais )  
+ );
+
+CREATE  TABLE ofertas.programas ( 
+	id_aut_programa      serial  NOT NULL ,
+	nombre               varchar(150)  NOT NULL ,
+	id_facultad          integer   ,
+	id_sede              integer   ,
+	id_nivelestudio      integer   ,
+	id_titulo            integer   ,
+	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa ),
+	CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede )  ,
+	CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  ,
+	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  
+ );
+
+CREATE  TABLE ofertas.referidos ( 
+	id_aut_referido      serial  NOT NULL ,
+	nombres              varchar(100)  NOT NULL ,
+	id_nivel_educativo   integer   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	correo               varchar(60)   ,
+	parentesco           varchar(40)   ,
+	id_aut_programa      integer   ,
+	es_egresado          bool   ,
+	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido ),
+	CONSTRAINT fk_referidos_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_referidos_programas FOREIGN KEY ( id_aut_programa ) REFERENCES ofertas.programas( id_aut_programa )  
+ );
+
+CREATE  TABLE ofertas.ciudades ( 
+	id_aut_ciudad        serial  NOT NULL ,
+	nombre               varchar(50)   ,
+	id_departamento      integer  NOT NULL ,
+	CONSTRAINT pk_ciudades_id PRIMARY KEY ( id_aut_ciudad ),
+	CONSTRAINT idx_ciudades UNIQUE ( nombre, id_departamento ) ,
+	CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep )  
+ );
+
+CREATE  TABLE ofertas.localizacion ( 
+	id_aut_localizacion  serial  NOT NULL ,
+	codigo_postal        integer   ,
+	direccion            varchar(100)  NOT NULL ,
+	barrio               varchar(40)   ,
+	id_ciudad            integer  NOT NULL ,
+	CONSTRAINT pk_localizacion_id PRIMARY KEY ( id_aut_localizacion ),
+	CONSTRAINT fk_localizacion_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+CREATE  TABLE ofertas.egresados ( 
+	id_aut_egresado      serial  NOT NULL ,
+	identificacion       integer  NOT NULL ,
+	nombres              varchar(40)  NOT NULL ,
+	apellidos            varchar(40)  NOT NULL ,
+	genero               varchar(20)  NOT NULL ,
+	id_lugar_expedicion  integer   ,
+	id_lugar_residencia  integer   ,
+	id_nivel_educativo   integer   ,
+	num_hijos            smallint DEFAULT 0  ,
+	id_lugar_nacimiento  integer   ,
+	fecha_nacimiento     date   ,
+	estado               varchar(40)  NOT NULL ,
+	correo               varchar(100)   ,
+	correo_alternativo   varchar(100)   ,
+	estado_civil         varchar(40)   ,
+	ha_trabajado         bool   ,
+	trabaja_actualmente  bool   ,
+	id_aut_user          integer   ,
+	grupo_etnico         varchar(40)   ,
+	celular              varchar(16)   ,
+	telefono_fijo        varchar(16)   ,
+	estado_completar     bool  NOT NULL ,
+	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado ),
+	CONSTRAINT fk_egresados_ciudades FOREIGN KEY ( id_lugar_expedicion ) REFERENCES ofertas.ciudades( id_aut_ciudad )  ,
+	CONSTRAINT fk_egresados_localizacion FOREIGN KEY ( id_lugar_residencia ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
+	CONSTRAINT fk_egresados_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_egresados_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  ,
+	CONSTRAINT fk_egresados_nacimiento_ciudades FOREIGN KEY ( id_lugar_nacimiento ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+CREATE  TABLE ofertas.egresados_discapacidades ( 
+	id_egresado          integer  NOT NULL ,
+	id_discapacidad      integer  NOT NULL ,
+	descripcion          varchar(80)   ,
+	CONSTRAINT idx_egresados_discapacidades PRIMARY KEY ( id_egresado, id_discapacidad ),
+	CONSTRAINT fk_egresados_discapacidades_egresado FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_egresados_discapacidades_discap FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades )  
+ );
+
+CREATE  TABLE ofertas.empresas ( 
+	id_aut_empresa       serial  NOT NULL ,
+	nit                  varchar(15)  NOT NULL ,
+	nombre               varchar(100)   ,
+	razon_social         varchar(200)  NOT NULL ,
+	anio_creacion        smallint  NOT NULL ,
+	numero_empleados     varchar(30)  NOT NULL ,
+	ingresos             varchar(30)   ,
+	sitio_web            varchar(200)   ,
+	id_direccion         integer  NOT NULL ,
+	estado               varchar(20)   ,
+	fecha_registro       date DEFAULT current_date NOT NULL ,
+	fecha_activacion     date   ,
+	fecha_vencimiento    date   ,
+	total_publicaciones  integer   ,
+	limite_publicaciones integer   ,
+	num_publicaciones_actuales integer   ,
+	correo               varchar(60)   ,
+	telefono             varchar(16)   ,
+	url_logo             varchar(255)   ,
+	url_doc_camaracomercio varchar(255)  NOT NULL ,
+	descripcion          text   ,
+	CONSTRAINT pk_empresas_id PRIMARY KEY ( id_aut_empresa ),
+	CONSTRAINT idx_empresas_unique_nombre UNIQUE ( nombre ) ,
+	CONSTRAINT idx_empresas_unique_nit UNIQUE ( nit ) ,
+	CONSTRAINT fk_empresas_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  
+ );
+
+CREATE  TABLE ofertas.empresas_sectores ( 
+	id_empresa           integer  NOT NULL ,
+	id_sub_sector        integer  NOT NULL ,
+	CONSTRAINT idx_empresas_sectores PRIMARY KEY ( id_empresa, id_sub_sector ),
+	CONSTRAINT fk_empresas_sectores_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_empresas_sectores_sector FOREIGN KEY ( id_sub_sector ) REFERENCES ofertas.sub_sectores( id_aut_sub_sector )  
+ );
+
+CREATE  TABLE ofertas.experiencia ( 
+	id_aut_exp           serial  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	id_cargo             integer  NOT NULL ,
+	nombre_empresa       varchar(50) DEFAULT 100 NOT NULL ,
+	dir_empresa          varchar(50) DEFAULT 100  ,
+	tel_trabajo          integer   ,
+	rango_salario        varchar(50) DEFAULT 100  ,
+	tipo_contrato        varchar(50) DEFAULT 50  ,
+	trabajo_en_su_area   bool   ,
+	sector               varchar(40)   ,
+	id_ciudad            integer  NOT NULL ,
+	fecha_inicio         date  NOT NULL ,
+	fecha_fin            date   ,
+	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp ),
+	CONSTRAINT fk_cargos_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_experiencia_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+COMMENT ON COLUMN ofertas.experiencia.sector IS 'Publico=0\nPrivado=1';
+
+CREATE  TABLE ofertas.grados ( 
+	id_num_acta          integer DEFAULT 50 NOT NULL ,
+	tipo_grado           varchar(60)   ,
+	mencion_honor        varchar(50)   ,
+	titulo_especial      varchar(100)   ,
+	id_tipo_de_comentarios integer   ,
+	anio_graduacion      varchar(50)  NOT NULL ,
+	fecha_graduacion     date   ,
+	id_programa          integer  NOT NULL ,
+	id_estudiante        integer  NOT NULL ,
+	estado               varchar(60)   ,
+	CONSTRAINT idx_grados PRIMARY KEY ( id_programa, id_estudiante ),
+	CONSTRAINT unq_grados_id_tipo_de_comentarios UNIQUE ( id_tipo_de_comentarios ) ,
+	CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
+	CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_estudiante ) REFERENCES ofertas.egresados( id_aut_egresado )  
+ );
+
+CREATE  TABLE ofertas.ofertas ( 
+	id_aut_oferta        serial  NOT NULL ,
+	id_empresa           integer  NOT NULL ,
+	nombre_oferta        varchar(100)  NOT NULL ,
+	descripcion          text  NOT NULL ,
+	id_cargo             integer  NOT NULL ,
+	numero_vacantes      integer DEFAULT 1 NOT NULL ,
+	id_forma_pago        integer  NOT NULL ,
+	experiencia          varchar(30)  NOT NULL ,
+	anios_experiencia    smallint DEFAULT 0 NOT NULL ,
+	fecha_publicacion    date   ,
+	fecha_cierre         date   ,
+	estado               varchar(20)  NOT NULL ,
+	estado_proceso       varchar   ,
+	id_sector            integer  NOT NULL ,
+	nombre_temporal_empresa varchar(30)   ,
+	licencia_conduccion  varchar(20)   ,
+	requisitos_minimos   text  NOT NULL ,
+	id_discapacidad      integer   ,
+	num_dias_oferta      integer  NOT NULL ,
+	id_aut_nivestud      integer  NOT NULL ,
+	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta ),
+	CONSTRAINT fk_ofertas_empresas FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_ofertas_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_ofertas_sectores FOREIGN KEY ( id_sector ) REFERENCES ofertas.sectores( id_aut_sector )  ,
+	CONSTRAINT fk_ofertas_salarios FOREIGN KEY ( id_forma_pago ) REFERENCES ofertas.salarios( id_aut_salario )  ,
+	CONSTRAINT fk_ofertas_discapacidades FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades )  ,
+	CONSTRAINT fk_ofertas_niveles_estudio FOREIGN KEY ( id_aut_nivestud ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  
+ );
+
+CREATE  TABLE ofertas.ofertas_areascon ( 
+	id_aut_oferta        integer  NOT NULL ,
+	id_areaconocimiento  integer  NOT NULL ,
+	CONSTRAINT idx_ofertas_areascon PRIMARY KEY ( id_aut_oferta, id_areaconocimiento ),
+	CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ofertas_areascon FOREIGN KEY ( id_areaconocimiento ) REFERENCES ofertas.areas_conocimiento( id_aut_areaconocimiento ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.ofertas_idiomas ( 
+	id_oferta            integer  NOT NULL ,
+	id_idioma            integer  NOT NULL ,
+	nivel_escritura      varchar(20)  NOT NULL ,
+	nivel_lectura        varchar(20)  NOT NULL ,
+	nivel_conversacion   varchar(20)  NOT NULL ,
+	CONSTRAINT idx_ofertas_idiomas PRIMARY KEY ( id_oferta, id_idioma ),
+	CONSTRAINT fk_ofertas_idiomas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ofertas_idiomas_idiomas FOREIGN KEY ( id_idioma ) REFERENCES ofertas.idiomas( id_aut_idioma )  
+ );
+
+CREATE  TABLE ofertas.ofertas_software ( 
+	id_software          serial  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	nivel                varchar(20)  NOT NULL ,
+	CONSTRAINT idx_ofertas_software PRIMARY KEY ( id_software ),
+	CONSTRAINT fk_ofertas_software_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.participa ( 
+	id_egresado          integer  NOT NULL ,
+	id_evento            integer  NOT NULL ,
+	como_se_entero       varchar(50)  NOT NULL ,
+	CONSTRAINT idx_participa PRIMARY KEY ( id_egresado, id_evento ),
+	CONSTRAINT fk_participa_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_participa_evento FOREIGN KEY ( id_evento ) REFERENCES ofertas.evento( id_aut_evento )  
+ );
+
+CREATE  TABLE ofertas.postulaciones ( 
+	id_aut_egresado      integer  NOT NULL ,
+	id_aut_oferta        integer  NOT NULL ,
+	fecha_postulacion    date DEFAULT current_date NOT NULL ,
+	fecha_revision_empresa date   ,
+	estado               varchar(30)   ,
+	CONSTRAINT idx_postulaciones PRIMARY KEY ( id_aut_egresado, id_aut_oferta ),
+	CONSTRAINT unq_postulaciones_id_aut_egresado UNIQUE ( id_aut_egresado ) ,
+	CONSTRAINT fk_postulaciones_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_postulaciones_egresados FOREIGN KEY ( id_aut_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
+ );
+
+CREATE  TABLE ofertas.preguntas_oferta ( 
+	id_aut_pregunta      serial  NOT NULL ,
+	pregunta             text  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	CONSTRAINT pk_preguntas_oferta_id_aut_pregunta PRIMARY KEY ( id_aut_pregunta ),
+	CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.programas_ofertas ( 
+	id_oferta            integer  NOT NULL ,
+	id_programa          integer  NOT NULL ,
+	CONSTRAINT idx_programas_ofertas PRIMARY KEY ( id_oferta, id_programa ),
+	CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
+	CONSTRAINT fk_programas_ofertas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta )  
+ );
+
+CREATE  TABLE ofertas.recepcion_hv ( 
+	id_aut_recepcionhv   serial  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	correo               varchar(60)  NOT NULL ,
+	nombres              varchar(30)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	CONSTRAINT pk_recepcion_hv_id_aut_recepcionhv PRIMARY KEY ( id_aut_recepcionhv ),
+	CONSTRAINT fk_recepcion_hv_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.referidos_egresados ( 
+	id_egresados         integer  NOT NULL ,
+	id_referidos         integer  NOT NULL ,
+	CONSTRAINT idx_referidos_egresados PRIMARY KEY ( id_egresados, id_referidos ),
+	CONSTRAINT fk_referidos_egresados_egresados FOREIGN KEY ( id_egresados ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_referidos_egresados_referidos FOREIGN KEY ( id_referidos ) REFERENCES ofertas.referidos( id_aut_referido )  
+ );
+
+CREATE  TABLE ofertas.representante_empresa ( 
+	id_aut_representante_empresa serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	id_empresa           integer  NOT NULL ,
+	telefono             varchar(16)   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	CONSTRAINT pk_table_0_id_aut_administrador_empresa PRIMARY KEY ( id_aut_representante_empresa ),
+	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) ,
+	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  
+ );
+
+CREATE  TABLE ofertas.solicita ( 
+	id_carnetizacion     integer  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	fecha_solicitud      date  NOT NULL ,
+	fecha_respuesta      date  NOT NULL ,
+	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado ),
+	CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion )  ,
+	CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
+ );
+
+CREATE  TABLE ofertas.tipo_de_observacion ( 
+	id_aut_comentario    serial  NOT NULL ,
+	sugerencia_programa  text  NOT NULL ,
+	opinio_universidad_futuro text  NOT NULL ,
+	nombre_docente_influyo varchar(60)  NOT NULL ,
+	id_grado             integer  NOT NULL ,
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario ),
+	CONSTRAINT fk_tipo_de_observacion_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_tipo_de_comentarios )  
+ );
+
+CREATE  TABLE ofertas.ubicacion_oferta ( 
+	id_oferta            integer  NOT NULL ,
+	id_ciudad            integer  NOT NULL ,
+	CONSTRAINT idx_ubicacion_oferta PRIMARY KEY ( id_oferta, id_ciudad ),
+	CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+CREATE  TABLE ofertas.administrador_empresa ( 
+	id_aut_administrador_empresa serial  NOT NULL ,
+	nombres              varchar(40)  NOT NULL ,
+	apellidos            varchar(40)  NOT NULL ,
+	id_cargo             integer  NOT NULL ,
+	telefono             varchar(16)   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	horario_contacto     varchar(40)   ,
+	correo_corporativo   varchar(60)  NOT NULL ,
+	id_direccion         integer  NOT NULL ,
+	id_empresa           integer  NOT NULL ,
+	id_aut_user          integer  NOT NULL ,
+	CONSTRAINT pk_representante_legal_id PRIMARY KEY ( id_aut_administrador_empresa ),
+	CONSTRAINT idx_administrador_empresa_0 UNIQUE ( id_empresa ) ,
+	CONSTRAINT idx_administrador_empresa_1 UNIQUE ( correo_corporativo ) ,
+	CONSTRAINT fk_representante_legal_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
+	CONSTRAINT fk_representante_legal_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  
+ );
+
+CREATE  TABLE ofertas.contratos ( 
+	id_aut_contrato      serial  NOT NULL ,
+	duracion             varchar(20)   ,
+	tipo_contrato        varchar(50)  NOT NULL ,
+	jornada_laboral      varchar(30)  NOT NULL ,
+	horario              varchar(40)   ,
+	comentarios_salario  text   ,
+	id_oferta            integer  NOT NULL ,
+	CONSTRAINT pk_contratos_id_aut_contrato PRIMARY KEY ( id_aut_contrato ),
+	CONSTRAINT idx_contratos_oferta UNIQUE ( id_oferta ) ,
+	CONSTRAINT fk_contratos_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.postulaciones_respuestas ( 
+	id_egresado          integer  NOT NULL ,
+	id_pregunta          integer  NOT NULL ,
+	respuesta            text  NOT NULL ,
+	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta ),
+	CONSTRAINT fk_postulaciones_respuestas_postulaciones FOREIGN KEY ( id_egresado ) REFERENCES ofertas.postulaciones( id_aut_egresado )  ,
+	CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta )  
+ );
+]]></string>
+		</script>
+		<script name="SQL_Editor_013" id="Editor_420da76" language="SQL" >
+			<string><![CDATA[CREATE SCHEMA ofertas;
+
+CREATE  TABLE ofertas.areas_conocimiento ( 
+	id_aut_areaconocimiento serial  NOT NULL ,
+	nombre               varchar(100)  NOT NULL ,
+	CONSTRAINT pk_areas_conocimiento_id PRIMARY KEY ( id_aut_areaconocimiento )
+ );
+
+CREATE  TABLE ofertas.cargos ( 
+	id_aut_cargos        serial  NOT NULL ,
+	nombre               varchar(40)  NOT NULL ,
+	estado               bool DEFAULT false  ,
+	CONSTRAINT pk_cargos_id_0 PRIMARY KEY ( id_aut_cargos )
+ );
+
+CREATE  TABLE ofertas.carnetizacion ( 
+	id_aut_carnetizacion integer  NOT NULL ,
+	estado_solicitud     varchar(50)  NOT NULL ,
+	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
+ );
+
+CREATE  TABLE ofertas.discapacidades ( 
+	id_aut_discapacidades serial  NOT NULL ,
+	nombre               varchar(30)  NOT NULL ,
+	CONSTRAINT pk_discapacidades_id_aut_discapacidades PRIMARY KEY ( id_aut_discapacidades )
+ );
+
+CREATE  TABLE ofertas.evento ( 
+	id_aut_evento        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	fecha_inicio         date   ,
+	fecha_fin            date   ,
+	lugar                text   ,
+	descripcion          varchar(50)   ,
+	cupos                numeric   ,
+	a_quien_va_dirigida  varchar(50)   ,
+	CONSTRAINT pk_evento_id_evento PRIMARY KEY ( id_aut_evento )
+ );
+
+CREATE  TABLE ofertas.facultades ( 
+	id_aut_facultad      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
+ );
+
+CREATE  TABLE ofertas.idiomas ( 
+	id_aut_idioma        serial  NOT NULL ,
+	nombre               varchar(20)  NOT NULL ,
+	CONSTRAINT pk_idiomas_id_aut_idioma PRIMARY KEY ( id_aut_idioma ),
+	CONSTRAINT idx_idiomas UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.nivel_programa ( 
+	id_aut_nivprogra     serial  NOT NULL ,
+	nombre               varchar(40)  NOT NULL ,
+	CONSTRAINT pk_nivel_programa_id_aut_nivprogra PRIMARY KEY ( id_aut_nivprogra ),
+	CONSTRAINT idx_nivel_programa UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.niveles_estudio ( 
+	id_aut_estudio       serial  NOT NULL ,
+	nombre               varchar(50) DEFAULT 100 NOT NULL ,
+	pertenece_u          bool DEFAULT false NOT NULL ,
+	CONSTRAINT pk_niveles_estudio_id PRIMARY KEY ( id_aut_estudio ),
+	CONSTRAINT idx_niveles_estudio_nombre UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.padres ( 
+	id_aut_padre         serial  NOT NULL ,
+	nombres              varchar(40)  NOT NULL ,
+	apellidos            varchar(40)  NOT NULL ,
+	correo               varchar(60)   ,
+	telefono             varchar(16)  NOT NULL ,
+	id_nivel_estudio     integer  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	id_programa          integer  NOT NULL ,
+	CONSTRAINT pk_contactos_id PRIMARY KEY ( id_aut_padre )
+ );
+
+CREATE  TABLE ofertas.pais ( 
+	id_aut_pais          serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_pais_id_pais PRIMARY KEY ( id_aut_pais ),
+	CONSTRAINT idx_pais UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.rol ( 
+	id_aut_rol           serial  NOT NULL ,
+	nombre               varchar(30)  NOT NULL ,
+	CONSTRAINT pk_roles_id PRIMARY KEY ( id_aut_rol )
+ );
+
+CREATE  TABLE ofertas.salarios ( 
+	id_aut_salario       serial  NOT NULL ,
+	minimo               integer  NOT NULL ,
+	maximo               integer  NOT NULL ,
+	forma_pago           varchar(20)  NOT NULL ,
+	CONSTRAINT pk_salarios_id_aut_salario PRIMARY KEY ( id_aut_salario )
+ );
+
+CREATE  TABLE ofertas.sectores ( 
+	id_aut_sector        serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_table_0_id_aut_cate_sectores PRIMARY KEY ( id_aut_sector ),
+	CONSTRAINT idx_sectores UNIQUE ( nombre ) 
+ );
+
+CREATE  TABLE ofertas.sede ( 
+	id_aut_sede          serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede )
+ );
+
+CREATE  TABLE ofertas.servicios ( 
+	id_aut_servicio      integer  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	CONSTRAINT pk_servicios_id_aut_servicio PRIMARY KEY ( id_aut_servicio )
+ );
+
+CREATE  TABLE ofertas.sub_sectores ( 
+	id_aut_sub_sector    serial  NOT NULL ,
+	nombre               varchar(100)  NOT NULL ,
+	id_sectores          integer  NOT NULL ,
+	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector ),
+	CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector )  
+ );
+
+CREATE  TABLE ofertas.tipo_de_observacion ( 
+	id_aut_comentario    serial  NOT NULL ,
+	pregunta             varchar(600)  NOT NULL ,
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
+ );
+
+CREATE  TABLE ofertas.titulo ( 
+	id_aut_titulo        serial  NOT NULL ,
+	nombre               varchar(150)  NOT NULL ,
+	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
+ );
+
+CREATE  TABLE ofertas.users ( 
+	id_aut_user          serial  NOT NULL ,
+	email                varchar(60)  NOT NULL ,
+	"password"           varchar(128)   ,
+	id_rol               integer  NOT NULL ,
+	codigo_verificacion  varchar(60)   ,
+	activo               bool DEFAULT false NOT NULL ,
+	CONSTRAINT pk_users_id PRIMARY KEY ( id_aut_user ),
+	CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol )  
+ );
+
+CREATE  TABLE ofertas.apoyos ( 
+	id_aut_apoyo         integer  NOT NULL ,
+	id_user              integer  NOT NULL ,
+	nombres              varchar(60)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	correo               varchar(60)  NOT NULL ,
+	correo_secundario    varchar(60)  NOT NULL ,
+	CONSTRAINT pk_apoyos_id_aut_apoyo PRIMARY KEY ( id_aut_apoyo ),
+	CONSTRAINT fk_apoyos_users FOREIGN KEY ( id_user ) REFERENCES ofertas.users( id_aut_user )  
+ );
+
+CREATE  TABLE ofertas.departamentos ( 
+	id_aut_dep           serial  NOT NULL ,
+	nombre               varchar(50)  NOT NULL ,
+	id_pais_fk           integer  NOT NULL ,
+	CONSTRAINT pk_departamento_id PRIMARY KEY ( id_aut_dep ),
+	CONSTRAINT idx_departamentos UNIQUE ( nombre, id_pais_fk ) ,
+	CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais )  
+ );
+
+CREATE  TABLE ofertas.programas ( 
+	id_aut_programa      serial  NOT NULL ,
+	nombre               varchar(150)  NOT NULL ,
+	id_facultad          integer   ,
+	id_sede              integer   ,
+	id_nivelestudio      integer   ,
+	id_titulo            integer   ,
+	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa ),
+	CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede )  ,
+	CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  ,
+	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  
+ );
+
+CREATE  TABLE ofertas.referidos ( 
+	id_aut_referido      serial  NOT NULL ,
+	nombres              varchar(100)  NOT NULL ,
+	id_nivel_educativo   integer   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	correo               varchar(60)   ,
+	parentesco           varchar(40)   ,
+	id_aut_programa      integer   ,
+	es_egresado          bool   ,
+	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido ),
+	CONSTRAINT fk_referidos_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_referidos_programas FOREIGN KEY ( id_aut_programa ) REFERENCES ofertas.programas( id_aut_programa )  
+ );
+
+CREATE  TABLE ofertas.acceso ( 
+	id_apoyo             integer  NOT NULL ,
+	id_servicio          integer  NOT NULL ,
+	CONSTRAINT pk_acceso_id_apoyo PRIMARY KEY ( id_apoyo ),
+	CONSTRAINT fk_acceso_apoyos FOREIGN KEY ( id_apoyo ) REFERENCES ofertas.apoyos( id_aut_apoyo )  ,
+	CONSTRAINT fk_acceso_servicios FOREIGN KEY ( id_servicio ) REFERENCES ofertas.servicios( id_aut_servicio )  
+ );
+
+CREATE  TABLE ofertas.ciudades ( 
+	id_aut_ciudad        serial  NOT NULL ,
+	nombre               varchar(50)   ,
+	id_departamento      integer  NOT NULL ,
+	CONSTRAINT pk_ciudades_id PRIMARY KEY ( id_aut_ciudad ),
+	CONSTRAINT idx_ciudades UNIQUE ( nombre, id_departamento ) ,
+	CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep )  
+ );
+
+CREATE  TABLE ofertas.localizacion ( 
+	id_aut_localizacion  serial  NOT NULL ,
+	codigo_postal        integer   ,
+	direccion            varchar(100)  NOT NULL ,
+	barrio               varchar(40)   ,
+	id_ciudad            integer  NOT NULL ,
+	CONSTRAINT pk_localizacion_id PRIMARY KEY ( id_aut_localizacion ),
+	CONSTRAINT fk_localizacion_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+CREATE  TABLE ofertas.egresados ( 
+	id_aut_egresado      serial  NOT NULL ,
+	identificacion       integer  NOT NULL ,
+	nombres              varchar(40)  NOT NULL ,
+	apellidos            varchar(40)  NOT NULL ,
+	genero               varchar(20)  NOT NULL ,
+	id_lugar_expedicion  integer   ,
+	id_lugar_residencia  integer   ,
+	id_nivel_educativo   integer   ,
+	num_hijos            smallint DEFAULT 0  ,
+	id_lugar_nacimiento  integer   ,
+	fecha_nacimiento     date   ,
+	estado               varchar(40)  NOT NULL ,
+	correo               varchar(100)   ,
+	correo_alternativo   varchar(100)   ,
+	estado_civil         varchar(40)   ,
+	ha_trabajado         bool   ,
+	trabaja_actualmente  bool   ,
+	id_aut_user          integer   ,
+	grupo_etnico         varchar(40)   ,
+	celular              varchar(16)   ,
+	telefono_fijo        varchar(16)   ,
+	estado_completar     bool  NOT NULL ,
+	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado ),
+	CONSTRAINT fk_egresados_ciudades FOREIGN KEY ( id_lugar_expedicion ) REFERENCES ofertas.ciudades( id_aut_ciudad )  ,
+	CONSTRAINT fk_egresados_localizacion FOREIGN KEY ( id_lugar_residencia ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
+	CONSTRAINT fk_egresados_niveles_estudio FOREIGN KEY ( id_nivel_educativo ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
+	CONSTRAINT fk_egresados_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  ,
+	CONSTRAINT fk_egresados_nacimiento_ciudades FOREIGN KEY ( id_lugar_nacimiento ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+CREATE  TABLE ofertas.egresados_discapacidades ( 
+	id_egresado          integer  NOT NULL ,
+	id_discapacidad      integer  NOT NULL ,
+	descripcion          varchar(80)   ,
+	CONSTRAINT idx_egresados_discapacidades PRIMARY KEY ( id_egresado, id_discapacidad ),
+	CONSTRAINT fk_egresados_discapacidades_egresado FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_egresados_discapacidades_discap FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades )  
+ );
+
+CREATE  TABLE ofertas.empresas ( 
+	id_aut_empresa       serial  NOT NULL ,
+	nit                  varchar(15)  NOT NULL ,
+	nombre               varchar(100)   ,
+	razon_social         varchar(200)  NOT NULL ,
+	anio_creacion        smallint  NOT NULL ,
+	numero_empleados     varchar(30)  NOT NULL ,
+	ingresos             varchar(30)   ,
+	sitio_web            varchar(200)   ,
+	id_direccion         integer  NOT NULL ,
+	estado               varchar(20)   ,
+	fecha_registro       date DEFAULT current_date NOT NULL ,
+	fecha_activacion     date   ,
+	fecha_vencimiento    date   ,
+	total_publicaciones  integer   ,
+	limite_publicaciones integer   ,
+	num_publicaciones_actuales integer   ,
+	correo               varchar(60)   ,
+	telefono             varchar(16)   ,
+	url_logo             varchar(255)   ,
+	url_doc_camaracomercio varchar(255)  NOT NULL ,
+	descripcion          text   ,
+	CONSTRAINT pk_empresas_id PRIMARY KEY ( id_aut_empresa ),
+	CONSTRAINT idx_empresas_unique_nombre UNIQUE ( nombre ) ,
+	CONSTRAINT idx_empresas_unique_nit UNIQUE ( nit ) ,
+	CONSTRAINT fk_empresas_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  
+ );
+
+CREATE  TABLE ofertas.empresas_sectores ( 
+	id_empresa           integer  NOT NULL ,
+	id_sub_sector        integer  NOT NULL ,
+	CONSTRAINT idx_empresas_sectores PRIMARY KEY ( id_empresa, id_sub_sector ),
+	CONSTRAINT fk_empresas_sectores_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_empresas_sectores_sector FOREIGN KEY ( id_sub_sector ) REFERENCES ofertas.sub_sectores( id_aut_sub_sector )  
+ );
+
+CREATE  TABLE ofertas.experiencia ( 
+	id_aut_exp           serial  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	id_cargo             integer  NOT NULL ,
+	nombre_empresa       varchar(50) DEFAULT 100 NOT NULL ,
+	dir_empresa          varchar(50) DEFAULT 100  ,
+	tel_trabajo          integer   ,
+	rango_salario        varchar(50) DEFAULT 100  ,
+	tipo_contrato        varchar(50) DEFAULT 50  ,
+	trabajo_en_su_area   bool   ,
+	sector               varchar(40)   ,
+	id_ciudad            integer  NOT NULL ,
+	fecha_inicio         date  NOT NULL ,
+	fecha_fin            date   ,
+	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp ),
+	CONSTRAINT fk_cargos_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_experiencia_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+COMMENT ON COLUMN ofertas.experiencia.sector IS 'Publico=0\nPrivado=1';
+
+CREATE  TABLE ofertas.grados ( 
+	id_aut_grado         integer  NOT NULL ,
+	tipo_grado           varchar(60)   ,
+	mencion_honor        varchar(50)   ,
+	titulo_especial      varchar(100)   ,
+	anio_graduacion      varchar(50)  NOT NULL ,
+	fecha_graduacion     date   ,
+	id_programa          integer  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	estado               varchar(60)   ,
+	CONSTRAINT pk_grados_id_aut_grado PRIMARY KEY ( id_aut_grado ),
+	CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
+	CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
+ );
+
+CREATE  TABLE ofertas.ofertas ( 
+	id_aut_oferta        serial  NOT NULL ,
+	id_empresa           integer  NOT NULL ,
+	nombre_oferta        varchar(100)  NOT NULL ,
+	descripcion          text  NOT NULL ,
+	id_cargo             integer  NOT NULL ,
+	numero_vacantes      integer DEFAULT 1 NOT NULL ,
+	id_forma_pago        integer  NOT NULL ,
+	experiencia          varchar(30)  NOT NULL ,
+	anios_experiencia    smallint DEFAULT 0 NOT NULL ,
+	fecha_publicacion    date   ,
+	fecha_cierre         date   ,
+	estado               varchar(20)  NOT NULL ,
+	estado_proceso       varchar   ,
+	id_sector            integer  NOT NULL ,
+	nombre_temporal_empresa varchar(30)   ,
+	licencia_conduccion  varchar(20)   ,
+	requisitos_minimos   text  NOT NULL ,
+	id_discapacidad      integer   ,
+	num_dias_oferta      integer  NOT NULL ,
+	id_aut_nivestud      integer  NOT NULL ,
+	CONSTRAINT pk_ofertas_id PRIMARY KEY ( id_aut_oferta ),
+	CONSTRAINT fk_ofertas_empresas FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_ofertas_cargos FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_ofertas_sectores FOREIGN KEY ( id_sector ) REFERENCES ofertas.sectores( id_aut_sector )  ,
+	CONSTRAINT fk_ofertas_salarios FOREIGN KEY ( id_forma_pago ) REFERENCES ofertas.salarios( id_aut_salario )  ,
+	CONSTRAINT fk_ofertas_discapacidades FOREIGN KEY ( id_discapacidad ) REFERENCES ofertas.discapacidades( id_aut_discapacidades )  ,
+	CONSTRAINT fk_ofertas_niveles_estudio FOREIGN KEY ( id_aut_nivestud ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  
+ );
+
+CREATE  TABLE ofertas.ofertas_areascon ( 
+	id_aut_oferta        integer  NOT NULL ,
+	id_areaconocimiento  integer  NOT NULL ,
+	CONSTRAINT idx_ofertas_areascon PRIMARY KEY ( id_aut_oferta, id_areaconocimiento ),
+	CONSTRAINT fk_ofertas_areascon_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ofertas_areascon FOREIGN KEY ( id_areaconocimiento ) REFERENCES ofertas.areas_conocimiento( id_aut_areaconocimiento ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.ofertas_idiomas ( 
+	id_oferta            integer  NOT NULL ,
+	id_idioma            integer  NOT NULL ,
+	nivel_escritura      varchar(20)  NOT NULL ,
+	nivel_lectura        varchar(20)  NOT NULL ,
+	nivel_conversacion   varchar(20)  NOT NULL ,
+	CONSTRAINT idx_ofertas_idiomas PRIMARY KEY ( id_oferta, id_idioma ),
+	CONSTRAINT fk_ofertas_idiomas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ofertas_idiomas_idiomas FOREIGN KEY ( id_idioma ) REFERENCES ofertas.idiomas( id_aut_idioma )  
+ );
+
+CREATE  TABLE ofertas.ofertas_software ( 
+	id_software          serial  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	nivel                varchar(20)  NOT NULL ,
+	CONSTRAINT idx_ofertas_software PRIMARY KEY ( id_software ),
+	CONSTRAINT fk_ofertas_software_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.participa ( 
+	id_egresado          integer  NOT NULL ,
+	id_evento            integer  NOT NULL ,
+	como_se_entero       varchar(50)  NOT NULL ,
+	CONSTRAINT idx_participa PRIMARY KEY ( id_egresado, id_evento ),
+	CONSTRAINT fk_participa_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_participa_evento FOREIGN KEY ( id_evento ) REFERENCES ofertas.evento( id_aut_evento )  
+ );
+
+CREATE  TABLE ofertas.postulaciones ( 
+	id_aut_egresado      integer  NOT NULL ,
+	id_aut_oferta        integer  NOT NULL ,
+	fecha_postulacion    date DEFAULT current_date NOT NULL ,
+	fecha_revision_empresa date   ,
+	estado               varchar(30)   ,
+	CONSTRAINT idx_postulaciones PRIMARY KEY ( id_aut_egresado, id_aut_oferta ),
+	CONSTRAINT unq_postulaciones_id_aut_egresado UNIQUE ( id_aut_egresado ) ,
+	CONSTRAINT fk_postulaciones_ofertas FOREIGN KEY ( id_aut_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_postulaciones_egresados FOREIGN KEY ( id_aut_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
+ );
+
+CREATE  TABLE ofertas.preguntas_oferta ( 
+	id_aut_pregunta      serial  NOT NULL ,
+	pregunta             text  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	CONSTRAINT pk_preguntas_oferta_id_aut_pregunta PRIMARY KEY ( id_aut_pregunta ),
+	CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.programas_ofertas ( 
+	id_oferta            integer  NOT NULL ,
+	id_programa          integer  NOT NULL ,
+	CONSTRAINT idx_programas_ofertas PRIMARY KEY ( id_oferta, id_programa ),
+	CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  ,
+	CONSTRAINT fk_programas_ofertas_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta )  
+ );
+
+CREATE  TABLE ofertas.recepcion_hv ( 
+	id_aut_recepcionhv   serial  NOT NULL ,
+	id_oferta            integer  NOT NULL ,
+	correo               varchar(60)  NOT NULL ,
+	nombres              varchar(30)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	CONSTRAINT pk_recepcion_hv_id_aut_recepcionhv PRIMARY KEY ( id_aut_recepcionhv ),
+	CONSTRAINT fk_recepcion_hv_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE
+ );
+
+CREATE  TABLE ofertas.referidos_egresados ( 
+	id_egresados         integer  NOT NULL ,
+	id_referidos         integer  NOT NULL ,
+	CONSTRAINT idx_referidos_egresados PRIMARY KEY ( id_egresados, id_referidos ),
+	CONSTRAINT fk_referidos_egresados_egresados FOREIGN KEY ( id_egresados ) REFERENCES ofertas.egresados( id_aut_egresado )  ,
+	CONSTRAINT fk_referidos_egresados_referidos FOREIGN KEY ( id_referidos ) REFERENCES ofertas.referidos( id_aut_referido )  
+ );
+
+CREATE  TABLE ofertas.representante_empresa ( 
+	id_aut_representante_empresa serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	apellidos            varchar(60)  NOT NULL ,
+	id_empresa           integer  NOT NULL ,
+	telefono             varchar(16)   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	CONSTRAINT pk_table_0_id_aut_administrador_empresa PRIMARY KEY ( id_aut_representante_empresa ),
+	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) ,
+	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  
+ );
+
+CREATE  TABLE ofertas.solicita ( 
+	id_carnetizacion     integer  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	fecha_solicitud      date  NOT NULL ,
+	fecha_respuesta      date  NOT NULL ,
+	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado ),
+	CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion )  ,
+	CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado )  
+ );
+
+CREATE  TABLE ofertas.ubicacion_oferta ( 
+	id_oferta            integer  NOT NULL ,
+	id_ciudad            integer  NOT NULL ,
+	CONSTRAINT idx_ubicacion_oferta PRIMARY KEY ( id_oferta, id_ciudad ),
+	CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad )  
+ );
+
+CREATE  TABLE ofertas.administrador_empresa ( 
+	id_aut_administrador_empresa serial  NOT NULL ,
+	nombres              varchar(40)  NOT NULL ,
+	apellidos            varchar(40)  NOT NULL ,
+	id_cargo             integer  NOT NULL ,
+	telefono             varchar(16)   ,
+	telefono_movil       varchar(16)  NOT NULL ,
+	horario_contacto     varchar(40)   ,
+	correo_corporativo   varchar(60)  NOT NULL ,
+	id_direccion         integer  NOT NULL ,
+	id_empresa           integer  NOT NULL ,
+	id_aut_user          integer  NOT NULL ,
+	CONSTRAINT pk_representante_legal_id PRIMARY KEY ( id_aut_administrador_empresa ),
+	CONSTRAINT idx_administrador_empresa_0 UNIQUE ( id_empresa ) ,
+	CONSTRAINT idx_administrador_empresa_1 UNIQUE ( correo_corporativo ) ,
+	CONSTRAINT fk_representante_legal_localizacion FOREIGN KEY ( id_direccion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
+	CONSTRAINT fk_representante_legal_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa )  ,
+	CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_cargo ) REFERENCES ofertas.cargos( id_aut_cargos )  ,
+	CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user )  
+ );
+
+CREATE  TABLE ofertas.comenta ( 
+	id_grado             integer  NOT NULL ,
+	id_comentario        integer  NOT NULL ,
+	respuesta            varchar(3000)  NOT NULL ,
+	CONSTRAINT pk_comenta_id_grado PRIMARY KEY ( id_grado ),
+	CONSTRAINT fk_comenta_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_aut_grado )  ,
+	CONSTRAINT fk_comenta_tipo_de_observacion FOREIGN KEY ( id_comentario ) REFERENCES ofertas.tipo_de_observacion( id_aut_comentario )  
  );
 
 CREATE  TABLE ofertas.contratos ( 
