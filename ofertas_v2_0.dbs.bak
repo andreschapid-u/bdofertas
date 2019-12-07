@@ -872,11 +872,11 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="egresados" color="008080" x="1040" y="736" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="1024" y="256" />
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="48" y="1376" />
-		<entity schema="ofertas" name="titulo" color="C1D8EE" x="288" y="1184" />
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1584" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1296" />
 		<entity schema="ofertas" name="sede_programas" color="C1D8EE" x="240" y="1344" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1296" y="1008" />
+		<entity schema="ofertas" name="titulo" color="C1D8EE" x="224" y="1152" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

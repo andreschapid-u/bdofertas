@@ -1,4 +1,4 @@
-drop schema if exists ofertas cascade;
+drop schema if exist ofertas cascade;
 
 CREATE SCHEMA ofertas;
 
@@ -145,9 +145,9 @@ CREATE  TABLE ofertas.titulo (
  );
 
 CREATE  TABLE ofertas.universidad ( 
-	id_universidad       serial  NOT NULL ,
+	id_aut_universidad   serial  NOT NULL ,
 	nombre               varchar(100)  NOT NULL ,
-	CONSTRAINT pk_universidad_id_universidad PRIMARY KEY ( id_universidad )
+	CONSTRAINT pk_universidad_id_universidad PRIMARY KEY ( id_aut_universidad )
  );
 
 CREATE  TABLE ofertas.users ( 
@@ -193,7 +193,7 @@ CREATE  TABLE ofertas.programas (
 	CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
 	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  ,
 	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  ,
-	CONSTRAINT fk_programas_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_universidad )  
+	CONSTRAINT fk_programas_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad )  
  );
 
 CREATE  TABLE ofertas.referidos ( 
@@ -244,7 +244,7 @@ CREATE  TABLE ofertas.sede (
 	id_universidad       integer  NOT NULL ,
 	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede ),
 	CONSTRAINT fk_sede_localizacion FOREIGN KEY ( id_localizacion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
-	CONSTRAINT fk_sede_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_universidad )  
+	CONSTRAINT fk_sede_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad )  
  );
 
 CREATE  TABLE ofertas.sede_programas ( 
@@ -567,5 +567,3 @@ CREATE  TABLE ofertas.postulaciones_respuestas (
 	CONSTRAINT fk_postulaciones_respuestas_postulaciones FOREIGN KEY ( id_egresado ) REFERENCES ofertas.postulaciones( id_aut_egresado )  ,
 	CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta )  
  );
-
- COMMIT;

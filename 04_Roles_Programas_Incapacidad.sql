@@ -23,7 +23,7 @@ INSERT INTO ofertas.nivel_programa( id_aut_nivprogra, nombre ) VALUES ( 5, 'Doct
 
 
 -- PROGRAMAS
--- INSERT INTO ofertas.programas( id_aut_programa, nombre, id_facultad, id_sede, id_nivelprogra ) VALUES ( 1, 'Ingeniería de Sistemas', null, null, 2 ); 
--- INSERT INTO ofertas.programas( id_aut_programa, nombre, id_facultad, id_sede, id_nivelprogra ) VALUES ( 2, 'Física', null, null, 2 ); 
+INSERT INTO ofertas.programas( id_aut_programa, nombre, id_facultad, id_sede, id_nivelprogra ) VALUES ( 1, 'Ingeniería de Sistemas', null, null, 2 ); 
+INSERT INTO ofertas.programas( id_aut_programa, nombre, id_facultad, id_sede, id_nivelprogra ) VALUES ( 2, 'Física', null, null, 2 ); 
 
 commit;
