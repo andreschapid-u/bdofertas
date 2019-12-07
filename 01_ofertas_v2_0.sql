@@ -39,12 +39,6 @@ CREATE  TABLE ofertas.evento (
 	CONSTRAINT pk_evento_id_evento PRIMARY KEY ( id_aut_evento )
  );
 
-CREATE  TABLE ofertas.facultades ( 
-	id_aut_facultad      serial  NOT NULL ,
-	nombre               varchar(60)  NOT NULL ,
-	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
- );
-
 CREATE  TABLE ofertas.idiomas ( 
 	id_aut_idioma        serial  NOT NULL ,
 	nombre               varchar(20)  NOT NULL ,
@@ -182,18 +176,24 @@ CREATE  TABLE ofertas.departamentos (
 	CONSTRAINT fk_departamentos_pais FOREIGN KEY ( id_pais_fk ) REFERENCES ofertas.pais( id_aut_pais )  
  );
 
+CREATE  TABLE ofertas.facultades ( 
+	id_aut_facultad      serial  NOT NULL ,
+	nombre               varchar(60)  NOT NULL ,
+	id_universidad       integer  NOT NULL ,
+	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad ),
+	CONSTRAINT fk_facultades_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad )  
+ );
+
 CREATE  TABLE ofertas.programas ( 
 	id_aut_programa      serial  NOT NULL ,
 	nombre               varchar(150)  NOT NULL ,
-	id_facultad          integer   ,
-	id_nivelestudio      integer   ,
+	id_facultad          integer  NOT NULL ,
+	id_nivelestudio      integer  NOT NULL ,
 	id_titulo            integer   ,
-	id_universidad       integer  NOT NULL ,
 	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa ),
 	CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio )  ,
-	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  ,
 	CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo )  ,
-	CONSTRAINT fk_programas_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad )  
+	CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad )  
  );
 
 CREATE  TABLE ofertas.referidos ( 
