@@ -1,4 +1,4 @@
-drop schema if exist ofertas cascade;
+drop schema if exists ofertas cascade;
 
 CREATE SCHEMA ofertas;
 
@@ -567,3 +567,5 @@ CREATE  TABLE ofertas.postulaciones_respuestas (
 	CONSTRAINT fk_postulaciones_respuestas_postulaciones FOREIGN KEY ( id_egresado ) REFERENCES ofertas.postulaciones( id_aut_egresado )  ,
 	CONSTRAINT fk_postulaciones_respuestas_preguntas_oferta FOREIGN KEY ( id_pregunta ) REFERENCES ofertas.preguntas_oferta( id_aut_pregunta )  
  );
+
+ COMMIT;
