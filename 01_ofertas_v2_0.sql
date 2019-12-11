@@ -1,4 +1,4 @@
-drop schema if exist ofertas cascade;
+drop schema if exists ofertas cascade;
 
 CREATE SCHEMA ofertas;
 
@@ -54,18 +54,6 @@ CREATE  TABLE ofertas.niveles_estudio (
 	CONSTRAINT idx_niveles_estudio_nombre UNIQUE ( nombre ) 
  );
 
-CREATE  TABLE ofertas.padres ( 
-	id_aut_padre         serial  NOT NULL ,
-	nombres              varchar(40)  NOT NULL ,
-	apellidos            varchar(40)  NOT NULL ,
-	correo               varchar(60)   ,
-	telefono             varchar(16)  NOT NULL ,
-	id_nivel_estudio     integer  NOT NULL ,
-	id_egresado          integer  NOT NULL ,
-	id_programa          integer  NOT NULL ,
-	CONSTRAINT pk_contactos_id PRIMARY KEY ( id_aut_padre )
- );
-
 CREATE  TABLE ofertas.pais ( 
 	id_aut_pais          serial  NOT NULL ,
 	nombre               varchar(50)  NOT NULL ,
@@ -110,12 +98,6 @@ CREATE  TABLE ofertas.sub_sectores (
 	nombre               varchar(100)  NOT NULL ,
 	id_sectores          integer  NOT NULL ,
 	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector )
- );
-
-CREATE  TABLE ofertas."table" ( 
- );
-
-CREATE  TABLE ofertas.table_0 ( 
  );
 
 CREATE  TABLE ofertas.tipo_de_observacion ( 
@@ -169,8 +151,7 @@ CREATE  TABLE ofertas.facultades (
 	id_aut_facultad      serial  NOT NULL ,
 	nombre               varchar(60)  NOT NULL ,
 	id_universidad       integer  NOT NULL ,
-	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad ),
-	CONSTRAINT fk_facultades_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad )  
+	CONSTRAINT pk_facultades_id PRIMARY KEY ( id_aut_facultad )
  );
 
 CREATE  TABLE ofertas.programas ( 
@@ -222,17 +203,13 @@ CREATE  TABLE ofertas.sede (
 	nombre               varchar(50)  NOT NULL ,
 	id_localizacion      integer  NOT NULL ,
 	id_universidad       integer  NOT NULL ,
-	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede ),
-	CONSTRAINT fk_sede_localizacion FOREIGN KEY ( id_localizacion ) REFERENCES ofertas.localizacion( id_aut_localizacion )  ,
-	CONSTRAINT fk_sede_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad )  
+	CONSTRAINT pk_sede_id_aut_sede PRIMARY KEY ( id_aut_sede )
  );
 
 CREATE  TABLE ofertas.sede_programas ( 
 	id_sede              integer  NOT NULL ,
 	id_programa          integer  NOT NULL ,
-	CONSTRAINT idx_sede_programas PRIMARY KEY ( id_sede, id_programa ),
-	CONSTRAINT fk_sede_programas_sede FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede )  ,
-	CONSTRAINT fk_sede_programas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa )  
+	CONSTRAINT idx_sede_programas PRIMARY KEY ( id_sede, id_programa )
  );
 
 CREATE  TABLE ofertas.egresados ( 
@@ -315,6 +292,9 @@ CREATE  TABLE ofertas.experiencia (
 	id_ciudad            integer  NOT NULL ,
 	fecha_inicio         date  NOT NULL ,
 	fecha_fin            date   ,
+	nombre_jefe          varchar(60)   ,
+	correo_jefe          varchar(60)   ,
+	telefono_jefe        varchar(15)   ,
 	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp )
  );
 
@@ -330,6 +310,7 @@ CREATE  TABLE ofertas.grados (
 	id_programa          integer  NOT NULL ,
 	id_egresado          integer  NOT NULL ,
 	estado               varchar(60)   ,
+	observacion          varchar(300)   ,
 	CONSTRAINT pk_grados_id_aut_grado PRIMARY KEY ( id_aut_grado )
  );
 
@@ -551,6 +532,8 @@ ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_cargos FOREIGN KEY
 
 ALTER TABLE ofertas.experiencia ADD CONSTRAINT fk_experiencia_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
+ALTER TABLE ofertas.facultades ADD CONSTRAINT fk_facultades_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad );
+
 ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
 ALTER TABLE ofertas.grados ADD CONSTRAINT fk_grados_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
@@ -595,13 +578,11 @@ ALTER TABLE ofertas.postulaciones_respuestas ADD CONSTRAINT fk_postulaciones_res
 
 ALTER TABLE ofertas.preguntas_oferta ADD CONSTRAINT fk_preguntas_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_programas FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede );
-
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
 
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
-
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo );
+
+ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
 
 ALTER TABLE ofertas.programas_ofertas ADD CONSTRAINT fk_programas_ofertas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
@@ -618,6 +599,14 @@ ALTER TABLE ofertas.referidos_egresados ADD CONSTRAINT fk_referidos_egresados_eg
 ALTER TABLE ofertas.referidos_egresados ADD CONSTRAINT fk_referidos_egresados_referidos FOREIGN KEY ( id_referidos ) REFERENCES ofertas.referidos( id_aut_referido );
 
 ALTER TABLE ofertas.representante_empresa ADD CONSTRAINT fk_representante_empresa FOREIGN KEY ( id_empresa ) REFERENCES ofertas.empresas( id_aut_empresa );
+
+ALTER TABLE ofertas.sede ADD CONSTRAINT fk_sede_localizacion FOREIGN KEY ( id_localizacion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
+
+ALTER TABLE ofertas.sede ADD CONSTRAINT fk_sede_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad );
+
+ALTER TABLE ofertas.sede_programas ADD CONSTRAINT fk_sede_programas_sede FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede );
+
+ALTER TABLE ofertas.sede_programas ADD CONSTRAINT fk_sede_programas_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
 
 ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion );
 

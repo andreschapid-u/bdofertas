@@ -496,19 +496,6 @@ Privado=1]]></comment>
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 		</table>
-		<table name="padres" >
-			<column name="id_aut_padre" type="serial" jt="4" mandatory="y" />
-			<column name="nombres" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="apellidos" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="correo" type="varchar" length="60" jt="12" />
-			<column name="telefono" type="varchar" length="16" jt="12" mandatory="y" />
-			<column name="id_nivel_estudio" type="integer" jt="4" mandatory="y" />
-			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
-			<column name="id_programa" type="integer" jt="4" mandatory="y" />
-			<index name="pk_contactos_id" unique="PRIMARY_KEY" >
-				<column name="id_aut_padre" />
-			</index>
-		</table>
 		<table name="pais" >
 			<column name="id_aut_pais" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="50" jt="12" mandatory="y" />
@@ -774,8 +761,6 @@ Privado=1]]></comment>
 				<fk_column name="id_sectores" pk="id_aut_sector" />
 			</fk>
 		</table>
-		<table name="table" />
-		<table name="table_0" />
 		<table name="tipo_de_observacion" >
 			<column name="id_aut_comentario" type="serial" jt="4" mandatory="y" />
 			<column name="pregunta" type="varchar" length="600" jt="12" mandatory="y" />
@@ -831,56 +816,58 @@ Privado=1]]></comment>
 	<connector name="PostgreSQL" database="PostgreSQL" host="localhost" port="5432" instance="test" user="test" passwd="dGVzdA==" />
 	<layout name="BDOFertas" id="Layout_2b6d324" show_relation="columns" >
 		<comment><![CDATA[ofertas]]></comment>
-		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="2016" y="896" />
-		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="2064" y="640" />
-		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="912" y="1600" />
-		<entity schema="ofertas" name="sectores" color="3986C1" x="1952" y="400" />
-		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1696" y="480" />
-		<entity schema="ofertas" name="recepcion_hv" color="C1D8EE" x="1888" y="1680" />
-		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="1984" y="1552" />
-		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1760" y="1472" />
-		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="1968" y="1280" />
-		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1296" y="1680" />
-		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1584" y="1744" />
-		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1264" y="1392" />
-		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="1056" y="1712" />
-		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1600" y="176" />
-		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1648" y="816" />
-		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="800" y="1328" />
-		<entity schema="ofertas" name="facultades" color="C1D8EE" x="896" y="1168" />
-		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1328" y="1120" />
-		<entity schema="ofertas" name="sede" color="C1D8EE" x="48" y="1376" />
-		<entity schema="ofertas" name="titulo" color="C1D8EE" x="48" y="1184" />
-		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="576" y="1616" />
-		<entity schema="ofertas" name="grados" color="C1D8EE" x="1088" y="1008" />
-		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1456" y="992" />
-		<entity schema="ofertas" name="solicita" color="C1D8EE" x="1232" y="880" />
-		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1456" y="880" />
-		<entity schema="ofertas" name="users" color="C1D8EE" x="992" y="48" />
-		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="496" y="48" />
-		<entity schema="ofertas" name="acceso" color="C1D8EE" x="496" y="272" />
-		<entity schema="ofertas" name="servicios" color="C1D8EE" x="480" y="416" />
-		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1232" y="256" />
-		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="1088" y="496" />
-		<entity schema="ofertas" name="participa" color="C1D8EE" x="560" y="576" />
-		<entity schema="ofertas" name="evento" color="C1D8EE" x="288" y="624" />
-		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="480" y="768" />
-		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="528" y="944" />
-		<entity schema="ofertas" name="programas" color="C1D8EE" x="256" y="1360" />
-		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="528" y="1312" />
-		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="560" y="1104" />
-		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="832" y="1488" />
-		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1232" y="720" />
-		<entity schema="ofertas" name="pais" color="C1D8EE" x="1520" y="528" />
-		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1328" y="480" />
-		<entity schema="ofertas" name="rol" color="3986C1" x="688" y="112" />
-		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="784" y="256" />
-		<entity schema="ofertas" name="referidos" color="C1D8EE" x="272" y="960" />
-		<entity schema="ofertas" name="egresados" color="008080" x="832" y="736" />
-		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1472" y="1296" />
-		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1152" y="1568" />
-		<entity schema="ofertas" name="ofertas_discapacidades" color="C1D8EE" x="1088" y="1456" />
-		<script name="01_ofertas_v2_0.sql" id="Editor_57a9f59" language="SQL" confirmed="y" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v2_0.sql" />
-		<script name="01_ofertas_v2_0.sql" id="Editor_2c1982e" language="SQL" confirmed="y" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v2_0.sql" />
+		<entity schema="ofertas" name="empresas_sectores" color="C1D8EE" x="2048" y="896" />
+		<entity schema="ofertas" name="sub_sectores" color="C1D8EE" x="2096" y="640" />
+		<entity schema="ofertas" name="programas_ofertas" color="C1D8EE" x="944" y="1600" />
+		<entity schema="ofertas" name="sectores" color="3986C1" x="1984" y="400" />
+		<entity schema="ofertas" name="administrador_empresa" color="C1D8EE" x="1728" y="480" />
+		<entity schema="ofertas" name="recepcion_hv" color="C1D8EE" x="1920" y="1680" />
+		<entity schema="ofertas" name="areas_conocimiento" color="C1D8EE" x="2016" y="1552" />
+		<entity schema="ofertas" name="contratos" color="C1D8EE" x="1792" y="1472" />
+		<entity schema="ofertas" name="ofertas_idiomas" color="C1D8EE" x="1328" y="1680" />
+		<entity schema="ofertas" name="ofertas_software" color="C1D8EE" x="1616" y="1744" />
+		<entity schema="ofertas" name="ubicacion_oferta" color="C1D8EE" x="1296" y="1392" />
+		<entity schema="ofertas" name="idiomas" color="C1D8EE" x="1088" y="1712" />
+		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1632" y="176" />
+		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1680" y="816" />
+		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="832" y="1328" />
+		<entity schema="ofertas" name="facultades" color="C1D8EE" x="928" y="1168" />
+		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1360" y="1120" />
+		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1376" />
+		<entity schema="ofertas" name="titulo" color="C1D8EE" x="80" y="1184" />
+		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="608" y="1616" />
+		<entity schema="ofertas" name="grados" color="C1D8EE" x="1120" y="1008" />
+		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1488" y="992" />
+		<entity schema="ofertas" name="solicita" color="C1D8EE" x="1264" y="880" />
+		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1488" y="880" />
+		<entity schema="ofertas" name="users" color="C1D8EE" x="1024" y="48" />
+		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="528" y="48" />
+		<entity schema="ofertas" name="acceso" color="C1D8EE" x="528" y="272" />
+		<entity schema="ofertas" name="servicios" color="C1D8EE" x="512" y="416" />
+		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1264" y="256" />
+		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="1120" y="496" />
+		<entity schema="ofertas" name="participa" color="C1D8EE" x="592" y="576" />
+		<entity schema="ofertas" name="evento" color="C1D8EE" x="320" y="624" />
+		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="512" y="768" />
+		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="560" y="944" />
+		<entity schema="ofertas" name="programas" color="C1D8EE" x="288" y="1360" />
+		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="560" y="1312" />
+		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="592" y="1104" />
+		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1264" y="720" />
+		<entity schema="ofertas" name="pais" color="C1D8EE" x="1552" y="528" />
+		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1360" y="480" />
+		<entity schema="ofertas" name="rol" color="3986C1" x="720" y="112" />
+		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="816" y="256" />
+		<entity schema="ofertas" name="referidos" color="C1D8EE" x="304" y="960" />
+		<entity schema="ofertas" name="egresados" color="008080" x="864" y="736" />
+		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1504" y="1296" />
+		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1184" y="1568" />
+		<entity schema="ofertas" name="ofertas_discapacidades" color="C1D8EE" x="1120" y="1456" />
+		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="864" y="1488" />
+		<entity schema="ofertas" name="universidad" color="3986C1" x="256" y="1600" />
+		<entity schema="ofertas" name="sede_programas" color="3986C1" x="48" y="1600" />
+		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="2000" y="1280" />
+		<entity schema="ofertas" name="recuperar_password" color="3986C1" x="1216" y="48" />
+		<script name="01_ofertas_v2_0.sql" id="Editor_111686c" language="SQL" confirmed="y" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v2_0.sql" />
 	</layout>
 </project>
