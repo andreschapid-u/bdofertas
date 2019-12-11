@@ -6,3 +6,5 @@ INSERT INTO  ofertas.niveles_estudio(id_aut_estudio,nombre,pertenece_u) VALUES (
 INSERT INTO  ofertas.niveles_estudio(id_aut_estudio,nombre,pertenece_u) VALUES (6,'Especialización', true);
 INSERT INTO  ofertas.niveles_estudio(id_aut_estudio,nombre,pertenece_u) VALUES (7,'Maestría',true);
 INSERT INTO  ofertas.niveles_estudio(id_aut_estudio,nombre,pertenece_u) VALUES (8,'Doctorado',true);
+
+COMMIT;

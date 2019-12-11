@@ -216,3 +216,6 @@ VALUES
 (112, 103, 'Edocx', 'Nivel usuario'),
 (113, 103, 'Microsoft Windows', 'Nivel usuario'),
 (114, 120, 'Oracle', 'Nivel profesional');
+
+
+COMMIT;

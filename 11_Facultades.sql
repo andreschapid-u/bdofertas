@@ -7,3 +7,5 @@ INSERT INTO  ofertas.facultades(id_aut_facultad,nombre,id_universidad) VALUES (6
 INSERT INTO  ofertas.facultades(id_aut_facultad,nombre,id_universidad) VALUES (7,'Facultad de Artes',1);
 INSERT INTO  ofertas.facultades(id_aut_facultad,nombre,id_universidad) VALUES (8,'Facultad de Ciencias Naturales, Exactas y de la Educación',1);
 INSERT INTO  ofertas.facultades(id_aut_facultad,nombre,id_universidad) VALUES (9,'Facultad de Ciencias Humanas y Sociales',1);
+
+COMMIT;

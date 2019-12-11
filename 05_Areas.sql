@@ -83,3 +83,4 @@ VALUES
 (81, 'Trade Marketing'),
 (82, 'Transporte'),
 (83, 'Ventas');
+COMMIT;

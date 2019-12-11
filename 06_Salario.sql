@@ -17,4 +17,4 @@ INSERT INTO  ofertas.salarios(id_aut_salario ,minimo,maximo,forma_pago) VALUES (
 INSERT INTO  ofertas.salarios(id_aut_salario ,minimo,maximo,forma_pago) VALUES (17, 6001,7500,'US Dolar');
 INSERT INTO  ofertas.salarios(id_aut_salario ,minimo,maximo,forma_pago) VALUES (18, 7501,10000,'US Dolar');
 
-
+COMMIT;

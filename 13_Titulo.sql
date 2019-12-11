@@ -16,3 +16,4 @@ INSERT INTO  ofertas.titulo(id_aut_titulo,nombre) VALUES (15,'Maestro en Contrab
 INSERT INTO  ofertas.titulo(id_aut_titulo,nombre) VALUES (16,'Maestro en Viola');
 INSERT INTO  ofertas.titulo(id_aut_titulo,nombre) VALUES (17,'Maestro en Violonchelo');
  
+ COMMIT;

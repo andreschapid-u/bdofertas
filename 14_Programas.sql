@@ -7,3 +7,4 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (3,'Contaduría Pública',1,5);
 
 
+COMMIT;

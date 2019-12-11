@@ -181,3 +181,4 @@ INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(177,'Zootecnist
 -- CARGOS PARA OFERTAS LABORALES
 --
 INSERT INTO ofertas.cargos(id_aut_cargos, nombre, estado) values(278,'Administrador Base de Datos',true);
+COMMIT;

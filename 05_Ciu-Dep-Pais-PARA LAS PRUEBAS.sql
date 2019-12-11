@@ -1144,7 +1144,7 @@ INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(978,
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(979,'Labranzagrande',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(980,'Pajarito',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(981,'Paya',6);
-INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(986,'Pisba',6);
+INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(982,'Pisba',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(983,'Berbeo',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(984,'Campohermoso',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(985,'Miraflores',6);
@@ -1246,3 +1246,4 @@ INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(1080
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(1081,'Bogota',33);
 
 -- ===================================================================================================
+COMMIT;

@@ -245,3 +245,5 @@ INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (243,'Yemen');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (244,'Yugoslavia');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (245,'Zambia');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (246,'Zimbabwe');
+
+COMMIT;

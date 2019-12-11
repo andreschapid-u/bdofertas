@@ -4113,3 +4113,5 @@ INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4117,'
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4118,'MatabelelandNorth',246);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4119,'MatabelelandSouth',246);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4120,'Midlands',246);
+
+COMMIT;
