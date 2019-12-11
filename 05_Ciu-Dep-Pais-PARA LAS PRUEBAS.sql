@@ -1142,7 +1142,7 @@ INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(976,
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(977,'Güicán',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(978,'Panqueba',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(979,'Labranzagrande',6);
-INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(970,'Pajarito',6);
+INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(980,'Pajarito',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(981,'Paya',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(986,'Pisba',6);
 INSERT INTO ofertas.ciudades(id_aut_ciudad, nombre, id_departamento) values(983,'Berbeo',6);
