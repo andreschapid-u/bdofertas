@@ -1,12 +1,12 @@
 --
 -- LOCALIZACIONES
 --
-truncate table ofertas.empresas_sectores cascade;
-truncate table ofertas.empresas cascade;
-truncate table ofertas.ofertas cascade;
-truncate table ofertas.localizacion cascade;
-truncate table ofertas.ofertas_software cascade;
-commit;
+-- truncate table ofertas.empresas_sectores cascade;
+-- truncate table ofertas.empresas cascade;
+-- truncate table ofertas.ofertas cascade;
+-- truncate table ofertas.localizacion cascade;
+-- truncate table ofertas.ofertas_software cascade;
+-- commit;
 
 --Localizaciones Mamian 101 -110, Vanessa 111-120, Santiago 121-130
 INSERT INTO ofertas.localizacion(id_aut_localizacion, codigo_postal, direccion, barrio, id_ciudad)
