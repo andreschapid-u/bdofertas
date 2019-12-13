@@ -12,8 +12,8 @@ CREATE TYPE ofertas.dominio_nivel_software_oferta AS ENUM ('Ninguno', 'Nivel baj
 CREATE TYPE ofertas.dominio_tipo_licencia_oferta AS ENUM ('Ninguna','A1', 'A2', 'B1', 'B2', 'B3', 'C1', 'C2', 'C3');
 CREATE TYPE ofertas.dominio_estado_postulacion_oferta AS ENUM ('Contratado', 'Muy bueno', 'Bueno', 'Descartado', 'Desistió', 'Sin clasificación');
 
-CREATE TYPE ofertas.dominio_numero_empleados AS ENUM ('1 - 10', '11 - 50', '51 - 150', '151 - 300', '301 - 500', '501 - 1000', '1001 - 5000', 'más de 5000');
-CREATE TYPE ofertas.dominio_ingresos_empresa AS ENUM ('0 - 3.000.000', '3.000.001 - 10.000.000', '10.000.001 - 25.000.000', '25.000.001 - 50.000.000', '50.000.001 - 100.000.000', 'más de 100.000.000');
+CREATE TYPE ofertas.dominio_numero_empleados AS ENUM ('1 - 10', '11 - 50', '51 - 150', '151 - 300', '301 - 500', '501 - 1000', '1001 - 5000', 'Más de 5000');
+CREATE TYPE ofertas.dominio_ingresos_empresa AS ENUM ('0 - 3.000.000', '3.000.001 - 10.000.000', '10.000.001 - 25.000.000', '25.000.001 - 50.000.000', '50.000.001 - 100.000.000', 'Más de 100.000.000');
 
 CREATE TYPE ofertas.dominio_perfil_oferta AS ENUM ('Profesional', 'Estudiante pregrado', 'Doctor', 'Especialista', 'Magister');
 
