@@ -74,3 +74,4 @@ INSERT INTO ofertas.idiomas(id_aut_idioma, nombre) values(73,'Urdu');
 INSERT INTO ofertas.idiomas(id_aut_idioma, nombre) values(74,'Uzbekistano');
 INSERT INTO ofertas.idiomas(id_aut_idioma, nombre) values(75,'Vasco');
 INSERT INTO ofertas.idiomas(id_aut_idioma, nombre) values(76,'Vietnamés');
+COMMIT;
