@@ -325,13 +325,9 @@ Privado=1]]></comment>
 		<table name="facultades" >
 			<column name="id_aut_facultad" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="60" jt="12" mandatory="y" />
-			<column name="id_universidad" type="integer" jt="4" mandatory="y" />
 			<index name="pk_facultades_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_facultad" />
 			</index>
-			<fk name="fk_facultades_universidad" to_schema="ofertas" to_table="universidad" >
-				<fk_column name="id_universidad" pk="id_aut_universidad" />
-			</fk>
 		</table>
 		<table name="grados" >
 			<column name="id_aut_grado" type="serial" jt="4" mandatory="y" />
@@ -875,8 +871,8 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="224" y="1152" />
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1584" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1296" />
-		<entity schema="ofertas" name="facultades" color="C1D8EE" x="416" y="1552" />
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="496" y="624" />
+		<entity schema="ofertas" name="facultades" color="C1D8EE" x="416" y="1552" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

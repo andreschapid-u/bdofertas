@@ -1,7 +1,7 @@
 --1.	Facultad de Ciencias Contables, Económicas y Administrativas.
 --a.	Tecnología:
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (1,'ADMINISTRACION FINANCIERA',1,4);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (2,'TECNOLOGIA EN GESTION BANCARIA Y FINANCIERA'1,4);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (2,'TECNOLOGIA EN GESTION BANCARIA Y FINANCIERA',1,4);
 --Pregrado:
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (3,'ADMINISTRACION DE EMPRESAS',1,5);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (4,'ADMINISTRACION FINANCIERA',1,5);
@@ -20,8 +20,8 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 -- Maestría
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (15,'MAESTRIA EN ADMINISTRACION DE EMPRESAS',1,7);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (16,'MAESTRIA EN CONTABILIDAD Y FINANZAS',1,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (17,'MAESTRIA EN COOPERACION INTERNACIONAL'1,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (18,'MAESTRIA EN ESTUDIOS INTERDISCIPLINARIOS DEL DESARROLLO'1,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (17,'MAESTRIA EN COOPERACION INTERNACIONAL',1,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (18,'MAESTRIA EN ESTUDIOS INTERDISCIPLINARIOS DEL DESARROLLO',1,7);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (19,'MAESTRIA EN GESTION DE ORGANIZACIONES Y PROYECTOS'1,7);
 
 
