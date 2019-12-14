@@ -166,11 +166,11 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 
 --7.	Facultad de Artes.
 --a.	Pregrado:
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (120,'ARTES PLASTICAS',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (121,'ARTES PLASTICAS ENFASIS DISEÑO GRAFICO',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (122,'DIRECCION DE BANDA',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (123,'DISEÑO GRAFICO',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (124,'LICENCIATURA EN MUSICA',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (120,'ARTES PLASTICAS',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (121,'ARTES PLASTICAS ENFASIS DISEÑO GRAFICO',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (122,'DIRECCION DE BANDA',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (123,'DISEÑO GRAFICO',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (124,'LICENCIATURA EN MUSICA',7,5);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (125,'MUSICA INSTRUMENTAL',7,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (126,'MUSICA INSTRUMENTAL',7,5,2);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (127,'MUSICA INSTRUMENTAL',7,5,3);
