@@ -166,147 +166,136 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 
 --7.	Facultad de Artes.
 --a.	Pregrado:
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (120,'ARTES PLASTICAS',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (121,'ARTES PLASTICAS ENFASIS DISEÑO GRAFICO',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (122,'DIRECCION DE BANDA',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (123,'DISEÑO GRAFICO',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (124,'LICENCIATURA EN MUSICA',7,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (125,'MUSICA INSTRUMENTAL',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (120,'ARTES PLASTICAS',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (121,'ARTES PLASTICAS ENFASIS DISEÑO GRAFICO',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (122,'DIRECCION DE BANDA',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (123,'DISEÑO GRAFICO',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (124,'LICENCIATURA EN MUSICA',7,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (125,'MUSICA INSTRUMENTAL',7,5,1);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (126,'MUSICA INSTRUMENTAL',7,5,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (127,'MUSICA INSTRUMENTAL',7,5,3);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (128,'MUSICA INSTRUMENTAL',7,5,4);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (129,'MUSICA INSTRUMENTAL',7,5,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (130,'MUSICA INSTRUMENTAL',7,5,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (131,'MUSICA INSTRUMENTAL',7,5,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (132,'MUSICA INSTRUMENTAL',7,5,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (133,'MUSICA INSTRUMENTAL',7,5,9);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (134,'MUSICA INSTRUMENTAL',7,5,10);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (135,'MUSICA INSTRUMENTAL',7,5,11);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (136,'MUSICA INSTRUMENTAL',7,5,12);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (137,'MUSICA INSTRUMENTAL',7,5,13);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (138,'MUSICA INSTRUMENTAL',7,5,14);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (139,'MUSICA INSTRUMENTAL',7,5,15);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (140,'MUSICA INSTRUMENTAL',7,5,16);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (141,'MUSICA INSTRUMENTAL',7,5,17);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_titulo) VALUES (142,'MUSICA INSTRUMENTAL',7,5,18);
 --b.	Postgrado:
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (126,'MAESTRIA EN MUSICA',7,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (143,'MAESTRIA EN MUSICA',7,7);
 
-/*
 
 --8.	Facultad de Ciencias Naturales, Exactas y de la Educación.
 --a.	Pregrado:
-'BIOLOGIA',8,5);
-'INGENIERIA FISICA',8,5);
-'LICENCIADO EN ETNOEDUCACION CON ENFASIS EN COMUNICACIÓN Y LINGÜÍSTICA',8,5);
-'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN CIENCIAS NATURALES Y EDUCACION AMBIENTAL',8,5);
-'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN EDUCACION ARTISTICA',8,5);
-'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN EDUCACION FISICA, RECREACION Y DEPORTES',8,5);
-'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN LENGUA CASTELLANA E INGLES',8,5);
-'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN MATEMATICAS E INFORMATICA',8,5);
-'LICENCIATURA EN EDUCACION BASICA PRIMARIA',8,5);
-'LICENCIATURA EN EDUCACION CON ESPECIALIDAD EN BIOLOGIA',8,5);
-'LICENCIATURA EN EDUCACION CON ESPECIALIDAD EN CIENCIAS SOCIALES',8,5);
-'LICENCIATURA EN EDUCACION CON ESPECIALIDAD EN MATEMATICAS',8,5);
-'LICENCIATURA EN EDUCACIÓN FÍSICA RECREATIVA Y DEPORTES',8,5);
-'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNICACION Y LINGUISTICA',8,5);
-'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNIDAD Y NATURALEZA',8,5);
-'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN ECONOMIA Y GESTION COMUNITARIA',8,5);
-'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN SALUD COMUNITARIA',8,5);
-'LICENCIATURA EN LENGUAS MODERNAS INGLES - FRANCES',8,5);
-'LICENCIATURA EN MATEMATICAS',8,5);
-'MATEMATICAS',8,5);
-'QUIMICA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (144,'BIOLOGIA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (145,'INGENIERIA FISICA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (146,'LICENCIADO EN ETNOEDUCACION CON ENFASIS EN COMUNICACIÓN Y LINGÜÍSTICA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (147,'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN CIENCIAS NATURALES Y EDUCACION AMBIENTAL',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (148,'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN EDUCACION ARTISTICA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (149,'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN EDUCACION FISICA, RECREACION Y DEPORTES',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (150,'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN LENGUA CASTELLANA E INGLES',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (151,'LICENCIATURA EN EDUCACION BASICA CON ENFASIS EN MATEMATICAS E INFORMATICA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (152,'LICENCIATURA EN EDUCACION BASICA PRIMARIA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (153,'LICENCIATURA EN EDUCACION CON ESPECIALIDAD EN BIOLOGIA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (154,'LICENCIATURA EN EDUCACION CON ESPECIALIDAD EN CIENCIAS SOCIALES',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (155,'LICENCIATURA EN EDUCACION CON ESPECIALIDAD EN MATEMATICAS',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (156,'LICENCIATURA EN EDUCACIÓN FÍSICA RECREATIVA Y DEPORTES',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (157,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNICACION Y LINGUISTICA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (158,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNIDAD Y NATURALEZA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (159,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN ECONOMIA Y GESTION COMUNITARIA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (160,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN SALUD COMUNITARIA',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (161,'LICENCIATURA EN LENGUAS MODERNAS INGLES - FRANCES',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (162,'LICENCIATURA EN MATEMATICAS',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (163,'MATEMATICAS',8,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (164,'QUIMICA',8,5);
 --b.	Posgrado:	
-'DOCTORADO EN CIENCIAS AMBIENTALES',8,8);
-'DOCTORADO EN CIENCIAS DE LA EDUCACION',8,8);
-'DOCTORADO EN CIENCIAS MATEMÁTICAS',8,8);
-'DOCTORADO EN CIENCIAS QUÍMICAS',8,8);
-'DOCTORADO EN ETNOBIOLOGÍA Y ESTUDIOS BIOCULTURALES',8,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (165,'DOCTORADO EN CIENCIAS AMBIENTALES',8,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (166,'DOCTORADO EN CIENCIAS DE LA EDUCACION',8,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (167,'DOCTORADO EN CIENCIAS MATEMÁTICAS',8,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (168,'DOCTORADO EN CIENCIAS QUÍMICAS',8,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (169,'DOCTORADO EN ETNOBIOLOGÍA Y ESTUDIOS BIOCULTURALES',8,8);
 -- Especialización
-'ESPECIALISTA EN PEDAGOGIA DE LA LECTURA Y LA ESCRITURA',8,6);
-'ESPECIALIZACION EN ACTIVIDAD FISICA PARA LA SALUD',8,6);
-'ESPECIALIZACION EN CIENCIAS DE LA ACTIVIDAD FISICA Y EL DEPORTE',8,6);
-'ESPECIALIZACION EN EDUCACION COMUNITARIA',8,6);
-'ESPECIALIZACION EN EDUCACION COMUNITARIA',8,6);
-'ESPECIALIZACION EN EDUCACION MATEMATICA',8,6);
-'ESPECIALIZACION EN EDUCACION MULTICULTURAL',8,6);
-'ESPECIALIZACION EN EDUCACION Y DISCAPACIDAD',8,6);
-'ESPECIALIZACION EN ENTRENAMIENTO DEPORTIVO',8,6);
-'ESPECIALIZACION EN MATEMATICA APLICADA CON ENFASIS EN MATEMATICA COMPUTACIONAL',8,6);
-'ESPECIALIZACION EN PEDAGOGIA DE LA LECTURA Y LA ESCRITURA',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (170,'ESPECIALISTA EN PEDAGOGIA DE LA LECTURA Y LA ESCRITURA',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (171,'ESPECIALIZACION EN ACTIVIDAD FISICA PARA LA SALUD',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (172,'ESPECIALIZACION EN CIENCIAS DE LA ACTIVIDAD FISICA Y EL DEPORTE',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (173,'ESPECIALIZACION EN EDUCACION COMUNITARIA',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (174,'ESPECIALIZACION EN EDUCACION COMUNITARIA',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (175,'ESPECIALIZACION EN EDUCACION MATEMATICA',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (176,'ESPECIALIZACION EN EDUCACION MULTICULTURAL',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (177,'ESPECIALIZACION EN EDUCACION Y DISCAPACIDAD',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (178,'ESPECIALIZACION EN ENTRENAMIENTO DEPORTIVO',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (179,'ESPECIALIZACION EN MATEMATICA APLICADA CON ENFASIS EN MATEMATICA COMPUTACIONAL',8,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (180,'ESPECIALIZACION EN PEDAGOGIA DE LA LECTURA Y LA ESCRITURA',8,6);
 -- Maestría
-'MAESTRÍA EN BIOINGENIERÍA (SEDE SANTANDER DE QUILICHAO)',8,7);
-'MAESTRIA EN BIOLOGIA',8,7);
-'MAESTRIA EN CIENCIAS MATEMATICAS',8,7);
-'MAESTRIA EN CIENCIAS QUIMICAS',8,7);
-'MAESTRÍA EN DEPORTE Y ACTIVIDAD FÍSICA',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN EDUCACION MATEMATICA',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN MULTICULTURAL Y ETNOEDUCACIÓN',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN SABER PEDAGOGICO',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN MOTRICIDAD Y DESARROLLO HUMANO',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN ENSEÑANZA DE LAS CIENCIAS Y LA TECNOLOGÍA',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN PEDAGOGÍA DE LA LECTURA Y ESCRITURA',8,7);
-'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN COMUNICACIÓN, EDUCACIÓN Y CULTURA',8,7);
-'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION  (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE BUENAVENTURA, SEDE BUGA, SEDE FLORENCIA, SEDE GUAPI, SEDE MOCOA, SEDE PASTO, SEDE TUMACO, SEDE VALLE DEL GUAMUEZ)',8,7);
-'MAESTRIA EN EDUCACION (MP)MODALIDAD PROFUNDIZACION (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE BUENAVENTURA, SEDE BUGA, SEDE FLORENCIA, SEDE GUAPI, SEDE MOCOA, SEDE PASTO, SEDE TUMACO, SEDE VALLE DEL GUAMUEZ)',8,7);
-'MAESTRIA EN EDUCACION (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',8,7);
-'MAESTRIA EN EDUCACION POPULAR (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',8,7);
-'MAESTRIA EN EDUCACION, ESTUDIOS DEL CUERPO Y LA MOTRICIDAD',8,7);
-'MAESTRIA EN INGENIERIA FISICA',8,7);
-'MAESTRIA EN RECURSOS HIDROBIOLOGICOS CONTINENTALES',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (181,'MAESTRIA EN BIOLOGIA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (182,'MAESTRIA EN CIENCIAS MATEMATICAS',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (183,'MAESTRIA EN CIENCIAS QUIMICAS',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (184,'MAESTRÍA EN DEPORTE Y ACTIVIDAD FÍSICA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (185,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN EDUCACION MATEMATICA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (186,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN MULTICULTURAL Y ETNOEDUCACIÓN',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (187,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN SABER PEDAGOGICO',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (188,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN MOTRICIDAD Y DESARROLLO HUMANO',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (189,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN ENSEÑANZA DE LAS CIENCIAS Y LA TECNOLOGÍA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (190,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN PEDAGOGÍA DE LA LECTURA Y ESCRITURA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (191,'MAESTRIA EN EDUCACION - LINEA DE INVESTIGACION EN COMUNICACIÓN, EDUCACIÓN Y CULTURA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (192,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (193,'MAESTRIA EN EDUCACION (MP)MODALIDAD PROFUNDIZACION',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (194,'MAESTRIA EN EDUCACION',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (195,'MAESTRIA EN EDUCACION POPULAR',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (196,'MAESTRIA EN EDUCACION, ESTUDIOS DEL CUERPO Y LA MOTRICIDAD',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (197,'MAESTRIA EN INGENIERIA FISICA',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (198,'MAESTRIA EN RECURSOS HIDROBIOLOGICOS CONTINENTALES',8,7);
 
 
 --9.	Facultad de Ciencias Humanas y Sociales.
 --a.	Pregrado:
-'ANTROPOLOGIA',9,5);
-'FILOSOFIA',9,5);
-'GEOGRAFIA DEL DESARROLLO REGIONAL Y AMBIENTAL',9,5);
-'HISTORIA',9,5);
-'LICENCIATURA EN CIENCIAS DE LA EDUCACION CON ENFASIS EN BIOLOGIA',9,5);
-'LICENCIATURA EN ESPAÑOL Y LITERATURA',9,5);
-'LICENCIATURA EN ETNOEDUCACION (SEDE GUAPI, SEDE POPAYÁN)',9,5);
-'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNICACIÓN Y LENGUAJE',9,5);
-'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNIDAD Y NATURALEZA',9,5);
-'LICENCIATURA EN FILOSOFIA',9,5);
-'LICENCIATURA EN LENGUAS MODERNAS INGLES - FRANCES',9,5);
-'LICENCIATURA EN LINGÜÍSTICA Y SEMIÓTICA',9,5);
-'LICENCIATURA EN LITERATURA Y LENGUA CASTELLANA',9,5);
-'LICENCIATURA EN LITERATURA Y LENGUA ESPAÑOLA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (199,'ANTROPOLOGIA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (200,'FILOSOFIA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (201,'GEOGRAFIA DEL DESARROLLO REGIONAL Y AMBIENTAL',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (202,'HISTORIA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (203,'LICENCIATURA EN CIENCIAS DE LA EDUCACION CON ENFASIS EN BIOLOGIA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (204,'LICENCIATURA EN ESPAÑOL Y LITERATURA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (205,'LICENCIATURA EN ETNOEDUCACION (SEDE GUAPI, SEDE POPAYÁN)',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (206,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNICACIÓN Y LENGUAJE',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (207,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNIDAD Y NATURALEZA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (208,'LICENCIATURA EN FILOSOFIA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (209,'LICENCIATURA EN LENGUAS MODERNAS INGLES - FRANCES',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (210,'LICENCIATURA EN LINGÜÍSTICA Y SEMIÓTICA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (211,'LICENCIATURA EN LITERATURA Y LENGUA CASTELLANA',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (212,'LICENCIATURA EN LITERATURA Y LENGUA ESPAÑOLA',9,5);
 --b.	Posgrado:
-'DOCTORADO EN ANTROPOLOGIA',9,8);
-'DOCTORADO EN CIENCIAS HUMANAS',9,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (213,'DOCTORADO EN ANTROPOLOGIA',9,8);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (214,'DOCTORADO EN CIENCIAS HUMANAS',9,8);
 -- Especialización 
-'ESPECIALIZACION EN ANTROPOLOGIA JURIDICA',9,6);
-'ESPECIALIZACION EN DOCENCIA EN HISTORIA DE COLOMBIA',9,6);
-'ESPECIALIZACION EN DOCENCIA SOBRE PROBLEMAS LATINOAMERICANOS',9,6);
-'ESPECIALIZACIÓN EN ESTUDIOS DE RIESGOS DE DESASTRES',9,6);
-'ESPECIALIZACIÓN EN ESTUDIOS INTERCULTURALES',9,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (215,'ESPECIALIZACION EN ANTROPOLOGIA JURIDICA',9,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (216,'ESPECIALIZACION EN DOCENCIA EN HISTORIA DE COLOMBIA',9,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (217,'ESPECIALIZACION EN DOCENCIA SOBRE PROBLEMAS LATINOAMERICANOS',9,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (218,'ESPECIALIZACIÓN EN ESTUDIOS DE RIESGOS DE DESASTRES',9,6);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (219,'ESPECIALIZACIÓN EN ESTUDIOS INTERCULTURALES',9,6);
 -- Maestría
-'MAESTRIA EN ANTROPOLOGIA (SEDE SANTANDER DE QUILICHAO, SEDE POPAYÁN)',9,7);
-'MAESTRIA EN ANTROPOLOGIA JURIDICA',9,7);
-'MAESTRÍA EN ARTES INTEGRADAS CON EL AMBIENTE',9,7);
-'MAESTRIA EN CIENCIAS HUMANAS',9,7);
-'MAESTRÍA EN ESTUDIOS DE RIESGOS DE DESASTRE Y ORDENAMIENTO TERRITORIAL',9,7);
-'MAESTRIA EN ESTUDIOS INTERCULTURALES',9,7);
-'MAESTRIA EN ESTUDIOS SOBRE PROBLEMAS POLITICOS LATINOAMERICANOS',9,7);
-'MAESTRIA EN ETICA Y FILOSOFIA POLITICA',9,7);
-'MAESTRIA EN HISTORIA',9,7);
-'MAESTRIA EN LINGUISTICA',9,7);
-'MAESTRÍA EN REVITALIZACIÓN Y ENSEÑANZA DE LENGUAS INDÍGENA',9,7);
-'MAESTRIA EN REVITALIZACION Y ENSEÑANZA DE LENGUAS INDIGENAS',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (220,'MAESTRIA EN ANTROPOLOGIA (SEDE SANTANDER DE QUILICHAO, SEDE POPAYÁN)',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (221,'MAESTRIA EN ANTROPOLOGIA JURIDICA',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (222,'MAESTRÍA EN ARTES INTEGRADAS CON EL AMBIENTE',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (223,'MAESTRIA EN CIENCIAS HUMANAS',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (224,'MAESTRÍA EN ESTUDIOS DE RIESGOS DE DESASTRE Y ORDENAMIENTO TERRITORIAL',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (225,'MAESTRIA EN ESTUDIOS INTERCULTURALES',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (226,'MAESTRIA EN ESTUDIOS SOBRE PROBLEMAS POLITICOS LATINOAMERICANOS',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (227,'MAESTRIA EN ETICA Y FILOSOFIA POLITICA',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (228,'MAESTRIA EN HISTORIA',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (229,'MAESTRIA EN LINGUISTICA',9,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (230,'MAESTRÍA EN REVITALIZACIÓN Y ENSEÑANZA DE LENGUAS INDÍGENA',9,7);
 
 
---Licenciatura en musica: MAESTRO EN MUSICA
 
---Lista Titulos para artes plasticas:
-'MAESTRO EN ARTES PLASTICAS ENFASIS DISEÑO GRAFICO'
-'MAESTRO EN ARTES PLASTICAS'
-
---Lista Titulos para Música Instrumental
-'MAESTRO EN CANTO LIRICO'
-'MAESTRO EN CLARINETE'
-'MAESTRO EN CONTRABAJO'
-'MAESTRO EN CORNO'
-'MAESTRO EN EUFONIO' 
-'MAESTRO EN FAGOT'
-'MAESTRO EN FLAUTA'
-'MAESTRO EN FLAUTA TRAVERSA'
-'MAESTRO EN GUITARRA'
-'MAESTRO EN PERCUSION'
-'MAESTRO EN PIANO'
-'MAESTRO EN SAXOFON'
-'MAESTRO EN TROMBON'
-'MAESTRO EN TROMPETA'
-'MAESTRO EN TUBA'
-'MAESTRO EN VIOLA'
-'MAESTRO EN VIOLIN'
-'MAESTRO EN VIOLONCHELO'
-
-
+/*
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (7,'ESPECIALIZACION EN GERENCIA DE PROYECTOS – CONVENIO UNIVERSIDAD DE NARIÑO (SEDE PASTO)'
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (7,'ESPECIALIZACION EN REVISORIA FISCAL Y AUDITORIA INTERNACIONAL (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (7,'ESPECIALIZACION EN SISTEMAS INTEGRADOS DE CALIDAD (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
@@ -324,5 +313,12 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (98,'ESPECIALIZACIÓN EN BIOÉTICA - CONVENIO UNIVERSIDAD EL BOSQUE (SEDE BOGOTÁ - UNIVERSIDAD DEL BOSQUE)',6,6);
 -- Maestría
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (98,'MAESTRÍA EN ADMINISTRACIÓN DE EMPRESAS DE SALUD - MBA EN SALUD - CONVENIDO UNIVERSIDAD EAN',6,7);
-*/
 
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (180,'MAESTRÍA EN BIOINGENIERÍA (SEDE SANTANDER DE QUILICHAO)',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (180,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION  (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE BUENAVENTURA, SEDE BUGA, SEDE FLORENCIA, SEDE GUAPI, SEDE MOCOA, SEDE PASTO, SEDE TUMACO, SEDE VALLE DEL GUAMUEZ)',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (180,'MAESTRIA EN EDUCACION (MP)MODALIDAD PROFUNDIZACION (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE BUENAVENTURA, SEDE BUGA, SEDE FLORENCIA, SEDE GUAPI, SEDE MOCOA, SEDE PASTO, SEDE TUMACO, SEDE VALLE DEL GUAMUEZ)',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (180,'MAESTRIA EN EDUCACION (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (180,'MAESTRIA EN EDUCACION POPULAR (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',8,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (205,'LICENCIATURA EN ETNOEDUCACION (SEDE GUAPI, SEDE POPAYÁN)',9,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (220,'MAESTRIA EN ANTROPOLOGIA (SEDE SANTANDER DE QUILICHAO, SEDE POPAYÁN)',9,7);
+*/
