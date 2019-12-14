@@ -25,8 +25,6 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (19,'MAESTRIA EN GESTION DE ORGANIZACIONES Y PROYECTOS'1,7);
 
 
-<<<<<<< HEAD:16_Programas.sql
-
 --2.	Facultad de Ingeniería Electrónica y Telecomunicaciones.
 --a.	Tecnología:
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (20,'TECNOLOGIA EN CONMUTACION',2,4);
@@ -327,6 +325,4 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 -- Maestría
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (98,'MAESTRÍA EN ADMINISTRACIÓN DE EMPRESAS DE SALUD - MBA EN SALUD - CONVENIDO UNIVERSIDAD EAN',6,7);
 */
-=======
-COMMIT;
->>>>>>> e7278c85b310eb7ed5982a61823393b71d1faa53:14_Programas.sql
+
