@@ -22,7 +22,7 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (16,'MAESTRIA EN CONTABILIDAD Y FINANZAS',1,7);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (17,'MAESTRIA EN COOPERACION INTERNACIONAL',1,7);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (18,'MAESTRIA EN ESTUDIOS INTERDISCIPLINARIOS DEL DESARROLLO',1,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (19,'MAESTRIA EN GESTION DE ORGANIZACIONES Y PROYECTOS'1,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (19,'MAESTRIA EN GESTION DE ORGANIZACIONES Y PROYECTOS',1,7);
 
 
 --2.	Facultad de Ingeniería Electrónica y Telecomunicaciones.
