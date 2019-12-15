@@ -31,11 +31,14 @@ CREATE  TABLE ofertas.evento (
 	id_aut_evento        serial  NOT NULL ,
 	nombre               varchar(200)  NOT NULL ,
 	fecha_inicio         date   ,
-	fecha_fin            date   ,
+	fecha_fin            date  NOT NULL ,
+	hora_inicio          date  NOT NULL ,
+	hora_fin             date   ,
 	lugar                text   ,
 	descripcion          varchar(50)   ,
 	cupos                numeric   ,
-	a_quien_va_dirigida  varchar(1500)   ,
+	a_quien_va_dirigido  varchar(1500)   ,
+	imagen               varchar(1000)   ,
 	CONSTRAINT pk_evento_id_evento PRIMARY KEY ( id_aut_evento )
  );
 

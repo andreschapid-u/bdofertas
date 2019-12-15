@@ -999,6 +999,7 @@ INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (997,'P
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (998,'Peravia',61);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (999,'PuertoPlata',61);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1000,'Salcedo',61);
+------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1001,'Samana',61);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1002,'SanCristobal',61);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1003,'SanJuan',61);
@@ -1999,6 +2000,7 @@ INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1997,'
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1998,'Mankistau',112);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (1999,'OntustikKazakstan',112);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2000,'Pavlodar',112);
+------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2001,'SigisKazakstan',112);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2002,'SoltustikKazakstan',112);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2003,'Taraz',112);
@@ -3000,6 +3002,7 @@ INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2997,'
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2998,'Hanty-Mansija',181);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (2999,'Ingusetija',181);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3000,'Irkutsk',181);
+------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3001,'Ivanovo',181);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3002,'Jamalo-Nenets',181);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3003,'Jaroslavl',181);
@@ -3993,6 +3996,7 @@ INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3997,'
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3998,'TreintayTres',233);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (3999,'Andijon',234);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4000,'Buhoro',234);
+------------------------------------------------------------------------------------------------------------------------
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4001,'BuxoroViloyati',234);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4002,'Cizah',234);
 INSERT INTO ofertas.departamentos(id_aut_dep, nombre, id_pais_fk) VALUES (4003,'Fargona',234);

@@ -122,6 +122,7 @@ INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (120,'Latvia');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (121,'Lebanon');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (122,'Lesotho');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (123,'Liberia');
+------------------------------------------------------------------------------------
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (124,'Libya');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (125,'Liechtenstein');
 INSERT INTO  ofertas.pais (id_aut_pais , nombre) VALUES (126,'Lithuania');
