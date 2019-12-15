@@ -278,7 +278,7 @@
 			<column name="lugar" type="text" jt="12" />
 			<column name="descripcion" type="varchar" length="50" jt="12" />
 			<column name="cupos" type="numeric" jt="2" />
-			<column name="a_quien_va_dirigida" type="varchar" length="1500" jt="12" />
+			<column name="a_quien_va_dirigido" type="varchar" length="1500" jt="12" />
 			<column name="imagen" type="varchar" length="1000" jt="12" />
 			<index name="pk_evento_id_evento" unique="PRIMARY_KEY" >
 				<column name="id_aut_evento" />
