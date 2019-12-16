@@ -34,7 +34,7 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 --b.	Pregrado:
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (23,'INGENIERIA DE SISTEMAS',2,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (24,'INGENIERIA ELECTRONICA Y TELECOMUNICACIONES',2,5,1);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (25,'INGENIERIA EN AUTOMATICA INDUSTRIAL',2,5.1);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (25,'INGENIERIA EN AUTOMATICA INDUSTRIAL',2,5,1);
 --c.	Posgrado:
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (26,'DOCTORADO EN CIENCIAS DE LA ELECTRONICA',2,8,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (27,'DOCTORADO EN INGENIERIA TELEMATICA',2,8,1);
