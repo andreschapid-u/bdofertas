@@ -237,8 +237,8 @@ CREATE  TABLE ofertas.egresados (
 	celular              varchar(16)   ,
 	telefono_fijo        varchar(16)   ,
 	estado_completar     bool  NOT NULL ,
-	fecha_creacion       date  NOT NULL ,
-	fecha_actualizacion  date  NOT NULL ,
+	fecha_creacion       date DEFAULT current_date NOT NULL ,
+	fecha_actualizacion  date DEFAULT current_date NOT NULL ,
 	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )
  );
 

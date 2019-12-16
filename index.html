@@ -1595,9 +1595,9 @@ varchar(16)</title></a>
 <text x='1117' y='1092' text-anchor='end' class='colType'>t</text>  <use id='nn' x='946' y='1101' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_estado_completar'><text id='ofertas.egresados.estado_completar' x='963' y='1111'>estado_completar</text><title>estado_completar
 * bool</title></a>
 <text x='1117' y='1108' text-anchor='end' class='colType'>b</text>  <use id='nn' x='946' y='1117' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_fecha_creacion'><text id='ofertas.egresados.fecha_creacion' x='963' y='1127'>fecha_creacion</text><title>fecha_creacion
-* date</title></a>
+* date default current_date</title></a>
 <text x='1117' y='1124' text-anchor='end' class='colType'>d</text>  <use id='nn' x='946' y='1133' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_fecha_actualizacion'><text id='ofertas.egresados.fecha_actualizacion' x='963' y='1143'>fecha_actualizacion</text><title>fecha_actualizacion
-* date</title></a>
+* date default current_date</title></a>
 <text x='1117' y='1140' text-anchor='end' class='colType'>d</text>
 <!-- == Table 'ofertas' == -->
 <rect class='entity' style='stroke:#1E578F' x='1584' y='1288' width='208' height='384' rx='8' ry='8' />
@@ -2439,13 +2439,13 @@ Referred by ofertas_discapacidades ( id_discapacidad -&gt; id_aut_discapacidades
 	<tr>
 		<td>*</td>
 		<td><a name='ofertas.egresados_fecha_creacion'>fecha&#95;creacion</a></td>
-		<td> date   </td>
+		<td> date   DEFAULT current_date </td>
 		<td>  </td>
 	</tr>
 	<tr>
 		<td>*</td>
 		<td><a name='ofertas.egresados_fecha_actualizacion'>fecha&#95;actualizacion</a></td>
-		<td> date   </td>
+		<td> date   DEFAULT current_date </td>
 		<td>  </td>
 	</tr>
 <tr><th colspan='4'>Indexes</th></tr>

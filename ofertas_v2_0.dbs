@@ -183,8 +183,12 @@
 			<column name="celular" type="varchar" length="16" jt="12" />
 			<column name="telefono_fijo" type="varchar" length="16" jt="12" />
 			<column name="estado_completar" type="bool" jt="-7" mandatory="y" />
-			<column name="fecha_creacion" type="date" jt="91" mandatory="y" />
-			<column name="fecha_actualizacion" type="date" jt="91" mandatory="y" />
+			<column name="fecha_creacion" type="date" jt="91" mandatory="y" >
+				<defo>current_date</defo>
+			</column>
+			<column name="fecha_actualizacion" type="date" jt="91" mandatory="y" >
+				<defo>current_date</defo>
+			</column>
 			<index name="pk_egresados_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_egresado" />
 			</index>
@@ -869,6 +873,5 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="128" y="1264" />
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1536" />
 		<entity schema="ofertas" name="sede_programas" color="3986C1" x="256" y="1536" />
-		<script name="01_ofertas_v2_0.sql" id="Editor_1390f8c" language="SQL" confirmed="y" file="file:/mnt/DatosSSD/Egresados/modelosBD/ofertasBD/01_ofertas_v2_0.sql" />
 	</layout>
 </project>

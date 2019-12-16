@@ -48,7 +48,7 @@ ALTER TABLE ofertas.ofertas_idiomas ALTER COLUMN nivel_escritura TYPE ofertas.do
 ALTER TABLE ofertas.ofertas_idiomas ALTER COLUMN nivel_lectura TYPE ofertas.dominio_nivel_idioma_oferta USING nivel_lectura::ofertas.dominio_nivel_idioma_oferta;
 ALTER TABLE ofertas.ofertas_idiomas ALTER COLUMN nivel_conversacion TYPE ofertas.dominio_nivel_idioma_oferta USING nivel_conversacion::ofertas.dominio_nivel_idioma_oferta;
 
-ALTER TABLE ofertas.ofertas_software ALTER COLUMN nivel TYPE varchar(30) USING nivel::varchar;
+-- ALTER TABLE ofertas.ofertas_software ALTER COLUMN nivel TYPE varchar(30) USING nivel::varchar;
 ALTER TABLE ofertas.ofertas_software ALTER COLUMN nivel TYPE ofertas.dominio_nivel_software_oferta USING nivel::ofertas.dominio_nivel_software_oferta;
 
 ALTER TABLE ofertas.ofertas ALTER COLUMN licencia_conduccion TYPE ofertas.dominio_tipo_licencia_oferta USING licencia_conduccion::ofertas.dominio_tipo_licencia_oferta;
