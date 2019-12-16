@@ -183,10 +183,10 @@
 			<column name="celular" type="varchar" length="16" jt="12" />
 			<column name="telefono_fijo" type="varchar" length="16" jt="12" />
 			<column name="estado_completar" type="bool" jt="-7" mandatory="y" />
-			<column name="create_at" type="timestamp" jt="93" mandatory="y" >
+			<column name="created_at" type="timestamp" jt="93" mandatory="y" >
 				<defo>current_timestamp</defo>
 			</column>
-			<column name="update_at" type="timestamp" jt="93" mandatory="y" >
+			<column name="updated_at" type="timestamp" jt="93" mandatory="y" >
 				<defo>current_timestamp</defo>
 			</column>
 			<index name="pk_egresados_id" unique="PRIMARY_KEY" >

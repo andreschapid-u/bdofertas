@@ -5,6 +5,4 @@ INSERT INTO  ofertas.universidad(id_aut_universidad,nombre) VALUES (4,'ESCUELA N
 INSERT INTO  ofertas.universidad(id_aut_universidad,nombre) VALUES (5,'UNIVERSIDAD EAN');
 INSERT INTO  ofertas.universidad(id_aut_universidad,nombre) VALUES (6,'UNIVERSIDAD DEL BOSQUE');
 
-
-
 COMMIT;
