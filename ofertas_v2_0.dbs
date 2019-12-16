@@ -183,11 +183,11 @@
 			<column name="celular" type="varchar" length="16" jt="12" />
 			<column name="telefono_fijo" type="varchar" length="16" jt="12" />
 			<column name="estado_completar" type="bool" jt="-7" mandatory="y" />
-			<column name="fecha_creacion" type="date" jt="91" mandatory="y" >
-				<defo>current_date</defo>
+			<column name="create_at" type="timestamp" jt="93" mandatory="y" >
+				<defo>current_timestamp</defo>
 			</column>
-			<column name="fecha_actualizacion" type="date" jt="91" mandatory="y" >
-				<defo>current_date</defo>
+			<column name="update_at" type="timestamp" jt="93" mandatory="y" >
+				<defo>current_timestamp</defo>
 			</column>
 			<index name="pk_egresados_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_egresado" />
@@ -836,7 +836,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1712" y="176" />
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1760" y="816" />
 		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="912" y="1328" />
-		<entity schema="ofertas" name="facultades" color="C1D8EE" x="1008" y="1168" />
 		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1120" />
 		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="688" y="1616" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
@@ -862,7 +861,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="rol" color="3986C1" x="800" y="112" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
-		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1584" y="1296" />
 		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1264" y="1568" />
 		<entity schema="ofertas" name="ofertas_discapacidades" color="C1D8EE" x="1200" y="1456" />
@@ -873,5 +871,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="128" y="1264" />
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1536" />
 		<entity schema="ofertas" name="sede_programas" color="3986C1" x="256" y="1536" />
+		<entity schema="ofertas" name="facultades" color="C1D8EE" x="432" y="1184" />
+		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 	</layout>
 </project>

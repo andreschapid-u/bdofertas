@@ -237,8 +237,8 @@ CREATE  TABLE ofertas.egresados (
 	celular              varchar(16)   ,
 	telefono_fijo        varchar(16)   ,
 	estado_completar     bool  NOT NULL ,
-	fecha_creacion       date DEFAULT current_date NOT NULL ,
-	fecha_actualizacion  date DEFAULT current_date NOT NULL ,
+	create_at            timestamp DEFAULT current_timestamp NOT NULL ,
+	update_at            timestamp DEFAULT current_timestamp NOT NULL ,
 	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )
  );
 
@@ -621,3 +621,4 @@ ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol );
+
