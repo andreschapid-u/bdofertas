@@ -19,7 +19,7 @@ CREATE TYPE ofertas.dominio_perfil_oferta AS ENUM ('Profesional', 'Estudiante pr
 
 
 --Egresados Dominios
-CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('Pendiente', 'Realizado');
+CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('Pendiente', 'Respondido','Cancelado');
 CREATE TYPE ofertas.dominio_genero_egresado AS ENUM ('Masculino', 'Femenino');
 CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('EN ESPERA', 'ACTIVO', 'INACTIVO','PENDIENTE');
 CREATE TYPE ofertas.dominio_estado_carnetizacion AS ENUM ('Aceptado', 'Pendiente','Cancelado');
