@@ -579,6 +579,7 @@ Privado=1]]></comment>
 			<column name="nombre" type="varchar" length="150" jt="12" mandatory="y" />
 			<column name="id_facultad" type="integer" jt="4" mandatory="y" />
 			<column name="id_nivelestudio" type="integer" jt="4" mandatory="y" />
+			<column name="id_sede" type="integer" jt="4" mandatory="y" />
 			<column name="id_titulo" type="integer" jt="4" />
 			<index name="pk_programas_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_programa" />
@@ -591,6 +592,9 @@ Privado=1]]></comment>
 			</fk>
 			<fk name="fk_programas_facultades" to_schema="ofertas" to_table="facultades" >
 				<fk_column name="id_facultad" pk="id_aut_facultad" />
+			</fk>
+			<fk name="fk_programas_sede" to_schema="ofertas" to_table="sede" >
+				<fk_column name="id_sede" pk="id_aut_sede" />
 			</fk>
 		</table>
 		<table name="programas_ofertas" >
@@ -718,20 +722,6 @@ Privado=1]]></comment>
 				<fk_column name="id_universidad" pk="id_aut_universidad" />
 			</fk>
 		</table>
-		<table name="sede_programas" >
-			<column name="id_sede" type="integer" jt="4" mandatory="y" />
-			<column name="id_programa" type="integer" jt="4" mandatory="y" />
-			<index name="idx_sede_programas" unique="PRIMARY_KEY" >
-				<column name="id_sede" />
-				<column name="id_programa" />
-			</index>
-			<fk name="fk_sede_programas_sede" to_schema="ofertas" to_table="sede" >
-				<fk_column name="id_sede" pk="id_aut_sede" />
-			</fk>
-			<fk name="fk_sede_programas_programas" to_schema="ofertas" to_table="programas" >
-				<fk_column name="id_programa" pk="id_aut_programa" />
-			</fk>
-		</table>
 		<table name="servicios" >
 			<column name="id_aut_servicio" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="60" jt="12" mandatory="y" />
@@ -852,9 +842,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
 		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="592" y="768" />
 		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="640" y="944" />
-		<entity schema="ofertas" name="programas" color="C1D8EE" x="368" y="1360" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="640" y="1312" />
-		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="672" y="1104" />
 		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1344" y="720" />
 		<entity schema="ofertas" name="pais" color="C1D8EE" x="1632" y="528" />
 		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1440" y="480" />
@@ -867,11 +855,12 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="944" y="1488" />
 		<entity schema="ofertas" name="ofertas_areascon" color="C1D8EE" x="2080" y="1280" />
 		<entity schema="ofertas" name="recuperar_password" color="3986C1" x="1296" y="48" />
-		<entity schema="ofertas" name="titulo" color="C1D8EE" x="464" y="1536" />
-		<entity schema="ofertas" name="sede" color="C1D8EE" x="128" y="1264" />
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1536" />
-		<entity schema="ofertas" name="sede_programas" color="3986C1" x="256" y="1536" />
 		<entity schema="ofertas" name="facultades" color="C1D8EE" x="432" y="1184" />
 		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
+		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="672" y="1104" />
+		<entity schema="ofertas" name="titulo" color="C1D8EE" x="400" y="1600" />
+		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
+		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1344" />
 	</layout>
 </project>
