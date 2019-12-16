@@ -1,0 +1,2 @@
+--Eventos
+INSERT INTO  ofertas.evento(id_aut_evento,nombre,fecha_inicio,fecha_fin,hora_inicio,hora_fin,lugar,descripcion,cupos,a_quien_va_dirigido,imagen) VALUES (1,'Primer encuentro de egresados','12/11/1995','14/11/1995','13:00:59','13:00:59','Centro','Centro comercial',4,'Estudiantes y profesores','Url de la imagen');

@@ -1,3 +1,4 @@
+--SEDE POPAYÁN
 --1.	Facultad de Ciencias Contables, Económicas y Administrativas.
 --a.	Tecnología:
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (1,'ADMINISTRACION FINANCIERA',1,4);
@@ -292,12 +293,17 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (228,'MAESTRIA EN HISTORIA',9,7);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (229,'MAESTRIA EN LINGUISTICA',9,7);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (230,'MAESTRÍA EN REVITALIZACIÓN Y ENSEÑANZA DE LENGUAS INDÍGENA',9,7);
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
 /*
+SEDE NORTE
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (231,'ESPECIALIZACION EN REVISORIA FISCAL Y AUDITORIA INTERNACIONAL (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
+
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (7,'ESPECIALIZACION EN GERENCIA DE PROYECTOS – CONVENIO UNIVERSIDAD DE NARIÑO (SEDE PASTO)'
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (7,'ESPECIALIZACION EN REVISORIA FISCAL Y AUDITORIA INTERNACIONAL (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
+
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (7,'ESPECIALIZACION EN SISTEMAS INTEGRADOS DE CALIDAD (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (14,'MAESTRIA EN COOPERACION INTERNACIONAL – CONVENIO NORTE SUR  UNIVERSIDAD DEL CAUCA (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio) VALUES (27,'ESPECIALIZACION EN REDES Y SERVICIOS TELEMATICOS – CONVENIO CON LA UNIVERSIDAD DE SAN BUENAVENTURA (SEDE CALI)',1,6);
