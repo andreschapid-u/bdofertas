@@ -493,19 +493,6 @@ Privado=1]]></comment>
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 		</table>
-		<table name="padres" >
-			<column name="id_aut_padre" type="serial" jt="4" mandatory="y" />
-			<column name="nombres" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="apellidos" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="correo" type="varchar" length="60" jt="12" />
-			<column name="telefono" type="varchar" length="16" jt="12" mandatory="y" />
-			<column name="id_nivel_estudio" type="integer" jt="4" mandatory="y" />
-			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
-			<column name="id_programa" type="integer" jt="4" mandatory="y" />
-			<index name="pk_contactos_id" unique="PRIMARY_KEY" >
-				<column name="id_aut_padre" />
-			</index>
-		</table>
 		<table name="pais" >
 			<column name="id_aut_pais" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="50" jt="12" mandatory="y" />
@@ -860,7 +847,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="736" y="944" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="736" y="1312" />
 		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="768" y="1104" />
-		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="1040" y="1488" />
 		<entity schema="ofertas" name="localizacion" color="C1D8EE" x="1440" y="720" />
 		<entity schema="ofertas" name="pais" color="C1D8EE" x="1728" y="528" />
 		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1536" y="480" />
@@ -878,6 +864,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1664" y="992" />
 		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1536" y="1120" />
 		<entity schema="ofertas" name="egresados" color="008080" x="1040" y="736" />
+		<entity schema="ofertas" name="discapacidades" color="C1D8EE" x="1008" y="1488" />
 		<script name="SQL_Editor" id="Editor_1609c3d" language="SQL" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

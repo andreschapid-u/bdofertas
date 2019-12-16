@@ -493,19 +493,6 @@ Privado=1]]></comment>
 				<fk_column name="id_oferta" pk="id_aut_oferta" />
 			</fk>
 		</table>
-		<table name="padres" >
-			<column name="id_aut_padre" type="serial" jt="4" mandatory="y" />
-			<column name="nombres" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="apellidos" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="correo" type="varchar" length="60" jt="12" />
-			<column name="telefono" type="varchar" length="16" jt="12" mandatory="y" />
-			<column name="id_nivel_estudio" type="integer" jt="4" mandatory="y" />
-			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
-			<column name="id_programa" type="integer" jt="4" mandatory="y" />
-			<index name="pk_contactos_id" unique="PRIMARY_KEY" >
-				<column name="id_aut_padre" />
-			</index>
-		</table>
 		<table name="pais" >
 			<column name="id_aut_pais" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="50" jt="12" mandatory="y" />

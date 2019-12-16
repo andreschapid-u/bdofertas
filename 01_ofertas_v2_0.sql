@@ -70,18 +70,6 @@ CREATE  TABLE ofertas.niveles_estudio (
 	CONSTRAINT idx_niveles_estudio_nombre UNIQUE ( nombre ) 
  );
 
-CREATE  TABLE ofertas.padres ( 
-	id_aut_padre         serial  NOT NULL ,
-	nombres              varchar(40)  NOT NULL ,
-	apellidos            varchar(40)  NOT NULL ,
-	correo               varchar(60)   ,
-	telefono             varchar(16)  NOT NULL ,
-	id_nivel_estudio     integer  NOT NULL ,
-	id_egresado          integer  NOT NULL ,
-	id_programa          integer  NOT NULL ,
-	CONSTRAINT pk_contactos_id PRIMARY KEY ( id_aut_padre )
- );
-
 CREATE  TABLE ofertas.pais ( 
 	id_aut_pais          serial  NOT NULL ,
 	nombre               varchar(50)  NOT NULL ,
