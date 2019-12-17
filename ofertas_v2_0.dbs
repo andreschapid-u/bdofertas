@@ -279,8 +279,8 @@
 			<column name="nombre" type="varchar" length="200" jt="12" mandatory="y" />
 			<column name="fecha_inicio" type="date" jt="91" mandatory="y" />
 			<column name="fecha_fin" type="date" jt="91" mandatory="y" />
-			<column name="hora_inicio" type="date" jt="91" mandatory="y" />
-			<column name="hora_fin" type="date" jt="91" />
+			<column name="hora_inicio" type="time" jt="92" mandatory="y" />
+			<column name="hora_fin" type="time" jt="92" />
 			<column name="lugar" type="text" jt="12" />
 			<column name="descripcion" type="varchar" length="50" jt="12" />
 			<column name="cupos" type="numeric" jt="2" />
