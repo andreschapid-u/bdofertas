@@ -192,7 +192,7 @@ CREATE  TABLE ofertas.egresados (
 	identificacion       integer  NOT NULL ,
 	nombres              varchar(40)  NOT NULL ,
 	apellidos            varchar(40)  NOT NULL ,
-	genero               varchar(20)  NOT NULL ,
+	genero               varchar(20)   ,
 	id_lugar_expedicion  integer   ,
 	id_lugar_residencia  integer   ,
 	id_nivel_educativo   integer   ,
@@ -209,7 +209,7 @@ CREATE  TABLE ofertas.egresados (
 	grupo_etnico         varchar(40)   ,
 	celular              varchar(16)   ,
 	telefono_fijo        varchar(16)   ,
-	estado_completar     bool  NOT NULL ,
+	estado_completar     bool DEFAULT false NOT NULL ,
 	created_at           timestamp DEFAULT current_timestamp NOT NULL ,
 	updated_at           timestamp DEFAULT current_timestamp NOT NULL ,
 	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )

@@ -163,7 +163,7 @@
 			<column name="identificacion" type="integer" jt="4" mandatory="y" />
 			<column name="nombres" type="varchar" length="40" jt="12" mandatory="y" />
 			<column name="apellidos" type="varchar" length="40" jt="12" mandatory="y" />
-			<column name="genero" type="varchar" length="20" jt="12" mandatory="y" />
+			<column name="genero" type="varchar" length="20" jt="12" />
 			<column name="id_lugar_expedicion" type="integer" jt="4" />
 			<column name="id_lugar_residencia" type="integer" jt="4" />
 			<column name="id_nivel_educativo" type="integer" jt="4" />
@@ -182,7 +182,9 @@
 			<column name="grupo_etnico" type="varchar" length="40" jt="12" />
 			<column name="celular" type="varchar" length="16" jt="12" />
 			<column name="telefono_fijo" type="varchar" length="16" jt="12" />
-			<column name="estado_completar" type="bool" jt="-7" mandatory="y" />
+			<column name="estado_completar" type="bool" jt="-7" mandatory="y" >
+				<defo>false</defo>
+			</column>
 			<column name="created_at" type="timestamp" jt="93" mandatory="y" >
 				<defo>current_timestamp</defo>
 			</column>
@@ -829,7 +831,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="912" y="1328" />
 		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1120" />
 		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="688" y="1616" />
-		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1568" y="992" />
 		<entity schema="ofertas" name="solicita" color="C1D8EE" x="1344" y="880" />
 		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1568" y="880" />
@@ -855,7 +856,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="recuperar_password" color="3986C1" x="1296" y="48" />
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1536" />
 		<entity schema="ofertas" name="facultades" color="C1D8EE" x="432" y="1184" />
-		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="672" y="1104" />
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="400" y="1600" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
@@ -863,6 +863,8 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
+		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
+		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
