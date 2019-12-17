@@ -318,6 +318,7 @@ Privado=1]]></comment>
 			<column name="nombre_jefe" type="varchar" length="60" jt="12" />
 			<column name="correo_jefe" type="varchar" length="60" jt="12" />
 			<column name="telefono_jefe" type="varchar" length="15" jt="12" />
+			<column name="categoria" type="varchar" length="80" jt="12" mandatory="y" />
 			<index name="pk_cargos_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_exp" />
 			</index>
@@ -846,8 +847,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="pais" color="C1D8EE" x="1632" y="528" />
 		<entity schema="ofertas" name="departamentos" color="C1D8EE" x="1440" y="480" />
 		<entity schema="ofertas" name="rol" color="3986C1" x="800" y="112" />
-		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
-		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<entity schema="ofertas" name="ofertas" color="C1D8EE" x="1584" y="1296" />
 		<entity schema="ofertas" name="salarios" color="C1D8EE" x="1264" y="1568" />
 		<entity schema="ofertas" name="ofertas_discapacidades" color="C1D8EE" x="1200" y="1456" />
@@ -862,6 +861,8 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1344" />
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
+		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
+		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

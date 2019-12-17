@@ -272,6 +272,7 @@ CREATE  TABLE ofertas.experiencia (
 	nombre_jefe          varchar(60)   ,
 	correo_jefe          varchar(60)   ,
 	telefono_jefe        varchar(15)   ,
+	categoria            varchar(80)  NOT NULL ,
 	CONSTRAINT pk_cargos_id PRIMARY KEY ( id_aut_exp )
  );
 
