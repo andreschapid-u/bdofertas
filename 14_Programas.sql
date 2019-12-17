@@ -264,7 +264,7 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (202,'HISTORIA',9,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (203,'LICENCIATURA EN CIENCIAS DE LA EDUCACION CON ENFASIS EN BIOLOGIA',9,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (204,'LICENCIATURA EN ESPAÑOL Y LITERATURA',9,5,1);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (205,'LICENCIATURA EN ETNOEDUCACION (SEDE GUAPI, SEDE POPAYÁN)',9,5,1);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (205,'LICENCIATURA EN ETNOEDUCACION',9,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (206,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNICACIÓN Y LENGUAJE',9,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (207,'LICENCIATURA EN ETNOEDUCACION CON ENFASIS EN COMUNIDAD Y NATURALEZA',9,5,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (208,'LICENCIATURA EN FILOSOFIA',9,5,1);
@@ -295,36 +295,67 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (230,'MAESTRÍA EN REVITALIZACIÓN Y ENSEÑANZA DE LENGUAS INDÍGENA',9,7,1);
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+--SEDE NORTE
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (231,'DERECHO',3,5,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (232,'ESPECIALIZACION EN REVISORIA FISCAL Y AUDITORIA INTERNACIONAL',1,6,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (233,'ESPECIALIZACION EN SISTEMAS INTEGRADOS DE CALIDAD',1,6,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (234,'MAESTRIA EN COOPERACION INTERNACIONAL',1,7,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (235,'INGENIERIA AGROPECUARIA',5,5,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (236,'ESPECIALIZACION EN SANIDAD EN PRODUCCION AGRARIA INTEGRADA',5,6,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (237,'MAESTRÍA EN CIENCIAS AGROINDUSTRIALES',5,7,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (238,'MAESTRÍA EN BIOINGENIERÍA (SEDE SANTANDER DE QUILICHAO)',8,7,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (239,'MAESTRIA EN EDUCACION',8,7,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (240,'MAESTRIA EN EDUCACION POPULAR',8,7,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (241,'MAESTRIA EN ANTROPOLOGIA',9,7,2);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (242,'INGENIERIA CIVIL',4,5,2);
 
 
-/*
+--SEDE PIENDAMO
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (243,'TECNOLOGIA AGROINDUSTRIAL',5,4,3);
 
-SEDE NORTE
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (231,'ESPECIALIZACION EN REVISORIA FISCAL Y AUDITORIA INTERNACIONAL (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (45,'DERECHO (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE MIRANDA)',3,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (7,'ESPECIALIZACION EN GERENCIA DE PROYECTOS – CONVENIO UNIVERSIDAD DE NARIÑO (SEDE PASTO)'
 
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (7,'ESPECIALIZACION EN SISTEMAS INTEGRADOS DE CALIDAD (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (14,'MAESTRIA EN COOPERACION INTERNACIONAL – CONVENIO NORTE SUR  UNIVERSIDAD DEL CAUCA (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)'
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (27,'ESPECIALIZACION EN REDES Y SERVICIOS TELEMATICOS – CONVENIO CON LA UNIVERSIDAD DE SAN BUENAVENTURA (SEDE CALI)',1,6);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (39,'MAESTRÍA EN INGENIERÍA ELECTRÓNICA – CONVENIO CON LA ESCUELA NAVAL ALMIRANTE PADILLA (SEDE CARTAGENA)',1,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (56,'MAESTRIA EN DERECHO ADMINISTRATIVO - SEDE PASTO ( UNIVERSIDAD DE NARIÑO) - SEDE POPAYÁN',1,6);
---a.	Tecnología:
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (77,'TECNOLOGIA AGROINDUSTRIAL(SEDE BOLÍVAR, SEDE SILVIA, SEDE PIENDAMO,  SEDE MIRANDA, SEDE EL BORDO)',5,4);
+--SEDE GUAPI
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (244,'LICENCIATURA EN ETNOEDUCACION',9,5,4);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (245,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION',8,7,4);
 
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (79,'INGENIERIA AGROPECUARIA (SEDE SANTANDER DE QUILICHAO, SEDE POPAYÁN, SEDE EL BORDO)',5,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (84,'ESPECIALIZACION EN SANIDAD EN PRODUCCION AGRARIA INTEGRADA (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',5,6);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (86,'MAESTRÍA EN CIENCIAS AGROINDUSTRIALES. (SEDE SANTANDER DE QUILICHAO, SEDE POPAYÁN)',5,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (98,'ESPECIALIZACIÓN EN AUDITORÍA Y GARANTÍA DE LA CALIDAD EN SALUD CON ÉNFASIS EN EPIDEMIOLOGÍA - CONVENIDO UNIVERSIDAD EAN (SEDE BOGOTÁ- UNIVERSIDAD EAN)',6,6);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (98,'ESPECIALIZACIÓN EN BIOÉTICA - CONVENIO UNIVERSIDAD EL BOSQUE (SEDE BOGOTÁ - UNIVERSIDAD DEL BOSQUE)',6,6);
--- Maestría
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (98,'MAESTRÍA EN ADMINISTRACIÓN DE EMPRESAS DE SALUD - MBA EN SALUD - CONVENIDO UNIVERSIDAD EAN',6,7);
+--SEDE MIRANDA
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (246,'DERECHO',3,5,5);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (247,'TECNOLOGIA AGROINDUSTRIAL',5,4,5);
 
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (180,'MAESTRÍA EN BIOINGENIERÍA (SEDE SANTANDER DE QUILICHAO)',8,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (180,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION  (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE BUENAVENTURA, SEDE BUGA, SEDE FLORENCIA, SEDE GUAPI, SEDE MOCOA, SEDE PASTO, SEDE TUMACO, SEDE VALLE DEL GUAMUEZ)',8,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (180,'MAESTRIA EN EDUCACION (MP)MODALIDAD PROFUNDIZACION (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO, SEDE BUENAVENTURA, SEDE BUGA, SEDE FLORENCIA, SEDE GUAPI, SEDE MOCOA, SEDE PASTO, SEDE TUMACO, SEDE VALLE DEL GUAMUEZ)',8,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (180,'MAESTRIA EN EDUCACION (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',8,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (180,'MAESTRIA EN EDUCACION POPULAR (SEDE POPAYÁN, SEDE SANTANDER DE QUILICHAO)',8,7);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (205,'LICENCIATURA EN ETNOEDUCACION (SEDE GUAPI, SEDE POPAYÁN)',9,5);
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (220,'MAESTRIA EN ANTROPOLOGIA (SEDE SANTANDER DE QUILICHAO, SEDE POPAYÁN)',9,7);
-*/
+--SEDE BOLÍVAR
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (248,'TECNOLOGIA AGROINDUSTRIAL',5,4,6);
+
+--SEDE EL BORDO
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (249,'INGENIERIA AGROPECUARIA',5,5,7);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (250,'TECNOLOGIA AGROINDUSTRIAL',5,4,7);
+
+
+--SEDE SILVIA
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (251,'TECNOLOGIA AGROINDUSTRIAL',5,4,8);
+
+
+--SEDE PASTO
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (252,'ESPECIALIZACION EN GERENCIA DE PROYECTOS',1,6,9);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (253,'MAESTRIA EN DERECHO ADMINISTRATIVO',1,6,9);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (254,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION',8,7,9);
+
+
+--SEDE CALI
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (255,'ESPECIALIZACION EN REDES Y SERVICIOS TELEMATICOS',1,6,10);
+
+--SEDE CARTAGENA
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (256,'MAESTRÍA EN INGENIERÍA ELECTRÓNICA ',1,7,11);
+
+--SEDE BOGOTÁ - UNIVERSIDAD EAN
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (257,'ESPECIALIZACIÓN EN AUDITORÍA Y GARANTÍA DE LA CALIDAD EN SALUD CON ÉNFASIS EN EPIDEMIOLOGÍA',6,6,12);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (258,'MAESTRÍA EN ADMINISTRACIÓN DE EMPRESAS DE SALUD - MBA EN SALUD',6,7,12);
+
+--SEDE BOGOTÁ - UNIVERSIDAD EL BOSQUE
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (259,'ESPECIALIZACIÓN EN BIOÉTICA - CONVENIO UNIVERSIDAD EL BOSQUE (SEDE BOGOTÁ - UNIVERSIDAD DEL BOSQUE)',6,6,13);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (260,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION',8,7,13);
+
+--SEDE BUENAVENTURA
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (261,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION',8,7,14);
+
+--SEDE BUGA
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (262,'MAESTRIA EN EDUCACION (MI) MODALIDAD INVESTIGACION',8,7,15);

@@ -11,5 +11,8 @@ INSERT INTO  ofertas.sede(id_aut_sede,nombre,id_localizacion,id_universidad) VAL
 INSERT INTO  ofertas.sede(id_aut_sede,nombre,id_localizacion,id_universidad) VALUES (11,'SEDE CARTAGENA',1,4);
 INSERT INTO  ofertas.sede(id_aut_sede,nombre,id_localizacion,id_universidad) VALUES (12,'SEDE BOGOTÁ - UNIVERSIDAD EAN',1,5);
 INSERT INTO  ofertas.sede(id_aut_sede,nombre,id_localizacion,id_universidad) VALUES (13,'SEDE BOGOTÁ - UNIVERSIDAD EL BOSQUE',1,6);
+INSERT INTO  ofertas.sede(id_aut_sede,nombre,id_localizacion,id_universidad) VALUES (14,'SEDE BUENAVENTURA',1,3);
+INSERT INTO  ofertas.sede(id_aut_sede,nombre,id_localizacion,id_universidad) VALUES (15,'SEDE BUGA',1,3);
+
 
 COMMIT;
