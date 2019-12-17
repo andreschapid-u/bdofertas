@@ -277,7 +277,7 @@
 		<table name="evento" >
 			<column name="id_aut_evento" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="200" jt="12" mandatory="y" />
-			<column name="fecha_inicio" type="date" jt="91" />
+			<column name="fecha_inicio" type="date" jt="91" mandatory="y" />
 			<column name="fecha_fin" type="date" jt="91" mandatory="y" />
 			<column name="hora_inicio" type="date" jt="91" mandatory="y" />
 			<column name="hora_fin" type="date" jt="91" />
@@ -839,7 +839,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1344" y="256" />
 		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="1200" y="496" />
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="672" y="576" />
-		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
 		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="592" y="768" />
 		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="640" y="944" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="640" y="1312" />
@@ -862,5 +861,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="400" y="1600" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1344" />
+		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
 	</layout>
 </project>
