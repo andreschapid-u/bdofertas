@@ -1,2 +1,0 @@
---Referidos
-INSERT INTO  ofertas.referidos(id_aut_referido,nombres,id_nivel_educativo,telefono_movil,correo,parentesco,id_aut_programa,es_egresado) VALUES (1,'Juanito Alimaña',4,3148337865,'juanito@hotmail.com','Padre',5,false);
