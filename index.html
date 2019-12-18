@@ -1731,8 +1731,8 @@ varchar(40)</title></a>
 <text x='525' y='1076' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_id_aut_programa'><text id='ofertas.referidos.id_aut_programa' x='403' y='1095' onmouseover="hghl(['referidos_fk_referidos_programas','ofertas.programas.id_aut_programa'])" onmouseout="uhghl(['referidos_fk_referidos_programas','ofertas.programas.id_aut_programa'])">id_aut_programa</text><title>id_aut_programa
 integer</title></a>
 <a xlink:href='#ofertas.referidos.id_aut_programa'><use id='fk' x='516' y='1084' xlink:href='#fk'/><title>References programas ( id_aut_programa ) </title></a>
-  <use id='nn' x='386' y='1101' xlink:href='#nn'/><a xlink:href='#ofertas.referidos_es_egresado'><text id='ofertas.referidos.es_egresado' x='403' y='1111'>es_egresado</text><title>es_egresado
-* bool</title></a>
+  <a xlink:href='#ofertas.referidos_es_egresado'><text id='ofertas.referidos.es_egresado' x='403' y='1111'>es_egresado</text><title>es_egresado
+bool default false</title></a>
 <text x='525' y='1108' text-anchor='end' class='colType'>b</text>
 </g></svg></div>
 <div class='container'>
@@ -3952,9 +3952,9 @@ Privado&#61;1 </td>
 		<td>  </td>
 	</tr>
 	<tr>
-		<td>*</td>
+		<td>&nbsp;</td>
 		<td><a name='ofertas.referidos_es_egresado'>es&#95;egresado</a></td>
-		<td> bool   </td>
+		<td> bool   DEFAULT false </td>
 		<td>  </td>
 	</tr>
 <tr><th colspan='4'>Indexes</th></tr>

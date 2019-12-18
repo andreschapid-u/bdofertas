@@ -648,7 +648,9 @@ Privado=1]]></comment>
 			<column name="correo" type="varchar" length="60" jt="12" />
 			<column name="parentesco" type="varchar" length="40" jt="12" />
 			<column name="id_aut_programa" type="integer" jt="4" />
-			<column name="es_egresado" type="bool" jt="-7" mandatory="y" />
+			<column name="es_egresado" type="bool" jt="-7" >
+				<defo>false</defo>
+			</column>
 			<index name="pk_referidos_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_referido" />
 			</index>
