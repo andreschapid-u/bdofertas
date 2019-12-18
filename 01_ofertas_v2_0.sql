@@ -31,7 +31,7 @@ CREATE  TABLE ofertas.evento (
 	lugar                text   ,
 	descripcion          varchar(50)   ,
 	cupos                numeric   ,
-	a_quien_va_dirigido  varchar(1500)   ,
+	a_quien_va_dirigida  varchar(1500)   ,
 	imagen               varchar(1000)   ,
 	CONSTRAINT pk_evento_id_evento PRIMARY KEY ( id_aut_evento )
  );

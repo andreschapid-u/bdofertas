@@ -869,7 +869,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
 		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
-		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1344" y="864" />
+		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1216" y="864" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
