@@ -23,7 +23,7 @@ CREATE  TABLE ofertas.discapacidades (
 
 CREATE  TABLE ofertas.evento ( 
 	id_aut_evento        serial  NOT NULL ,
-	nombre               varchar(200)  NOT NULL ,
+	nombre               varchar(300)  NOT NULL ,
 	fecha_inicio         date  NOT NULL ,
 	fecha_fin            date  NOT NULL ,
 	hora_inicio          time  NOT NULL ,
