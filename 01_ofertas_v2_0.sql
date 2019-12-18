@@ -26,7 +26,7 @@ CREATE  TABLE ofertas.evento (
 	nombre               varchar(300)  NOT NULL ,
 	fecha_inicio         date  NOT NULL ,
 	fecha_fin            date  NOT NULL ,
-	hora_inicio          time  NOT NULL ,
+	hora_inicio          time   ,
 	hora_fin             time   ,
 	lugar                text   ,
 	descripcion          text   ,
@@ -620,3 +620,4 @@ ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol );
+
