@@ -29,7 +29,7 @@ CREATE  TABLE ofertas.evento (
 	hora_inicio          time  NOT NULL ,
 	hora_fin             time   ,
 	lugar                text   ,
-	descripcion          varchar(50)   ,
+	descripcion          text   ,
 	cupos                numeric   ,
 	a_quien_va_dirigida  varchar(1500)   ,
 	imagen               varchar(1000)   ,
