@@ -1,3 +1,3 @@
 --Grados
-INSERT INTO  ofertas.grados(id_aut_grado,tipo_grado,mencion_honor,titulo_especial,anio_graduacion,fecha_graduacion,id_programa,id_egresado,estado,observacion) VALUES (1,'Postumo','Mención de honor','Honoris Causa','2008','2008/08/02',12,1,'Activo','Ninguna');
-INSERT INTO  ofertas.grados(id_aut_grado,tipo_grado,mencion_honor,titulo_especial,anio_graduacion,fecha_graduacion,id_programa,id_egresado,estado,observacion) VALUES (2,'Privado','Mención de honor','Honoris Causa','2008','2009/08/02',20,2,'Pendiente','Ninguna');
+INSERT INTO  ofertas.grados(id_aut_grado,tipo_grado,mencion_honor,titulo_especial,anio_graduacion,fecha_graduacion,id_programa,id_egresado,estado,observacion) VALUES (1,'GRADO POSTUMO','Mención de honor','Honoris Causa','2008','2008/08/02',12,1,'PENDIENTE','Ninguna');
+INSERT INTO  ofertas.grados(id_aut_grado,tipo_grado,mencion_honor,titulo_especial,anio_graduacion,fecha_graduacion,id_programa,id_egresado,estado,observacion) VALUES (2,'GRADO PRIVADO','Mención de honor','Honoris Causa','2008','2009/08/02',20,2,'ACTIVO','Ninguna');
