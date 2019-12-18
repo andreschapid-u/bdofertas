@@ -1,5 +1,5 @@
 --Egresados Dominios
-CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('PENDIENTE', 'RESPONDIDO','CANCELADO');
+CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('PENDIENTE', 'RESPONDIDO','CANCELADO','RECHAZADO','RECIBIDO');
 CREATE TYPE ofertas.dominio_genero_egresado AS ENUM ('MASCULINO', 'FEMENINO');
 CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('EN ESPERA', 'ACTIVO', 'INACTIVO','PENDIENTE');
 CREATE TYPE ofertas.dominio_estado_civil_egresado AS ENUM ('SOLTERO(A)', 'CASADO(A)','VIUDO(A)','UNION LIBRE','SEPARADO(A)','COMPROMETIDO(A)','DIVORCIADO(A)');
