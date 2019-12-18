@@ -287,7 +287,7 @@
 			<column name="nombre" type="varchar" length="300" jt="12" mandatory="y" />
 			<column name="fecha_inicio" type="date" jt="91" mandatory="y" />
 			<column name="fecha_fin" type="date" jt="91" mandatory="y" />
-			<column name="hora_inicio" type="time" jt="92" mandatory="y" />
+			<column name="hora_inicio" type="time" jt="92" />
 			<column name="hora_fin" type="time" jt="92" />
 			<column name="lugar" type="text" jt="12" />
 			<column name="descripcion" type="text" length="50" jt="12" />
@@ -648,7 +648,7 @@ Privado=1]]></comment>
 			<column name="correo" type="varchar" length="60" jt="12" />
 			<column name="parentesco" type="varchar" length="40" jt="12" />
 			<column name="id_aut_programa" type="integer" jt="4" />
-			<column name="es_egresado" type="bool" jt="-7" />
+			<column name="es_egresado" type="bool" jt="-7" mandatory="y" />
 			<index name="pk_referidos_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_referido" />
 			</index>
@@ -839,7 +839,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="688" y="1616" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1568" y="992" />
 		<entity schema="ofertas" name="users" color="C1D8EE" x="1104" y="48" />
-		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="608" y="48" />
 		<entity schema="ofertas" name="acceso" color="C1D8EE" x="608" y="272" />
 		<entity schema="ofertas" name="servicios" color="C1D8EE" x="592" y="416" />
 		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1344" y="256" />
@@ -864,12 +863,13 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="400" y="1600" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1344" />
-		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
 		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1216" y="864" />
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
+		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="608" y="48" />
+		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

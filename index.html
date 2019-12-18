@@ -442,14 +442,6 @@ users ref rol ( id_rol -&gt; id_aut_rol )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1088,128L 896,128' ><title>Fk fk_users_roles
 users ref rol ( id_rol -&gt; id_aut_rol )</title></path>
 <text x='1067' y='123' transform='rotate(0 1067,123)' class='relName'>id_rol</text>
-<!-- == Fk 'apoyos_fk_apoyos_users' == -->
-<path id='apoyos_fk_apoyos_users'  onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" transform='translate(8,0)' class='scene' d='M 752,64L 1088,64' >
-	<title>Fk fk_apoyos_users
-apoyos ref users ( id_user -&gt; id_aut_user )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 752,64L 1088,64' ><title>Fk fk_apoyos_users
-apoyos ref users ( id_user -&gt; id_aut_user )</title></path>
-<text x='761' y='59' transform='rotate(0 761,59)' class='relName'>id_user</text>
 <!-- == Fk 'acceso_fk_acceso_apoyos' == -->
 <path id='acceso_fk_acceso_apoyos'  onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','ofertas.apoyos.id_aut_apoyo'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','ofertas.apoyos.id_aut_apoyo'])" transform='translate(8,0)' class='scene' d='M 624,256L 624,208' >
 	<title>Fk fk_acceso_apoyos
@@ -674,22 +666,6 @@ sede ref universidad ( id_universidad -&gt; id_aut_universidad )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 96,1456L 96,1520' ><title>Fk fk_sede_universidad
 sede ref universidad ( id_universidad -&gt; id_aut_universidad )</title></path>
 <text x='111' y='1457' transform='rotate(90 111,1457)' class='relName'>id_universidad</text>
-<!-- == Fk 'referidos_fk_referidos_niveles_estudio' == -->
-<path id='referidos_fk_referidos_niveles_estudio'  onmouseover="hghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" onmouseout="uhghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" transform='translate(8,0)' class='scene' d='M 528,992L 624,992' >
-	<title>Fk fk_referidos_niveles_estudio
-referidos ref niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 528,992L 624,992' ><title>Fk fk_referidos_niveles_estudio
-referidos ref niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio )</title></path>
-<text x='537' y='987' transform='rotate(0 537,987)' class='relName'>id_nivel_educativo</text>
-<!-- == Fk 'referidos_fk_referidos_programas' == -->
-<path id='referidos_fk_referidos_programas'  onmouseover="hghl(['referidos_fk_referidos_programas','ofertas.referidos.id_aut_programa','ofertas.programas.id_aut_programa'])" onmouseout="uhghl(['referidos_fk_referidos_programas','ofertas.referidos.id_aut_programa','ofertas.programas.id_aut_programa'])" transform='translate(8,0)' class='scene' d='M 400,1136L 400,1304Q 400,1312 408,1312L 424,1312Q 432,1312 432,1320L 432,1328' >
-	<title>Fk fk_referidos_programas
-referidos ref programas ( id_aut_programa )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 400,1136L 400,1304Q 400,1312 408,1312L 424,1312Q 432,1312 432,1320L 432,1328' ><title>Fk fk_referidos_programas
-referidos ref programas ( id_aut_programa )</title></path>
-<text x='415' y='1137' transform='rotate(90 415,1137)' class='relName'>id_aut_programa</text>
 <!-- == Fk 'experiencia_fk_cargos_egresados' == -->
 <path id='experiencia_fk_cargos_egresados'  onmouseover="hghl(['experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 960,576L 960,720' >
 	<title>Fk fk_cargos_egresados
@@ -778,6 +754,30 @@ carnetizacion ref egresados ( id_egresado -&gt; id_aut_egresado )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1200,864L 1104,864' ><title>Fk fk_carnetizacion_egresados
 carnetizacion ref egresados ( id_egresado -&gt; id_aut_egresado )</title></path>
 <text x='1143' y='859' transform='rotate(0 1143,859)' class='relName'>id_egresado</text>
+<!-- == Fk 'apoyos_fk_apoyos_users' == -->
+<path id='apoyos_fk_apoyos_users'  onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" transform='translate(8,0)' class='scene' d='M 752,64L 1088,64' >
+	<title>Fk fk_apoyos_users
+apoyos ref users ( id_user -&gt; id_aut_user )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 752,64L 1088,64' ><title>Fk fk_apoyos_users
+apoyos ref users ( id_user -&gt; id_aut_user )</title></path>
+<text x='761' y='59' transform='rotate(0 761,59)' class='relName'>id_user</text>
+<!-- == Fk 'referidos_fk_referidos_niveles_estudio' == -->
+<path id='referidos_fk_referidos_niveles_estudio'  onmouseover="hghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" onmouseout="uhghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" transform='translate(8,0)' class='scene' d='M 528,992L 624,992' >
+	<title>Fk fk_referidos_niveles_estudio
+referidos ref niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 528,992L 624,992' ><title>Fk fk_referidos_niveles_estudio
+referidos ref niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio )</title></path>
+<text x='537' y='987' transform='rotate(0 537,987)' class='relName'>id_nivel_educativo</text>
+<!-- == Fk 'referidos_fk_referidos_programas' == -->
+<path id='referidos_fk_referidos_programas'  onmouseover="hghl(['referidos_fk_referidos_programas','ofertas.referidos.id_aut_programa','ofertas.programas.id_aut_programa'])" onmouseout="uhghl(['referidos_fk_referidos_programas','ofertas.referidos.id_aut_programa','ofertas.programas.id_aut_programa'])" transform='translate(8,0)' class='scene' d='M 400,1136L 400,1304Q 400,1312 408,1312L 424,1312Q 432,1312 432,1320L 432,1328' >
+	<title>Fk fk_referidos_programas
+referidos ref programas ( id_aut_programa )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 400,1136L 400,1304Q 400,1312 408,1312L 424,1312Q 432,1312 432,1320L 432,1328' ><title>Fk fk_referidos_programas
+referidos ref programas ( id_aut_programa )</title></path>
+<text x='415' y='1137' transform='rotate(90 415,1137)' class='relName'>id_aut_programa</text>
 <!-- == Table 'empresas_sectores' == -->
 <rect class='entity' style='stroke:#1E578F' x='2128' y='888' width='128' height='80' rx='8' ry='8' />
 <path d='M 2128 916 L 2128 896 Q 2128 888 2136 888 L 2248 888 Q 2256 888 2256 896 L 2256 916 L2128 916 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1114,28 +1114,6 @@ varchar(60)</title></a>
 <text x='1245' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1106' y='157' xlink:href='#nn'/><a xlink:href='#ofertas.users_activo'><text id='ofertas.users.activo' x='1123' y='167'>activo</text><title>activo
 * bool default false</title></a>
 <text x='1245' y='164' text-anchor='end' class='colType'>b</text>
-<!-- == Table 'apoyos' == -->
-<rect class='entity' style='stroke:#1E578F' x='608' y='40' width='144' height='160' rx='8' ry='8' />
-<path d='M 608 68 L 608 48 Q 608 40 616 40 L 744 40 Q 752 40 752 48 L 752 68 L608 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='608' y='40' width='144' height='160' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.apoyos'><text x='656' y='59' >apoyos</text><title>Table ofertas.apoyos</title></a>
-  <use id='nn' x='610' y='77' xlink:href='#nn'/><use id='pk' x='610' y='76' xlink:href='#pk'><title>Pk pk_apoyos_id_aut_apoyo ( id_aut_apoyo ) </title></use><a xlink:href='#ofertas.apoyos_id_aut_apoyo'><text id='ofertas.apoyos.id_aut_apoyo' x='627' y='87' onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo'])">id_aut_apoyo</text><title>id_aut_apoyo
-* serial</title></a>
-<a xlink:href='#ofertas.apoyos.id_aut_apoyo'><use id='ref' x='740' y='76' xlink:href='#ref'/><title>Referred by acceso ( id_apoyo -&gt; id_aut_apoyo ) </title></a>
-  <use id='nn' x='610' y='93' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombre_rol'><text id='ofertas.apoyos.nombre_rol' x='627' y='103'>nombre_rol</text><title>nombre_rol
-* varchar(60)</title></a>
-<text x='749' y='100' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='109' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_id_user'><text id='ofertas.apoyos.id_user' x='627' y='119' onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])">id_user</text><title>id_user
-* integer</title></a>
-<a xlink:href='#ofertas.apoyos.id_user'><use id='fk' x='740' y='108' xlink:href='#fk'/><title>References users ( id_user -&gt; id_aut_user ) </title></a>
-  <use id='nn' x='610' y='125' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombres'><text id='ofertas.apoyos.nombres' x='627' y='135'>nombres</text><title>nombres
-* varchar(60)</title></a>
-<text x='749' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='141' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_apellidos'><text id='ofertas.apoyos.apellidos' x='627' y='151'>apellidos</text><title>apellidos
-* varchar(60)</title></a>
-<text x='749' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='157' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo'><text id='ofertas.apoyos.correo' x='627' y='167'>correo</text><title>correo
-* varchar(60)</title></a>
-<text x='749' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='173' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo_secundario'><text id='ofertas.apoyos.correo_secundario' x='627' y='183'>correo_secundario</text><title>correo_secundario
-* varchar(60)</title></a>
-<text x='749' y='180' text-anchor='end' class='colType'>t</text>
 <!-- == Table 'acceso' == -->
 <rect class='entity' style='stroke:#1E578F' x='608' y='264' width='96' height='80' rx='8' ry='8' />
 <path d='M 608 292 L 608 272 Q 608 264 616 264 L 696 264 Q 704 264 704 272 L 704 292 L608 292 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1521,31 +1499,6 @@ integer</title></a>
 * integer</title></a>
 <a xlink:href='#ofertas.sede.id_universidad'><use id='fk' x='196' y='1420' xlink:href='#fk'/><title>References universidad ( id_universidad -&gt; id_aut_universidad ) </title></a>
 
-<!-- == Table 'referidos' == -->
-<rect class='entity' style='stroke:#1E578F' x='384' y='952' width='144' height='176' rx='8' ry='8' />
-<path d='M 384 980 L 384 960 Q 384 952 392 952 L 520 952 Q 528 952 528 960 L 528 980 L384 980 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='384' y='952' width='144' height='176' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.referidos'><text x='428' y='971' >referidos</text><title>Table ofertas.referidos</title></a>
-  <use id='nn' x='386' y='989' xlink:href='#nn'/><use id='pk' x='386' y='988' xlink:href='#pk'><title>Pk pk_referidos_id ( id_aut_referido ) </title></use><a xlink:href='#ofertas.referidos_id_aut_referido'><text id='ofertas.referidos.id_aut_referido' x='403' y='999' onmouseover="hghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos'])" onmouseout="uhghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos'])">id_aut_referido</text><title>id_aut_referido
-* serial</title></a>
-<a xlink:href='#ofertas.referidos.id_aut_referido'><use id='ref' x='516' y='988' xlink:href='#ref'/><title>Referred by referidos_egresados ( id_referidos -&gt; id_aut_referido ) </title></a>
-  <use id='nn' x='386' y='1005' xlink:href='#nn'/><a xlink:href='#ofertas.referidos_nombres'><text id='ofertas.referidos.nombres' x='403' y='1015'>nombres</text><title>nombres
-* varchar(100)</title></a>
-<text x='525' y='1012' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_id_nivel_educativo'><text id='ofertas.referidos.id_nivel_educativo' x='403' y='1031' onmouseover="hghl(['referidos_fk_referidos_niveles_estudio','ofertas.niveles_estudio.id_aut_estudio'])" onmouseout="uhghl(['referidos_fk_referidos_niveles_estudio','ofertas.niveles_estudio.id_aut_estudio'])">id_nivel_educativo</text><title>id_nivel_educativo
-integer</title></a>
-<a xlink:href='#ofertas.referidos.id_nivel_educativo'><use id='fk' x='516' y='1020' xlink:href='#fk'/><title>References niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio ) </title></a>
-  <use id='nn' x='386' y='1037' xlink:href='#nn'/><a xlink:href='#ofertas.referidos_telefono_movil'><text id='ofertas.referidos.telefono_movil' x='403' y='1047'>telefono_movil</text><title>telefono_movil
-* varchar(16)</title></a>
-<text x='525' y='1044' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_correo'><text id='ofertas.referidos.correo' x='403' y='1063'>correo</text><title>correo
-varchar(60)</title></a>
-<text x='525' y='1060' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_parentesco'><text id='ofertas.referidos.parentesco' x='403' y='1079'>parentesco</text><title>parentesco
-varchar(40)</title></a>
-<text x='525' y='1076' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_id_aut_programa'><text id='ofertas.referidos.id_aut_programa' x='403' y='1095' onmouseover="hghl(['referidos_fk_referidos_programas','ofertas.programas.id_aut_programa'])" onmouseout="uhghl(['referidos_fk_referidos_programas','ofertas.programas.id_aut_programa'])">id_aut_programa</text><title>id_aut_programa
-integer</title></a>
-<a xlink:href='#ofertas.referidos.id_aut_programa'><use id='fk' x='516' y='1084' xlink:href='#fk'/><title>References programas ( id_aut_programa ) </title></a>
-  <a xlink:href='#ofertas.referidos_es_egresado'><text id='ofertas.referidos.es_egresado' x='403' y='1111'>es_egresado</text><title>es_egresado
-bool</title></a>
-<text x='525' y='1108' text-anchor='end' class='colType'>b</text>
 <!-- == Table 'experiencia' == -->
 <rect class='entity' style='stroke:#1E578F' x='896' y='248' width='144' height='320' rx='8' ry='8' />
 <path d='M 896 276 L 896 256 Q 896 248 904 248 L 1032 248 Q 1040 248 1040 256 L 1040 276 L896 276 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1719,8 +1672,8 @@ date</title></a>
 * date</title></a>
 <text x='541' y='692' text-anchor='end' class='colType'>d</text>  <use id='nn' x='402' y='701' xlink:href='#nn'/><a xlink:href='#ofertas.evento_fecha_fin'><text id='ofertas.evento.fecha_fin' x='419' y='711'>fecha_fin</text><title>fecha_fin
 * date</title></a>
-<text x='541' y='708' text-anchor='end' class='colType'>d</text>  <use id='nn' x='402' y='717' xlink:href='#nn'/><a xlink:href='#ofertas.evento_hora_inicio'><text id='ofertas.evento.hora_inicio' x='419' y='727'>hora_inicio</text><title>hora_inicio
-* time</title></a>
+<text x='541' y='708' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_hora_inicio'><text id='ofertas.evento.hora_inicio' x='419' y='727'>hora_inicio</text><title>hora_inicio
+time</title></a>
 <text x='541' y='724' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_hora_fin'><text id='ofertas.evento.hora_fin' x='419' y='743'>hora_fin</text><title>hora_fin
 time</title></a>
 <text x='541' y='740' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_lugar'><text id='ofertas.evento.lugar' x='419' y='759'>lugar</text><title>lugar
@@ -1734,6 +1687,53 @@ varchar(1500)</title></a>
 <text x='541' y='804' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_imagen'><text id='ofertas.evento.imagen' x='419' y='823'>imagen</text><title>imagen
 varchar(1000)</title></a>
 <text x='541' y='820' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'apoyos' == -->
+<rect class='entity' style='stroke:#1E578F' x='608' y='40' width='144' height='160' rx='8' ry='8' />
+<path d='M 608 68 L 608 48 Q 608 40 616 40 L 744 40 Q 752 40 752 48 L 752 68 L608 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='608' y='40' width='144' height='160' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.apoyos'><text x='656' y='59' >apoyos</text><title>Table ofertas.apoyos</title></a>
+  <use id='nn' x='610' y='77' xlink:href='#nn'/><use id='pk' x='610' y='76' xlink:href='#pk'><title>Pk pk_apoyos_id_aut_apoyo ( id_aut_apoyo ) </title></use><a xlink:href='#ofertas.apoyos_id_aut_apoyo'><text id='ofertas.apoyos.id_aut_apoyo' x='627' y='87' onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo'])">id_aut_apoyo</text><title>id_aut_apoyo
+* serial</title></a>
+<a xlink:href='#ofertas.apoyos.id_aut_apoyo'><use id='ref' x='740' y='76' xlink:href='#ref'/><title>Referred by acceso ( id_apoyo -&gt; id_aut_apoyo ) </title></a>
+  <use id='nn' x='610' y='93' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombre_rol'><text id='ofertas.apoyos.nombre_rol' x='627' y='103'>nombre_rol</text><title>nombre_rol
+* varchar(60)</title></a>
+<text x='749' y='100' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='109' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_id_user'><text id='ofertas.apoyos.id_user' x='627' y='119' onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])">id_user</text><title>id_user
+* integer</title></a>
+<a xlink:href='#ofertas.apoyos.id_user'><use id='fk' x='740' y='108' xlink:href='#fk'/><title>References users ( id_user -&gt; id_aut_user ) </title></a>
+  <use id='nn' x='610' y='125' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombres'><text id='ofertas.apoyos.nombres' x='627' y='135'>nombres</text><title>nombres
+* varchar(60)</title></a>
+<text x='749' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='141' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_apellidos'><text id='ofertas.apoyos.apellidos' x='627' y='151'>apellidos</text><title>apellidos
+* varchar(60)</title></a>
+<text x='749' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='157' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo'><text id='ofertas.apoyos.correo' x='627' y='167'>correo</text><title>correo
+* varchar(60)</title></a>
+<text x='749' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='173' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo_secundario'><text id='ofertas.apoyos.correo_secundario' x='627' y='183'>correo_secundario</text><title>correo_secundario
+* varchar(60)</title></a>
+<text x='749' y='180' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'referidos' == -->
+<rect class='entity' style='stroke:#1E578F' x='384' y='952' width='144' height='176' rx='8' ry='8' />
+<path d='M 384 980 L 384 960 Q 384 952 392 952 L 520 952 Q 528 952 528 960 L 528 980 L384 980 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='384' y='952' width='144' height='176' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.referidos'><text x='428' y='971' >referidos</text><title>Table ofertas.referidos</title></a>
+  <use id='nn' x='386' y='989' xlink:href='#nn'/><use id='pk' x='386' y='988' xlink:href='#pk'><title>Pk pk_referidos_id ( id_aut_referido ) </title></use><a xlink:href='#ofertas.referidos_id_aut_referido'><text id='ofertas.referidos.id_aut_referido' x='403' y='999' onmouseover="hghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos'])" onmouseout="uhghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos'])">id_aut_referido</text><title>id_aut_referido
+* serial</title></a>
+<a xlink:href='#ofertas.referidos.id_aut_referido'><use id='ref' x='516' y='988' xlink:href='#ref'/><title>Referred by referidos_egresados ( id_referidos -&gt; id_aut_referido ) </title></a>
+  <use id='nn' x='386' y='1005' xlink:href='#nn'/><a xlink:href='#ofertas.referidos_nombres'><text id='ofertas.referidos.nombres' x='403' y='1015'>nombres</text><title>nombres
+* varchar(100)</title></a>
+<text x='525' y='1012' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_id_nivel_educativo'><text id='ofertas.referidos.id_nivel_educativo' x='403' y='1031' onmouseover="hghl(['referidos_fk_referidos_niveles_estudio','ofertas.niveles_estudio.id_aut_estudio'])" onmouseout="uhghl(['referidos_fk_referidos_niveles_estudio','ofertas.niveles_estudio.id_aut_estudio'])">id_nivel_educativo</text><title>id_nivel_educativo
+integer</title></a>
+<a xlink:href='#ofertas.referidos.id_nivel_educativo'><use id='fk' x='516' y='1020' xlink:href='#fk'/><title>References niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio ) </title></a>
+  <use id='nn' x='386' y='1037' xlink:href='#nn'/><a xlink:href='#ofertas.referidos_telefono_movil'><text id='ofertas.referidos.telefono_movil' x='403' y='1047'>telefono_movil</text><title>telefono_movil
+* varchar(16)</title></a>
+<text x='525' y='1044' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_correo'><text id='ofertas.referidos.correo' x='403' y='1063'>correo</text><title>correo
+varchar(60)</title></a>
+<text x='525' y='1060' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_parentesco'><text id='ofertas.referidos.parentesco' x='403' y='1079'>parentesco</text><title>parentesco
+varchar(40)</title></a>
+<text x='525' y='1076' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.referidos_id_aut_programa'><text id='ofertas.referidos.id_aut_programa' x='403' y='1095' onmouseover="hghl(['referidos_fk_referidos_programas','ofertas.programas.id_aut_programa'])" onmouseout="uhghl(['referidos_fk_referidos_programas','ofertas.programas.id_aut_programa'])">id_aut_programa</text><title>id_aut_programa
+integer</title></a>
+<a xlink:href='#ofertas.referidos.id_aut_programa'><use id='fk' x='516' y='1084' xlink:href='#fk'/><title>References programas ( id_aut_programa ) </title></a>
+  <use id='nn' x='386' y='1101' xlink:href='#nn'/><a xlink:href='#ofertas.referidos_es_egresado'><text id='ofertas.referidos.es_egresado' x='403' y='1111'>es_egresado</text><title>es_egresado
+* bool</title></a>
+<text x='525' y='1108' text-anchor='end' class='colType'>b</text>
 </g></svg></div>
 <div class='container'>
 
@@ -2737,7 +2737,7 @@ varchar(1000)</title></a>
 		<td>  </td>
 	</tr>
 	<tr>
-		<td>*</td>
+		<td>&nbsp;</td>
 		<td><a name='ofertas.evento_hora_inicio'>hora&#95;inicio</a></td>
 		<td> time   </td>
 		<td>  </td>
@@ -3952,7 +3952,7 @@ Privado&#61;1 </td>
 		<td>  </td>
 	</tr>
 	<tr>
-		<td>&nbsp;</td>
+		<td>*</td>
 		<td><a name='ofertas.referidos_es_egresado'>es&#95;egresado</a></td>
 		<td> bool   </td>
 		<td>  </td>

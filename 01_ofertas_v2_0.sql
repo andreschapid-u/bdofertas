@@ -384,7 +384,7 @@ CREATE  TABLE ofertas.referidos (
 	correo               varchar(60)   ,
 	parentesco           varchar(40)   ,
 	id_aut_programa      integer   ,
-	es_egresado          bool   ,
+	es_egresado          bool  NOT NULL ,
 	CONSTRAINT pk_referidos_id PRIMARY KEY ( id_aut_referido )
  );
 
