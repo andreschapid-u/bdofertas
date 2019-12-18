@@ -1,12 +1,12 @@
 --Egresados Dominios
 CREATE TYPE ofertas.dominio_estado_solicitud_carnetizacion AS ENUM ('PENDIENTE', 'RESPONDIDO','CANCELADO','RECHAZADO','RECIBIDO');
 CREATE TYPE ofertas.dominio_genero_egresado AS ENUM ('MASCULINO', 'FEMENINO');
-CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('EN ESPERA', 'ACTIVO', 'INACTIVO','PENDIENTE');
+CREATE TYPE ofertas.dominio_estado_egresado AS ENUM ('ACTIVO LOGUEADO','ACTIVO NO LOGUEADO','PENDIENTE');
 CREATE TYPE ofertas.dominio_estado_civil_egresado AS ENUM ('SOLTERO(A)', 'CASADO(A)','VIUDO(A)','UNION LIBRE','SEPARADO(A)','COMPROMETIDO(A)','DIVORCIADO(A)');
 CREATE TYPE ofertas.dominio_grupo_etnico_egresado AS ENUM ('AFRODESCENDIENTE', 'INDÍGENA', 'MESTIZO', 'BLANCO', 'OTRO');
 CREATE TYPE ofertas.dominio_estado_grado AS ENUM ('PENDIENTE','ACTIVO');
 CREATE TYPE ofertas.dominio_tipo_grado_grado AS ENUM ('GRADO POSTUMO','GRADO PRIVADO');
-CREATE TYPE ofertas.dominio_categoria_experiencia AS ENUM ('INDEPENDIENTE','EMPRESARIO');
+CREATE TYPE ofertas.dominio_categoria_experiencia AS ENUM ('INDEPENDIENTE','EMPRESARIO','EMPLEADO');
 
 
 --Egresados ALTER TABLE
