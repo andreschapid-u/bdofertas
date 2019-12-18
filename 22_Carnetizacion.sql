@@ -1,6 +1,6 @@
 --Carnetizacion
-INSERT INTO  ofertas.carnetizacion(id_aut_carnetizacion,estado_solicitud) VALUES (1,'PENDIENTE');
-INSERT INTO  ofertas.carnetizacion(id_aut_carnetizacion,estado_solicitud) VALUES (2,'RESPONDIDO');
-INSERT INTO  ofertas.carnetizacion(id_aut_carnetizacion,estado_solicitud) VALUES (3,'CANCELADO');
+INSERT INTO  ofertas.carnetizacion(id_aut_carnetizacion,id_egresado,estado_solicitud,fecha_solicitud,fecha_respuesta) VALUES (1,1,'PENDIENTE','2009/07/12','2009/07/15');
+INSERT INTO  ofertas.carnetizacion(id_aut_carnetizacion,id_egresado,estado_solicitud,fecha_solicitud,fecha_respuesta) VALUES (2,2,'RESPONDIDO','2009/07/12','2009/07/15');
+INSERT INTO  ofertas.carnetizacion(id_aut_carnetizacion,id_egresado,estado_solicitud,fecha_solicitud,fecha_respuesta) VALUES (3,3.'CANCELADO','2009/07/12','2009/07/15');
 
 COMMIT;

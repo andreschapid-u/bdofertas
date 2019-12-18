@@ -15,12 +15,6 @@ CREATE  TABLE ofertas.cargos (
 	CONSTRAINT pk_cargos_id_0 PRIMARY KEY ( id_aut_cargos )
  );
 
-CREATE  TABLE ofertas.carnetizacion ( 
-	id_aut_carnetizacion serial  NOT NULL ,
-	estado_solicitud     varchar(50)  NOT NULL ,
-	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
- );
-
 CREATE  TABLE ofertas.discapacidades ( 
 	id_aut_discapacidades serial  NOT NULL ,
 	nombre               varchar(30)  NOT NULL ,
@@ -411,14 +405,6 @@ CREATE  TABLE ofertas.representante_empresa (
 	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) 
  );
 
-CREATE  TABLE ofertas.solicita ( 
-	id_carnetizacion     serial  NOT NULL ,
-	id_egresado          integer  NOT NULL ,
-	fecha_solicitud      date  NOT NULL ,
-	fecha_respuesta      date   ,
-	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado )
- );
-
 CREATE  TABLE ofertas.ubicacion_oferta ( 
 	id_oferta            integer  NOT NULL ,
 	id_ciudad            integer  NOT NULL ,
@@ -440,6 +426,15 @@ CREATE  TABLE ofertas.administrador_empresa (
 	CONSTRAINT pk_representante_legal_id PRIMARY KEY ( id_aut_administrador_empresa ),
 	CONSTRAINT idx_administrador_empresa_0 UNIQUE ( id_empresa ) ,
 	CONSTRAINT idx_administrador_empresa_1 UNIQUE ( correo_corporativo ) 
+ );
+
+CREATE  TABLE ofertas.carnetizacion ( 
+	id_aut_carnetizacion serial  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	estado_solicitud     varchar(50)  NOT NULL ,
+	fecha_solicitud      date  NOT NULL ,
+	fecha_respuesta      date   ,
+	CONSTRAINT pk_carnetizacion_id_aut_carnetizacion PRIMARY KEY ( id_aut_carnetizacion )
  );
 
 CREATE  TABLE ofertas.contratos ( 
@@ -475,6 +470,14 @@ CREATE  TABLE ofertas.postulaciones_respuestas (
 	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta )
  );
 
+CREATE  TABLE ofertas.solicita ( 
+	id_carnetizacion     serial  NOT NULL ,
+	id_egresado          integer  NOT NULL ,
+	fecha_solicitud      date  NOT NULL ,
+	fecha_respuesta      date   ,
+	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado )
+ );
+
 CREATE  TABLE ofertas.comenta ( 
 	id_grado             integer  NOT NULL ,
 	id_comentario        integer  NOT NULL ,
@@ -495,6 +498,8 @@ ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_representante_empres
 ALTER TABLE ofertas.administrador_empresa ADD CONSTRAINT fk_administrador_empresa_users FOREIGN KEY ( id_aut_user ) REFERENCES ofertas.users( id_aut_user );
 
 ALTER TABLE ofertas.apoyos ADD CONSTRAINT fk_apoyos_users FOREIGN KEY ( id_user ) REFERENCES ofertas.users( id_aut_user );
+
+ALTER TABLE ofertas.carnetizacion ADD CONSTRAINT fk_carnetizacion_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
 
 ALTER TABLE ofertas.ciudades ADD CONSTRAINT fk_ciudades_departamentos FOREIGN KEY ( id_departamento ) REFERENCES ofertas.departamentos( id_aut_dep );
 
