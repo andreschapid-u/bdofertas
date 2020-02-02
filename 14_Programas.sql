@@ -28,7 +28,7 @@ INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudi
 
 --2.	Facultad de Ingeniería Electrónica y Telecomunicaciones.
 --a.	Tecnología:
-INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (20,'TECNOLOGIA EN CONMUTACION',2,4,1);
+INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (20,'TECNOLOGIA EN COMPUTACION',2,4,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (21,'TECNOLOGIA EN SISTEMAS DE LA INFORMACION',2,4,1);
 INSERT INTO  ofertas.programas(id_aut_programa,nombre,id_facultad,id_nivelestudio,id_sede) VALUES (22,'TECNOLOGIA EN TELEMATICA',2,4,1);
 --b.	Pregrado:
