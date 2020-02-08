@@ -110,8 +110,6 @@ CREATE  TABLE ofertas.tipo_de_observacion (
 	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
  );
 
-CREATE INDEX unq_tipo_de_observacion_pregunta_padre ON ofertas.tipo_de_observacion ( pregunta_padre );
-
 CREATE  TABLE ofertas.titulo ( 
 	id_aut_titulo        serial  NOT NULL ,
 	nombre               varchar(150)  NOT NULL ,
@@ -618,11 +616,10 @@ ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_egresados FOREIGN KEY ( 
 
 ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector );
 
-ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion FOREIGN KEY ( id_aut_comentario ) REFERENCES ofertas.tipo_de_observacion( pregunta_padre );
+ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion FOREIGN KEY ( pregunta_padre ) REFERENCES ofertas.tipo_de_observacion( id_aut_comentario );
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol );
-
