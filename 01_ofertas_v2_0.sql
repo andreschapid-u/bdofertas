@@ -107,9 +107,10 @@ CREATE  TABLE ofertas.tipo_de_observacion (
 	id_aut_comentario    serial  NOT NULL ,
 	pregunta             varchar(600)  NOT NULL ,
 	pregunta_padre       integer   ,
-	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario ),
-	CONSTRAINT unq_tipo_de_observacion_pregunta_padre UNIQUE ( pregunta_padre ) 
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
  );
+
+CREATE INDEX unq_tipo_de_observacion_pregunta_padre ON ofertas.tipo_de_observacion ( pregunta_padre );
 
 CREATE  TABLE ofertas.titulo ( 
 	id_aut_titulo        serial  NOT NULL ,
@@ -624,3 +625,4 @@ ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol );
+
