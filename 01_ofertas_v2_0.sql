@@ -106,7 +106,9 @@ CREATE  TABLE ofertas.sub_sectores (
 CREATE  TABLE ofertas.tipo_de_observacion ( 
 	id_aut_comentario    serial  NOT NULL ,
 	pregunta             varchar(600)  NOT NULL ,
-	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
+	pregunta_padre       integer   ,
+	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario ),
+	CONSTRAINT unq_tipo_de_observacion_pregunta_padre UNIQUE ( pregunta_padre ) 
  );
 
 CREATE  TABLE ofertas.titulo ( 
@@ -614,6 +616,8 @@ ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_carnetizacion FOREIGN KE
 ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
 
 ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector );
+
+ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion FOREIGN KEY ( id_aut_comentario ) REFERENCES ofertas.tipo_de_observacion( pregunta_padre );
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 

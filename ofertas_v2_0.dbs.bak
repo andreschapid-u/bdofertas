@@ -770,9 +770,16 @@ Privado=1]]></comment>
 		<table name="tipo_de_observacion" >
 			<column name="id_aut_comentario" type="serial" jt="4" mandatory="y" />
 			<column name="pregunta" type="varchar" length="600" jt="12" mandatory="y" />
+			<column name="pregunta_padre" type="integer" jt="4" />
 			<index name="pk_comentarios_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_comentario" />
 			</index>
+			<index name="unq_tipo_de_observacion_pregunta_padre" unique="UNIQUE" >
+				<column name="pregunta_padre" />
+			</index>
+			<fk name="fk_tipo_de_observacion" to_schema="ofertas" to_table="tipo_de_observacion" >
+				<fk_column name="id_aut_comentario" pk="pregunta_padre" />
+			</fk>
 		</table>
 		<table name="titulo" >
 			<column name="id_aut_titulo" type="serial" jt="4" mandatory="y" />
@@ -837,9 +844,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="representante_empresa" color="3986C1" x="1712" y="176" />
 		<entity schema="ofertas" name="empresas" color="C1D8EE" x="1760" y="816" />
 		<entity schema="ofertas" name="egresados_discapacidades" color="C1D8EE" x="912" y="1328" />
-		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1120" />
 		<entity schema="ofertas" name="preguntas_oferta" color="C1D8EE" x="688" y="1616" />
-		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1568" y="992" />
 		<entity schema="ofertas" name="users" color="C1D8EE" x="1104" y="48" />
 		<entity schema="ofertas" name="acceso" color="C1D8EE" x="608" y="272" />
 		<entity schema="ofertas" name="servicios" color="C1D8EE" x="592" y="416" />
@@ -872,6 +877,8 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
 		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="608" y="48" />
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
+		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1072" />
+		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1408" y="896" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
