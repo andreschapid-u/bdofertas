@@ -740,22 +740,6 @@ Privado=1]]></comment>
 				<column name="id_aut_servicio" />
 			</index>
 		</table>
-		<table name="solicita" >
-			<column name="id_carnetizacion" type="serial" jt="4" mandatory="y" />
-			<column name="id_egresado" type="integer" jt="4" mandatory="y" />
-			<column name="fecha_solicitud" type="date" jt="91" mandatory="y" />
-			<column name="fecha_respuesta" type="date" jt="91" />
-			<index name="idx_solicita" unique="PRIMARY_KEY" >
-				<column name="id_carnetizacion" />
-				<column name="id_egresado" />
-			</index>
-			<fk name="fk_solicita_carnetizacion" to_schema="ofertas" to_table="carnetizacion" >
-				<fk_column name="id_carnetizacion" pk="id_aut_carnetizacion" />
-			</fk>
-			<fk name="fk_solicita_egresados" to_schema="ofertas" to_table="egresados" >
-				<fk_column name="id_egresado" pk="id_aut_egresado" />
-			</fk>
-		</table>
 		<table name="sub_sectores" >
 			<column name="id_aut_sub_sector" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="100" jt="12" mandatory="y" />
@@ -873,9 +857,9 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1072" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1408" y="896" />
-		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1200" y="848" />
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="304" y="560" />
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="560" y="624" />
+		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1200" y="848" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
