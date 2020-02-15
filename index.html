@@ -450,22 +450,6 @@ ciudades ref departamentos ( id_departamento -&gt; id_aut_dep )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1328,512L 1424,512' ><title>Fk fk_ciudades_departamentos
 ciudades ref departamentos ( id_departamento -&gt; id_aut_dep )</title></path>
 <text x='1337' y='507' transform='rotate(0 1337,507)' class='relName'>id_departamento</text>
-<!-- == Fk 'participa_fk_participa_egresados' == -->
-<path id='participa_fk_participa_egresados'  onmouseover="hghl(['participa_fk_participa_egresados','ofertas.participa.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['participa_fk_participa_egresados','ofertas.participa.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 784,672L 784,728Q 784,736 792,736L 928,736' >
-	<title>Fk fk_participa_egresados
-participa ref egresados ( id_egresado -&gt; id_aut_egresado )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 784,672L 784,728Q 784,736 792,736L 928,736' ><title>Fk fk_participa_egresados
-participa ref egresados ( id_egresado -&gt; id_aut_egresado )</title></path>
-<text x='799' y='673' transform='rotate(90 799,673)' class='relName'>id_egresado</text>
-<!-- == Fk 'participa_fk_participa_evento' == -->
-<path id='participa_fk_participa_evento'  onmouseover="hghl(['participa_fk_participa_evento','ofertas.participa.id_evento','ofertas.evento.id_aut_evento'])" onmouseout="uhghl(['participa_fk_participa_evento','ofertas.participa.id_evento','ofertas.evento.id_aut_evento'])" transform='translate(8,0)' class='scene' d='M 656,640L 544,640' >
-	<title>Fk fk_participa_evento
-participa ref evento ( id_evento -&gt; id_aut_evento )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 656,640L 544,640' ><title>Fk fk_participa_evento
-participa ref evento ( id_evento -&gt; id_aut_evento )</title></path>
-<text x='612' y='635' transform='rotate(0 612,635)' class='relName'>id_evento</text>
 <!-- == Fk 'referidos_egresados_fk_referidos_egresados_egresados' == -->
 <path id='referidos_egresados_fk_referidos_egresados_egresados'  onmouseover="hghl(['referidos_egresados_fk_referidos_egresados_egresados','ofertas.referidos_egresados.id_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['referidos_egresados_fk_referidos_egresados_egresados','ofertas.referidos_egresados.id_egresados','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 720,784L 928,784' >
 	<title>Fk fk_referidos_egresados_egresados
@@ -475,11 +459,11 @@ referidos_egresados ref egresados ( id_egresados -&gt; id_aut_egresado )</title>
 referidos_egresados ref egresados ( id_egresados -&gt; id_aut_egresado )</title></path>
 <text x='729' y='779' transform='rotate(0 729,779)' class='relName'>id_egresados</text>
 <!-- == Fk 'referidos_egresados_fk_referidos_egresados_referidos' == -->
-<path id='referidos_egresados_fk_referidos_egresados_referidos'  onmouseover="hghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos','ofertas.referidos.id_aut_referido'])" onmouseout="uhghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos','ofertas.referidos.id_aut_referido'])" transform='translate(8,0)' class='scene' d='M 608,848L 608,968Q 608,976 600,976L 528,976' >
+<path id='referidos_egresados_fk_referidos_egresados_referidos'  onmouseover="hghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos','ofertas.referidos.id_aut_referido'])" onmouseout="uhghl(['referidos_egresados_fk_referidos_egresados_referidos','ofertas.referidos_egresados.id_referidos','ofertas.referidos.id_aut_referido'])" transform='translate(8,0)' class='scene' d='M 608,848L 608,920Q 608,928 600,928L 520,928Q 512,928 512,936L 512,944' >
 	<title>Fk fk_referidos_egresados_referidos
 referidos_egresados ref referidos ( id_referidos -&gt; id_aut_referido )</title>
 </path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 608,848L 608,968Q 608,976 600,976L 528,976' ><title>Fk fk_referidos_egresados_referidos
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 608,848L 608,920Q 608,928 600,928L 520,928Q 512,928 512,936L 512,944' ><title>Fk fk_referidos_egresados_referidos
 referidos_egresados ref referidos ( id_referidos -&gt; id_aut_referido )</title></path>
 <text x='623' y='849' transform='rotate(90 623,849)' class='relName'>id_referidos</text>
 <!-- == Fk 'postulaciones_respuestas_fk_postulaciones_respuestas_postulaciones' == -->
@@ -730,14 +714,6 @@ egresados ref ciudades ( id_lugar_nacimiento -&gt; id_aut_ciudad )</title>
 <path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 1104,768L 1208,768Q 1216,768 1216,760L 1216,592' ><title>Fk fk_egresados_nacimiento_ciudades
 egresados ref ciudades ( id_lugar_nacimiento -&gt; id_aut_ciudad )</title></path>
 <text x='1113' y='763' transform='rotate(0 1113,763)' class='relName'>id_lugar_nacimiento</text>
-<!-- == Fk 'carnetizacion_fk_carnetizacion_egresados' == -->
-<path id='carnetizacion_fk_carnetizacion_egresados'  onmouseover="hghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 1200,864L 1104,864' >
-	<title>Fk fk_carnetizacion_egresados
-carnetizacion ref egresados ( id_egresado -&gt; id_aut_egresado )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1200,864L 1104,864' ><title>Fk fk_carnetizacion_egresados
-carnetizacion ref egresados ( id_egresado -&gt; id_aut_egresado )</title></path>
-<text x='1143' y='859' transform='rotate(0 1143,859)' class='relName'>id_egresado</text>
 <!-- == Fk 'apoyos_fk_apoyos_users' == -->
 <path id='apoyos_fk_apoyos_users'  onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" transform='translate(8,0)' class='scene' d='M 752,64L 1088,64' >
 	<title>Fk fk_apoyos_users
@@ -747,13 +723,13 @@ apoyos ref users ( id_user -&gt; id_aut_user )</title>
 apoyos ref users ( id_user -&gt; id_aut_user )</title></path>
 <text x='761' y='59' transform='rotate(0 761,59)' class='relName'>id_user</text>
 <!-- == Fk 'referidos_fk_referidos_niveles_estudio' == -->
-<path id='referidos_fk_referidos_niveles_estudio'  onmouseover="hghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" onmouseout="uhghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" transform='translate(8,0)' class='scene' d='M 528,992L 624,992' >
+<path id='referidos_fk_referidos_niveles_estudio'  onmouseover="hghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" onmouseout="uhghl(['referidos_fk_referidos_niveles_estudio','ofertas.referidos.id_nivel_educativo','ofertas.niveles_estudio.id_aut_estudio'])" transform='translate(8,0)' class='scene' d='M 528,976L 624,976' >
 	<title>Fk fk_referidos_niveles_estudio
 referidos ref niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio )</title>
 </path>
-<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 528,992L 624,992' ><title>Fk fk_referidos_niveles_estudio
+<path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 528,976L 624,976' ><title>Fk fk_referidos_niveles_estudio
 referidos ref niveles_estudio ( id_nivel_educativo -&gt; id_aut_estudio )</title></path>
-<text x='537' y='987' transform='rotate(0 537,987)' class='relName'>id_nivel_educativo</text>
+<text x='537' y='971' transform='rotate(0 537,971)' class='relName'>id_nivel_educativo</text>
 <!-- == Fk 'referidos_fk_referidos_programas' == -->
 <path id='referidos_fk_referidos_programas'  onmouseover="hghl(['referidos_fk_referidos_programas','ofertas.referidos.id_aut_programa','ofertas.programas.id_aut_programa'])" onmouseout="uhghl(['referidos_fk_referidos_programas','ofertas.referidos.id_aut_programa','ofertas.programas.id_aut_programa'])" transform='translate(8,0)' class='scene' d='M 400,1136L 400,1304Q 400,1312 408,1312L 424,1312Q 432,1312 432,1320L 432,1328' >
 	<title>Fk fk_referidos_programas
@@ -786,6 +762,30 @@ tipo_de_observacion ref tipo_de_observacion ( pregunta_padre -&gt; id_aut_coment
 <path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 1552,976L 1560,976Q 1568,976 1568,984L 1568,1000Q 1568,1008 1560,1008L 1544,1008Q 1536,1008 1536,1000L 1536,992' ><title>Fk fk_tipo_de_observacion
 tipo_de_observacion ref tipo_de_observacion ( pregunta_padre -&gt; id_aut_comentario )</title></path>
 <text x='1561' y='971' transform='rotate(0 1561,971)' class='relName'>pregunta_padre</text>
+<!-- == Fk 'participa_fk_participa_egresados' == -->
+<path id='participa_fk_participa_egresados'  onmouseover="hghl(['participa_fk_participa_egresados','ofertas.participa.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['participa_fk_participa_egresados','ofertas.participa.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 688,704L 968,704Q 976,704 976,712L 976,720' >
+	<title>Fk fk_participa_egresados
+participa ref egresados ( id_egresado -&gt; id_aut_egresado )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 688,704L 968,704Q 976,704 976,712L 976,720' ><title>Fk fk_participa_egresados
+participa ref egresados ( id_egresado -&gt; id_aut_egresado )</title></path>
+<text x='697' y='699' transform='rotate(0 697,699)' class='relName'>id_egresado</text>
+<!-- == Fk 'participa_fk_participa_evento' == -->
+<path id='participa_fk_participa_evento'  onmouseover="hghl(['participa_fk_participa_evento','ofertas.participa.id_evento','ofertas.evento.id_aut_evento'])" onmouseout="uhghl(['participa_fk_participa_evento','ofertas.participa.id_evento','ofertas.evento.id_aut_evento'])" transform='translate(8,0)' class='scene' d='M 544,624L 448,624' >
+	<title>Fk fk_participa_evento
+participa ref evento ( id_evento -&gt; id_aut_evento )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 544,624L 448,624' ><title>Fk fk_participa_evento
+participa ref evento ( id_evento -&gt; id_aut_evento )</title></path>
+<text x='500' y='619' transform='rotate(0 500,619)' class='relName'>id_evento</text>
+<!-- == Fk 'carnetizacion_fk_carnetizacion_egresados' == -->
+<path id='carnetizacion_fk_carnetizacion_egresados'  onmouseover="hghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','ofertas.egresados.id_aut_egresado'])" transform='translate(8,0)' class='scene' d='M 1184,848L 1104,848' >
+	<title>Fk fk_carnetizacion_egresados
+carnetizacion ref egresados ( id_egresado -&gt; id_aut_egresado )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1184,848L 1104,848' ><title>Fk fk_carnetizacion_egresados
+carnetizacion ref egresados ( id_egresado -&gt; id_aut_egresado )</title></path>
+<text x='1127' y='843' transform='rotate(0 1127,843)' class='relName'>id_egresado</text>
 <!-- == Table 'empresas_sectores' == -->
 <rect class='entity' style='stroke:#1E578F' x='2128' y='888' width='128' height='80' rx='8' ry='8' />
 <path d='M 2128 916 L 2128 896 Q 2128 888 2136 888 L 2248 888 Q 2256 888 2256 896 L 2256 916 L2128 916 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1153,20 +1153,6 @@ varchar(50)</title></a>
 * integer</title></a>
 <a xlink:href='#ofertas.ciudades.id_departamento'><use id='fk' x='1316' y='556' xlink:href='#fk'/><title>References departamentos ( id_departamento -&gt; id_aut_dep ) </title></a>
 
-<!-- == Table 'participa' == -->
-<rect class='entity' style='stroke:#1E578F' x='672' y='568' width='128' height='96' rx='8' ry='8' />
-<path d='M 672 596 L 672 576 Q 672 568 680 568 L 792 568 Q 800 568 800 576 L 800 596 L672 596 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='672' y='568' width='128' height='96' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.participa'><text x='708' y='587' >participa</text><title>Table ofertas.participa</title></a>
-  <use id='nn' x='674' y='605' xlink:href='#nn'/><use id='pk' x='674' y='604' xlink:href='#pk'><title>Pk idx_participa ( id_egresado, id_evento ) </title></use><a xlink:href='#ofertas.participa_id_egresado'><text id='ofertas.participa.id_egresado' x='691' y='615' onmouseover="hghl(['participa_fk_participa_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['participa_fk_participa_egresados','ofertas.egresados.id_aut_egresado'])">id_egresado</text><title>id_egresado
-* integer</title></a>
-<a xlink:href='#ofertas.participa.id_egresado'><use id='fk' x='788' y='604' xlink:href='#fk'/><title>References egresados ( id_egresado -&gt; id_aut_egresado ) </title></a>
-  <use id='nn' x='674' y='621' xlink:href='#nn'/><use id='pk' x='674' y='620' xlink:href='#pk'><title>Pk idx_participa ( id_egresado, id_evento ) </title></use><a xlink:href='#ofertas.participa_id_evento'><text id='ofertas.participa.id_evento' x='691' y='631' onmouseover="hghl(['participa_fk_participa_evento','ofertas.evento.id_aut_evento'])" onmouseout="uhghl(['participa_fk_participa_evento','ofertas.evento.id_aut_evento'])">id_evento</text><title>id_evento
-* integer</title></a>
-<a xlink:href='#ofertas.participa.id_evento'><use id='fk' x='788' y='620' xlink:href='#fk'/><title>References evento ( id_evento -&gt; id_aut_evento ) </title></a>
-  <use id='nn' x='674' y='637' xlink:href='#nn'/><a xlink:href='#ofertas.participa_como_se_entero'><text id='ofertas.participa.como_se_entero' x='691' y='647'>como_se_entero</text><title>como_se_entero
-* varchar(50)</title></a>
-<text x='797' y='644' text-anchor='end' class='colType'>t</text>
 <!-- == Table 'referidos_egresados' == -->
 <rect class='entity' style='stroke:#1E578F' x='592' y='760' width='128' height='80' rx='8' ry='8' />
 <path d='M 592 788 L 592 768 Q 592 760 600 760 L 712 760 Q 720 760 720 768 L 720 788 L592 788 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1561,7 +1547,7 @@ varchar(300)</title></a>
 <path d='M 944 756 L 944 736 Q 944 728 952 728 L 1096 728 Q 1104 728 1104 736 L 1104 756 L944 756 ' style='fill:url(#tbg_008080);stroke:1;stroke-opacity:0.1;' />
 <rect class='entity' x='944' y='728' width='160' height='432' rx='8' ry='8' style='fill:none;stroke:#DAE1E1'/>
 <a xlink:href='#ofertas.egresados'><text x='992' y='747' >egresados</text><title>Table ofertas.egresados</title></a>
-  <use id='nn' x='946' y='765' xlink:href='#nn'/><use id='pk' x='946' y='764' xlink:href='#pk'><title>Pk pk_egresados_id ( id_aut_egresado ) </title></use><a xlink:href='#ofertas.egresados_id_aut_egresado'><text id='ofertas.egresados.id_aut_egresado' x='963' y='775' onmouseover="hghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','egresados_discapacidades_fk_egresados_discapacidades_egresado','ofertas.egresados_discapacidades.id_egresado','experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','grados_fk_grados_egresados','ofertas.grados.id_egresado','participa_fk_participa_egresados','ofertas.participa.id_egresado','postulaciones_fk_postulaciones_egresados','ofertas.postulaciones.id_aut_egresado','referidos_egresados_fk_referidos_egresados_egresados','ofertas.referidos_egresados.id_egresados','solicita_fk_solicita_egresados','ofertas.solicita.id_egresado'])" onmouseout="uhghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','egresados_discapacidades_fk_egresados_discapacidades_egresado','ofertas.egresados_discapacidades.id_egresado','experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','grados_fk_grados_egresados','ofertas.grados.id_egresado','participa_fk_participa_egresados','ofertas.participa.id_egresado','postulaciones_fk_postulaciones_egresados','ofertas.postulaciones.id_aut_egresado','referidos_egresados_fk_referidos_egresados_egresados','ofertas.referidos_egresados.id_egresados','solicita_fk_solicita_egresados','ofertas.solicita.id_egresado'])">id_aut_egresado</text><title>id_aut_egresado
+  <use id='nn' x='946' y='765' xlink:href='#nn'/><use id='pk' x='946' y='764' xlink:href='#pk'><title>Pk pk_egresados_id ( id_aut_egresado ) </title></use><a xlink:href='#ofertas.egresados_id_aut_egresado'><text id='ofertas.egresados.id_aut_egresado' x='963' y='775' onmouseover="hghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','egresados_discapacidades_fk_egresados_discapacidades_egresado','ofertas.egresados_discapacidades.id_egresado','experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','grados_fk_grados_egresados','ofertas.grados.id_egresado','participa_fk_participa_egresados','ofertas.participa.id_egresado','postulaciones_fk_postulaciones_egresados','ofertas.postulaciones.id_aut_egresado','referidos_egresados_fk_referidos_egresados_egresados','ofertas.referidos_egresados.id_egresados'])" onmouseout="uhghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.carnetizacion.id_egresado','egresados_discapacidades_fk_egresados_discapacidades_egresado','ofertas.egresados_discapacidades.id_egresado','experiencia_fk_cargos_egresados','ofertas.experiencia.id_egresado','grados_fk_grados_egresados','ofertas.grados.id_egresado','participa_fk_participa_egresados','ofertas.participa.id_egresado','postulaciones_fk_postulaciones_egresados','ofertas.postulaciones.id_aut_egresado','referidos_egresados_fk_referidos_egresados_egresados','ofertas.referidos_egresados.id_egresados'])">id_aut_egresado</text><title>id_aut_egresado
 * serial</title></a>
 <a xlink:href='#ofertas.egresados.id_aut_egresado'><use id='ref' x='1092' y='764' xlink:href='#ref'/><title>Referred by carnetizacion ( id_egresado -&gt; id_aut_egresado ) 
 Referred by egresados_discapacidades ( id_egresado -&gt; id_aut_egresado ) 
@@ -1569,8 +1555,7 @@ Referred by experiencia ( id_egresado -&gt; id_aut_egresado )
 Referred by grados ( id_egresado -&gt; id_aut_egresado ) 
 Referred by participa ( id_egresado -&gt; id_aut_egresado ) 
 Referred by postulaciones ( id_aut_egresado ) 
-Referred by referidos_egresados ( id_egresados -&gt; id_aut_egresado ) 
-Referred by solicita ( id_egresado -&gt; id_aut_egresado ) </title></a>
+Referred by referidos_egresados ( id_egresados -&gt; id_aut_egresado ) </title></a>
   <use id='nn' x='946' y='781' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_identificacion'><text id='ofertas.egresados.identificacion' x='963' y='791'>identificacion</text><title>identificacion
 * integer</title></a>
 <text x='1101' y='788' text-anchor='end' class='colType'>#</text>  <use id='nn' x='946' y='797' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_nombres'><text id='ofertas.egresados.nombres' x='963' y='807'>nombres</text><title>nombres
@@ -1623,53 +1608,6 @@ varchar(16)</title></a>
 <text x='1101' y='1124' text-anchor='end' class='colType'>d</text>  <use id='nn' x='946' y='1133' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_updated_at'><text id='ofertas.egresados.updated_at' x='963' y='1143'>updated_at</text><title>updated_at
 * timestamp default current_timestamp</title></a>
 <text x='1101' y='1140' text-anchor='end' class='colType'>d</text>
-<!-- == Table 'carnetizacion' == -->
-<rect class='entity' style='stroke:#1E578F' x='1216' y='856' width='144' height='128' rx='8' ry='8' />
-<path d='M 1216 884 L 1216 864 Q 1216 856 1224 856 L 1352 856 Q 1360 856 1360 864 L 1360 884 L1216 884 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='1216' y='856' width='144' height='128' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.carnetizacion'><text x='1248' y='875' >carnetizacion</text><title>Table ofertas.carnetizacion</title></a>
-  <use id='nn' x='1218' y='893' xlink:href='#nn'/><use id='pk' x='1218' y='892' xlink:href='#pk'><title>Pk pk_carnetizacion_id_aut_carnetizacion ( id_aut_carnetizacion ) </title></use><a xlink:href='#ofertas.carnetizacion_id_aut_carnetizacion'><text id='ofertas.carnetizacion.id_aut_carnetizacion' x='1235' y='903' onmouseover="hghl(['solicita_fk_solicita_carnetizacion','ofertas.solicita.id_carnetizacion'])" onmouseout="uhghl(['solicita_fk_solicita_carnetizacion','ofertas.solicita.id_carnetizacion'])">id_aut_carnetizacion</text><title>id_aut_carnetizacion
-* serial</title></a>
-<a xlink:href='#ofertas.carnetizacion.id_aut_carnetizacion'><use id='ref' x='1348' y='892' xlink:href='#ref'/><title>Referred by solicita ( id_carnetizacion -&gt; id_aut_carnetizacion ) </title></a>
-  <use id='nn' x='1218' y='909' xlink:href='#nn'/><a xlink:href='#ofertas.carnetizacion_id_egresado'><text id='ofertas.carnetizacion.id_egresado' x='1235' y='919' onmouseover="hghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.egresados.id_aut_egresado'])">id_egresado</text><title>id_egresado
-* integer</title></a>
-<a xlink:href='#ofertas.carnetizacion.id_egresado'><use id='fk' x='1348' y='908' xlink:href='#fk'/><title>References egresados ( id_egresado -&gt; id_aut_egresado ) </title></a>
-  <use id='nn' x='1218' y='925' xlink:href='#nn'/><a xlink:href='#ofertas.carnetizacion_estado_solicitud'><text id='ofertas.carnetizacion.estado_solicitud' x='1235' y='935'>estado_solicitud</text><title>estado_solicitud
-* varchar(50)</title></a>
-<text x='1357' y='932' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1218' y='941' xlink:href='#nn'/><a xlink:href='#ofertas.carnetizacion_fecha_solicitud'><text id='ofertas.carnetizacion.fecha_solicitud' x='1235' y='951'>fecha_solicitud</text><title>fecha_solicitud
-* date</title></a>
-<text x='1357' y='948' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.carnetizacion_fecha_respuesta'><text id='ofertas.carnetizacion.fecha_respuesta' x='1235' y='967'>fecha_respuesta</text><title>fecha_respuesta
-date</title></a>
-<text x='1357' y='964' text-anchor='end' class='colType'>d</text>
-<!-- == Table 'evento' == -->
-<rect class='entity' style='stroke:#1E578F' x='400' y='616' width='144' height='224' rx='8' ry='8' />
-<path d='M 400 644 L 400 624 Q 400 616 408 616 L 536 616 Q 544 616 544 624 L 544 644 L400 644 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='400' y='616' width='144' height='224' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.evento'><text x='449' y='635' >evento</text><title>Table ofertas.evento</title></a>
-  <use id='nn' x='402' y='653' xlink:href='#nn'/><use id='pk' x='402' y='652' xlink:href='#pk'><title>Pk pk_evento_id_evento ( id_aut_evento ) </title></use><a xlink:href='#ofertas.evento_id_aut_evento'><text id='ofertas.evento.id_aut_evento' x='419' y='663' onmouseover="hghl(['participa_fk_participa_evento','ofertas.participa.id_evento'])" onmouseout="uhghl(['participa_fk_participa_evento','ofertas.participa.id_evento'])">id_aut_evento</text><title>id_aut_evento
-* serial</title></a>
-<a xlink:href='#ofertas.evento.id_aut_evento'><use id='ref' x='532' y='652' xlink:href='#ref'/><title>Referred by participa ( id_evento -&gt; id_aut_evento ) </title></a>
-  <use id='nn' x='402' y='669' xlink:href='#nn'/><a xlink:href='#ofertas.evento_nombre'><text id='ofertas.evento.nombre' x='419' y='679'>nombre</text><title>nombre
-* varchar(300)</title></a>
-<text x='541' y='676' text-anchor='end' class='colType'>t</text>  <use id='nn' x='402' y='685' xlink:href='#nn'/><a xlink:href='#ofertas.evento_fecha_inicio'><text id='ofertas.evento.fecha_inicio' x='419' y='695'>fecha_inicio</text><title>fecha_inicio
-* date</title></a>
-<text x='541' y='692' text-anchor='end' class='colType'>d</text>  <use id='nn' x='402' y='701' xlink:href='#nn'/><a xlink:href='#ofertas.evento_fecha_fin'><text id='ofertas.evento.fecha_fin' x='419' y='711'>fecha_fin</text><title>fecha_fin
-* date</title></a>
-<text x='541' y='708' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_hora_inicio'><text id='ofertas.evento.hora_inicio' x='419' y='727'>hora_inicio</text><title>hora_inicio
-time</title></a>
-<text x='541' y='724' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_hora_fin'><text id='ofertas.evento.hora_fin' x='419' y='743'>hora_fin</text><title>hora_fin
-time</title></a>
-<text x='541' y='740' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_lugar'><text id='ofertas.evento.lugar' x='419' y='759'>lugar</text><title>lugar
-text</title></a>
-<text x='541' y='756' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_descripcion'><text id='ofertas.evento.descripcion' x='419' y='775'>descripcion</text><title>descripcion
-text</title></a>
-<text x='541' y='772' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_cupos'><text id='ofertas.evento.cupos' x='419' y='791'>cupos</text><title>cupos
-numeric</title></a>
-<text x='541' y='788' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.evento_a_quien_va_dirigida'><text id='ofertas.evento.a_quien_va_dirigida' x='419' y='807'>a_quien_va_dirigida</text><title>a_quien_va_dirigida
-varchar(1500)</title></a>
-<text x='541' y='804' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_imagen'><text id='ofertas.evento.imagen' x='419' y='823'>imagen</text><title>imagen
-varchar(1000)</title></a>
-<text x='541' y='820' text-anchor='end' class='colType'>t</text>
 <!-- == Table 'apoyos' == -->
 <rect class='entity' style='stroke:#1E578F' x='608' y='40' width='144' height='160' rx='8' ry='8' />
 <path d='M 608 68 L 608 48 Q 608 40 616 40 L 744 40 Q 752 40 752 48 L 752 68 L608 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1736,18 +1674,76 @@ bool default false</title></a>
 <path d='M 1408 916 L 1408 896 Q 1408 888 1416 888 L 1544 888 Q 1552 888 1552 896 L 1552 916 L1408 916 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
 <rect class='entity' x='1408' y='888' width='144' height='96' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
 <a xlink:href='#ofertas.tipo_de_observacion'><text x='1420' y='907' >tipo_de_observacion</text><title>Table ofertas.tipo_de_observacion</title></a>
-  <use id='nn' x='1410' y='925' xlink:href='#nn'/><use id='pk' x='1410' y='924' xlink:href='#pk'><title>Pk pk_comentarios_id ( id_aut_comentario ) </title></use><a xlink:href='#ofertas.tipo_de_observacion_id_aut_comentario'><text id='ofertas.tipo_de_observacion.id_aut_comentario' x='1427' y='935' onmouseover="hghl(['comenta_fk_comenta_tipo_de_observacion','ofertas.comenta.id_comentario','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.pregunta_padre','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.pregunta_padre'])" onmouseout="uhghl(['comenta_fk_comenta_tipo_de_observacion','ofertas.comenta.id_comentario','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.pregunta_padre','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.pregunta_padre'])">id_aut_comentario</text><title>id_aut_comentario
+  <use id='nn' x='1410' y='925' xlink:href='#nn'/><use id='pk' x='1410' y='924' xlink:href='#pk'><title>Pk pk_comentarios_id ( id_aut_comentario ) </title></use><a xlink:href='#ofertas.tipo_de_observacion_id_aut_comentario'><text id='ofertas.tipo_de_observacion.id_aut_comentario' x='1427' y='935' onmouseover="hghl(['comenta_fk_comenta_tipo_de_observacion','ofertas.comenta.id_comentario','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.pregunta_padre'])" onmouseout="uhghl(['comenta_fk_comenta_tipo_de_observacion','ofertas.comenta.id_comentario','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.pregunta_padre'])">id_aut_comentario</text><title>id_aut_comentario
 * serial</title></a>
 <a xlink:href='#ofertas.tipo_de_observacion.id_aut_comentario'><use id='ref' x='1540' y='924' xlink:href='#ref'/><title>Referred by comenta ( id_comentario -&gt; id_aut_comentario ) 
-Referred by tipo_de_observacion ( pregunta_padre -&gt; id_aut_comentario ) 
 Referred by tipo_de_observacion ( pregunta_padre -&gt; id_aut_comentario ) </title></a>
   <use id='nn' x='1410' y='941' xlink:href='#nn'/><a xlink:href='#ofertas.tipo_de_observacion_pregunta'><text id='ofertas.tipo_de_observacion.pregunta' x='1427' y='951'>pregunta</text><title>pregunta
 * varchar(600)</title></a>
-<text x='1549' y='948' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.tipo_de_observacion_pregunta_padre'><text id='ofertas.tipo_de_observacion.pregunta_padre' x='1427' y='967' onmouseover="hghl(['tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.id_aut_comentario','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.id_aut_comentario'])" onmouseout="uhghl(['tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.id_aut_comentario','tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.id_aut_comentario'])">pregunta_padre</text><title>pregunta_padre
+<text x='1549' y='948' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.tipo_de_observacion_pregunta_padre'><text id='ofertas.tipo_de_observacion.pregunta_padre' x='1427' y='967' onmouseover="hghl(['tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.id_aut_comentario'])" onmouseout="uhghl(['tipo_de_observacion_fk_tipo_de_observacion','ofertas.tipo_de_observacion.id_aut_comentario'])">pregunta_padre</text><title>pregunta_padre
 integer</title></a>
-<a xlink:href='#ofertas.tipo_de_observacion.pregunta_padre'><use id='fk' x='1540' y='956' xlink:href='#fk'/><title>References tipo_de_observacion ( pregunta_padre -&gt; id_aut_comentario ) 
-Referred by tipo_de_observacion ( id_aut_comentario -&gt; pregunta_padre ) </title></a>
+<a xlink:href='#ofertas.tipo_de_observacion.pregunta_padre'><use id='fk' x='1540' y='956' xlink:href='#fk'/><title>References tipo_de_observacion ( pregunta_padre -&gt; id_aut_comentario ) </title></a>
 
+<!-- == Table 'evento' == -->
+<rect class='entity' style='stroke:#1E578F' x='304' y='552' width='144' height='224' rx='8' ry='8' />
+<path d='M 304 580 L 304 560 Q 304 552 312 552 L 440 552 Q 448 552 448 560 L 448 580 L304 580 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='304' y='552' width='144' height='224' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.evento'><text x='353' y='571' >evento</text><title>Table ofertas.evento</title></a>
+  <use id='nn' x='306' y='589' xlink:href='#nn'/><use id='pk' x='306' y='588' xlink:href='#pk'><title>Pk pk_evento_id_evento ( id_aut_evento ) </title></use><a xlink:href='#ofertas.evento_id_aut_evento'><text id='ofertas.evento.id_aut_evento' x='323' y='599' onmouseover="hghl(['participa_fk_participa_evento','ofertas.participa.id_evento'])" onmouseout="uhghl(['participa_fk_participa_evento','ofertas.participa.id_evento'])">id_aut_evento</text><title>id_aut_evento
+* serial</title></a>
+<a xlink:href='#ofertas.evento.id_aut_evento'><use id='ref' x='436' y='588' xlink:href='#ref'/><title>Referred by participa ( id_evento -&gt; id_aut_evento ) </title></a>
+  <use id='nn' x='306' y='605' xlink:href='#nn'/><a xlink:href='#ofertas.evento_nombre'><text id='ofertas.evento.nombre' x='323' y='615'>nombre</text><title>nombre
+* varchar(300)</title></a>
+<text x='445' y='612' text-anchor='end' class='colType'>t</text>  <use id='nn' x='306' y='621' xlink:href='#nn'/><a xlink:href='#ofertas.evento_fecha_inicio'><text id='ofertas.evento.fecha_inicio' x='323' y='631'>fecha_inicio</text><title>fecha_inicio
+* date</title></a>
+<text x='445' y='628' text-anchor='end' class='colType'>d</text>  <use id='nn' x='306' y='637' xlink:href='#nn'/><a xlink:href='#ofertas.evento_fecha_fin'><text id='ofertas.evento.fecha_fin' x='323' y='647'>fecha_fin</text><title>fecha_fin
+* date</title></a>
+<text x='445' y='644' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_hora_inicio'><text id='ofertas.evento.hora_inicio' x='323' y='663'>hora_inicio</text><title>hora_inicio
+time</title></a>
+<text x='445' y='660' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_hora_fin'><text id='ofertas.evento.hora_fin' x='323' y='679'>hora_fin</text><title>hora_fin
+time</title></a>
+<text x='445' y='676' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.evento_lugar'><text id='ofertas.evento.lugar' x='323' y='695'>lugar</text><title>lugar
+text</title></a>
+<text x='445' y='692' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_descripcion'><text id='ofertas.evento.descripcion' x='323' y='711'>descripcion</text><title>descripcion
+text</title></a>
+<text x='445' y='708' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_cupos'><text id='ofertas.evento.cupos' x='323' y='727'>cupos</text><title>cupos
+numeric</title></a>
+<text x='445' y='724' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.evento_a_quien_va_dirigida'><text id='ofertas.evento.a_quien_va_dirigida' x='323' y='743'>a_quien_va_dirigida</text><title>a_quien_va_dirigida
+varchar(1500)</title></a>
+<text x='445' y='740' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.evento_imagen'><text id='ofertas.evento.imagen' x='323' y='759'>imagen</text><title>imagen
+varchar(1000)</title></a>
+<text x='445' y='756' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'participa' == -->
+<rect class='entity' style='stroke:#1E578F' x='560' y='616' width='128' height='96' rx='8' ry='8' />
+<path d='M 560 644 L 560 624 Q 560 616 568 616 L 680 616 Q 688 616 688 624 L 688 644 L560 644 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='560' y='616' width='128' height='96' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.participa'><text x='596' y='635' >participa</text><title>Table ofertas.participa</title></a>
+  <use id='nn' x='562' y='653' xlink:href='#nn'/><use id='pk' x='562' y='652' xlink:href='#pk'><title>Pk idx_participa ( id_egresado, id_evento ) </title></use><a xlink:href='#ofertas.participa_id_egresado'><text id='ofertas.participa.id_egresado' x='579' y='663' onmouseover="hghl(['participa_fk_participa_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['participa_fk_participa_egresados','ofertas.egresados.id_aut_egresado'])">id_egresado</text><title>id_egresado
+* integer</title></a>
+<a xlink:href='#ofertas.participa.id_egresado'><use id='fk' x='676' y='652' xlink:href='#fk'/><title>References egresados ( id_egresado -&gt; id_aut_egresado ) </title></a>
+  <use id='nn' x='562' y='669' xlink:href='#nn'/><use id='pk' x='562' y='668' xlink:href='#pk'><title>Pk idx_participa ( id_egresado, id_evento ) </title></use><a xlink:href='#ofertas.participa_id_evento'><text id='ofertas.participa.id_evento' x='579' y='679' onmouseover="hghl(['participa_fk_participa_evento','ofertas.evento.id_aut_evento'])" onmouseout="uhghl(['participa_fk_participa_evento','ofertas.evento.id_aut_evento'])">id_evento</text><title>id_evento
+* integer</title></a>
+<a xlink:href='#ofertas.participa.id_evento'><use id='fk' x='676' y='668' xlink:href='#fk'/><title>References evento ( id_evento -&gt; id_aut_evento ) </title></a>
+  <use id='nn' x='562' y='685' xlink:href='#nn'/><a xlink:href='#ofertas.participa_como_se_entero'><text id='ofertas.participa.como_se_entero' x='579' y='695'>como_se_entero</text><title>como_se_entero
+* varchar(50)</title></a>
+<text x='685' y='692' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'carnetizacion' == -->
+<rect class='entity' style='stroke:#1E578F' x='1200' y='840' width='144' height='128' rx='8' ry='8' />
+<path d='M 1200 868 L 1200 848 Q 1200 840 1208 840 L 1336 840 Q 1344 840 1344 848 L 1344 868 L1200 868 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1200' y='840' width='144' height='128' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.carnetizacion'><text x='1232' y='859' >carnetizacion</text><title>Table ofertas.carnetizacion</title></a>
+  <use id='nn' x='1202' y='877' xlink:href='#nn'/><use id='pk' x='1202' y='876' xlink:href='#pk'><title>Pk pk_carnetizacion_id_aut_carnetizacion ( id_aut_carnetizacion ) </title></use><a xlink:href='#ofertas.carnetizacion_id_aut_carnetizacion'><text id='ofertas.carnetizacion.id_aut_carnetizacion' x='1219' y='887'>id_aut_carnetizacion</text><title>id_aut_carnetizacion
+* serial</title></a>
+<text x='1341' y='884' text-anchor='end' class='colType'>#</text>  <use id='nn' x='1202' y='893' xlink:href='#nn'/><a xlink:href='#ofertas.carnetizacion_id_egresado'><text id='ofertas.carnetizacion.id_egresado' x='1219' y='903' onmouseover="hghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.egresados.id_aut_egresado'])" onmouseout="uhghl(['carnetizacion_fk_carnetizacion_egresados','ofertas.egresados.id_aut_egresado'])">id_egresado</text><title>id_egresado
+* integer</title></a>
+<a xlink:href='#ofertas.carnetizacion.id_egresado'><use id='fk' x='1332' y='892' xlink:href='#fk'/><title>References egresados ( id_egresado -&gt; id_aut_egresado ) </title></a>
+  <use id='nn' x='1202' y='909' xlink:href='#nn'/><a xlink:href='#ofertas.carnetizacion_estado_solicitud'><text id='ofertas.carnetizacion.estado_solicitud' x='1219' y='919'>estado_solicitud</text><title>estado_solicitud
+* varchar(50)</title></a>
+<text x='1341' y='916' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1202' y='925' xlink:href='#nn'/><a xlink:href='#ofertas.carnetizacion_fecha_solicitud'><text id='ofertas.carnetizacion.fecha_solicitud' x='1219' y='935'>fecha_solicitud</text><title>fecha_solicitud
+* date</title></a>
+<text x='1341' y='932' text-anchor='end' class='colType'>d</text>  <a xlink:href='#ofertas.carnetizacion_fecha_respuesta'><text id='ofertas.carnetizacion.fecha_respuesta' x='1219' y='951'>fecha_respuesta</text><title>fecha_respuesta
+date</title></a>
+<text x='1341' y='948' text-anchor='end' class='colType'>d</text>
 </g></svg></div>
 <div class='container'>
 
@@ -2023,14 +2019,14 @@ Referred by tipo_de_observacion ( id_aut_comentario -&gt; pregunta_padre ) </tit
 </table></div></div>
 
 <br><br>
-<div class='card'><div class='card-body'><a name='ofertas.carnetizacion' onclick='window.scrollTo(1016, 864);return false;' style='cursor:pointer;'><h5 class='card-title'>Table carnetizacion</h5></a>
+<div class='card'><div class='card-body'><a name='ofertas.carnetizacion' onclick='window.scrollTo(1000, 848);return false;' style='cursor:pointer;'><h5 class='card-title'>Table carnetizacion</h5></a>
 <table class='table table-sm table-bordered small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:20%'>Field Name</th><th style='width:23%'>Data Type</th><th style='width:52%'>Description</th></tr>
 </thead>
 <tbody>
 	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#ref'/></svg></td>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
 		<td><a name='ofertas.carnetizacion_id_aut_carnetizacion'>id&#95;aut&#95;carnetizacion</a></td>
 		<td> serial   </td>
 		<td>  </td>
@@ -2720,7 +2716,7 @@ Referred by tipo_de_observacion ( id_aut_comentario -&gt; pregunta_padre ) </tit
 </table></div></div>
 
 <br><br>
-<div class='card'><div class='card-body'><a name='ofertas.evento' onclick='window.scrollTo(200, 624);return false;' style='cursor:pointer;'><h5 class='card-title'>Table evento</h5></a>
+<div class='card'><div class='card-body'><a name='ofertas.evento' onclick='window.scrollTo(104, 560);return false;' style='cursor:pointer;'><h5 class='card-title'>Table evento</h5></a>
 <table class='table table-sm table-bordered small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:20%'>Field Name</th><th style='width:23%'>Data Type</th><th style='width:52%'>Description</th></tr>
@@ -3542,7 +3538,7 @@ Privado&#61;1 </td>
 </table></div></div>
 
 <br><br>
-<div class='card'><div class='card-body'><a name='ofertas.participa' onclick='window.scrollTo(472, 576);return false;' style='cursor:pointer;'><h5 class='card-title'>Table participa</h5></a>
+<div class='card'><div class='card-body'><a name='ofertas.participa' onclick='window.scrollTo(360, 624);return false;' style='cursor:pointer;'><h5 class='card-title'>Table participa</h5></a>
 <table class='table table-sm table-bordered small' style='table-layout: fixed; word-wrap: break-word;'>
 <thead>
 <tr><th style='width:5%'>Idx</th><th style='width:20%'>Field Name</th><th style='width:23%'>Data Type</th><th style='width:52%'>Description</th></tr>

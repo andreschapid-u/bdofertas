@@ -847,7 +847,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="servicios" color="C1D8EE" x="592" y="416" />
 		<entity schema="ofertas" name="cargos" color="C1D8EE" x="1344" y="256" />
 		<entity schema="ofertas" name="ciudades" color="C1D8EE" x="1200" y="496" />
-		<entity schema="ofertas" name="participa" color="C1D8EE" x="672" y="576" />
 		<entity schema="ofertas" name="referidos_egresados" color="C1D8EE" x="592" y="768" />
 		<entity schema="ofertas" name="niveles_estudio" color="C1D8EE" x="640" y="944" />
 		<entity schema="ofertas" name="postulaciones_respuestas" color="C1D8EE" x="640" y="1312" />
@@ -870,12 +869,13 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
 		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
-		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1216" y="864" />
-		<entity schema="ofertas" name="evento" color="C1D8EE" x="400" y="624" />
 		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="608" y="48" />
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1072" />
 		<entity schema="ofertas" name="tipo_de_observacion" color="C1D8EE" x="1408" y="896" />
+		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1200" y="848" />
+		<entity schema="ofertas" name="evento" color="C1D8EE" x="304" y="560" />
+		<entity schema="ofertas" name="participa" color="C1D8EE" x="560" y="624" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 

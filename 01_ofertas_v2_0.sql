@@ -471,14 +471,6 @@ CREATE  TABLE ofertas.postulaciones_respuestas (
 	CONSTRAINT idx_postulaciones_respuestas PRIMARY KEY ( id_egresado, id_pregunta )
  );
 
-CREATE  TABLE ofertas.solicita ( 
-	id_carnetizacion     serial  NOT NULL ,
-	id_egresado          integer  NOT NULL ,
-	fecha_solicitud      date  NOT NULL ,
-	fecha_respuesta      date   ,
-	CONSTRAINT idx_solicita PRIMARY KEY ( id_carnetizacion, id_egresado )
- );
-
 CREATE  TABLE ofertas.comenta ( 
 	id_grado             integer  NOT NULL ,
 	id_comentario        integer  NOT NULL ,
@@ -609,10 +601,6 @@ ALTER TABLE ofertas.representante_empresa ADD CONSTRAINT fk_representante_empres
 ALTER TABLE ofertas.sede ADD CONSTRAINT fk_sede_localizacion FOREIGN KEY ( id_localizacion ) REFERENCES ofertas.localizacion( id_aut_localizacion );
 
 ALTER TABLE ofertas.sede ADD CONSTRAINT fk_sede_universidad FOREIGN KEY ( id_universidad ) REFERENCES ofertas.universidad( id_aut_universidad );
-
-ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_carnetizacion FOREIGN KEY ( id_carnetizacion ) REFERENCES ofertas.carnetizacion( id_aut_carnetizacion );
-
-ALTER TABLE ofertas.solicita ADD CONSTRAINT fk_solicita_egresados FOREIGN KEY ( id_egresado ) REFERENCES ofertas.egresados( id_aut_egresado );
 
 ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIGN KEY ( id_sectores ) REFERENCES ofertas.sectores( id_aut_sector );
 
