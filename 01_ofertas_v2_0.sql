@@ -110,12 +110,6 @@ CREATE  TABLE ofertas.tipo_de_observacion (
 	CONSTRAINT pk_comentarios_id PRIMARY KEY ( id_aut_comentario )
  );
 
-CREATE  TABLE ofertas.titulo ( 
-	id_aut_titulo        serial  NOT NULL ,
-	nombre               varchar(150)  NOT NULL ,
-	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
- );
-
 CREATE  TABLE ofertas.universidad ( 
 	id_aut_universidad   serial  NOT NULL ,
 	nombre               varchar(100)  NOT NULL ,
@@ -357,7 +351,6 @@ CREATE  TABLE ofertas.programas (
 	id_facultad          integer  NOT NULL ,
 	id_nivelestudio      integer  NOT NULL ,
 	id_sede              integer  NOT NULL ,
-	id_titulo            integer   ,
 	CONSTRAINT pk_programas_id PRIMARY KEY ( id_aut_programa )
  );
 
@@ -404,6 +397,13 @@ CREATE  TABLE ofertas.representante_empresa (
 	telefono_movil       varchar(16)  NOT NULL ,
 	CONSTRAINT pk_table_0_id_aut_administrador_empresa PRIMARY KEY ( id_aut_representante_empresa ),
 	CONSTRAINT idx_administrador_empresa UNIQUE ( id_empresa ) 
+ );
+
+CREATE  TABLE ofertas.titulo ( 
+	id_aut_titulo        serial  NOT NULL ,
+	nombre               varchar(150)  NOT NULL ,
+	id_programa          integer   ,
+	CONSTRAINT pk_titulo_id_aut_titulo PRIMARY KEY ( id_aut_titulo )
  );
 
 CREATE  TABLE ofertas.ubicacion_oferta ( 
@@ -576,8 +576,6 @@ ALTER TABLE ofertas.preguntas_oferta ADD CONSTRAINT fk_preguntas_oferta_ofertas 
 
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_niveles_estudio FOREIGN KEY ( id_nivelestudio ) REFERENCES ofertas.niveles_estudio( id_aut_estudio );
 
-ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_titulo FOREIGN KEY ( id_titulo ) REFERENCES ofertas.titulo( id_aut_titulo );
-
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_facultades FOREIGN KEY ( id_facultad ) REFERENCES ofertas.facultades( id_aut_facultad );
 
 ALTER TABLE ofertas.programas ADD CONSTRAINT fk_programas_sede FOREIGN KEY ( id_sede ) REFERENCES ofertas.sede( id_aut_sede );
@@ -606,8 +604,11 @@ ALTER TABLE ofertas.sub_sectores ADD CONSTRAINT fk_sectores_cate_sectores FOREIG
 
 ALTER TABLE ofertas.tipo_de_observacion ADD CONSTRAINT fk_tipo_de_observacion FOREIGN KEY ( pregunta_padre ) REFERENCES ofertas.tipo_de_observacion( id_aut_comentario );
 
+ALTER TABLE ofertas.titulo ADD CONSTRAINT fk_titulo_programas FOREIGN KEY ( id_programa ) REFERENCES ofertas.programas( id_aut_programa );
+
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol );
+

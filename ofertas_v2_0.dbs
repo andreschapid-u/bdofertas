@@ -589,15 +589,11 @@ Privado=1]]></comment>
 			<column name="id_facultad" type="integer" jt="4" mandatory="y" />
 			<column name="id_nivelestudio" type="integer" jt="4" mandatory="y" />
 			<column name="id_sede" type="integer" jt="4" mandatory="y" />
-			<column name="id_titulo" type="integer" jt="4" />
 			<index name="pk_programas_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_programa" />
 			</index>
 			<fk name="fk_programas_niveles_estudio" to_schema="ofertas" to_table="niveles_estudio" >
 				<fk_column name="id_nivelestudio" pk="id_aut_estudio" />
-			</fk>
-			<fk name="fk_programas_titulo" to_schema="ofertas" to_table="titulo" >
-				<fk_column name="id_titulo" pk="id_aut_titulo" />
 			</fk>
 			<fk name="fk_programas_facultades" to_schema="ofertas" to_table="facultades" >
 				<fk_column name="id_facultad" pk="id_aut_facultad" />
@@ -765,9 +761,13 @@ Privado=1]]></comment>
 		<table name="titulo" >
 			<column name="id_aut_titulo" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="150" jt="12" mandatory="y" />
+			<column name="id_programa" type="integer" jt="4" />
 			<index name="pk_titulo_id_aut_titulo" unique="PRIMARY_KEY" >
 				<column name="id_aut_titulo" />
 			</index>
+			<fk name="fk_titulo_programas" to_schema="ofertas" to_table="programas" >
+				<fk_column name="id_programa" pk="id_aut_programa" />
+			</fk>
 		</table>
 		<table name="ubicacion_oferta" >
 			<column name="id_oferta" type="integer" jt="4" mandatory="y" />
@@ -847,8 +847,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="universidad" color="C1D8EE" x="48" y="1536" />
 		<entity schema="ofertas" name="facultades" color="C1D8EE" x="432" y="1184" />
 		<entity schema="ofertas" name="postulaciones" color="C1D8EE" x="672" y="1104" />
-		<entity schema="ofertas" name="titulo" color="C1D8EE" x="400" y="1600" />
-		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1344" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
@@ -860,6 +858,8 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="evento" color="C1D8EE" x="304" y="560" />
 		<entity schema="ofertas" name="participa" color="C1D8EE" x="560" y="624" />
 		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1200" y="848" />
+		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
+		<entity schema="ofertas" name="titulo" color="C1D8EE" x="416" y="1568" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
