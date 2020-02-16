@@ -761,7 +761,7 @@ Privado=1]]></comment>
 		<table name="titulo" >
 			<column name="id_aut_titulo" type="serial" jt="4" mandatory="y" />
 			<column name="nombre" type="varchar" length="150" jt="12" mandatory="y" />
-			<column name="id_programa" type="integer" jt="4" mandatory="y" />
+			<column name="id_programa" type="integer" jt="4" />
 			<index name="pk_titulo_id_aut_titulo" unique="PRIMARY_KEY" >
 				<column name="id_aut_titulo" />
 			</index>
