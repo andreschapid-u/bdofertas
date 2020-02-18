@@ -201,7 +201,8 @@ CREATE  TABLE ofertas.egresados (
 	estado_completar     bool DEFAULT false NOT NULL ,
 	created_at           timestamp DEFAULT current_timestamp NOT NULL ,
 	updated_at           timestamp DEFAULT current_timestamp NOT NULL ,
-	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado )
+	CONSTRAINT pk_egresados_id PRIMARY KEY ( id_aut_egresado ),
+	CONSTRAINT idx_egresados_identificacion UNIQUE ( identificacion ) 
  );
 
 CREATE  TABLE ofertas.egresados_discapacidades ( 
@@ -611,4 +612,3 @@ ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ofertas 
 ALTER TABLE ofertas.ubicacion_oferta ADD CONSTRAINT fk_ubicacion_oferta_ciudades FOREIGN KEY ( id_ciudad ) REFERENCES ofertas.ciudades( id_aut_ciudad );
 
 ALTER TABLE ofertas.users ADD CONSTRAINT fk_users_roles FOREIGN KEY ( id_rol ) REFERENCES ofertas.rol( id_aut_rol );
-

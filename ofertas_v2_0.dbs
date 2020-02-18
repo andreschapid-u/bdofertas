@@ -200,6 +200,9 @@
 			<index name="pk_egresados_id" unique="PRIMARY_KEY" >
 				<column name="id_aut_egresado" />
 			</index>
+			<index name="idx_egresados_identificacion" unique="UNIQUE" >
+				<column name="identificacion" />
+			</index>
 			<fk name="fk_egresados_ciudades" to_schema="ofertas" to_table="ciudades" >
 				<fk_column name="id_lugar_expedicion" pk="id_aut_ciudad" />
 			</fk>
@@ -850,7 +853,6 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="sede" color="C1D8EE" x="80" y="1344" />
 		<entity schema="ofertas" name="experiencia" color="C1D8EE" x="896" y="256" />
 		<entity schema="ofertas" name="grados" color="C1D8EE" x="1200" y="1008" />
-		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 		<entity schema="ofertas" name="apoyos" color="C1D8EE" x="608" y="48" />
 		<entity schema="ofertas" name="referidos" color="C1D8EE" x="384" y="960" />
 		<entity schema="ofertas" name="comenta" color="C1D8EE" x="1440" y="1072" />
@@ -860,6 +862,7 @@ Privado=1]]></comment>
 		<entity schema="ofertas" name="carnetizacion" color="C1D8EE" x="1200" y="848" />
 		<entity schema="ofertas" name="programas" color="C1D8EE" x="416" y="1344" />
 		<entity schema="ofertas" name="titulo" color="C1D8EE" x="416" y="1568" />
+		<entity schema="ofertas" name="egresados" color="008080" x="944" y="736" />
 		<script name="SQL_Editor" id="Editor_529c5ff" language="SQL" confirmed="y" >
 			<string><![CDATA[CREATE SCHEMA ofertas;
 
