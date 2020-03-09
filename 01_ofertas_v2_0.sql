@@ -1,5 +1,6 @@
 drop schema if exists ofertas cascade;
 
+
 CREATE SCHEMA ofertas;
 
 CREATE  TABLE ofertas.areas_conocimiento ( 
@@ -178,7 +179,7 @@ CREATE  TABLE ofertas.sede (
 
 CREATE  TABLE ofertas.egresados ( 
 	id_aut_egresado      serial  NOT NULL ,
-	identificacion       integer  NOT NULL ,
+	identificacion       varchar(20)  NOT NULL ,
 	nombres              varchar(40)  NOT NULL ,
 	apellidos            varchar(40)  NOT NULL ,
 	genero               varchar(20)   ,
