@@ -1,6 +1,5 @@
 drop schema if exists ofertas cascade;
 
-
 CREATE SCHEMA ofertas;
 
 CREATE  TABLE ofertas.areas_conocimiento ( 
@@ -104,6 +103,9 @@ CREATE  TABLE ofertas.sub_sectores (
 	CONSTRAINT pk_sectores_id PRIMARY KEY ( id_aut_sub_sector )
  );
 
+CREATE  TABLE ofertas."table" ( 
+ );
+
 CREATE  TABLE ofertas.tipo_de_observacion ( 
 	id_aut_comentario    serial  NOT NULL ,
 	pregunta             varchar(600)  NOT NULL ,
@@ -136,6 +138,13 @@ CREATE  TABLE ofertas.apoyos (
 	correo               varchar(60)  NOT NULL ,
 	correo_secundario    varchar(60)  NOT NULL ,
 	CONSTRAINT pk_apoyos_id_aut_apoyo PRIMARY KEY ( id_aut_apoyo )
+ );
+
+CREATE  TABLE ofertas.confirmacion_correo ( 
+	id_aut_confirmacion_correo serial  NOT NULL ,
+	nuevo_correo         varchar(50)   ,
+	link_confirmacion    varchar(1000)   ,
+	CONSTRAINT pk_confirmacion_correo_id_aut_confirmacion_correo PRIMARY KEY ( id_aut_confirmacion_correo )
  );
 
 CREATE  TABLE ofertas.departamentos ( 
@@ -501,6 +510,8 @@ ALTER TABLE ofertas.ciudades ADD CONSTRAINT fk_ciudades_departamentos FOREIGN KE
 ALTER TABLE ofertas.comenta ADD CONSTRAINT fk_comenta_grados FOREIGN KEY ( id_grado ) REFERENCES ofertas.grados( id_aut_grado );
 
 ALTER TABLE ofertas.comenta ADD CONSTRAINT fk_comenta_tipo_de_observacion FOREIGN KEY ( id_comentario ) REFERENCES ofertas.tipo_de_observacion( id_aut_comentario );
+
+ALTER TABLE ofertas.confirmacion_correo ADD CONSTRAINT fk_confirmacion_correo_apoyos FOREIGN KEY ( id_aut_confirmacion_correo ) REFERENCES ofertas.apoyos( id_aut_apoyo );
 
 ALTER TABLE ofertas.contratos ADD CONSTRAINT fk_contratos_ofertas FOREIGN KEY ( id_oferta ) REFERENCES ofertas.ofertas( id_aut_oferta ) ON DELETE CASCADE ON UPDATE CASCADE;
 

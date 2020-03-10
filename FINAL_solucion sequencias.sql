@@ -34,4 +34,5 @@ SELECT setval(pg_get_serial_sequence('ofertas.tipo_de_observacion', 'id_aut_come
 SELECT setval(pg_get_serial_sequence('ofertas.titulo', 'id_aut_titulo'), coalesce(max(id_aut_titulo)+1,1), false) FROM ofertas.titulo;
 SELECT setval(pg_get_serial_sequence('ofertas.universidad', 'id_aut_universidad'), coalesce(max(id_aut_universidad)+1,1), false) FROM ofertas.universidad;
 SELECT setval(pg_get_serial_sequence('ofertas.users', 'id_aut_user'), coalesce(max(id_aut_user)+1,1), false) FROM ofertas.users;
+SELECT setval(pg_get_serial_sequence('ofertas.confirmacion_correo', 'id_aut_confirmacion_correo'), coalesce(max(id_aut_confirmacion_correo)+1,1), false) FROM ofertas.confirmacion_correo;
 commit;
