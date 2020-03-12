@@ -778,14 +778,6 @@ egresados ref ciudades ( id_lugar_nacimiento -&gt; id_aut_ciudad )</title>
 <path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 1104,768L 1208,768Q 1216,768 1216,760L 1216,592' ><title>Fk fk_egresados_nacimiento_ciudades
 egresados ref ciudades ( id_lugar_nacimiento -&gt; id_aut_ciudad )</title></path>
 <text x='1113' y='763' transform='rotate(0 1113,763)' class='relName'>id_lugar_nacimiento</text>
-<!-- == Fk 'apoyos_fk_apoyos_users' == -->
-<path id='apoyos_fk_apoyos_users'  onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" transform='translate(8,0)' class='scene' d='M 752,64L 1088,64' >
-	<title>Fk fk_apoyos_users
-apoyos ref users ( id_user -&gt; id_aut_user )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 752,64L 1088,64' ><title>Fk fk_apoyos_users
-apoyos ref users ( id_user -&gt; id_aut_user )</title></path>
-<text x='761' y='59' transform='rotate(0 761,59)' class='relName'>id_user</text>
 <!-- == Fk 'confirmacion_correo_fk_confirmacion_correo_apoyos' == -->
 <path id='confirmacion_correo_fk_confirmacion_correo_apoyos'  onmouseover="hghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo','ofertas.apoyos.id_aut_apoyo'])" onmouseout="uhghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo','ofertas.apoyos.id_aut_apoyo'])" transform='translate(8,0)' class='scene' d='M 480,64L 592,64' >
 	<title>Fk fk_confirmacion_correo_apoyos
@@ -794,6 +786,14 @@ confirmacion_correo ref apoyos ( id_aut_confirmacion_correo -&gt; id_aut_apoyo )
 <path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 480,64L 592,64' ><title>Fk fk_confirmacion_correo_apoyos
 confirmacion_correo ref apoyos ( id_aut_confirmacion_correo -&gt; id_aut_apoyo )</title></path>
 <text x='489' y='59' transform='rotate(0 489,59)' class='relName'>id_aut_confirmacion_correo</text>
+<!-- == Fk 'apoyos_fk_apoyos_users' == -->
+<path id='apoyos_fk_apoyos_users'  onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" transform='translate(8,0)' class='scene' d='M 752,64L 1088,64' >
+	<title>Fk fk_apoyos_users
+apoyos ref users ( id_user -&gt; id_aut_user )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 752,64L 1088,64' ><title>Fk fk_apoyos_users
+apoyos ref users ( id_user -&gt; id_aut_user )</title></path>
+<text x='761' y='59' transform='rotate(0 761,59)' class='relName'>id_user</text>
 <!-- == Table 'empresas_sectores' == -->
 <rect class='entity' style='stroke:#1E578F' x='2128' y='888' width='128' height='80' rx='8' ry='8' />
 <path d='M 2128 916 L 2128 896 Q 2128 888 2136 888 L 2248 888 Q 2256 888 2256 896 L 2256 916 L2128 916 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1730,30 +1730,6 @@ varchar(16)</title></a>
 <text x='1101' y='1124' text-anchor='end' class='colType'>d</text>  <use id='nn' x='946' y='1133' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_updated_at'><text id='ofertas.egresados.updated_at' x='963' y='1143'>updated_at</text><title>updated_at
 * timestamp default current_timestamp</title></a>
 <text x='1101' y='1140' text-anchor='end' class='colType'>d</text>
-<!-- == Table 'apoyos' == -->
-<rect class='entity' style='stroke:#1E578F' x='608' y='40' width='144' height='160' rx='8' ry='8' />
-<path d='M 608 68 L 608 48 Q 608 40 616 40 L 744 40 Q 752 40 752 48 L 752 68 L608 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='608' y='40' width='144' height='160' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.apoyos'><text x='656' y='59' >apoyos</text><title>Table ofertas.apoyos</title></a>
-  <use id='nn' x='610' y='77' xlink:href='#nn'/><use id='pk' x='610' y='76' xlink:href='#pk'><title>Pk pk_apoyos_id_aut_apoyo ( id_aut_apoyo ) </title></use><a xlink:href='#ofertas.apoyos_id_aut_apoyo'><text id='ofertas.apoyos.id_aut_apoyo' x='627' y='87' onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo'])">id_aut_apoyo</text><title>id_aut_apoyo
-* serial</title></a>
-<a xlink:href='#ofertas.apoyos.id_aut_apoyo'><use id='ref' x='740' y='76' xlink:href='#ref'/><title>Referred by acceso ( id_apoyo -&gt; id_aut_apoyo ) 
-Referred by confirmacion_correo ( id_aut_confirmacion_correo -&gt; id_aut_apoyo ) 
-Referred by confirmacion_correo ( id_aut_confirmacion_correo -&gt; id_aut_apoyo ) </title></a>
-  <use id='nn' x='610' y='93' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombre_rol'><text id='ofertas.apoyos.nombre_rol' x='627' y='103'>nombre_rol</text><title>nombre_rol
-* varchar(60)</title></a>
-<text x='749' y='100' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='109' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_id_user'><text id='ofertas.apoyos.id_user' x='627' y='119' onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])">id_user</text><title>id_user
-* integer</title></a>
-<a xlink:href='#ofertas.apoyos.id_user'><use id='fk' x='740' y='108' xlink:href='#fk'/><title>References users ( id_user -&gt; id_aut_user ) </title></a>
-  <use id='nn' x='610' y='125' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombres'><text id='ofertas.apoyos.nombres' x='627' y='135'>nombres</text><title>nombres
-* varchar(60)</title></a>
-<text x='749' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='141' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_apellidos'><text id='ofertas.apoyos.apellidos' x='627' y='151'>apellidos</text><title>apellidos
-* varchar(60)</title></a>
-<text x='749' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='157' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo'><text id='ofertas.apoyos.correo' x='627' y='167'>correo</text><title>correo
-* varchar(60)</title></a>
-<text x='749' y='164' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='173' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo_secundario'><text id='ofertas.apoyos.correo_secundario' x='627' y='183'>correo_secundario</text><title>correo_secundario
-* varchar(60)</title></a>
-<text x='749' y='180' text-anchor='end' class='colType'>t</text>
 <!-- == Table 'confirmacion_correo' == -->
 <rect class='entity' style='stroke:#1E578F' x='288' y='40' width='192' height='96' rx='8' ry='8' />
 <path d='M 288 68 L 288 48 Q 288 40 296 40 L 472 40 Q 480 40 480 48 L 480 68 L288 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1767,6 +1743,29 @@ varchar(50)</title></a>
 <text x='477' y='100' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.confirmacion_correo_link_confirmacion'><text id='ofertas.confirmacion_correo.link_confirmacion' x='307' y='119'>link_confirmacion</text><title>link_confirmacion
 varchar(1000)</title></a>
 <text x='477' y='116' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'apoyos' == -->
+<rect class='entity' style='stroke:#1E578F' x='608' y='40' width='144' height='160' rx='8' ry='8' />
+<path d='M 608 68 L 608 48 Q 608 40 616 40 L 744 40 Q 752 40 752 48 L 752 68 L608 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='608' y='40' width='144' height='160' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.apoyos'><text x='656' y='59' >apoyos</text><title>Table ofertas.apoyos</title></a>
+  <use id='nn' x='610' y='77' xlink:href='#nn'/><use id='pk' x='610' y='76' xlink:href='#pk'><title>Pk pk_apoyos_id_aut_apoyo ( id_aut_apoyo ) </title></use><a xlink:href='#ofertas.apoyos_id_aut_apoyo'><text id='ofertas.apoyos.id_aut_apoyo' x='627' y='87' onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo'])">id_aut_apoyo</text><title>id_aut_apoyo
+* serial</title></a>
+<a xlink:href='#ofertas.apoyos.id_aut_apoyo'><use id='ref' x='740' y='76' xlink:href='#ref'/><title>Referred by acceso ( id_apoyo -&gt; id_aut_apoyo ) 
+Referred by confirmacion_correo ( id_aut_confirmacion_correo -&gt; id_aut_apoyo ) </title></a>
+  <use id='nn' x='610' y='93' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombre_rol'><text id='ofertas.apoyos.nombre_rol' x='627' y='103'>nombre_rol</text><title>nombre_rol
+* varchar(60)</title></a>
+<text x='749' y='100' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='109' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_id_user'><text id='ofertas.apoyos.id_user' x='627' y='119' onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])">id_user</text><title>id_user
+* integer</title></a>
+<a xlink:href='#ofertas.apoyos.id_user'><use id='fk' x='740' y='108' xlink:href='#fk'/><title>References users ( id_user -&gt; id_aut_user ) </title></a>
+  <use id='nn' x='610' y='125' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombres'><text id='ofertas.apoyos.nombres' x='627' y='135'>nombres</text><title>nombres
+* varchar(60)</title></a>
+<text x='749' y='132' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='141' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_apellidos'><text id='ofertas.apoyos.apellidos' x='627' y='151'>apellidos</text><title>apellidos
+* varchar(60)</title></a>
+<text x='749' y='148' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='157' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_correo'><text id='ofertas.apoyos.correo' x='627' y='167'>correo</text><title>correo
+* varchar(60)</title></a>
+<text x='749' y='164' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.apoyos_correo_secundario'><text id='ofertas.apoyos.correo_secundario' x='627' y='183'>correo_secundario</text><title>correo_secundario
+varchar(60)</title></a>
+<text x='749' y='180' text-anchor='end' class='colType'>t</text>
 </g></svg></div>
 <div class='container'>
 
@@ -1962,7 +1961,7 @@ varchar(1000)</title></a>
 		<td>  </td>
 	</tr>
 	<tr>
-		<td>*</td>
+		<td>&nbsp;</td>
 		<td><a name='ofertas.apoyos_correo_secundario'>correo&#95;secundario</a></td>
 		<td> varchar&#40;60&#41;   </td>
 		<td>  </td>

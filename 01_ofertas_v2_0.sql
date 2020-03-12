@@ -136,7 +136,7 @@ CREATE  TABLE ofertas.apoyos (
 	nombres              varchar(60)  NOT NULL ,
 	apellidos            varchar(60)  NOT NULL ,
 	correo               varchar(60)  NOT NULL ,
-	correo_secundario    varchar(60)  NOT NULL ,
+	correo_secundario    varchar(60)   ,
 	CONSTRAINT pk_apoyos_id_aut_apoyo PRIMARY KEY ( id_aut_apoyo )
  );
 
