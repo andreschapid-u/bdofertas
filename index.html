@@ -490,14 +490,6 @@ localizacion ref ciudades ( id_ciudad -&gt; id_aut_ciudad )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1328,720L 1320,720Q 1312,720 1312,712L 1312,592' ><title>Fk fk_localizacion_ciudades
 localizacion ref ciudades ( id_ciudad -&gt; id_aut_ciudad )</title></path>
 <text x='1285' y='715' transform='rotate(0 1285,715)' class='relName'>id_ciudad</text>
-<!-- == Fk 'departamentos_fk_departamentos_pais' == -->
-<path id='departamentos_fk_departamentos_pais'  onmouseover="hghl(['departamentos_fk_departamentos_pais','ofertas.departamentos.id_pais_fk','ofertas.pais.id_aut_pais'])" onmouseout="uhghl(['departamentos_fk_departamentos_pais','ofertas.departamentos.id_pais_fk','ofertas.pais.id_aut_pais'])" transform='translate(8,0)' class='scene' d='M 1536,528L 1616,528' >
-	<title>Fk fk_departamentos_pais
-departamentos ref pais ( id_pais_fk -&gt; id_aut_pais )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1536,528L 1616,528' ><title>Fk fk_departamentos_pais
-departamentos ref pais ( id_pais_fk -&gt; id_aut_pais )</title></path>
-<text x='1545' y='523' transform='rotate(0 1545,523)' class='relName'>id_pais_fk</text>
 <!-- == Fk 'ofertas_fk_ofertas_empresas' == -->
 <path id='ofertas_fk_ofertas_empresas'  onmouseover="hghl(['ofertas_fk_ofertas_empresas','ofertas.ofertas.id_empresa','ofertas.empresas.id_aut_empresa'])" onmouseout="uhghl(['ofertas_fk_ofertas_empresas','ofertas.ofertas.id_empresa','ofertas.empresas.id_aut_empresa'])" transform='translate(8,0)' class='scene' d='M 1728,1280L 1728,1176Q 1728,1168 1736,1168L 1744,1168' >
 	<title>Fk fk_ofertas_empresas
@@ -778,14 +770,6 @@ egresados ref ciudades ( id_lugar_nacimiento -&gt; id_aut_ciudad )</title>
 <path transform='translate(8,0)' marker-start='url(#foot0p)' marker-end='url(#arrow1)'  class='dotted '  d='M 1104,768L 1208,768Q 1216,768 1216,760L 1216,592' ><title>Fk fk_egresados_nacimiento_ciudades
 egresados ref ciudades ( id_lugar_nacimiento -&gt; id_aut_ciudad )</title></path>
 <text x='1113' y='763' transform='rotate(0 1113,763)' class='relName'>id_lugar_nacimiento</text>
-<!-- == Fk 'confirmacion_correo_fk_confirmacion_correo_apoyos' == -->
-<path id='confirmacion_correo_fk_confirmacion_correo_apoyos'  onmouseover="hghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo','ofertas.apoyos.id_aut_apoyo'])" onmouseout="uhghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo','ofertas.apoyos.id_aut_apoyo'])" transform='translate(8,0)' class='scene' d='M 480,64L 592,64' >
-	<title>Fk fk_confirmacion_correo_apoyos
-confirmacion_correo ref apoyos ( id_aut_confirmacion_correo -&gt; id_aut_apoyo )</title>
-</path>
-<path transform='translate(8,0)' marker-start='url(#foot1)' marker-end='url(#arrow1)'    d='M 480,64L 592,64' ><title>Fk fk_confirmacion_correo_apoyos
-confirmacion_correo ref apoyos ( id_aut_confirmacion_correo -&gt; id_aut_apoyo )</title></path>
-<text x='489' y='59' transform='rotate(0 489,59)' class='relName'>id_aut_confirmacion_correo</text>
 <!-- == Fk 'apoyos_fk_apoyos_users' == -->
 <path id='apoyos_fk_apoyos_users'  onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.apoyos.id_user','ofertas.users.id_aut_user'])" transform='translate(8,0)' class='scene' d='M 752,64L 1088,64' >
 	<title>Fk fk_apoyos_users
@@ -794,6 +778,22 @@ apoyos ref users ( id_user -&gt; id_aut_user )</title>
 <path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 752,64L 1088,64' ><title>Fk fk_apoyos_users
 apoyos ref users ( id_user -&gt; id_aut_user )</title></path>
 <text x='761' y='59' transform='rotate(0 761,59)' class='relName'>id_user</text>
+<!-- == Fk 'departamentos_fk_departamentos_pais' == -->
+<path id='departamentos_fk_departamentos_pais'  onmouseover="hghl(['departamentos_fk_departamentos_pais','ofertas.departamentos.id_pais_fk','ofertas.pais.id_aut_pais'])" onmouseout="uhghl(['departamentos_fk_departamentos_pais','ofertas.departamentos.id_pais_fk','ofertas.pais.id_aut_pais'])" transform='translate(8,0)' class='scene' d='M 1536,528L 1616,528' >
+	<title>Fk fk_departamentos_pais
+departamentos ref pais ( id_pais_fk -&gt; id_aut_pais )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 1536,528L 1616,528' ><title>Fk fk_departamentos_pais
+departamentos ref pais ( id_pais_fk -&gt; id_aut_pais )</title></path>
+<text x='1545' y='523' transform='rotate(0 1545,523)' class='relName'>id_pais_fk</text>
+<!-- == Fk 'confirmacion_correo_fk_confirmacion_correo_apoyos' == -->
+<path id='confirmacion_correo_fk_confirmacion_correo_apoyos'  onmouseover="hghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_apoyos_fk','ofertas.apoyos.id_aut_apoyo'])" onmouseout="uhghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_apoyos_fk','ofertas.apoyos.id_aut_apoyo'])" transform='translate(8,0)' class='scene' d='M 480,64L 592,64' >
+	<title>Fk fk_confirmacion_correo_apoyos
+confirmacion_correo ref apoyos ( id_apoyos_fk -&gt; id_aut_apoyo )</title>
+</path>
+<path transform='translate(8,0)' marker-start='url(#foot1p)' marker-end='url(#arrow1)'    d='M 480,64L 592,64' ><title>Fk fk_confirmacion_correo_apoyos
+confirmacion_correo ref apoyos ( id_apoyos_fk -&gt; id_aut_apoyo )</title></path>
+<text x='489' y='59' transform='rotate(0 489,59)' class='relName'>id_apoyos_fk</text>
 <!-- == Table 'empresas_sectores' == -->
 <rect class='entity' style='stroke:#1E578F' x='2128' y='888' width='128' height='80' rx='8' ry='8' />
 <path d='M 2128 916 L 2128 896 Q 2128 888 2136 888 L 2248 888 Q 2256 888 2256 896 L 2256 916 L2128 916 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
@@ -1235,20 +1235,6 @@ varchar(40)</title></a>
   <use id='nn' x='1634' y='573' xlink:href='#nn'/><use id='unq' x='1634' y='572' xlink:href='#unq'><title>Unq idx_pais ( nombre ) </title></use><a xlink:href='#ofertas.pais_nombre'><text id='ofertas.pais.nombre' x='1651' y='583'>nombre</text><title>nombre
 * varchar(50)</title></a>
 <text x='1725' y='580' text-anchor='end' class='colType'>t</text>
-<!-- == Table 'departamentos' == -->
-<rect class='entity' style='stroke:#1E578F' x='1440' y='472' width='96' height='96' rx='8' ry='8' />
-<path d='M 1440 500 L 1440 480 Q 1440 472 1448 472 L 1528 472 Q 1536 472 1536 480 L 1536 500 L1440 500 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='1440' y='472' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.departamentos'><text x='1442' y='491' >departamentos</text><title>Table ofertas.departamentos</title></a>
-  <use id='nn' x='1442' y='509' xlink:href='#nn'/><use id='pk' x='1442' y='508' xlink:href='#pk'><title>Pk pk_departamento_id ( id_aut_dep ) </title></use><a xlink:href='#ofertas.departamentos_id_aut_dep'><text id='ofertas.departamentos.id_aut_dep' x='1459' y='519' onmouseover="hghl(['ciudades_fk_ciudades_departamentos','ofertas.ciudades.id_departamento'])" onmouseout="uhghl(['ciudades_fk_ciudades_departamentos','ofertas.ciudades.id_departamento'])">id_aut_dep</text><title>id_aut_dep
-* serial</title></a>
-<a xlink:href='#ofertas.departamentos.id_aut_dep'><use id='ref' x='1524' y='508' xlink:href='#ref'/><title>Referred by ciudades ( id_departamento -&gt; id_aut_dep ) </title></a>
-  <use id='nn' x='1442' y='525' xlink:href='#nn'/><use id='unq' x='1442' y='524' xlink:href='#unq'><title>Unq idx_departamentos ( nombre, id_pais_fk ) </title></use><a xlink:href='#ofertas.departamentos_nombre'><text id='ofertas.departamentos.nombre' x='1459' y='535'>nombre</text><title>nombre
-* varchar(50)</title></a>
-<text x='1533' y='532' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1442' y='541' xlink:href='#nn'/><use id='unq' x='1442' y='540' xlink:href='#unq'><title>Unq idx_departamentos ( nombre, id_pais_fk ) </title></use><a xlink:href='#ofertas.departamentos_id_pais_fk'><text id='ofertas.departamentos.id_pais_fk' x='1459' y='551' onmouseover="hghl(['departamentos_fk_departamentos_pais','ofertas.pais.id_aut_pais'])" onmouseout="uhghl(['departamentos_fk_departamentos_pais','ofertas.pais.id_aut_pais'])">id_pais_fk</text><title>id_pais_fk
-* integer</title></a>
-<a xlink:href='#ofertas.departamentos.id_pais_fk'><use id='fk' x='1524' y='540' xlink:href='#fk'/><title>References pais ( id_pais_fk -&gt; id_aut_pais ) </title></a>
-
 <!-- == Table 'rol' == -->
 <rect class='entity' style='stroke:#1E5D8F' x='800' y='104' width='96' height='80' rx='8' ry='8' />
 <path d='M 800 132 L 800 112 Q 800 104 808 104 L 888 104 Q 896 104 896 112 L 896 132 L800 132 ' style='fill:url(#tbg_3986C1);stroke:1;stroke-opacity:0.1;' />
@@ -1730,28 +1716,16 @@ varchar(16)</title></a>
 <text x='1101' y='1124' text-anchor='end' class='colType'>d</text>  <use id='nn' x='946' y='1133' xlink:href='#nn'/><a xlink:href='#ofertas.egresados_updated_at'><text id='ofertas.egresados.updated_at' x='963' y='1143'>updated_at</text><title>updated_at
 * timestamp default current_timestamp</title></a>
 <text x='1101' y='1140' text-anchor='end' class='colType'>d</text>
-<!-- == Table 'confirmacion_correo' == -->
-<rect class='entity' style='stroke:#1E578F' x='288' y='40' width='192' height='96' rx='8' ry='8' />
-<path d='M 288 68 L 288 48 Q 288 40 296 40 L 472 40 Q 480 40 480 48 L 480 68 L288 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
-<rect class='entity' x='288' y='40' width='192' height='96' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
-<a xlink:href='#ofertas.confirmacion_correo'><text x='324' y='59' >confirmacion_correo</text><title>Table ofertas.confirmacion_correo</title></a>
-  <use id='nn' x='290' y='77' xlink:href='#nn'/><use id='pk' x='290' y='76' xlink:href='#pk'><title>Pk pk_confirmacion_correo_id_aut_confirmacion_correo ( id_aut_confirmacion_correo ) </title></use><a xlink:href='#ofertas.confirmacion_correo_id_aut_confirmacion_correo'><text id='ofertas.confirmacion_correo.id_aut_confirmacion_correo' x='307' y='87' onmouseover="hghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.apoyos.id_aut_apoyo'])" onmouseout="uhghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.apoyos.id_aut_apoyo'])">id_aut_confirmacion_correo</text><title>id_aut_confirmacion_correo
-* serial</title></a>
-<a xlink:href='#ofertas.confirmacion_correo.id_aut_confirmacion_correo'><use id='fk' x='468' y='76' xlink:href='#fk'/><title>References apoyos ( id_aut_confirmacion_correo -&gt; id_aut_apoyo ) </title></a>
-  <a xlink:href='#ofertas.confirmacion_correo_nuevo_correo'><text id='ofertas.confirmacion_correo.nuevo_correo' x='307' y='103'>nuevo_correo</text><title>nuevo_correo
-varchar(50)</title></a>
-<text x='477' y='100' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.confirmacion_correo_link_confirmacion'><text id='ofertas.confirmacion_correo.link_confirmacion' x='307' y='119'>link_confirmacion</text><title>link_confirmacion
-varchar(1000)</title></a>
-<text x='477' y='116' text-anchor='end' class='colType'>t</text>
 <!-- == Table 'apoyos' == -->
 <rect class='entity' style='stroke:#1E578F' x='608' y='40' width='144' height='160' rx='8' ry='8' />
 <path d='M 608 68 L 608 48 Q 608 40 616 40 L 744 40 Q 752 40 752 48 L 752 68 L608 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
 <rect class='entity' x='608' y='40' width='144' height='160' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
 <a xlink:href='#ofertas.apoyos'><text x='656' y='59' >apoyos</text><title>Table ofertas.apoyos</title></a>
-  <use id='nn' x='610' y='77' xlink:href='#nn'/><use id='pk' x='610' y='76' xlink:href='#pk'><title>Pk pk_apoyos_id_aut_apoyo ( id_aut_apoyo ) </title></use><a xlink:href='#ofertas.apoyos_id_aut_apoyo'><text id='ofertas.apoyos.id_aut_apoyo' x='627' y='87' onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_aut_confirmacion_correo'])">id_aut_apoyo</text><title>id_aut_apoyo
+  <use id='nn' x='610' y='77' xlink:href='#nn'/><use id='pk' x='610' y='76' xlink:href='#pk'><title>Pk pk_apoyos_id_aut_apoyo ( id_aut_apoyo ) </title></use><a xlink:href='#ofertas.apoyos_id_aut_apoyo'><text id='ofertas.apoyos.id_aut_apoyo' x='627' y='87' onmouseover="hghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_apoyos_fk','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_apoyos_fk'])" onmouseout="uhghl(['acceso_fk_acceso_apoyos','ofertas.acceso.id_apoyo','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_apoyos_fk','confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.confirmacion_correo.id_apoyos_fk'])">id_aut_apoyo</text><title>id_aut_apoyo
 * serial</title></a>
 <a xlink:href='#ofertas.apoyos.id_aut_apoyo'><use id='ref' x='740' y='76' xlink:href='#ref'/><title>Referred by acceso ( id_apoyo -&gt; id_aut_apoyo ) 
-Referred by confirmacion_correo ( id_aut_confirmacion_correo -&gt; id_aut_apoyo ) </title></a>
+Referred by confirmacion_correo ( id_apoyos_fk -&gt; id_aut_apoyo ) 
+Referred by confirmacion_correo ( id_apoyos_fk -&gt; id_aut_apoyo ) </title></a>
   <use id='nn' x='610' y='93' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_nombre_rol'><text id='ofertas.apoyos.nombre_rol' x='627' y='103'>nombre_rol</text><title>nombre_rol
 * varchar(60)</title></a>
 <text x='749' y='100' text-anchor='end' class='colType'>t</text>  <use id='nn' x='610' y='109' xlink:href='#nn'/><a xlink:href='#ofertas.apoyos_id_user'><text id='ofertas.apoyos.id_user' x='627' y='119' onmouseover="hghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])" onmouseout="uhghl(['apoyos_fk_apoyos_users','ofertas.users.id_aut_user'])">id_user</text><title>id_user
@@ -1766,6 +1740,35 @@ Referred by confirmacion_correo ( id_aut_confirmacion_correo -&gt; id_aut_apoyo 
 <text x='749' y='164' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.apoyos_correo_secundario'><text id='ofertas.apoyos.correo_secundario' x='627' y='183'>correo_secundario</text><title>correo_secundario
 varchar(60)</title></a>
 <text x='749' y='180' text-anchor='end' class='colType'>t</text>
+<!-- == Table 'departamentos' == -->
+<rect class='entity' style='stroke:#1E578F' x='1440' y='472' width='96' height='96' rx='8' ry='8' />
+<path d='M 1440 500 L 1440 480 Q 1440 472 1448 472 L 1528 472 Q 1536 472 1536 480 L 1536 500 L1440 500 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='1440' y='472' width='96' height='96' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.departamentos'><text x='1442' y='491' >departamentos</text><title>Table ofertas.departamentos</title></a>
+  <use id='nn' x='1442' y='509' xlink:href='#nn'/><use id='pk' x='1442' y='508' xlink:href='#pk'><title>Pk pk_departamento_id ( id_aut_dep ) </title></use><a xlink:href='#ofertas.departamentos_id_aut_dep'><text id='ofertas.departamentos.id_aut_dep' x='1459' y='519' onmouseover="hghl(['ciudades_fk_ciudades_departamentos','ofertas.ciudades.id_departamento'])" onmouseout="uhghl(['ciudades_fk_ciudades_departamentos','ofertas.ciudades.id_departamento'])">id_aut_dep</text><title>id_aut_dep
+* serial</title></a>
+<a xlink:href='#ofertas.departamentos.id_aut_dep'><use id='ref' x='1524' y='508' xlink:href='#ref'/><title>Referred by ciudades ( id_departamento -&gt; id_aut_dep ) </title></a>
+  <use id='nn' x='1442' y='525' xlink:href='#nn'/><use id='unq' x='1442' y='524' xlink:href='#unq'><title>Unq idx_departamentos ( nombre, id_pais_fk ) </title></use><a xlink:href='#ofertas.departamentos_nombre'><text id='ofertas.departamentos.nombre' x='1459' y='535'>nombre</text><title>nombre
+* varchar(50)</title></a>
+<text x='1533' y='532' text-anchor='end' class='colType'>t</text>  <use id='nn' x='1442' y='541' xlink:href='#nn'/><use id='unq' x='1442' y='540' xlink:href='#unq'><title>Unq idx_departamentos ( nombre, id_pais_fk ) </title></use><a xlink:href='#ofertas.departamentos_id_pais_fk'><text id='ofertas.departamentos.id_pais_fk' x='1459' y='551' onmouseover="hghl(['departamentos_fk_departamentos_pais','ofertas.pais.id_aut_pais'])" onmouseout="uhghl(['departamentos_fk_departamentos_pais','ofertas.pais.id_aut_pais'])">id_pais_fk</text><title>id_pais_fk
+* integer</title></a>
+<a xlink:href='#ofertas.departamentos.id_pais_fk'><use id='fk' x='1524' y='540' xlink:href='#fk'/><title>References pais ( id_pais_fk -&gt; id_aut_pais ) </title></a>
+
+<!-- == Table 'confirmacion_correo' == -->
+<rect class='entity' style='stroke:#1E578F' x='288' y='40' width='192' height='112' rx='8' ry='8' />
+<path d='M 288 68 L 288 48 Q 288 40 296 40 L 472 40 Q 480 40 480 48 L 480 68 L288 68 ' style='fill:url(#tbg_C1D8EE);stroke:1;stroke-opacity:0.1;' />
+<rect class='entity' x='288' y='40' width='192' height='112' rx='8' ry='8' style='fill:none;stroke:#DADDE1'/>
+<a xlink:href='#ofertas.confirmacion_correo'><text x='324' y='59' >confirmacion_correo</text><title>Table ofertas.confirmacion_correo</title></a>
+  <use id='nn' x='290' y='77' xlink:href='#nn'/><use id='pk' x='290' y='76' xlink:href='#pk'><title>Pk pk_confirmacion_correo_id_aut_confirmacion_correo ( id_aut_confirmacion_correo ) </title></use><a xlink:href='#ofertas.confirmacion_correo_id_aut_confirmacion_correo'><text id='ofertas.confirmacion_correo.id_aut_confirmacion_correo' x='307' y='87'>id_aut_confirmacion_correo</text><title>id_aut_confirmacion_correo
+* serial</title></a>
+<text x='477' y='84' text-anchor='end' class='colType'>#</text>  <a xlink:href='#ofertas.confirmacion_correo_nuevo_correo'><text id='ofertas.confirmacion_correo.nuevo_correo' x='307' y='103'>nuevo_correo</text><title>nuevo_correo
+varchar(50)</title></a>
+<text x='477' y='100' text-anchor='end' class='colType'>t</text>  <a xlink:href='#ofertas.confirmacion_correo_link_confirmacion'><text id='ofertas.confirmacion_correo.link_confirmacion' x='307' y='119'>link_confirmacion</text><title>link_confirmacion
+varchar(1000)</title></a>
+<text x='477' y='116' text-anchor='end' class='colType'>t</text>  <use id='nn' x='290' y='125' xlink:href='#nn'/><a xlink:href='#ofertas.confirmacion_correo_id_apoyos_fk'><text id='ofertas.confirmacion_correo.id_apoyos_fk' x='307' y='135' onmouseover="hghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.apoyos.id_aut_apoyo'])" onmouseout="uhghl(['confirmacion_correo_fk_confirmacion_correo_apoyos','ofertas.apoyos.id_aut_apoyo'])">id_apoyos_fk</text><title>id_apoyos_fk
+* integer</title></a>
+<a xlink:href='#ofertas.confirmacion_correo.id_apoyos_fk'><use id='fk' x='468' y='124' xlink:href='#fk'/><title>References apoyos ( id_apoyos_fk -&gt; id_aut_apoyo ) </title></a>
+
 </g></svg></div>
 <div class='container'>
 
@@ -2186,7 +2189,7 @@ varchar(60)</title></a>
 </thead>
 <tbody>
 	<tr>
-		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg><svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td>*<svg width='14' height='14'><use xlink:href='#pk'/></svg></td>
 		<td><a name='ofertas.confirmacion_correo_id_aut_confirmacion_correo'>id&#95;aut&#95;confirmacion&#95;correo</a></td>
 		<td> serial   </td>
 		<td>  </td>
@@ -2203,6 +2206,12 @@ varchar(60)</title></a>
 		<td> varchar&#40;1000&#41;   </td>
 		<td>  </td>
 	</tr>
+	<tr>
+		<td>*<svg width='14' height='14'><use xlink:href='#fk'/></svg></td>
+		<td><a name='ofertas.confirmacion_correo_id_apoyos_fk'>id&#95;apoyos&#95;fk</a></td>
+		<td> integer   </td>
+		<td>  </td>
+	</tr>
 <tr><th colspan='4'>Indexes</th></tr>
 	<tr>		<td><svg width='14' height='14'><use xlink:href='#pk'/></svg></td><td>pk&#95;confirmacion&#95;correo&#95;id&#95;aut&#95;confirmacion&#95;correo</td>
 		<td> ON id&#95;aut&#95;confirmacion&#95;correo</td>
@@ -2211,7 +2220,7 @@ varchar(60)</title></a>
 <tr><th colspan='4'>Foreign Keys</th></tr>
 	<tr>
 		<td><svg width='14' height='14'><use xlink:href='#fk'/></svg></td><td>fk_confirmacion_correo_apoyos</td>
-		<td > ( id&#95;aut&#95;confirmacion&#95;correo ) ref <a href='#ofertas&#46;apoyos'>apoyos</a> (id&#95;aut&#95;apoyo) </td>
+		<td > ( id&#95;apoyos&#95;fk ) ref <a href='#ofertas&#46;apoyos'>apoyos</a> (id&#95;aut&#95;apoyo) </td>
 		<td>  </td>
 	</tr>
 </tbody>
